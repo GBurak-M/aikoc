@@ -1,0 +1,10 @@
+{
+  "name": "aikoc",
+  "short_name": "aikoc",
+  "description": "YKS eğitim koçu — sınav takibi ve müfredat desteği",
+  "lang": "tr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1"
+}
