@@ -7,6 +7,7 @@ import {
   EVERYDAY_PHRASES,
 } from '../data/languageKnowledge';
 import { findTerm } from './academicTerms';
+import { tryScienceDisciplineReply } from './scienceKnowledge';
 import type { CoachContext } from './localAi';
 
 export type ChatTurn = { role: 'user' | 'assistant'; text: string };
@@ -71,6 +72,12 @@ export function tryConversationalReply(
       : `İyiyim, sorduğun için teşekkürler. Asıl önemli olan sensin ${name} — çalışmalar nasıl gidiyor?`;
   }
 
+  // Bilim dalları
+  const scienceDiscipline = tryScienceDisciplineReply(raw);
+  if (scienceDiscipline) {
+    return `${name}, bilim dalları rehberinden:\n\n${scienceDiscipline}`;
+  }
+
   // Gramer / dil bilgisi
   if (/gramer|grammar|dil bilgisi|zaman|tense|cumle|cümle|fiil|verb|article|baglac|bağlaç/.test(m)) {
     const rule = findGrammarByKeyword(raw);
@@ -112,7 +119,7 @@ export function tryConversationalReply(
   if (isQuestion && /ne yapabilirsin|neler yapabilir|what can you do/.test(m)) {
     return `Şunlarda yardımcı olurum ${name}:
 • Deneme ve net analizi, çalışma planı
-• Türkçe–İngilizce kelime, gramer, akademik terim
+• Türkçe–İngilizce kelime, gramer, akademik terim ve bilim dalları rehberi
 • LGS, YKS, KPSS ve diğer sınav hazırlığı
 • Kütüphanedeki kitap/makale önerisi
 • Motivasyon ve takılı kaldığın konular

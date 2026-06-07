@@ -16,6 +16,12 @@ import {
 import { formatArchiveStatsSummary, getArchiveSubjectStats } from './examArchive/stats';
 import { buildTrafficCoachSummary } from './siteTraffic';
 import { formatGenericTerm, formatTermResult, findTerm } from './academicTerms';
+import {
+  findDiscipline,
+  formatDiscipline,
+  formatScienceTaxonomyOverview,
+  tryScienceDisciplineReply,
+} from './scienceKnowledge';
 import { getMoraleMessage } from './aiCoachHub';
 import { sanitizeCoachOutput } from './chatModeration';
 import {
@@ -80,6 +86,8 @@ export async function translateAcademicTerm(
   await delay(400);
   const entry = findTerm(term);
   if (entry) return formatTermResult(entry, direction);
+  const discipline = findDiscipline(term);
+  if (discipline) return formatDiscipline(discipline);
   return formatGenericTerm(term.trim(), direction);
 }
 
@@ -333,6 +341,13 @@ export async function generateCoachChatResponse(
         reply = formatWorldCalendar(world);
       }
       break;
+    case 'science_fields': {
+      const disciplineReply = tryScienceDisciplineReply(userMessage);
+      reply =
+        disciplineReply ??
+        `${formatScienceTaxonomyOverview()}\n\nTek bir dal sor: örn. "Jeofizik nedir?", "Biyoinformatik YKS bağlantısı", "sosyal bilimler dalları".`;
+      break;
+    }
     case 'science_news':
       if (!world) {
         reply = `Güncel bilim yayınları OpenAlex üzerinden çekilir. Zeka Merkezi sekmesinde "Verileri Yenile" ile akışı güncelle.`;
@@ -397,9 +412,13 @@ Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${lear
     case 'turkish':
       reply = `Türkçe/paragraf için günde 20-40 paragraf + 1 dil bilgisi testi iyi bir ritim. Edebiyatta eser-şair-akım tablosu çıkar; gramer sorularında zaman ve bağlaçlara dikkat et.`;
       break;
-    case 'science':
-      reply = `Fen netleri formül + soru dengesiyle yükselir. Her konudan sonra kısa formül kartı hazırla. Fizikte grafik, kimyada mol, biyolojide sistem soruları sık çıkar.`;
+    case 'science': {
+      const disciplineReply = tryScienceDisciplineReply(userMessage);
+      reply =
+        disciplineReply ??
+        `Fen netleri formül + soru dengesiyle yükselir. Her konudan sonra kısa formül kartı hazırla. Fizikte grafik, kimyada mol, biyolojide sistem soruları sık çıkar.\n\nBilim dalları rehberi için "bilim dalları nelerdir" veya "astrofizik nedir" diye sorabilirsin.`;
       break;
+    }
     case 'social':
       reply = `Sosyal bilimlerde kronoloji ve harita çalışması kritik. Tarihte olay-neden-sonuç, coğrafyada harita yorumu, felsefede akım-fikir eşleştirmesi yap.`;
       break;
@@ -620,6 +639,9 @@ function tryTopicSolvers(subject: string, q: string): string | null {
 }
 
 function tryAcademicTermAnswer(question: string): string | null {
+  const discipline = findDiscipline(question);
+  if (discipline) return formatDiscipline(discipline);
+
   const words = question.split(/\s+/).filter((w) => w.length > 3);
   for (const word of words) {
     const entry = findTerm(word);
@@ -632,6 +654,8 @@ function tryAcademicTermAnswer(question: string): string | null {
 
 4. **Analoji:** ${entry.analogy}`;
     }
+    const wordDiscipline = findDiscipline(word);
+    if (wordDiscipline) return formatDiscipline(wordDiscipline);
   }
   return null;
 }

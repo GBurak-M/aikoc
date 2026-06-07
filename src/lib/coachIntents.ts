@@ -19,6 +19,7 @@ export function detectCoachIntent(message: string): string {
   if (/hava|weather|yagmur|sicak|derece/.test(m)) return 'weather';
   if (/namaz|ezan|imsak|vakit/.test(m)) return 'prayer';
   if (/takvim|bayram|tatil/.test(m)) return 'calendar';
+  if (/bilim dall|bilim dalı|bilim kategori|bilimler neler|tum bilim|butun bilim|disiplin nedir|science field|scientific discipline|bilim dallari/.test(m)) return 'science_fields';
   if (/bilim|arastirma|makale|openalex|yayin/.test(m)) return 'science_news';
   if (/gramer|grammar|dil bilgisi|ingilizce kelime|turkce kelime|ceviri|çeviri|translate|tense|zaman|article|baglac|bağlaç/.test(m)) return 'language';
   if (/motivasyon|morali|vazgec|umutsuz|yoruldum|stres|kayg/.test(m)) return 'motivation';

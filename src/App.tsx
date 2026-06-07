@@ -18,6 +18,11 @@ import {
   translateAcademicTerm,
   type CoachContext,
 } from './lib/localAi';
+import { SCIENCE_CATEGORIES, type ScienceCategoryId } from './data/scienceDisciplines';
+import {
+  formatCategoryOverview,
+  formatScienceTaxonomyOverview,
+} from './lib/scienceKnowledge';
 import SmartHubPanel from './components/SmartHubPanel';
 import {
   ensureScienceTopics,
@@ -2445,6 +2450,48 @@ export default function App() {
                   </button>
                 </div>
 
+                {/* Bilim Dalları Kategorileri */}
+                <div className="mb-4">
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Bilim Dalları (9 Kategori):</span>
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {(Object.entries(SCIENCE_CATEGORIES) as [ScienceCategoryId, typeof SCIENCE_CATEGORIES.formal][]).map(
+                      ([id, cat]) => (
+                        <button
+                          type="button"
+                          key={id}
+                          onClick={() => {
+                            setLastTranslatedTerm(cat.tr);
+                            setTranslatedResult(formatCategoryOverview(id));
+                            logSiteEvent('dictionary_search', { tab: activeTab, detail: `bilim:${id}` });
+                          }}
+                          className={`text-[9px] font-bold px-2 py-1 rounded-lg border transition-all ${
+                            darkMode
+                              ? 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'
+                              : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
+                          }`}
+                        >
+                          {cat.tr}
+                        </button>
+                      ),
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setLastTranslatedTerm('Tüm Bilim Dalları');
+                        setTranslatedResult(formatScienceTaxonomyOverview());
+                        logSiteEvent('dictionary_search', { tab: activeTab, detail: 'bilim:tum' });
+                      }}
+                      className={`text-[9px] font-bold px-2 py-1 rounded-lg border transition-all ${
+                        darkMode
+                          ? 'bg-emerald-900/40 border-emerald-800 text-emerald-300 hover:bg-emerald-900/60'
+                          : 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100'
+                      }`}
+                    >
+                      Tümünü Göster
+                    </button>
+                  </div>
+                </div>
+
                 {/* Hızlı Terim Seçim Kartları */}
                 <div className="mb-4">
                   <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">Popüler Terimler:</span>
@@ -2473,7 +2520,7 @@ export default function App() {
                     type="text"
                     value={translateText}
                     onChange={(e) => setTranslateText(e.target.value)}
-                    placeholder={translateDirection === 'TR_EN' ? "Örn: Türev, Ozmos, Fotosentez" : "Örn: Gravity, Cell, Mitosis"}
+                    placeholder={translateDirection === 'TR_EN' ? "Örn: Türev, Astrofizik, Biyoinformatik" : "Örn: Physics, Genetics, Robotics"}
                     className={`w-full text-xs px-3.5 py-2.5 rounded-xl border focus:outline-none focus:ring-1 ${activeTheme.ring} ${
                       darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
                     }`}
