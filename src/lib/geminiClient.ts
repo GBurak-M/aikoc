@@ -1,4 +1,4 @@
-import type { GeminiChatTurn, GeminiGenerateInput } from '../../server/geminiHandler';
+import type { GeminiChatTurn, GeminiGenerateInput } from '../../api/lib/geminiHandler';
 
 export type { GeminiChatTurn };
 

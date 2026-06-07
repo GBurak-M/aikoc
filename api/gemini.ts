@@ -1,4 +1,4 @@
-import { generateWithGemini, type GeminiGenerateInput } from '../server/geminiHandler';
+import { generateWithGemini, type GeminiGenerateInput } from './lib/geminiHandler.js';
 
 export default async function handler(
   req: { method?: string; body?: GeminiGenerateInput },

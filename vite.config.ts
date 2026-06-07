@@ -1,6 +1,6 @@
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { generateWithGemini, type GeminiGenerateInput } from './server/geminiHandler';
+import { generateWithGemini, type GeminiGenerateInput } from './api/lib/geminiHandler';
 
 function geminiDevApiPlugin(): Plugin {
   return {
