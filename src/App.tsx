@@ -1198,7 +1198,20 @@ export default function App() {
         status: 'Tekrar Et',
       };
 
-      setUnsolvedArchive((prev) => [archiveItem, ...prev]);
+      const questionKey = (questionText || '(Görsel Soru)').trim().toLocaleLowerCase('tr-TR');
+      setUnsolvedArchive((prev) => {
+        const existingIdx = prev.findIndex(
+          (item) =>
+            item.subject === questionSubject &&
+            item.question.trim().toLocaleLowerCase('tr-TR') === questionKey,
+        );
+        if (existingIdx >= 0) {
+          const updated = [...prev];
+          updated[existingIdx] = { ...updated[existingIdx], ...archiveItem, id: updated[existingIdx].id };
+          return updated;
+        }
+        return [archiveItem, ...prev];
+      });
       logSiteEvent('question_solve', {
         tab: activeTab,
         detail: `${questionSubject} ${(questionText || 'görsel').slice(0, 80)}`,
@@ -2609,10 +2622,10 @@ export default function App() {
         )}
 
         {activeTab === 'sorucozucu' && (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fadeIn">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 animate-fadeIn">
             
             {/* SOL 2 KOLON: SORU GİRİŞİ VE AKTİF ÇÖZÜM */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-4">
               
               <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
                 <div className="flex items-center gap-2 border-b pb-4 mb-4 dark:border-slate-700">
@@ -2785,14 +2798,16 @@ export default function App() {
             <div className="space-y-6">
               
               <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
-                <div className="border-b pb-4 mb-4 dark:border-slate-700 flex justify-between items-center">
-                  <div>
-                    <h3 className="font-extrabold text-sm uppercase">Yapamadığım Sorular</h3>
-                    <p className="text-[10px] text-slate-400 font-semibold uppercase">Soruları tekrar durumuna göre listele</p>
+                <div className="border-b pb-4 mb-4 dark:border-slate-700">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="font-extrabold text-sm uppercase">Yapamadığım Sorular</h3>
+                      <p className="text-[10px] text-slate-400 font-semibold uppercase">Soruları tekrar durumuna göre listele</p>
+                    </div>
+                    <span className={`shrink-0 text-[10px] font-black px-2.5 py-1 rounded-md ${activeTheme.lightBg} dark:bg-slate-800 ${activeTheme.textMuted}`}>
+                      {unsolvedArchive.length} Soru
+                    </span>
                   </div>
-                  <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${activeTheme.lightBg} dark:bg-slate-800 ${activeTheme.textMuted}`}>
-                    {unsolvedArchive.length} Soru
-                  </span>
                 </div>
 
                 {unsolvedArchive.length === 0 ? (

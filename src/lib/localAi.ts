@@ -561,37 +561,82 @@ Seri devrede dirençler toplanır; paralelde 1/R = 1/R₁ + 1/R₂.
 4. **Pekiştirme:** 12 V ve 4 Ω için akım kaç A? → 3 A`;
 }
 
-function solveBySubject(subject: string, question: string): string {
-  const q = normalize(question);
+function solveAmoeba(): string {
+  return `1. **İlgili Kavramlar:**
+Amip (Amoeba), tek hücreli ökaryot bir protisttir. Yapısında hücre zarı, sitoplazma, çekirdek ve besin kofulları bulunur; kloroplast ve hücre duvarı yoktur.
 
-  const arithmetic = tryEvaluateExpression(question);
-  if (arithmetic) return arithmetic;
+2. **Adım Adım: Amip Nasıl Yaşar?**
+• **Habitat:** Genellikle tatlı su (göller, dere kenarları); nemli ortamlarda yaşar.
+• **Hareket:** Sahte ayaklar (pöd) oluşturarak amipoid hareket yapar; sitoplazma akışıyla yön değiştirir.
+• **Beslenme:** Heterotroftur. Fagositoz ile küçük organizmaları veya organik parçacıkları yutar; besin kofulunda sindirir, artıkları egzositoz ile atar.
+• **Solunum:** Hücre zarından difüzyonla O₂ alır, CO₂ verir (aerobik solunum).
+• **Boşaltım:** Kontraktıl koful ile fazla suyu dışarı atar (ozmoregülasyon).
+• **Üreme:** Uygun koşullarda ikili bölünme (mitoz) ile ürer; genetik çeşitlilik sınırlıdır.
 
-  if (/teğet|teget|egim|eğim|türev|trev/.test(q) && /fonksiyon|f\(x\)|3x|x\^2|x²/.test(q)) {
-    return solveDerivativeTangent();
-  }
-  if (/x\^2|x²|ikinci derece|diskriminant|kök/.test(q) && /denklem|x/.test(q)) {
-    return solveQuadratic();
-  }
-  if (/momentum|kuvvet.*uygulan|impuls|10\s*n.*5\s*s/i.test(q)) {
-    return solveMomentum();
-  }
-  if (/ohm|direnç|akım|volt|amper/.test(q)) {
-    return solveOhm();
-  }
-  if (/mitokondri|ozmotik|osmotik|turgor|ph/.test(q)) {
-    return solveMitochondria();
-  }
-  if (/paragraf|ana (fikir|düşünce)|çıkarım/.test(q)) {
-    return `1. **İlgili Kurallar:** Ana düşünce genelde giriş veya sonuç cümlesinde; yardımcı düşünce detay verir.
+3. **Kritik YKS Püf Noktası (ÖSYM Tarzı):**
+Amip sorularında **fagositoz**, **pöd**, **ökaryot tek hücre** ve **kloroplastsız** özellikler birlikte aranır. Öglena ile karıştırmayın: öglenada kloroplast vardır ve fotosentez yapabilir.
 
-2. **Adım Adım Çözüm:** Metni bölümlere ayırın → her bölümün konusunu tek cümleyle yazın → seçenekleri metin kanıtıyla eleyin.
+4. **Pekiştirme Sorusu:**
+Amipte besin alımı hangi yolla gerçekleşir?
+Doğru Cevap: Fagositoz`;
+}
 
-3. **Kritik YKS Püf Noktası:** "En", "hiç", "daima" gibi mutlak ifadeler çoğu zaman yanlış şıktır.
+function solvePhotosynthesis(): string {
+  return `1. **İlgili Formüller/Kurallar:**
+6CO₂ + 6H₂O + ışık → C₆H₁₂O₆ + 6O₂. Kloroplastta ışığa bağımlı ve ışıktan bağımsız reaksiyonlar.
 
-4. **Pekiştirme:** Günlük 2 paragraf sorusu + yanlış analizi.`;
+2. **Adım Adım Detaylı Çözüm:**
+Işık fazında klorofil ışığı soğurur → ATP ve NADPH üretilir → Calvin döngüsünde CO₂ organik besine dönüşür.
+
+3. **Kritik YKS Püf Noktası:**
+Fotosentez hızını ışık yoğunluğu, CO₂ miktarı ve sıcaklık belirler; sınırlayıcı faktör kavramını kullanın.
+
+4. **Pekiştirme:** Fotosentezde O₂ hangi reaksiyondan açığa çıkar? → Işığa bağımlı reaksiyon (su yarılanması).`;
+}
+
+type TopicSolver = {
+  subjects?: string[];
+  pattern: RegExp;
+  solve: () => string;
+};
+
+const TOPIC_SOLVERS: TopicSolver[] = [
+  { subjects: ['Biyoloji'], pattern: /amip|amoeba|ameba/, solve: solveAmoeba },
+  { subjects: ['Biyoloji'], pattern: /fotosentez|klorofil|kloroplast/, solve: solvePhotosynthesis },
+  { subjects: ['Biyoloji'], pattern: /mitokondri|ozmotik|osmotik|turgor|ph/, solve: solveMitochondria },
+  { pattern: /momentum|kuvvet.*uygulan|impuls|10\s*n.*5\s*s/i, solve: solveMomentum },
+  { pattern: /ohm|direnç|akım|volt|amper/, solve: solveOhm },
+  { pattern: /teğet|teget|egim|eğim|türev|trev/, solve: solveDerivativeTangent },
+];
+
+function tryTopicSolvers(subject: string, q: string): string | null {
+  for (const { subjects, pattern, solve } of TOPIC_SOLVERS) {
+    if (subjects && !subjects.includes(subject)) continue;
+    if (!pattern.test(q)) continue;
+    if (solve === solveDerivativeTangent && !/fonksiyon|f\(x\)|3x|x\^2|x²/.test(q)) continue;
+    return solve();
   }
+  return null;
+}
 
+function tryAcademicTermAnswer(question: string): string | null {
+  const words = question.split(/\s+/).filter((w) => w.length > 3);
+  for (const word of words) {
+    const entry = findTerm(word);
+    if (entry) {
+      return `1. **Kavram:** ${entry.tr} (${entry.en})
+
+2. **Tanım:** ${entry.definition}
+
+3. **YKS İpucu:** ${entry.yksTip}
+
+4. **Analoji:** ${entry.analogy}`;
+    }
+  }
+  return null;
+}
+
+function buildSubjectGuide(subject: string): string {
   const guides: Record<string, string> = {
     Matematik: `1. **İlgili Formüller/Kurallar:** Sorudaki ana kavramı (denklem, fonksiyon, geometri) belirleyin; TYT'de temel, AYT'de ileri formüller gerekir.
 2. **Adım Adım Detaylı Çözüm:** Verilenleri yazın → bilinmeyeni tanımlayın → işlem adımlarını sırayla uygulayın.
@@ -614,14 +659,42 @@ function solveBySubject(subject: string, question: string): string {
 3. **Kritik YKS Püf Noktası:** "En", "dışında", "yalnızca" gibi mutlak ifadelere dikkat.
 4. **Pekiştirme:** 1 paragraf testi + yanlış analizi.`,
   };
+  return guides[subject] ?? guides.Matematik;
+}
 
-  const body = guides[subject] ?? guides.Matematik;
+function solveBySubject(subject: string, question: string): string {
+  const q = normalize(question);
+
+  const arithmetic = tryEvaluateExpression(question);
+  if (arithmetic) return arithmetic;
+
+  const topicSolution = tryTopicSolvers(subject, q);
+  if (topicSolution) return topicSolution;
+
+  if (/x\^2|x²|ikinci derece|diskriminant|kök/.test(q) && /denklem|x/.test(q)) {
+    return solveQuadratic();
+  }
+  if (/paragraf|ana (fikir|düşünce)|çıkarım/.test(q)) {
+    return `1. **İlgili Kurallar:** Ana düşünce genelde giriş veya sonuç cümlesinde; yardımcı düşünce detay verir.
+
+2. **Adım Adım Çözüm:** Metni bölümlere ayırın → her bölümün konusunu tek cümleyle yazın → seçenekleri metin kanıtıyla eleyin.
+
+3. **Kritik YKS Püf Noktası:** "En", "hiç", "daima" gibi mutlak ifadeler çoğu zaman yanlış şıktır.
+
+4. **Pekiştirme:** Günlük 2 paragraf sorusu + yanlış analizi.`;
+  }
+
+  const termAnswer = tryAcademicTermAnswer(question);
+  if (termAnswer) return termAnswer;
+
+  const body = buildSubjectGuide(subject);
+  const shortQ = question.slice(0, 200) + (question.length > 200 ? '…' : '');
   return `${body}
 
 ---
-**Sorunuz:** "${question.slice(0, 200)}${question.length > 200 ? '…' : ''}"
+**Sorunuz:** "${shortQ}"
 
-Yerel AI çözücü bu soruyu örnek veritabanında tam eşleştiremedi; yukarıdaki ${subject} çözüm stratejisini uygulayın. Soruyu daha net yazarsanız veya örnek sorulardan birini seçerseniz adım adım çözüm üretilir.`;
+Bu soru için özel bir çözüm şablonu henüz yok; yukarıdaki ${subject} stratejisini uygulayın. Sayıları, şıkları veya denklemi ekleyerek tekrar gönderirseniz adım adım çözüm üretilir.`;
 }
 
 export async function generateQuestionSolution(
