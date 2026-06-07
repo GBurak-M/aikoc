@@ -179,7 +179,7 @@ export function buildEducationProfile(input: {
     mahalle: input.mahalle?.trim() ?? '',
     ilce: input.ilce?.trim() ?? '',
     il: input.il?.trim() || 'İstanbul',
-    ulke: input.ul?.trim() || 'Türkiye',
+    ulke: input.ulke?.trim() || 'Türkiye',
     curriculumId: `meb_${grade}`,
     curriculumLabel: curr.label,
     mebFramework: curr.mebFramework,
@@ -206,7 +206,7 @@ export function loadCurriculumState(memberId: string): MemberCurriculumState | n
 }
 
 export function saveCurriculumState(state: MemberCurriculumState) {
-  safeSetItem(curriculumStateKey(state.memberId), state);
+  safeSetItem(curriculumStateKey(state.education.memberId), state);
 }
 
 export function initCurriculumState(

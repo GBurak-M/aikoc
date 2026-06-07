@@ -15,7 +15,21 @@ export type HourlyWeather = {
   precipProb: number;
   code: number;
   label: string;
+  /** Ortalama rüzgar hızı (m/s) */
+  windSpeedMs: number | null;
+  /** Ani rüzgar / rüzgar hamleleri (m/s) */
+  windGustMs: number | null;
 };
+
+/** m/s → km/sa (km/h) */
+export function windMsToKmh(ms: number): number {
+  return ms * 3.6;
+}
+
+export function formatWindPair(ms: number | null | undefined): { ms: string; kmh: string } | null {
+  if (ms == null || Number.isNaN(ms)) return null;
+  return { ms: ms.toFixed(1), kmh: windMsToKmh(ms).toFixed(0) };
+}
 
 export type PrayerTimes = {
   date: string;
@@ -46,14 +60,25 @@ export type CalendarInfo = {
   upcomingEvents: CalendarEvent[];
 };
 
+export type ScienceKind = 'makale' | 'kitap' | 'yayin';
+
 export type ScienceItem = {
   id: string;
   title: string;
   summary: string;
   field: string;
+  kind: ScienceKind;
   date: string;
   source: string;
   url?: string;
+  authors?: string;
+};
+
+export type ScienceTopicFeed = {
+  field: string;
+  articles: ScienceItem[];
+  books: ScienceItem[];
+  publications: ScienceItem[];
 };
 
 export type WorldSnapshot = {
@@ -62,6 +87,9 @@ export type WorldSnapshot = {
   currentTemp: number | null;
   prayer: PrayerTimes;
   calendar: CalendarInfo;
+  /** Konuya göre gruplanmış, Türkçeleştirilmiş bilim akışı */
+  scienceTopics: ScienceTopicFeed[];
+  /** Düz liste — AI koçu ve özetler için */
   science: ScienceItem[];
   fetchedAt: string;
 };
@@ -101,13 +129,30 @@ const TR_HOLIDAYS_2026: CalendarEvent[] = [
   { date: '2026-06-06', title: 'YKS 2026 (Tahmini dönem)', type: 'egitim' },
 ];
 
-const OPENALEX_FIELDS: Array<{ field: string; concept: string }> = [
+const OPENALEX_TOPICS: Array<{ field: string; concept: string }> = [
   { field: 'Fizik', concept: 'C121332964' },
   { field: 'Biyoloji', concept: 'C185592680' },
   { field: 'Kimya', concept: 'C158790577' },
   { field: 'Matematik', concept: 'C33923547' },
-  { field: 'Bilgisayar', concept: 'C41008148' },
+  { field: 'Bilgisayar Bilimi', concept: 'C41008148' },
+  { field: 'Tıp', concept: 'C71924100' },
+  { field: 'Psikoloji', concept: 'C15744967' },
+  { field: 'Mühendislik', concept: 'C127413603' },
+  { field: 'Çevre Bilimleri', concept: 'C18903297' },
+  { field: 'Sosyal Bilimler', concept: 'C17744445' },
 ];
+
+const KIND_LABEL: Record<ScienceKind, string> = {
+  makale: 'Makale',
+  kitap: 'Kitap',
+  yayin: 'Yayın',
+};
+
+function scienceFromDate(): string {
+  const d = new Date();
+  d.setMonth(d.getMonth() - 8);
+  return d.toISOString().slice(0, 10);
+}
 
 function weatherLabel(code: number): string {
   return WEATHER_LABELS[code] ?? 'Değişken';
@@ -184,7 +229,11 @@ export async function fetchHourlyWeather(lat: number, lon: number): Promise<{
   const url = new URL('https://api.open-meteo.com/v1/forecast');
   url.searchParams.set('latitude', String(lat));
   url.searchParams.set('longitude', String(lon));
-  url.searchParams.set('hourly', 'temperature_2m,precipitation_probability,weather_code');
+  url.searchParams.set(
+    'hourly',
+    'temperature_2m,precipitation_probability,weather_code,wind_speed_10m,wind_gusts_10m',
+  );
+  url.searchParams.set('windspeed_unit', 'ms');
   url.searchParams.set('timezone', 'Europe/Istanbul');
   url.searchParams.set('forecast_days', '2');
 
@@ -200,6 +249,8 @@ export async function fetchHourlyWeather(lat: number, lon: number): Promise<{
     const t = new Date(h.time[i]).getTime();
     if (t < now - 3600000) continue;
     if (hourly.length >= 24) break;
+    const windSpeed = h.wind_speed_10m?.[i];
+    const windGust = h.wind_gusts_10m?.[i];
     hourly.push({
       time: h.time[i],
       hourLabel: formatHour(h.time[i]),
@@ -207,6 +258,8 @@ export async function fetchHourlyWeather(lat: number, lon: number): Promise<{
       precipProb: h.precipitation_probability[i] ?? 0,
       code: h.weather_code[i],
       label: weatherLabel(h.weather_code[i]),
+      windSpeedMs: typeof windSpeed === 'number' ? Math.round(windSpeed * 10) / 10 : null,
+      windGustMs: typeof windGust === 'number' ? Math.round(windGust * 10) / 10 : null,
     });
   }
 
@@ -278,66 +331,143 @@ export async function buildCalendarInfo(): Promise<CalendarInfo> {
   };
 }
 
-async function fetchOpenAlexField(field: string, conceptId: string): Promise<ScienceItem[]> {
+type OpenAlexWork = {
+  id: string;
+  title: string;
+  publication_date: string;
+  abstract_inverted_index?: Record<string, number[]>;
+  primary_location?: { source?: { display_name?: string }; landing_page_url?: string };
+  doi?: string;
+  open_access?: { oa_url?: string };
+  authorships?: Array<{ author?: { display_name?: string } }>;
+};
+
+function abstractFromInverted(index?: Record<string, number[]>): string {
+  if (!index) return 'Özet mevcut değil.';
+  const words = Object.entries(index)
+    .flatMap(([word, positions]) => positions.map((pos) => ({ word, pos })))
+    .sort((a, b) => a.pos - b.pos)
+    .map((x) => x.word)
+    .slice(0, 55)
+    .join(' ');
+  return words ? `${words}…` : 'Özet mevcut değil.';
+}
+
+function mapOpenAlexWork(w: OpenAlexWork, field: string, kind: ScienceKind): ScienceItem {
+  const authors = (w.authorships ?? [])
+    .slice(0, 4)
+    .map((a) => a.author?.display_name)
+    .filter(Boolean)
+    .join(', ');
+  const doi = w.doi?.replace('https://doi.org/', '');
+  const url = w.open_access?.oa_url
+    ?? (doi ? `https://doi.org/${doi}` : w.primary_location?.landing_page_url);
+
+  return {
+    id: w.id,
+    title: w.title ?? 'Başlıksız',
+    summary: abstractFromInverted(w.abstract_inverted_index),
+    field,
+    kind,
+    date: w.publication_date ?? '',
+    source: w.primary_location?.source?.display_name ?? 'OpenAlex (küresel)',
+    url: url || undefined,
+    authors: authors || undefined,
+  };
+}
+
+async function fetchOpenAlexByType(
+  field: string,
+  conceptId: string,
+  workType: 'article' | 'book' | 'book-chapter',
+  kind: ScienceKind,
+  perPage: number,
+): Promise<ScienceItem[]> {
   const url = new URL('https://api.openalex.org/works');
-  url.searchParams.set('filter', `concepts.id:${conceptId},from_publication_date:2025-01-01`);
+  url.searchParams.set(
+    'filter',
+    `concepts.id:${conceptId},type:${workType},from_publication_date:${scienceFromDate()}`,
+  );
   url.searchParams.set('sort', 'publication_date:desc');
-  url.searchParams.set('per_page', '3');
+  url.searchParams.set('per_page', String(perPage));
 
   const res = await fetch(url.toString());
   if (!res.ok) return [];
 
   const data = await res.json();
-  return (data.results ?? []).map((w: {
-    id: string;
-    title: string;
-    publication_date: string;
-    abstract_inverted_index?: Record<string, number[]>;
-    primary_location?: { source?: { display_name?: string } };
-    doi?: string;
-  }) => {
-    let summary = 'Özet mevcut değil.';
-    if (w.abstract_inverted_index) {
-      const words = Object.entries(w.abstract_inverted_index)
-        .flatMap(([word, positions]) => positions.map((pos) => ({ word, pos })))
-        .sort((a, b) => a.pos - b.pos)
-        .map((x) => x.word)
-        .slice(0, 40)
-        .join(' ');
-      if (words) summary = `${words}…`;
-    }
-    return {
-      id: w.id,
-      title: w.title ?? 'Başlıksız',
-      summary,
-      field,
-      date: w.publication_date ?? '',
-      source: w.primary_location?.source?.display_name ?? 'OpenAlex',
-      url: w.doi ? `https://doi.org/${w.doi.replace('https://doi.org/', '')}` : undefined,
-    };
-  });
+  return (data.results ?? []).map((w: OpenAlexWork) => mapOpenAlexWork(w, field, kind));
 }
 
-export async function fetchScienceDigest(): Promise<ScienceItem[]> {
-  const batches = await Promise.all(
-    OPENALEX_FIELDS.map(({ field, concept }) =>
-      fetchOpenAlexField(field, concept).catch(() => []),
-    ),
-  );
-  const merged = batches.flat();
-  const seen = new Set<string>();
-  return merged
-    .filter((item) => {
-      if (seen.has(item.id)) return false;
-      seen.add(item.id);
-      return true;
-    })
-    .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 12);
+async function fetchTopicFeed(field: string, conceptId: string): Promise<ScienceTopicFeed> {
+  const [articles, books, publications] = await Promise.all([
+    fetchOpenAlexByType(field, conceptId, 'article', 'makale', 3).catch(() => []),
+    fetchOpenAlexByType(field, conceptId, 'book', 'kitap', 2).catch(() => []),
+    fetchOpenAlexByType(field, conceptId, 'book-chapter', 'yayin', 2).catch(() => []),
+  ]);
+  return { field, articles, books, publications };
 }
+
+export function flattenScienceFeed(topics: ScienceTopicFeed[]): ScienceItem[] {
+  const seen = new Set<string>();
+  const all: ScienceItem[] = [];
+  for (const t of topics) {
+    for (const item of [...t.articles, ...t.books, ...t.publications]) {
+      if (seen.has(item.id)) continue;
+      seen.add(item.id);
+      all.push(item);
+    }
+  }
+  return all.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+async function localizeScienceItems(items: ScienceItem[]): Promise<ScienceItem[]> {
+  if (items.length === 0) return [];
+  const { translateManyToTurkish } = await import('./translate');
+  const titles = items.map((i) => i.title);
+  const summaries = items.map((i) => i.summary);
+  const [titlesTr, summariesTr] = await Promise.all([
+    translateManyToTurkish(titles, 3, 300),
+    translateManyToTurkish(summaries, 2, 350),
+  ]);
+  return items.map((item, idx) => ({
+    ...item,
+    title: titlesTr[idx] ?? item.title,
+    summary: summariesTr[idx] ?? item.summary,
+  }));
+}
+
+async function localizeTopicFeed(feed: ScienceTopicFeed): Promise<ScienceTopicFeed> {
+  const [articles, books, publications] = await Promise.all([
+    localizeScienceItems(feed.articles),
+    localizeScienceItems(feed.books),
+    localizeScienceItems(feed.publications),
+  ]);
+  return { field: feed.field, articles, books, publications };
+}
+
+export async function fetchScienceDigest(): Promise<{
+  topics: ScienceTopicFeed[];
+  flat: ScienceItem[];
+}> {
+  const rawTopics = await Promise.all(
+    OPENALEX_TOPICS.map(({ field, concept }) => fetchTopicFeed(field, concept)),
+  );
+
+  const topicsWithContent = rawTopics.filter(
+    (t) => t.articles.length > 0 || t.books.length > 0 || t.publications.length > 0,
+  );
+
+  const topics = await Promise.all(
+    topicsWithContent.map((t) => localizeTopicFeed(t)),
+  );
+
+  return { topics, flat: flattenScienceFeed(topics) };
+}
+
+export { KIND_LABEL as SCIENCE_KIND_LABEL };
 
 export async function fetchWorldSnapshot(settlement: Settlement): Promise<WorldSnapshot> {
-  const [weatherResult, prayer, calendar, science] = await Promise.all([
+  const [weatherResult, prayer, calendar, scienceResult] = await Promise.all([
     fetchHourlyWeather(settlement.lat, settlement.lon),
     fetchPrayerTimes(settlement.lat, settlement.lon),
     buildCalendarInfo(),
@@ -350,7 +480,8 @@ export async function fetchWorldSnapshot(settlement: Settlement): Promise<WorldS
     currentTemp: weatherResult.currentTemp,
     prayer,
     calendar,
-    science,
+    scienceTopics: scienceResult.topics,
+    science: scienceResult.flat,
     fetchedAt: new Date().toISOString(),
   };
 }
@@ -359,6 +490,31 @@ export const WORLD_CACHE_KEY = 'aikoc_world_snapshot';
 export const LOCATION_CACHE_KEY = 'aikoc_settlement';
 export const WORLD_CACHE_TTL_MS = 30 * 60 * 1000;
 
-export function isWorldCacheStale(fetchedAt: string): boolean {
-  return Date.now() - new Date(fetchedAt).getTime() > WORLD_CACHE_TTL_MS;
+export function isWorldCacheStale(fetchedAt: string, snapshot?: WorldSnapshot | null): boolean {
+  if (Date.now() - new Date(fetchedAt).getTime() > WORLD_CACHE_TTL_MS) return true;
+  if (snapshot && !snapshot.scienceTopics?.length && (snapshot.science?.length ?? 0) > 0) return true;
+  if (snapshot?.science?.[0] && snapshot.science[0].kind == null) return true;
+  return false;
+}
+
+/** Eski önbellekte scienceTopics yoksa science listesinden türetir */
+export function ensureScienceTopics(snapshot: WorldSnapshot): WorldSnapshot {
+  if (snapshot.scienceTopics?.length) return snapshot;
+  const items = (snapshot.science ?? []).map((s) => ({
+    ...s,
+    kind: (s as ScienceItem).kind ?? ('makale' as ScienceKind),
+  }));
+  const byField = new Map<string, ScienceItem[]>();
+  for (const item of items) {
+    const list = byField.get(item.field) ?? [];
+    list.push(item);
+    byField.set(item.field, list);
+  }
+  const scienceTopics: ScienceTopicFeed[] = [...byField.entries()].map(([field, all]) => ({
+    field,
+    articles: all.filter((i) => i.kind === 'makale'),
+    books: all.filter((i) => i.kind === 'kitap'),
+    publications: all.filter((i) => i.kind === 'yayin'),
+  }));
+  return { ...snapshot, scienceTopics, science: items };
 }

@@ -43,6 +43,7 @@ type ThemeClasses = {
   ring: string;
   lightBg: string;
   hover: string;
+  chartStroke?: string;
 };
 
 type Props = {
@@ -528,7 +529,7 @@ export default function MemberPanel({
                     <XAxis dataKey="label" fontSize={9} stroke={darkMode ? '#94a3b8' : '#64748b'} />
                     <YAxis fontSize={10} stroke={darkMode ? '#94a3b8' : '#64748b'} />
                     <Tooltip />
-                    <Line type="monotone" dataKey="net" stroke="#6366f1" strokeWidth={2} dot={{ r: 3 }} />
+                    <Line type="monotone" dataKey="net" stroke={activeTheme.chartStroke ?? '#6366f1'} strokeWidth={2} dot={{ r: 3 }} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>

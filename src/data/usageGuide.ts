@@ -9,17 +9,20 @@ export const USAGE_GUIDE = {
   content: `aikoc, YKS hazırlık sürecinizi tek bir yerde toplayan ücretsiz bir sınav takip ve yapay zeka asistanı uygulamasıdır. API anahtarı gerekmez; sınav analizi ve koç sohbeti cihazınızda çalışır.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. İLK KURULUM
+1. İLK KULLANIM (ÜYE OLMADAN)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Uygulamayı ilk açtığınızda profil ekranı gelir. Şunları doldurun:
+Uygulamayı açtığınızda doğrudan ana arayüz gelir; üyelik zorunlu değildir.
 
-• Adınız / rumuzunuz
-• YKS alanınız (Sayısal, Eşit Ağırlık, Sözel, Dil)
-• Günlük çalışma hedefiniz (saat)
-• Hedef üniversite ve bölüm
+Misafir olarak kullanabileceğiniz bölümler:
+• Planlayıcı
+• AI Soru Çöz
+• Zeka Merkezi
+• Kütüphane
 
-「Sınav Yolculuğunu Başlat」 butonuna bastığınızda ana panele geçersiniz. Profiliniz tarayıcınızda saklanır; daha sonra üst bardaki adınıza tıklayarak düzenleyebilirsiniz.
+İsterseniz üst bardaki adınıza tıklayarak rumuz, alan ve hedef bilgilerinizi düzenleyebilirsiniz. Profil tarayıcınızda saklanır.
+
+Kullanım kılavuzu yalnızca üst bardaki 「KILAVUZ」 butonundan açılır; kütüphane içinde yer almaz.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 2. ÜYELİK SİSTEMİ (E-POSTA & TELEFON)
@@ -153,11 +156,15 @@ Not Defterim:
 7. KÜTÜPHANE SEKMESİ
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Ders çalışma rehberleri, motivasyon yazıları ve yapay zeka tüyoları.
+Ücretsiz ve açık erişimli kaynaklar: bilimsel makaleler, ders kitapları, romanlar, haritalar (şehir/ilçe/köy/mahalle), ansiklopediler, onaylı bilimsel ve dini yayınlar.
 
-• Makale kartına tıklayarak tam metni okuyun
-• Bu kullanım kılavuzu da Kütüphane’de yer alır
-• Üst bardaki 「KILAVUZ」 düğmesiyle her zaman açılabilir
+• Kelime veya kelime gruplarıyla arama yapın
+• Kategori filtreleriyle daraltın
+• Kaynağa tıklayıp harici bağlantıdan okuyun
+• 「Kaynak Öner」 ile makale/kitap önerebilirsiniz — editör onayından sonra listeye eklenir
+• Editör PIN ile onay bekleyen önerileri yönetebilirsiniz (yönetici)
+
+Kullanım kılavuzu yalnızca üst bardaki 「KILAVUZ」 düğmesindedir; kütüphanede yer almaz.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 8. SINAVLAR SEKMESİ

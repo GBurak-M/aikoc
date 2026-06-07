@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar
+  RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar,
+  BarChart, Bar, Cell,
 } from 'recharts';
 import {
-  BookOpen, Target, Plus, Trash2, Sparkles,
+  Award, BookOpen, Target, Plus, Trash2, Activity,
   Moon, Sun, Share2, Languages, GraduationCap, BookMarked,
-  Image, HelpCircle, Check, CheckCircle2, HelpCircle as QuestionIcon, LogOut, User, Settings, Edit3
+  Image, HelpCircle, Check, CheckCircle2, LogOut, LogIn, User, Settings, Edit3, Shield,
+  Calendar, Send, ArrowRight, X, Calculator, FlaskConical, PenLine, Globe,
 } from 'lucide-react';
 import {
   generateCoachChatResponse,
@@ -18,6 +20,7 @@ import {
 } from './lib/localAi';
 import SmartHubPanel from './components/SmartHubPanel';
 import {
+  ensureScienceTopics,
   fetchWorldSnapshot,
   isWorldCacheStale,
   LOCATION_CACHE_KEY,
@@ -27,7 +30,14 @@ import {
   type Settlement,
   type WorldSnapshot,
 } from './lib/worldData';
-import { safeParse, safeSetItem, chatStorageKey } from './lib/storage';
+import {
+  loadInitialExams,
+  loadInitialNotes,
+  loadInitialTasks,
+  safeParse,
+  safeSetItem,
+  chatStorageKey,
+} from './lib/storage';
 import {
   getExamsForChart,
   getLatestExamByType,
@@ -38,26 +48,81 @@ import {
 import { USAGE_GUIDE } from './data/usageGuide';
 import { SITE_NAME, SITE_TAGLINE } from './config/site';
 import MemberAuthModal from './components/MemberAuthModal';
+import PasswordResetModal from './components/PasswordResetModal';
+import AdminPanel from './components/AdminPanel';
+import { parseResetTokenFromHash } from './lib/passwordReset';
+import BrandLogo from './components/BrandLogo';
+import BrandWordmark from './components/BrandWordmark';
 import MemberPanel from './components/MemberPanel';
+import LibraryPanel from './components/LibraryPanel';
+import CoachChatCorner from './components/CoachChatCorner';
+import { moderateUserInput } from './lib/chatModeration';
+import { syncCrawlerWithEditorSession } from './lib/libraryCrawler';
+import { isEditorSessionActive } from './lib/library';
+import {
+  buildCoreKnowledgeCoachBlock,
+  recordChatExchange,
+  setLearningAutomationEnabled,
+  syncLearningAutomation,
+  syncLearningWithEditorSession,
+} from './lib/aiCentralLearning';
+import {
+  ensureBootstrapAdmins,
+  getLoggedInAdmin,
+  logoutAdmin,
+  type AdminAccount,
+} from './lib/adminAuth';
+import { grantEditorSessionForAdmin, revokeEditorSessionForAdmin } from './lib/library';
+import NationalExamPanel from './components/NationalExamPanel';
+import {
+  GUEST_PROFILE,
+  getEffectiveProfile,
+  isGuestProfile,
+  loadUserProfile,
+  type UserProfile,
+} from './lib/guestProfile';
+import {
+  markGuestTabActive,
+  registerGuestSessionCleanup,
+} from './lib/guestSession';
+
+const MEMBER_ONLY_TABS = new Set(['panel', 'sinavlar', 'uyepanel']);
+import { detectExamFromText } from './data/nationalExams';
+import {
+  buildTrafficCoachSummary,
+  getTrafficHighlights,
+  logSiteEvent,
+  logSiteTabVisit,
+} from './lib/siteTraffic';
+import {
+  formatArchiveStatsSummary,
+  getArchivePaperStats,
+  getArchiveSubjectStats,
+} from './lib/examArchive/stats';
+import { buildLearningCoachSummary } from './lib/userLearning';
+import { generateContextualCoachTip } from './lib/aiCoachHub';
+import {
+  getThemeClasses,
+  getThemeSurfaceStyle,
+  isThemeColor,
+  THEME_LABELS,
+  THEME_OPTIONS,
+  type ThemeColor,
+} from './lib/theme';
 import {
   addProgressSnapshot,
+  ensureMemberSessionForAdmin,
   getLoggedInMember,
   getMemberDisplayName,
+  isAdminLinkedMemberSession,
   logMemberSearch,
   logMemberUpload,
   logMemberVisit,
+  logoutMember,
   type MemberAccount,
 } from './lib/membership';
 import { loadCurriculumState, loadEducationProfile, setupMemberCurriculum } from './lib/memberEducation';
 import { runMemberCoachOnce, startBackgroundCoach, stopBackgroundCoach } from './lib/backgroundCoach';
-
-type UserProfile = {
-  name: string;
-  field: string;
-  targetUniv: string;
-  targetDept: string;
-  dailyTargetHours: string;
-};
 
 type ChatMessage = {
   id: string;
@@ -76,6 +141,14 @@ type ConfirmState = {
   onConfirm: () => void;
 } | null;
 
+function buildGuestWelcomeMessage(): ChatMessage {
+  return {
+    id: 'welcome',
+    role: 'assistant',
+    text: `Merhaba! Ben ${SITE_NAME}. 🌟\n\nBu portal seni sürekli geliştirmen için tasarlandı: ücretsiz kitap ve makaleler, ulusal sınav arşivi, planlayıcı ve AI koç sohbeti.\n\nSağ alttaki **AI Koç** köşesinden yazarak veya mikrofonla konuşarak soru sorabilirsin. Deneme takibi ve kişisel analiz için giriş yapman yeterli.`,
+  };
+}
+
 function buildWelcomeMessage(profile: UserProfile): ChatMessage {
   return {
     id: 'welcome',
@@ -83,133 +156,6 @@ function buildWelcomeMessage(profile: UserProfile): ChatMessage {
     text: `Merhaba ${profile.name}! Ben ${SITE_NAME}, senin yapay zeka eğitim koçun. 🌟\n\nHedefin olan ${profile.targetUniv} - ${profile.targetDept} (${profile.field}) bölümüne giden bu yolda sana destek olmak için buradayım. Sınav netlerini analiz edebilir, ders başarı grafiklerini inceleyebilir ve hedeflerine ulaşman için sana özel çalışma planları önerebilirim.\n\nSol taraftaki panelden yeni denemelerini girerek ilk analizimizi başlatalım! 🚀`,
   };
 }
-
-// Varsayılan Deneme Verileri (Başlangıç için)
-const DEFAULT_EXAMS = [
-  {
-    id: '1',
-    name: '3D SİMÜLASYON',
-    type: 'TYT',
-    date: '10.05.2026',
-    notes: 'Fen netlerim arttı ancak Türkçede süre kontrolünü geliştirmeliyim.',
-    scores: {
-      Matematik: { correct: 35, wrong: 4, net: 34 },
-      Türkçe: { correct: 32, wrong: 6, net: 30.5 },
-      Fen: { correct: 18, wrong: 2, net: 17.5 },
-      Sosyal: { correct: 21, wrong: 4, net: 20 }
-    },
-    totalNet: 102,
-    accuracy: 84
-  },
-  {
-    id: '2',
-    name: 'LİMİT AYT-1',
-    type: 'AYT',
-    date: '15.05.2026',
-    notes: 'Sosyal-2 beklediğimden iyi geçti. Matematikte logaritma konusunu tekrar etmeliyim.',
-    scores: {
-      Matematik: { correct: 38, wrong: 2, net: 37.5 },
-      Edebiyat: { correct: 21, wrong: 4, net: 20 },
-      Fen: { correct: 34, wrong: 4, net: 33 },
-      Sosyal: { correct: 36, wrong: 2, net: 35.5 }
-    },
-    totalNet: 126,
-    accuracy: 92
-  }
-];
-
-// Varsayılan Haftalık Hedefler
-const DEFAULT_TASKS = [
-  { id: 't1', text: 'Günde 40 Paragraf sorusu çöz', category: 'TUR', done: true },
-  { id: 't2', text: 'Trigonometri yarım açı formülleri tekrarı yap', category: 'MAT', done: false },
-  { id: 't3', text: 'Kimyasal bağlar konusundan 50 soru bitir', category: 'FEN', done: false },
-  { id: 't4', text: 'Tarih - Kurtuluş Savaşı dönemi özetini oku', category: 'SOS', done: true },
-  { id: 't5', text: `${SITE_NAME} ile haftalık durum analizi gerçekleştir`, category: 'GENEL', done: false }
-];
-
-// Varsayılan Notlar
-const DEFAULT_NOTES = [
-  {
-    id: 'n1',
-    date: '18.05.2026',
-    title: 'MATEMATİK - LOGARİTMA FORMÜLLERİ',
-    content: 'log(a*b) = log(a) + log(b)\nlog(a/b) = log(a) - log(b)\nlog_a(x) = ln(x)/ln(a) taban değiştirme kuralı önemlidir.',
-    color: 'blue'
-  },
-  {
-    id: 'n2',
-    date: '16.05.2026',
-    title: 'EDEBİYAT - DİVAN ŞAİRLERİ',
-    content: 'Fuzuli: Izdırap şairi, Su Kasidesi.\nBaki: Rindane şiir, Kanuni Mersiyesi.\nNefi: Siham-ı Kaza (hiciv türü).\nNedim: Şarkı türü, Lale devri eğlence şairi.',
-    color: 'pink'
-  }
-];
-
-// Kütüphane Makaleleri Verisi
-const LIBRARY_ARTICLES = [
-  {
-    id: 'art1',
-    category: 'MATEMATİK',
-    title: 'TYT Matematik 30+ Net Yapma Stratejileri',
-    readTime: '6 dk okuma',
-    author: 'Eğitim Koçu Caner Kaya',
-    summary: 'TYT Matematik sınavında 30 net barajını aşmanın sırrı, formüllerden ziyade mantıksal akıl yürütmedir. Önce ilk 12 konuyu (Temel Kavramlar, Bölünebilme, Rasyonel Sayılar, Köklü-Üslü Sayılar) hatasız bitirmelisin...',
-    content: `TYT Matematik'te 30 netin üzerine çıkmak istiyorsanız şu stratejileri mutlaka uygulamalısınız:
-    
-    1. İlk 12 Konuda Sıfır Hata Hedefi: Temel Kavramlar, Sayı Basamakları, Bölme-Bölünebilme, OBEB-OKEK, Rasyonel Sayılar, Basit Eşitsizlikler, Mutlak Değer, Üslü Sayılar, Köklü Sayılar, Çarpanlara Ayırma, Oran-Orantı ve Denklem Çözme konuları sınavın omurgasını oluşturur. Bunlardan her yıl yaklaşık 10-12 soru gelir. Bu bölümü eksiksiz tamamlayın.
-    
-    2. Günlük Problem Rutini: Problemler sınavın neredeyse üçte birini kaplar. Her gün hiç aksatmadan farklı yayınlardan 20 adet "Yeni Nesil Problem" çözmek soru okuma refleksinizi inanılmaz derecede hızlandıracaktır.
-    
-    3. Geometriyi İhmal Etmeyin: Geometriden her yıl 10 soru çıkmaktadır. Üçgende Açılar, Benzerlik ve Özel Üçgenleri kavramadan diğer konulara geçmeyin. Geometri görme işidir ve sadece her gün çözerek gelişir.`
-  },
-  {
-    id: 'art2',
-    category: 'YAPAY ZEKA',
-    title: 'AI Koç ile Verimli Ders Çalışma Tüyoları',
-    readTime: '4 dk okuma',
-    author: 'Yapay Zeka Uzmanı Buse Aksoy',
-    summary: 'Yapay zekayı bir sınav ortağı gibi kullanabilirsin! Yapamadığın bir sorunun fotoğrafını veya metnini AI Koçuna göndererek "bunu adım adım, basitleştirerek açıkla" komutu ver. Ayrıca Feynman Tekniği kullanabilirsin...',
-    content: `Yapay Zekayı (AI Koç) kendi kişisel öğretmeniniz haline getirmek için şu taktikleri uygulayabilirsiniz:
-    
-    1. Feynman Tekniği ile Öğrenme: Anlamakta zorlandığınız karmaşık bir konuyu AI Koç'a yazın ve ona şu promptu verin: "Bana [Konu Adı] konusunu 5 yaşındaki bir çocuğa anlatır gibi, en basit benzetmelerle açıkla." Bu yöntemle soyut kavramlar kafanızda hemen netleşecektir.
-    
-    2. Soru Çözüm Analizi: Çözemediğiniz matematik veya fen sorularını "Bunu adım adım çöz ve her adımda hangi kuralı uyguladığını belirt" diyerek yapay zekaya sorun. Doğrudan cevabı almak yerine mantığı kavrayın.
-    
-    3. Kişiselleştirilmiş Deneme Değerlendirmesi: Yanlış yaptığınız konuların listesini AI Koç'a vererek "Bu zayıf yönlerime göre bana 3 günlük nokta atışı bir tekrar kampı programı hazırlar mısın?" talebinde bulunun.`
-  },
-  {
-    id: 'art3',
-    category: 'MOTİVASYON',
-    title: 'Sınav Kaygısıyla Baş Etme Rehberi',
-    readTime: '5 dk okuma',
-    author: 'PDR Uzmanı Zeynep Şahin',
-    summary: 'Kaygı, belirli bir düzeyde olduğunda seni motive eder ancak aşırıya kaçtığında odaklanmanı engeller. Sınav anında nefes egzersizleri yapmayı öğren: 4 saniye nefes al, 4 saniye tut, 4 saniye ver...',
-    content: `Kaygı her öğrencide olması gereken doğal bir duygudur. Önemli olan bu kaygıyı yönetebilmektir:
-    
-    1. Kontrollü Diyafram Nefesi: Sınav esnasında veya çalışırken paniklediğinizi hissettiğiniz anda gözlerinizi kapatın. 4 saniye boyunca burnunuzdan derin nefes alın, 4 saniye boyunca bu nefesi tutun ve ardından 4 saniyede ağzınızdan yavaşça verin. Bu işlem beyninize "her şey yolunda" mesajı gönderir.
-    
-    2. Felaket Senaryolarını Durdurun: "Ya yapamazsam", "Sınavım kötü geçecek" gibi düşünceler zihninize hücum ettiğinde, kendinize şu ana kadar harcadığınız emeği hatırlatın. Sınavı bir ölüm kalım mücadelesi değil, sadece o güne kadar öğrendiklerinizi yansıtma fırsatı olarak görün.
-    
-    3. Uyku ve Beslenme Düzeni: Sınav döneminde kafein tüketimini sınırlandırın. Kafein kalp ritmini hızlandırarak yapay bir kaygı ve huzursuzluk hissi yaratabilir. Düzenli uyku ise kaygıyı azaltan en güçlü silahtır.`
-  },
-  {
-    id: 'art4',
-    category: 'EDEBİYAT',
-    title: 'YKS Edebiyat Ezberleme Hafıza Teknikleri',
-    readTime: '7 dk okuma',
-    author: 'Edebiyat Öğretmeni Kemal Solmaz',
-    summary: 'Edebiyatın yoğun bilgi yığınını ezberlemek için hikayeleştirme (kodlama) yöntemlerini kullan. Örneğin Tanzimat dönemi sanatçılarını komik bir hikaye içinde birleştir. Akrostişler, şair-yazar eşleştirmeli kartlar...',
-    content: `AYT Edebiyat'ta 24'te 24 yapmak için ezber yükünü hafifletecek hafıza teknikleri şunlardır:
-    
-    1. Hikayeleştirme (Kodlama) Yöntemi: Eserleri ve sanatçıları kuru kuru ezberlemek yerine komik, absürt ve akılda kalıcı hikayeler uydurun. Beynimiz mantıklı bilgileri değil, sıra dışı ve komik kurguları asla unutmaz.
-    
-    2. Akrostiş ve Şifrelemeler: Sanatçıların özelliklerini veya edebi topluluk üyelerini baş harfleriyle şifreleyin. (Örn: Beş Hececiler -> HEYOF: Halit Fahri, Enis Behiç, Yusuf Ziya, Orhan Seyfi, Faruk Nafiz).
-    
-    3. Görsel Zihin Haritaları: Bir sanatçıyı merkeze alıp etrafına kollar çizerek en önemli eserlerini farklı renkli kalemlerle kağıda dökün. Bu görsel şema zihninizde kalıcı bir yer edinecektir.`
-  }
-];
-
-const LIBRARY_WITH_GUIDE = [USAGE_GUIDE, ...LIBRARY_ARTICLES];
 
 // Geliştirilmiş Çeviri ve YKS Sözlük Kategorileri
 const POPULAR_ACADEMIC_TERMS = [
@@ -241,9 +187,11 @@ export default function App() {
   const profileNameRef = useRef<string | null>(null);
 
   // Giriş / Profil Bilgileri Eyaleti
-  const [userProfile, setUserProfile] = useState<UserProfile | null>(() =>
-    safeParse<UserProfile | null>('guidance_core_profile', null),
-  );
+  const [userProfile, setUserProfile] = useState<UserProfile>(() => {
+    const loggedMember = getLoggedInMember();
+    return loggedMember ? loadUserProfile() : { ...GUEST_PROFILE };
+  });
+  const [showGuideModal, setShowGuideModal] = useState(false);
 
   // Giriş Yaparken Form Değişkenleri
   const [setupName, setSetupName] = useState('');
@@ -260,23 +208,22 @@ export default function App() {
   const [confirmDialog, setConfirmDialog] = useState<ConfirmState>(null);
 
   // Eyalet (State) Yönetimi
-  const [exams, setExams] = useState<Exam[]>(() =>
-    safeParse<Exam[]>('guidance_core_exams', DEFAULT_EXAMS as Exam[]),
-  );
+  const [exams, setExams] = useState<Exam[]>(() => loadInitialExams());
 
-  const [tasks, setTasks] = useState(() =>
-    safeParse('guidance_core_tasks', DEFAULT_TASKS),
-  );
+  const [tasks, setTasks] = useState(() => loadInitialTasks());
 
-  const [notes, setNotes] = useState(() =>
-    safeParse('guidance_core_notes', DEFAULT_NOTES),
-  );
+  const [notes, setNotes] = useState(() => loadInitialNotes());
 
-  const [themeColor, setThemeColor] = useState('indigo'); // indigo, pink, amber, teal, violet
+  const [themeColor, setThemeColor] = useState<ThemeColor>(() => {
+    const saved = safeParse<string>('guidance_core_theme', 'ocean');
+    return isThemeColor(saved) ? saved : 'ocean';
+  });
   const [darkMode, setDarkMode] = useState(() =>
     safeParse('guidance_core_dark_mode', false),
   );
-  const [activeTab, setActiveTab] = useState('panel'); // panel, merkez, sorucozucu, planlayici, kutuphane, sinavlar
+  const [activeTab, setActiveTab] = useState(() =>
+    getLoggedInMember() ? 'panel' : 'merkez',
+  );
   
   // Sınav Formu State'leri
   const [examType, setExamType] = useState('TYT'); // TYT veya AYT
@@ -304,9 +251,13 @@ export default function App() {
   const [loadingAi, setLoadingAi] = useState(false);
   const [aiLoadingMode, setAiLoadingMode] = useState<'chat' | 'analysis' | null>(null);
   const [aiChatQuery, setAiChatQuery] = useState('');
+  const [coachCornerOpen, setCoachCornerOpen] = useState(false);
+  const [autoSpeakCoach, setAutoSpeakCoach] = useState(false);
   
   // Varsayılan selamlamanın kullanıcıya göre özelleştirilmesi için chat geçmişi
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+  const [archiveStatsTick, setArchiveStatsTick] = useState(0);
+  const coachedTabsRef = useRef<Set<string>>(new Set());
 
   // Yeni Not State'leri
   const [newNoteTitle, setNewNoteTitle] = useState('');
@@ -339,15 +290,13 @@ export default function App() {
   );
 
   // Kütüphane Modal State'i
-  const [selectedArticle, setSelectedArticle] = useState<typeof LIBRARY_WITH_GUIDE[number] | null>(null);
-
   // Zeka Merkezi — konum, hava, namaz, takvim, bilim
   const [settlement, setSettlement] = useState<Settlement | null>(() =>
     safeParse<Settlement | null>(LOCATION_CACHE_KEY, null),
   );
   const [worldSnapshot, setWorldSnapshot] = useState<WorldSnapshot | null>(() => {
     const cached = safeParse<WorldSnapshot | null>(WORLD_CACHE_KEY, null);
-    if (cached && !isWorldCacheStale(cached.fetchedAt)) return cached;
+    if (cached && !isWorldCacheStale(cached.fetchedAt, cached)) return ensureScienceTopics(cached);
     return null;
   });
   const [locationQuery, setLocationQuery] = useState('');
@@ -358,33 +307,82 @@ export default function App() {
   const [loadingScienceBrief, setLoadingScienceBrief] = useState(false);
 
   const [member, setMember] = useState<MemberAccount | null>(() => getLoggedInMember());
+  const [admin, setAdmin] = useState<AdminAccount | null>(() => {
+    ensureBootstrapAdmins();
+    return getLoggedInAdmin();
+  });
   const [showMemberAuth, setShowMemberAuth] = useState(false);
+  const [memberAuthMode, setMemberAuthMode] = useState<'login' | 'register' | 'forgot'>('register');
+  const [passwordResetToken, setPasswordResetToken] = useState<string | null>(() =>
+    parseResetTokenFromHash(window.location.hash),
+  );
   const [memberActivityTick, setMemberActivityTick] = useState(0);
   const [curriculumTick, setCurriculumTick] = useState(0);
 
   const refreshMemberActivity = () => setMemberActivityTick((t) => t + 1);
 
+  useEffect(() => registerGuestSessionCleanup(), []);
+
+  useEffect(() => {
+    const syncHash = () => {
+      const token = parseResetTokenFromHash(window.location.hash);
+      setPasswordResetToken(token);
+    };
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
+  }, []);
+
+  useEffect(() => {
+    if (!member && MEMBER_ONLY_TABS.has(activeTab)) {
+      setActiveTab('merkez');
+    }
+  }, [member, activeTab]);
+
   const requestConfirm = (title: string, message: string, onConfirm: () => void) => {
     setConfirmDialog({ title, message, onConfirm });
   };
 
-  const handleLogout = () => {
-    requestConfirm(
-      'Çıkış Yap',
-      'Profilinizden çıkış yapılacak. Verileriniz cihazınızda saklanmaya devam eder.',
-      () => {
-        setUserProfile(null);
-        setChatHistory([]);
-        profileNameRef.current = null;
-        localStorage.removeItem('guidance_core_profile');
-        setConfirmDialog(null);
-      },
-    );
+  const handleAuthButton = () => {
+    if (member) {
+      requestConfirm(
+        'Çıkış Yap',
+        'Üyelik oturumunuz kapatılacak. Deneme ve not verileriniz cihazınızda kalır.',
+        () => {
+          stopBackgroundCoach();
+          logoutMember();
+          setMember(null);
+          resetGuestSession();
+          if (activeTab === 'uyepanel') setActiveTab('panel');
+          setConfirmDialog(null);
+        },
+      );
+      return;
+    }
+    openMemberAuth('register');
   };
 
-  // Profil kayıt fonksiyonu
+  const openMemberAuth = (mode: 'login' | 'register' | 'forgot' = 'register') => {
+    setMemberAuthMode(mode);
+    setShowMemberAuth(true);
+  };
+
+  /** Üye çıkışında: profil/sohbet misafire döner; cihazdaki deneme verisi kalır. */
+  const resetGuestSession = () => {
+    profileNameRef.current = null;
+    coachedTabsRef.current = new Set();
+    setUserProfile({ ...GUEST_PROFILE });
+    safeSetItem('guidance_core_profile', GUEST_PROFILE);
+    setChatHistory([buildGuestWelcomeMessage()]);
+    markGuestTabActive();
+  };
+
   const handleSaveProfile = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!member) {
+      openMemberAuth('register');
+      return;
+    }
     if (!setupName.trim() || !setupTargetUniv.trim() || !setupTargetDept.trim()) return;
 
     const newProfile: UserProfile = {
@@ -397,6 +395,10 @@ export default function App() {
 
     setUserProfile(newProfile);
     safeSetItem('guidance_core_profile', newProfile);
+    logSiteEvent('profile_edit', {
+      tab: activeTab,
+      detail: `${newProfile.field} ${newProfile.targetDept}`,
+    });
     setIsEditingProfile(false);
   };
 
@@ -406,25 +408,52 @@ export default function App() {
     safeSetItem('guidance_core_dark_mode', darkMode);
   }, [darkMode]);
 
-  // Profil değişince sohbeti yükle (düzenlemede sıfırlama)
   useEffect(() => {
-    if (!userProfile) {
-      setChatHistory([]);
-      profileNameRef.current = null;
-      return;
+    safeSetItem('guidance_core_theme', themeColor);
+  }, [themeColor]);
+
+  const effectiveProfile = getEffectiveProfile(Boolean(member), userProfile);
+
+  useEffect(() => {
+    if (!member && chatHistory.length === 0) {
+      setChatHistory([buildGuestWelcomeMessage()]);
     }
-
-    if (profileNameRef.current === userProfile.name) return;
-
-    profileNameRef.current = userProfile.name;
-    const savedChat = safeParse<ChatMessage[]>(chatStorageKey(userProfile.name), []);
-    setChatHistory(savedChat.length > 0 ? savedChat : [buildWelcomeMessage(userProfile)]);
-  }, [userProfile]);
+  }, []);
 
   useEffect(() => {
-    if (!userProfile || chatHistory.length === 0) return;
+    if (admin) {
+      setLearningAutomationEnabled(true);
+      grantEditorSessionForAdmin();
+      syncCrawlerWithEditorSession();
+      syncLearningAutomation();
+    } else if (isEditorSessionActive()) {
+      syncCrawlerWithEditorSession();
+      syncLearningWithEditorSession();
+    }
+  }, [admin?.id]);
+
+  useEffect(() => {
+    if (!admin) {
+      setLearningAutomationEnabled(false);
+      if (!isEditorSessionActive()) syncLearningAutomation();
+    }
+  }, [admin]);
+
+  useEffect(() => {
+    if (!member) return;
+    const chatKeyId = userProfile.name;
+    if (profileNameRef.current === chatKeyId) return;
+
+    profileNameRef.current = chatKeyId;
+    const storageKey = chatStorageKey(chatKeyId);
+    const savedChat = safeParse<ChatMessage[]>(storageKey, []);
+    setChatHistory(savedChat.length > 0 ? savedChat : [buildWelcomeMessage(userProfile)]);
+  }, [member, userProfile]);
+
+  useEffect(() => {
+    if (!member || chatHistory.length === 0) return;
     safeSetItem(chatStorageKey(userProfile.name), chatHistory);
-  }, [chatHistory, userProfile]);
+  }, [chatHistory, member, userProfile.name]);
 
   // Yerel hafızaya kaydetme
   useEffect(() => {
@@ -471,7 +500,7 @@ export default function App() {
 
   useEffect(() => {
     if (!settlement) return;
-    if (!worldSnapshot || isWorldCacheStale(worldSnapshot.fetchedAt)) {
+    if (!worldSnapshot || isWorldCacheStale(worldSnapshot.fetchedAt, worldSnapshot)) {
       refreshWorldData(settlement);
     }
   }, [settlement]);
@@ -479,7 +508,7 @@ export default function App() {
   useEffect(() => {
     if (!settlement) return;
     const interval = setInterval(() => {
-      if (!worldSnapshot || isWorldCacheStale(worldSnapshot.fetchedAt)) {
+      if (!worldSnapshot || isWorldCacheStale(worldSnapshot.fetchedAt, worldSnapshot)) {
         refreshWorldData(settlement);
       }
     }, WORLD_CACHE_TTL_MS);
@@ -515,12 +544,15 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (!member || activeTab === 'uyepanel') return;
-    logMemberVisit(member.id, activeTab);
-    refreshMemberActivity();
+    if (activeTab === 'uyepanel') return;
+    logSiteTabVisit(activeTab);
+    if (member) {
+      logMemberVisit(member.id, activeTab);
+      refreshMemberActivity();
+    }
   }, [activeTab, member?.id]);
 
-  const handleMemberAuthSuccess = async (loggedMember: MemberAccount) => {
+  const activateMemberExperience = async (loggedMember: MemberAccount) => {
     setMember(loggedMember);
     if (!loadEducationProfile(loggedMember.id)) {
       await setupMemberCurriculum(loggedMember.id, {
@@ -536,25 +568,68 @@ export default function App() {
       totalTasks: tasks.length,
     });
     setCurriculumTick((t) => t + 1);
-    if (!userProfile) {
-      const profile: UserProfile = {
-        name: loggedMember.firstName,
-        field: 'Sayısal',
-        targetUniv: '',
-        targetDept: '',
-        dailyTargetHours: '4',
-      };
-      setUserProfile(profile);
-      safeSetItem('guidance_core_profile', profile);
-    }
-    setActiveTab('uyepanel');
+    const stored = loadUserProfile();
+    const profile: UserProfile = isGuestProfile(stored)
+      ? {
+          name: loggedMember.firstName,
+          field: 'Sayısal',
+          targetUniv: 'Belirtilmedi',
+          targetDept: 'Belirtilmedi',
+          dailyTargetHours: '4',
+        }
+      : stored;
+    setUserProfile(profile);
+    safeSetItem('guidance_core_profile', profile);
+    profileNameRef.current = null;
+  };
+
+  const handleMemberAuthSuccess = async (loggedMember: MemberAccount) => {
+    logSiteEvent('member_login', { tab: activeTab, detail: loggedMember.email });
+    await activateMemberExperience(loggedMember);
+    setActiveTab('panel');
   };
 
   const handleMemberLogout = () => {
     stopBackgroundCoach();
+    logoutMember();
     setMember(null);
+    resetGuestSession();
     if (activeTab === 'uyepanel') setActiveTab('panel');
   };
+
+  const handleAdminAuthSuccess = async (loggedAdmin: AdminAccount) => {
+    setAdmin(loggedAdmin);
+    logSiteEvent('admin_login', { tab: activeTab, detail: loggedAdmin.email });
+    const linkedMember = ensureMemberSessionForAdmin(loggedAdmin);
+    await activateMemberExperience(linkedMember);
+    setLearningAutomationEnabled(true);
+    grantEditorSessionForAdmin();
+    syncCrawlerWithEditorSession();
+    syncLearningAutomation();
+    setActiveTab('admin');
+  };
+
+  const handleAdminLogout = () => {
+    if (admin && isAdminLinkedMemberSession(admin.email)) {
+      stopBackgroundCoach();
+      logoutMember();
+      setMember(null);
+      resetGuestSession();
+    }
+    logoutAdmin();
+    setAdmin(null);
+    setLearningAutomationEnabled(false);
+    revokeEditorSessionForAdmin();
+    syncCrawlerWithEditorSession();
+    syncLearningAutomation();
+    if (activeTab === 'admin' || MEMBER_ONLY_TABS.has(activeTab)) setActiveTab('merkez');
+  };
+
+  useEffect(() => {
+    if (!admin || member) return;
+    const linkedMember = ensureMemberSessionForAdmin(admin);
+    void activateMemberExperience(linkedMember);
+  }, [admin?.id, member?.id]);
 
   useEffect(() => {
     if (!member) return;
@@ -598,64 +673,8 @@ export default function App() {
   // Hızlı Seçim Kısmı İçin Şablonlar
   const fastExams = ['3D Simülasyon', 'Özdebir', 'Bilgi Sarmal', 'Limit', 'Altın Karma'];
 
-  // Tema renk sınıflarını alma helperı
-  const getThemeClasses = () => {
-    const colors = {
-      indigo: {
-        bg: 'bg-indigo-600',
-        hover: 'hover:bg-indigo-700',
-        text: 'text-indigo-600',
-        border: 'border-indigo-600',
-        lightBg: 'bg-indigo-50',
-        darkText: 'dark:text-indigo-400',
-        gradient: 'from-indigo-500 to-purple-600',
-        ring: 'focus:ring-indigo-500'
-      },
-      pink: {
-        bg: 'bg-pink-600',
-        hover: 'hover:bg-pink-700',
-        text: 'text-pink-600',
-        border: 'border-pink-600',
-        lightBg: 'bg-pink-50',
-        darkText: 'dark:text-pink-400',
-        gradient: 'from-pink-500 to-rose-600',
-        ring: 'focus:ring-pink-500'
-      },
-      amber: {
-        bg: 'bg-amber-500',
-        hover: 'hover:bg-amber-600',
-        text: 'text-amber-500',
-        border: 'border-amber-500',
-        lightBg: 'bg-amber-50',
-        darkText: 'dark:text-amber-400',
-        gradient: 'from-amber-500 to-orange-600',
-        ring: 'focus:ring-amber-500'
-      },
-      teal: {
-        bg: 'bg-teal-600',
-        hover: 'hover:bg-teal-700',
-        text: 'text-teal-600',
-        border: 'border-teal-600',
-        lightBg: 'bg-teal-50',
-        darkText: 'dark:text-teal-400',
-        gradient: 'from-teal-500 to-emerald-600',
-        ring: 'focus:ring-teal-500'
-      },
-      violet: {
-        bg: 'bg-violet-600',
-        hover: 'hover:bg-violet-700',
-        text: 'text-violet-600',
-        border: 'border-violet-600',
-        lightBg: 'bg-violet-50',
-        darkText: 'dark:text-violet-400',
-        gradient: 'from-violet-500 to-fuchsia-600',
-        ring: 'focus:ring-violet-500'
-      }
-    };
-    return colors[themeColor] || colors.indigo;
-  };
-
-  const activeTheme = getThemeClasses();
+  const activeTheme = getThemeClasses(themeColor);
+  const surfaceStyle = getThemeSurfaceStyle(themeColor, darkMode);
 
   // Maksimum soru sınırları
   const getMaxQuestions = (examType, subject) => {
@@ -754,6 +773,40 @@ export default function App() {
 
   const radarData = getRadarData();
 
+  const archiveSubjectStats = useMemo(
+    () => getArchiveSubjectStats(),
+    [archiveStatsTick],
+  );
+  const archivePaperStats = useMemo(
+    () => getArchivePaperStats(),
+    [archiveStatsTick],
+  );
+  const archiveChartData = useMemo(
+    () =>
+      archiveSubjectStats.map((s) => ({
+        subject: s.subject.length > 10 ? `${s.subject.slice(0, 9)}…` : s.subject,
+        fullSubject: s.subject,
+        accuracy: s.accuracy,
+        correct: s.correct,
+        wrong: s.wrong,
+        total: s.total,
+      })),
+    [archiveSubjectStats],
+  );
+
+  const bumpArchiveStats = useCallback(() => {
+    setArchiveStatsTick((n) => n + 1);
+  }, []);
+
+  const pushCoachInsight = useCallback((text: string) => {
+    if (!member || !text.trim()) return;
+    setChatHistory((prev) => [
+      ...prev,
+      { id: `coach-${Date.now()}`, role: 'assistant', text },
+    ]);
+    logSiteEvent('chat_coach', { tab: activeTab, detail: text.slice(0, 120) });
+  }, [activeTab, member]);
+
   // Sınavı Ekleme Fonksiyonu
   const handleAddExam = (e) => {
     e.preventDefault();
@@ -793,6 +846,16 @@ export default function App() {
 
     const nextExams = [newExam, ...exams];
     setExams(nextExams);
+    logSiteEvent('exam_add', {
+      tab: activeTab,
+      detail: `${newExam.type} ${newExam.name} ${newExam.totalNet} net`,
+    });
+    const examTip = generateContextualCoachTip(
+      'exam_add',
+      `${newExam.type} ${newExam.totalNet} net`,
+      buildCoachContext(),
+    );
+    if (examTip) pushCoachInsight(examTip);
 
     if (member) {
       logMemberUpload(member.id, 'sinav', newExam.name, `${newExam.type} · ${newExam.totalNet} net`);
@@ -886,8 +949,7 @@ export default function App() {
       .map((e) => `${e.name} (${e.type}): ${e.totalNet} Net`)
       .join(', ');
 
-  const buildCoachContext = (): CoachContext | null => {
-    if (!userProfile) return null;
+  const buildCoachContext = (): CoachContext => {
     let curriculumNote: string | undefined;
     if (member) {
       const state = loadCurriculumState(member.id);
@@ -901,8 +963,22 @@ export default function App() {
         curriculumNote = `${edu.effectiveGrade === 'mezun' ? 'Mezun' : `${edu.effectiveGrade}. sınıf`} · ${weak || report.summary.slice(0, 120)}`;
       }
     }
+    const trafficSummary = buildTrafficCoachSummary();
+    const targetExam =
+      detectExamFromText(effectiveProfile.targetDept) ??
+      detectExamFromText(effectiveProfile.field) ??
+      detectExamFromText(trafficSummary) ??
+      null;
+
+    const archiveStatsSummary = formatArchiveStatsSummary();
+    const learningSummary = buildLearningCoachSummary(
+      getArchiveSubjectStats(),
+      subjectAverages,
+      worldSnapshot,
+    );
+
     return {
-      profile: userProfile,
+      profile: effectiveProfile,
       exams,
       subjectAverages,
       pendingTasks: tasks.filter((t: { done: boolean }) => !t.done).length,
@@ -912,18 +988,32 @@ export default function App() {
       avgNet: metrics.avgNet,
       world: worldSnapshot,
       curriculumNote,
+      trafficSummary,
+      targetExam,
+      archiveStatsSummary,
+      learningSummary,
+      centralAiInsight: buildCoreKnowledgeCoachBlock(),
     };
   };
 
+  useEffect(() => {
+    if (!member || activeTab === 'uyepanel') return;
+    const coachTabs = new Set(['panel', 'sinavlar']);
+    if (!coachTabs.has(activeTab) || coachedTabsRef.current.has(activeTab)) return;
+    coachedTabsRef.current.add(activeTab);
+    const tip = generateContextualCoachTip('tab_visit', activeTab, buildCoachContext());
+    if (tip) pushCoachInsight(tip);
+  }, [activeTab, member, pushCoachInsight]);
+
   const askLocalCoach = async (userMessage: string) => {
     const context = buildCoachContext();
-    if (!context) return;
 
     setLoadingAi(true);
     setAiLoadingMode('chat');
 
     try {
       const aiText = await generateCoachChatResponse(userMessage, context);
+      recordChatExchange(userMessage, aiText, { memberType: member ? 'member' : 'guest' });
       setChatHistory((prev) => [...prev, { id: Date.now().toString(), role: 'assistant', text: aiText }]);
     } catch (error) {
       console.error(error);
@@ -938,7 +1028,6 @@ export default function App() {
   };
 
   const triggerFullAnalysis = async () => {
-    if (!userProfile) return;
     if (exams.length === 0) {
       setAiAnalysis('Sistemde kayıtlı deneme sınavı bulunamadı. Lütfen analiz için önce en az bir adet deneme sınavı sonucu giriniz.');
       return;
@@ -946,8 +1035,9 @@ export default function App() {
 
     setLoadingAi(true);
     setAiLoadingMode('analysis');
+    logSiteEvent('exam_analysis', { tab: activeTab, detail: `${exams.length} deneme` });
     try {
-      const analysis = await generateFullExamAnalysis(exams, userProfile);
+      const analysis = await generateFullExamAnalysis(exams, effectiveProfile);
       setAiAnalysis(analysis);
     } catch (error) {
       console.error(error);
@@ -963,15 +1053,39 @@ export default function App() {
     if (!aiChatQuery.trim()) return;
 
     const userMessage = aiChatQuery.trim();
+    const moderation = moderateUserInput(userMessage);
+    if (!moderation.allowed) {
+      logSiteEvent('chat_moderated', { tab: activeTab, detail: moderation.reason });
+      setChatHistory((prev) => [
+        ...prev,
+        { id: Date.now().toString(), role: 'user', text: userMessage },
+        { id: `mod-${Date.now()}`, role: 'assistant', text: moderation.userMessage },
+      ]);
+      setAiChatQuery('');
+      return;
+    }
+
     setChatHistory((prev) => [...prev, { id: Date.now().toString(), role: 'user', text: userMessage }]);
     setAiChatQuery('');
+    logSiteEvent('chat_user', { tab: activeTab, detail: userMessage.slice(0, 120) });
 
     askLocalCoach(userMessage);
   };
 
   // Önerilen Hazır Sorulardan Birine Tıklama
   const handleSuggestedQuestion = (question: string) => {
+    const moderation = moderateUserInput(question);
+    if (!moderation.allowed) {
+      logSiteEvent('chat_moderated', { tab: activeTab, detail: moderation.reason });
+      setChatHistory((prev) => [
+        ...prev,
+        { id: Date.now().toString(), role: 'user', text: question },
+        { id: `mod-${Date.now()}`, role: 'assistant', text: moderation.userMessage },
+      ]);
+      return;
+    }
     setChatHistory((prev) => [...prev, { id: Date.now().toString(), role: 'user', text: question }]);
+    logSiteEvent('chat_user', { tab: activeTab, detail: question.slice(0, 120) });
     askLocalCoach(question);
   };
 
@@ -1008,6 +1122,7 @@ export default function App() {
         };
         setTranslationHistory((prev) => [historyItem, ...prev.slice(0, 4)]);
       }
+      logSiteEvent('dictionary_search', { tab: activeTab, detail: targetTerm });
       if (member) {
         logMemberSearch(member.id, targetTerm, 'sozluk');
         refreshMemberActivity();
@@ -1071,6 +1186,10 @@ export default function App() {
       };
 
       setUnsolvedArchive((prev) => [archiveItem, ...prev]);
+      logSiteEvent('question_solve', {
+        tab: activeTab,
+        detail: `${questionSubject} ${(questionText || 'görsel').slice(0, 80)}`,
+      });
       if (member) {
         logMemberUpload(
           member.id,
@@ -1162,10 +1281,18 @@ export default function App() {
 
     setTasks([...tasks, newTask]);
     setNewTaskText('');
+    logSiteEvent('task_add', { tab: activeTab, detail: newTask.text.slice(0, 80) });
   };
 
   const toggleTaskDone = (id) => {
+    const task = tasks.find((t) => t.id === id);
     setTasks(tasks.map(t => t.id === id ? { ...t, done: !t.done } : t));
+    if (task) {
+      logSiteEvent('task_toggle', {
+        tab: activeTab,
+        detail: `${task.done ? 'geri al' : 'tamamla'}: ${task.text.slice(0, 60)}`,
+      });
+    }
   };
 
   const deleteTask = (id: string, taskText: string) => {
@@ -1195,6 +1322,7 @@ export default function App() {
     };
 
     setNotes([newNote, ...notes]);
+    logSiteEvent('note_add', { tab: activeTab, detail: newNote.title.slice(0, 80) });
     if (member) {
       logMemberUpload(member.id, 'not', newNote.title);
       refreshMemberActivity();
@@ -1252,6 +1380,14 @@ export default function App() {
 
   // Düzenleme modunda değerleri inputlara önceden doldurma
   const openEditProfile = () => {
+    if (!member) {
+      setNotification({
+        title: 'Üyelik gerekli',
+        message: 'Profil ve AI koç özellikleri için giriş yapın veya üye olun.',
+      });
+      openMemberAuth('login');
+      return;
+    }
     if (userProfile) {
       setSetupName(userProfile.name);
       setSetupField(userProfile.field);
@@ -1262,345 +1398,190 @@ export default function App() {
     setIsEditingProfile(true);
   };
 
-  // GİRİŞ / KURULUM EKRANI (Eğer profil yoksa gösterilir)
-  if (!userProfile) {
-    return (
-      <div className={`min-h-screen flex items-center justify-center p-4 transition-colors duration-300 ${darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-100 text-slate-800'}`}>
-        <div className={`w-full max-w-xl rounded-3xl p-6 md:p-8 border shadow-2xl transition-all ${
-          darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-200'
-        }`}>
-          
-          <div className="text-center mb-6">
-            <div className={`inline-flex p-3 rounded-2xl text-white bg-gradient-to-tr ${activeTheme.gradient} shadow-lg mb-4`}>
-              <Sparkles className="h-8 w-8 animate-pulse" />
-            </div>
-            <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-              {SITE_NAME}&apos;a Hoş Geldiniz!
-            </h1>
-            <p className="text-xs text-slate-400 font-bold uppercase mt-1">{SITE_TAGLINE}</p>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
-              Size özel bir çalışma planı sunabilmemiz ve yapay zeka koçunuzu hazırlayabilmemiz için lütfen temel bilgilerinizi giriniz.
-            </p>
-          </div>
+  const trafficHighlights = getTrafficHighlights();
 
-          <form onSubmit={handleSaveProfile} className="space-y-4">
-            <div>
-              <label htmlFor="setup-name" className="block text-xs font-bold text-slate-400 mb-1.5 uppercase">Adınız / Rumuzunuz</label>
-              <input
-                id="setup-name"
-                type="text"
-                value={setupName}
-                onChange={(e) => setSetupName(e.target.value)}
-                placeholder="Örn: Ahmet, Ayşe, Geleceğin Mühendisi..."
-                className={`w-full text-sm px-4 py-2.5 rounded-xl border focus:outline-none focus:ring-2 ${activeTheme.ring} ${
-                  darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
-                }`}
-                required
-              />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label htmlFor="setup-field" className="block text-xs font-bold text-slate-400 mb-1.5 uppercase">YKS Alanınız</label>
-                <select
-                  id="setup-field"
-                  value={setupField}
-                  onChange={(e) => setSetupField(e.target.value)}
-                  className={`w-full text-sm px-4 py-2.5 rounded-xl border focus:outline-none focus:ring-2 ${activeTheme.ring} ${
-                    darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
-                  }`}
-                >
-                  <option value="Sayısal">Sayısal (SAY)</option>
-                  <option value="Eşit Ağırlık">Eşit Ağırlık (EA)</option>
-                  <option value="Sözel">Sözel (SÖZ)</option>
-                  <option value="Dil">Yabancı Dil (DİL)</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-400 mb-1.5 uppercase">Günlük Çalışma Hedefiniz (Saat)</label>
-                <input
-                  type="number"
-                  min="1"
-                  max="24"
-                  value={setupDailyTargetHours}
-                  onChange={(e) => setSetupDailyTargetHours(e.target.value)}
-                  className={`w-full text-sm px-4 py-2.5 rounded-xl border focus:outline-none focus:ring-2 ${activeTheme.ring} ${
-                    darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
-                  }`}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-400 mb-1.5 uppercase">Hedef Üniversite</label>
-                <input
-                  type="text"
-                  value={setupTargetUniv}
-                  onChange={(e) => setSetupTargetUniv(e.target.value)}
-                  placeholder="Örn: ODTÜ, Boğaziçi, Hacettepe..."
-                  className={`w-full text-sm px-4 py-2.5 rounded-xl border focus:outline-none focus:ring-2 ${activeTheme.ring} ${
-                    darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
-                  }`}
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-400 mb-1.5 uppercase">Hedef Bölüm</label>
-                <input
-                  type="text"
-                  value={setupTargetDept}
-                  onChange={(e) => setSetupTargetDept(e.target.value)}
-                  placeholder="Örn: Tıp, Bilgisayar Müh, Hukuk..."
-                  className={`w-full text-sm px-4 py-2.5 rounded-xl border focus:outline-none focus:ring-2 ${activeTheme.ring} ${
-                    darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
-                  }`}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <button
-                type="submit"
-                className={`w-full py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-tr ${activeTheme.gradient} ${activeTheme.hover} shadow-md transition-all flex items-center justify-center gap-2`}
-              >
-                <span>Sınav Yolculuğunu Başlat ➔</span>
-              </button>
-            </div>
-          </form>
-
-          {/* Karanlık Mod Butonu */}
-          <div className="mt-6 flex justify-center">
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`p-2.5 rounded-xl border transition-all text-xs flex items-center gap-2 ${
-                darkMode ? 'bg-slate-800 border-slate-700 text-amber-400 hover:bg-slate-700' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
-              }`}
-            >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-              <span>{darkMode ? "Açık Tema" : "Koyu Tema"}</span>
-            </button>
-          </div>
-
-        </div>
-      </div>
-    );
-  }
-
-  // ANA UYGULAMA EKRANI
+  // ANA UYGULAMA EKRANI (misafir olarak doğrudan açılır; üyelik isteğe bağlı)
   return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${darkMode ? 'bg-slate-900 text-slate-100' : 'bg-slate-50 text-slate-800'}`}>
+    <div
+      className={`min-h-screen font-sans transition-colors duration-500 mesh-bg ${darkMode ? 'dark text-slate-100' : 'text-slate-800'}`}
+      style={surfaceStyle}
+    >
       
       {/* ÜST BAR (HEADER) */}
-      <header className={`p-4 md:px-8 border-b ${darkMode ? 'bg-slate-900 border-slate-800' : 'bg-white border-slate-100'} sticky top-0 z-50 shadow-sm`}>
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          
-          {/* Logo ve Slogan */}
-          <div className="flex items-center gap-3">
-            <div className={`p-2.5 rounded-2xl text-white bg-gradient-to-tr ${activeTheme.gradient} shadow-md`}>
-              <Sparkles className="h-6 w-6 animate-pulse" />
-            </div>
-            <div>
+      <header className={`site-content-layer sticky top-0 z-50 border-b glass-panel ${darkMode ? activeTheme.borderDark : activeTheme.borderLight}`}>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
-                  {SITE_NAME}
-                </span>
-                <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold text-white ${activeTheme.bg}`}>
-                  v1.5
+                <BrandWordmark
+                  size="lg"
+                  gradientClass={activeTheme.logoGradient}
+                  frameClassName={`bg-gradient-to-tr ${activeTheme.gradient}`}
+                />
+                <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold text-white ${activeTheme.bg}`}>
+                  v2.0
                 </span>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{SITE_TAGLINE.toUpperCase()}</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium truncate">{SITE_TAGLINE}</p>
             </div>
           </div>
 
-          {/* Menü ve Ayarlar */}
-          <div className="flex flex-wrap items-center gap-3 w-full md:w-auto justify-center">
-            
-            {/* Kullanıcı Rozeti ve Düzenleme Butonu */}
+          <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={openEditProfile}
-              className={`flex items-center gap-2 text-xs px-3 py-2 rounded-xl border font-bold transition-all ${
-                darkMode ? 'bg-slate-800 border-slate-700 hover:bg-slate-700 text-indigo-400' : 'bg-indigo-50 border-indigo-100 hover:bg-indigo-100/60 text-indigo-700'
-              }`}
+              className={`header-chip ${darkMode ? `header-chip-dark ${activeTheme.headerChipDark}` : `header-chip-light ${activeTheme.headerChipLight}`}`}
               title="Profilimi Düzenle"
             >
-              <User className="h-3.5 w-3.5" />
-              <span>{userProfile.name} ({userProfile.field})</span>
-              <Settings className="h-3 w-3 opacity-60" />
+              <User className="h-3.5 w-3.5 shrink-0" />
+              <span className="truncate max-w-[140px]">
+                {member ? getMemberDisplayName(member) : 'Misafir'}
+              </span>
+              <Settings className="h-3 w-3 opacity-60 shrink-0" />
             </button>
 
-            {/* Renk Seçici (Palet) */}
-            <div className={`flex items-center gap-1.5 p-1.5 rounded-xl border ${darkMode ? 'bg-slate-800 border-slate-700' : 'bg-slate-50 border-slate-200'}`}>
-              <span className="text-[10px] font-bold text-slate-400 px-1">TON:</span>
-              {['indigo', 'pink', 'amber', 'teal', 'violet'].map(color => (
-                <button
-                  key={color}
-                  onClick={() => setThemeColor(color)}
-                  className={`w-4 h-4 rounded-full transition-transform ${
-                    color === 'indigo' ? 'bg-indigo-600' :
-                    color === 'pink' ? 'bg-pink-600' :
-                    color === 'amber' ? 'bg-amber-500' :
-                    color === 'teal' ? 'bg-teal-600' : 'bg-violet-600'
-                  } ${themeColor === color ? 'scale-125 ring-2 ring-slate-400' : 'hover:scale-110'}`}
-                  title={`${color.toUpperCase()} Tema`}
-                />
-              ))}
+            <div className={`hidden sm:flex items-center gap-1 p-1 rounded-xl border ${darkMode ? 'bg-slate-800/80 border-slate-700' : 'bg-white/80 border-slate-200'}`}>
+              {THEME_OPTIONS.map((color) => {
+                const swatchTheme = getThemeClasses(color);
+                return (
+                  <button
+                    key={color}
+                    type="button"
+                    onClick={() => setThemeColor(color)}
+                    className={`w-4 h-4 rounded-full transition-transform ${swatchTheme.swatch} ${
+                      themeColor === color ? `scale-125 ring-2 ${activeTheme.pickerRing}` : 'hover:scale-110'
+                    }`}
+                    title={THEME_LABELS[color]}
+                  />
+                );
+              })}
             </div>
 
-            {member ? (
+            <button
+              type="button"
+              onClick={() => setShowGuideModal(true)}
+              className={`header-chip ${darkMode ? `header-chip-dark ${activeTheme.headerChipDark}` : `header-chip-light ${activeTheme.headerChipLight}`}`}
+              title="Kılavuz"
+            >
+              <BookOpen className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">KILAVUZ</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleShare}
+              className={`header-chip ${darkMode ? `header-chip-dark ${activeTheme.headerChipDark}` : `header-chip-light ${activeTheme.headerChipLight}`}`}
+            >
+              <Share2 className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">PAYLAŞ</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setDarkMode(!darkMode)}
+              className={`p-2 rounded-xl border transition-all ${
+                darkMode ? 'bg-slate-800 border-slate-700 text-amber-400' : 'bg-white border-slate-200 text-slate-600'
+              }`}
+              title={darkMode ? 'Açık Tema' : 'Koyu Tema'}
+            >
+              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            </button>
+
+            {admin && (
               <button
-                onClick={() => setActiveTab('uyepanel')}
-                className={`flex items-center gap-1 text-xs px-3 py-2 rounded-xl border font-semibold transition-all ${
-                  darkMode ? 'bg-slate-800 border-slate-700 hover:bg-slate-700 text-violet-300' : 'bg-violet-50 border-violet-100 hover:bg-violet-100 text-violet-700'
-                }`}
-                title="Üye paneli"
+                type="button"
+                onClick={handleAdminLogout}
+                className="auth-btn border border-violet-500 text-violet-600 dark:text-violet-400"
+                title="Admin ve üye çıkışı"
               >
-                <User className="h-3.5 w-3.5" />
-                <span>{getMemberDisplayName(member).split(' ')[0]}</span>
-              </button>
-            ) : (
-              <button
-                onClick={() => setShowMemberAuth(true)}
-                className={`flex items-center gap-1 text-xs px-3 py-2 rounded-xl border font-semibold transition-all ${
-                  darkMode ? 'bg-slate-800 border-slate-700 hover:bg-slate-700 text-violet-300' : 'bg-violet-50 border-violet-100 hover:bg-violet-100 text-violet-700'
-                }`}
-              >
-                <User className="h-3.5 w-3.5" />
-                <span>ÜYE OL</span>
+                <Shield className="h-4 w-4" />
+                <span className="hidden sm:inline">ADMIN</span>
               </button>
             )}
 
-            <button
-              onClick={() => {
-                setSelectedArticle(USAGE_GUIDE);
-                setActiveTab('kutuphane');
-              }}
-              className={`flex items-center gap-1 text-xs px-3 py-2 rounded-xl border font-semibold transition-all ${
-                darkMode ? 'bg-slate-800 border-slate-700 hover:bg-slate-700 text-sky-300' : 'bg-sky-50 border-sky-100 hover:bg-sky-100 text-sky-700'
-              }`}
-              title="Site kullanım kılavuzu"
-            >
-              <BookOpen className="h-3.5 w-3.5" />
-              <span>KILAVUZ</span>
-            </button>
-
-            {/* Paylaş Butonu */}
-            <button 
-              onClick={handleShare}
-              className={`flex items-center gap-1 text-xs px-3 py-2 rounded-xl border font-semibold transition-all ${
-                darkMode ? 'bg-slate-800 border-slate-700 hover:bg-slate-700 text-slate-300' : 'bg-white border-slate-200 hover:bg-slate-50 text-slate-600'
-              }`}
-            >
-              <Share2 className="h-3.5 w-3.5" />
-              <span>PAYLAŞ</span>
-            </button>
-
-            <button
-              onClick={handleLogout}
-              className={`flex items-center gap-1 text-xs px-3 py-2 rounded-xl border font-semibold transition-all ${
-                darkMode ? 'bg-slate-800 border-slate-700 hover:bg-slate-700 text-rose-300' : 'bg-white border-slate-200 hover:bg-rose-50 text-rose-600'
-              }`}
-              title="Çıkış Yap"
-            >
-              <LogOut className="h-3.5 w-3.5" />
-              <span>ÇIKIŞ</span>
-            </button>
-
-            {/* Karanlık Mod Butonu */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-xl border transition-all ${
-                darkMode ? 'bg-slate-800 border-slate-700 text-amber-400 hover:bg-slate-700' : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
-              }`}
-              title={darkMode ? 'Açık Tema' : 'Koyu Tema'}
-              aria-label={darkMode ? 'Açık temaya geç' : 'Koyu temaya geç'}
-            >
-              {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </button>
-
-            {/* Navigasyon Sekmeleri */}
-            <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+            {member && !admin ? (
               <button
-                onClick={() => setActiveTab('panel')}
-                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                  activeTab === 'panel' 
-                    ? `${activeTheme.bg} text-white shadow-sm` 
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
+                type="button"
+                onClick={handleAuthButton}
+                className="auth-btn auth-btn-logout"
+                title="Çıkış Yap"
               >
-                PANEL
+                <LogOut className="h-4 w-4" />
+                <span>ÇIKIŞ</span>
               </button>
+            ) : !member ? (
               <button
-                onClick={() => setActiveTab('merkez')}
-                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                  activeTab === 'merkez'
-                    ? `${activeTheme.bg} text-white shadow-sm`
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
+                type="button"
+                onClick={handleAuthButton}
+                className={`auth-btn text-white bg-gradient-to-r ${activeTheme.gradient} hover:opacity-90 shadow-md`}
+                title="Giriş Yap"
               >
-                🧠 ZEKA MERKEZİ
+                <LogIn className="h-4 w-4" />
+                <span>GİRİŞ</span>
               </button>
-              <button
-                onClick={() => setActiveTab('sorucozucu')}
-                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                  activeTab === 'sorucozucu' 
-                    ? `${activeTheme.bg} text-white shadow-sm` 
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
-              >
-                💡 AI SORU ÇÖZÜCÜ
-              </button>
-              <button
-                onClick={() => setActiveTab('planlayici')}
-                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                  activeTab === 'planlayici' 
-                    ? `${activeTheme.bg} text-white shadow-sm` 
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
-              >
-                PLANLAYICI
-              </button>
-              <button
-                onClick={() => setActiveTab('kutuphane')}
-                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                  activeTab === 'kutuphane' 
-                    ? `${activeTheme.bg} text-white shadow-sm` 
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
-              >
-                KÜTÜPHANE
-              </button>
-              <button
-                onClick={() => setActiveTab('sinavlar')}
-                className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                  activeTab === 'sinavlar' 
-                    ? `${activeTheme.bg} text-white shadow-sm` 
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                }`}
-              >
-                GRAFİKLER
-              </button>
-              {member && (
-                <button
-                  onClick={() => setActiveTab('uyepanel')}
-                  className={`text-xs px-3 py-1.5 rounded-lg font-bold transition-all ${
-                    activeTab === 'uyepanel'
-                      ? `${activeTheme.bg} text-white shadow-sm`
-                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                  }`}
-                >
-                  ÜYE PANELİ
-                </button>
-              )}
-            </div>
-
+            ) : null}
           </div>
         </div>
+
+        <nav className="max-w-7xl mx-auto px-4 md:px-8 pb-3">
+          <div className={`nav-rail flex flex-wrap gap-1 p-1.5 rounded-2xl border ${activeTheme.navRail}`}>
+            {[
+              ...(member ? [{ id: 'panel', label: 'Panel' }] : []),
+              { id: 'merkez', label: 'Zeka Merkezi' },
+              { id: 'sorucozucu', label: 'AI Soru Çözücü' },
+              { id: 'planlayici', label: 'Planlayıcı' },
+              { id: 'kutuphane', label: 'Kütüphane' },
+              { id: 'ulusalsinav', label: 'Ulusal Sınavlar' },
+              ...(member
+                ? [
+                    { id: 'sinavlar', label: 'Grafikler' },
+                    { id: 'uyepanel', label: 'Üye Paneli' },
+                  ]
+                : []),
+              ...(admin ? [{ id: 'admin', label: 'Admin' }] : []),
+            ].map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                className={`nav-pill ${activeTab === tab.id ? `nav-pill-active ${activeTheme.bg} ${activeTheme.navShadow}` : `nav-pill-idle ${activeTheme.navPillIdle}`}`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </nav>
       </header>
+
+      <section className={`site-content-layer hero-strip relative overflow-hidden border-b bg-gradient-to-r ${activeTheme.heroStrip} ${darkMode ? activeTheme.borderDark : activeTheme.borderLight}`}>
+        <div className={`hero-glow -top-12 right-1/4 w-48 h-48 ${activeTheme.lightBg} opacity-40`} aria-hidden />
+        <div className={`hero-glow bottom-0 left-1/3 w-36 h-36 bg-violet-400/20 opacity-50`} style={{ animationDelay: '2s' }} aria-hidden />
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-5 flex flex-col md:flex-row md:items-center justify-between gap-4 relative">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">Kişisel sınav koçluğu</p>
+            <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight">
+              {member
+                ? `Hoş geldin, ${getMemberDisplayName(member).split(' ')[0]}`
+                : 'Misafir olarak keşfet'}
+            </h1>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-xl">
+              {admin && member
+                ? 'Admin oturumu: yönetim paneli ile birlikte Panel, Grafikler, AI koç ve tüm üye hizmetleri kullanılabilir.'
+                : member
+                  ? 'LGS · YKS · KPSS · ALES — deneme takibi, grafikler ve kişisel AI koç seninle.'
+                  : 'Zeka Merkezi, soru çözücü, planlayıcı, kütüphane ve ulusal sınav arşivi açık. Panel, grafikler ve AI koç için giriş yapın.'}
+            </p>
+          </div>
+          {!member && (
+            <button
+              type="button"
+              onClick={() => openMemberAuth('login')}
+              className={`shrink-0 px-5 py-3 rounded-2xl text-sm font-bold text-white bg-gradient-to-r ${activeTheme.gradient} shadow-lg hover:scale-[1.02] transition-transform`}
+            >
+              Hemen Giriş Yap
+            </button>
+          )}
+        </div>
+      </section>
 
       {/* PROFIL DÜZENLEME MODALI */}
       {isEditingProfile && (
@@ -1745,7 +1726,7 @@ export default function App() {
           <div className={`w-full max-w-md rounded-2xl p-6 shadow-2xl border text-center ${
             darkMode ? 'bg-slate-900 border-slate-800 text-slate-100' : 'bg-white border-slate-200 text-slate-800'
           }`}>
-            <h3 className="text-sm font-black uppercase tracking-wider mb-2 text-indigo-500">{notification.title}</h3>
+            <h3 className={`text-sm font-black uppercase tracking-wider mb-2 ${activeTheme.text}`}>{notification.title}</h3>
             <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap leading-relaxed mb-6">{notification.message}</p>
             <button
               onClick={() => setNotification(null)}
@@ -1761,100 +1742,196 @@ export default function App() {
         <MemberAuthModal
           darkMode={darkMode}
           activeTheme={activeTheme}
+          initialMode={memberAuthMode}
           onClose={() => setShowMemberAuth(false)}
           onSuccess={handleMemberAuthSuccess}
+          onAdminSuccess={handleAdminAuthSuccess}
         />
       )}
 
-      {/* METRİK KARTLARI (ÖZET PANELİ) */}
-      <section className="p-4 md:p-8 max-w-7xl mx-auto">
+      {passwordResetToken && (
+        <PasswordResetModal
+          darkMode={darkMode}
+          activeTheme={activeTheme}
+          token={passwordResetToken}
+          onClose={() => {
+            setPasswordResetToken(null);
+            window.history.replaceState(null, '', window.location.pathname + window.location.search);
+          }}
+          onSuccess={() => {
+            setNotification({
+              title: 'Şifre güncellendi',
+              message: 'Yeni şifrenizle giriş yapabilirsiniz.',
+            });
+            openMemberAuth('login');
+          }}
+        />
+      )}
+
+      {showGuideModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 overflow-y-auto max-h-[85vh] shadow-2xl relative ${
+            darkMode ? 'bg-slate-800 text-slate-100' : 'bg-white text-slate-800'
+          }`}>
+            <button
+              type="button"
+              onClick={() => setShowGuideModal(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-rose-500 p-1 rounded-lg transition-colors"
+              aria-label="Kılavuzu kapat"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="flex items-center gap-3 mb-4">
+              <BrandWordmark
+                size="md"
+                gradientClass={activeTheme.logoGradient}
+                frameClassName={`bg-gradient-to-tr ${activeTheme.gradient}`}
+              />
+              <div className="flex flex-wrap gap-2 items-center">
+                <span className={`text-[10px] font-extrabold px-2.5 py-1 text-white rounded-md ${activeTheme.bg}`}>
+                  {USAGE_GUIDE.category}
+                </span>
+                <span className="text-[10px] text-slate-400">{USAGE_GUIDE.readTime}</span>
+              </div>
+            </div>
+            <h2 className="font-extrabold text-lg md:text-xl mb-4">{USAGE_GUIDE.title}</h2>
+            <p className="text-[11px] font-bold text-slate-400 mb-6">Yazar: {USAGE_GUIDE.author}</p>
+            <div className="text-xs md:text-sm leading-relaxed whitespace-pre-wrap text-slate-700 dark:text-slate-300">
+              {USAGE_GUIDE.content}
+            </div>
+            <div className="mt-8 border-t pt-4 dark:border-slate-700 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setShowGuideModal(false)}
+                className={`px-6 py-2 rounded-xl text-white font-bold text-xs ${activeTheme.bg} ${activeTheme.hover}`}
+              >
+                Kapat
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* METRİK KARTLARI — yalnızca üyeler (Panel / Grafikler) */}
+      {member && (
+      <section className="site-content-layer p-4 md:p-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           
           {/* NET ORTALAMASI */}
-          <div className={`p-5 rounded-2xl border transition-all ${darkMode ? 'bg-slate-800/50 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm flex justify-between items-center`}>
-            <div>
+          <div className={`metric-card group relative flex justify-between items-center pl-6 ${activeTheme.metricBorder}`}>
+            <span className={`metric-card-accent bg-gradient-to-b ${activeTheme.metricAccent}`} />
+            <div className="relative z-[1]">
               <p className="text-[11px] font-bold text-slate-400 tracking-wider uppercase">NET ORTALAMASI</p>
               <div className="flex items-baseline gap-2 mt-1">
-                <span className="text-3xl font-extrabold tracking-tight">{metrics.avgNet}</span>
-                <span className="text-sm font-semibold text-slate-500">Net</span>
+                <span className="text-3xl font-extrabold tracking-tight">
+                  {metrics.examCount === 0 ? '—' : metrics.avgNet}
+                </span>
+                {metrics.examCount > 0 && (
+                  <span className="text-sm font-semibold text-slate-500">Net</span>
+                )}
               </div>
-              <p className="text-xs text-emerald-500 font-bold flex items-center gap-1 mt-1">
-                <span>↗ Son 3 sınavda artışta</span>
+              <p className={`text-xs font-medium mt-1 ${metrics.examCount === 0 ? 'text-slate-400' : 'text-emerald-500 font-bold'}`}>
+                {metrics.examCount === 0 ? 'Henüz sınav girilmedi' : '↗ Son 3 sınavda artışta'}
               </p>
             </div>
-            <div className={`p-3.5 rounded-2xl ${activeTheme.lightBg} ${activeTheme.darkText}`}>
+            <div className={`icon-well relative z-[1] ${activeTheme.lightBg} ${activeTheme.darkText}`}>
               <Target className="h-6 w-6" />
             </div>
           </div>
 
           {/* DOĞRULUK ORANI */}
-          <div className={`p-5 rounded-2xl border transition-all ${darkMode ? 'bg-slate-800/50 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm flex justify-between items-center`}>
-            <div>
+          <div className={`metric-card group relative flex justify-between items-center pl-6 ${activeTheme.metricBorder}`}>
+            <span className={`metric-card-accent bg-gradient-to-b ${activeTheme.metricAccent}`} />
+            <div className="relative z-[1]">
               <p className="text-[11px] font-bold text-slate-400 tracking-wider uppercase">DOĞRULUK ORANI</p>
               <div className="flex items-baseline gap-2 mt-1">
-                <span className="text-3xl font-extrabold tracking-tight">%{metrics.avgAccuracy}</span>
+                <span className="text-3xl font-extrabold tracking-tight">
+                  {metrics.examCount === 0 ? '—' : `%${metrics.avgAccuracy}`}
+                </span>
               </div>
-              <p className="text-xs text-slate-400 font-medium mt-1">Hataları azaltma hedefi</p>
+              <p className="text-xs text-slate-400 font-medium mt-1">
+                {metrics.examCount === 0 ? 'Sınav ekleyince hesaplanır' : 'Hataları azaltma hedefi'}
+              </p>
             </div>
-            <div className={`p-3.5 rounded-2xl ${activeTheme.lightBg} ${activeTheme.darkText}`}>
+            <div className={`icon-well relative z-[1] ${activeTheme.lightBg} ${activeTheme.darkText}`}>
               <Award className="h-6 w-6" />
             </div>
           </div>
 
           {/* DENEME SAYISI */}
-          <div className={`p-5 rounded-2xl border transition-all ${darkMode ? 'bg-slate-800/50 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm flex justify-between items-center`}>
-            <div>
+          <div className={`metric-card group relative flex justify-between items-center pl-6 ${activeTheme.metricBorder}`}>
+            <span className={`metric-card-accent bg-gradient-to-b ${activeTheme.metricAccent}`} />
+            <div className="relative z-[1]">
               <p className="text-[11px] font-bold text-slate-400 tracking-wider uppercase">DENEME SAYISI</p>
               <div className="flex items-baseline gap-2 mt-1">
-                <span className="text-3xl font-extrabold tracking-tight">{metrics.examCount} Adet</span>
+                <span className="text-3xl font-extrabold tracking-tight">
+                  {metrics.examCount === 0 ? '0' : metrics.examCount} Adet
+                </span>
               </div>
-              <p className="text-xs text-slate-400 font-medium mt-1">YKS Hedefine Hazırlık</p>
+              <p className="text-xs text-slate-400 font-medium mt-1">
+                {metrics.examCount === 0 ? 'İlk denemenizi kaydedin' : 'YKS Hedefine Hazırlık'}
+              </p>
             </div>
-            <div className="p-3.5 rounded-2xl bg-rose-50 text-rose-500 dark:bg-rose-900/20 dark:text-rose-400">
+            <div className="icon-well relative z-[1] bg-rose-50 text-rose-500 dark:bg-rose-900/20 dark:text-rose-400">
               <Calendar className="h-6 w-6" />
             </div>
           </div>
 
           {/* HEDEF ÜNİVERSİTE / SIRALAMA */}
-          <div className={`p-5 rounded-2xl border transition-all ${darkMode ? 'bg-slate-800/50 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm flex justify-between items-center`}>
-            <div>
+          <div className={`metric-card group relative flex justify-between items-center pl-6 ${activeTheme.metricBorder}`}>
+            <span className={`metric-card-accent bg-gradient-to-b ${activeTheme.metricAccent}`} />
+            <div className="relative z-[1]">
               <p className="text-[11px] font-bold text-slate-400 tracking-wider uppercase">HEDEFİNİZ</p>
               <div className="flex flex-col mt-1">
-                <span className={`text-sm font-black truncate max-w-[180px] ${activeTheme.text}`} title={userProfile.targetUniv}>
-                  {userProfile.targetUniv}
-                </span>
-                <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold truncate max-w-[180px]" title={userProfile.targetDept}>
-                  {userProfile.targetDept}
-                </span>
+                {effectiveProfile.targetUniv !== GUEST_PROFILE.targetUniv ? (
+                  <>
+                    <span className={`text-sm font-black truncate max-w-[180px] ${activeTheme.text}`} title={effectiveProfile.targetUniv}>
+                      {effectiveProfile.targetUniv}
+                    </span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-semibold truncate max-w-[180px]" title={effectiveProfile.targetDept}>
+                      {effectiveProfile.targetDept}
+                    </span>
+                  </>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={openEditProfile}
+                    className="text-sm font-semibold text-left text-slate-400 hover:text-purple-500 transition-colors"
+                  >
+                    Profilden hedef belirle
+                  </button>
+                )}
               </div>
-              <p className="text-[10px] text-purple-500 font-bold flex items-center gap-1 mt-1">
-                <span>🎯 Günlük Hedef: {userProfile.dailyTargetHours} Saat</span>
+              <p className="text-[10px] text-purple-500 font-bold flex items-center gap-1.5 mt-1">
+                <Target className="h-3.5 w-3.5 shrink-0" />
+                <span>Günlük Hedef: {effectiveProfile.dailyTargetHours} Saat</span>
               </p>
             </div>
-            <div className="p-3.5 rounded-2xl bg-emerald-50 text-emerald-500 dark:bg-emerald-950/20 dark:text-emerald-400">
+            <div className="icon-well relative z-[1] bg-emerald-50 text-emerald-500 dark:bg-emerald-950/20 dark:text-emerald-400">
               <GraduationCap className="h-6 w-6" />
             </div>
           </div>
 
         </div>
       </section>
+      )}
 
       {/* ANA İÇERİK ALANI */}
-      <main className="px-4 md:px-8 pb-16 max-w-7xl mx-auto">
+      <main className="site-content-layer px-4 md:px-8 pb-16 max-w-7xl mx-auto">
         
-        {/* TAB 1: PANEL (SINAV GİRİŞİ, DERS ORTALAMALARI & AI KOÇ CHAT) */}
-        {activeTab === 'panel' && (
+        {/* TAB 1: PANEL (SINAV GİRİŞİ, DERS ORTALAMALARI & AI KOÇ CHAT) — üyelere özel */}
+        {activeTab === 'panel' && member && (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fadeIn">
             
             {/* SOL VE ORTA ALAN: GİRİŞ PANELİ VE DERS ORTALAMALARI */}
             <div className="lg:col-span-2 space-y-6">
               
               {/* Sınav Giriş Paneli */}
-              <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
+              <div className="intel-card p-6">
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b pb-4 mb-6 dark:border-slate-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className={`h-5 w-5 ${activeTheme.text}`} />
-                    <h2 className="font-extrabold text-lg tracking-tight uppercase">SINAV SONUCU GİRİŞ PANELİ</h2>
+                    <h2 className="font-display font-extrabold text-lg tracking-tight uppercase">SINAV SONUCU GİRİŞ PANELİ</h2>
                   </div>
                   
                   <div className="flex gap-3 text-[10px] uppercase font-bold tracking-wider">
@@ -2037,36 +2114,43 @@ export default function App() {
                     type="submit"
                     className={`w-full py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-tr ${activeTheme.gradient} ${activeTheme.hover} shadow-md transition-all flex items-center justify-center gap-2`}
                   >
-                    <span>Sınav Kaydet & Analiz Et ➔</span>
+                    <span>Sınav Kaydet & Analiz Et</span>
+                    <ArrowRight className="h-4 w-4" />
                   </button>
                 </form>
               </div>
 
               {/* DERSLERE GÖRE NET ORTALAMASI & RADAR GRAFİĞİ */}
-              <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
+              <div className="intel-card p-6">
                 <div className="flex justify-between items-center border-b pb-4 mb-6 dark:border-slate-700">
                   <div>
-                    <h3 className="font-extrabold text-base tracking-tight uppercase">DERSLERE GÖRE NET ORTALAMASI</h3>
+                    <h3 className="font-display font-extrabold text-base tracking-tight uppercase">DERSLERE GÖRE NET ORTALAMASI</h3>
                     <p className="text-[11px] text-slate-400 font-semibold uppercase">Ders bazında şimdiye kadar yaptığın denemelerin performans grafiği</p>
                   </div>
-                  <span className="text-xs font-bold text-indigo-500 bg-indigo-50 dark:bg-indigo-950/30 px-3 py-1.5 rounded-xl">Hedef: %100 Başarı</span>
+                  <span className={`text-xs font-bold ${activeTheme.textMuted} ${activeTheme.lightBg} dark:bg-slate-800/40 px-3 py-1.5 rounded-xl`}>Hedef: %100 Başarı</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
                   {/* Sol Sütun: Yatay Bar Oranları */}
                   <div className="md:col-span-7 space-y-5">
-                    {subjectAverages.map((sub, i) => {
+                    {exams.length === 0 ? (
+                      <div className="text-center py-10 text-sm text-slate-400">
+                        Henüz deneme sınavı yok. Sol panelden ilk sınavınızı kaydettiğinizde ders bazlı grafikler burada görünecek.
+                      </div>
+                    ) : subjectAverages.map((sub, i) => {
                       let barColor = 'bg-violet-500';
-                      let iconStr = '📐';
-                      if (sub.subject.includes('Türkçe')) { barColor = 'bg-rose-500'; iconStr = '✍️'; }
-                      if (sub.subject.includes('Fen')) { barColor = 'bg-emerald-500'; iconStr = '🧪'; }
-                      if (sub.subject.includes('Sosyal')) { barColor = 'bg-amber-500'; iconStr = '🌍'; }
+                      let SubjectIcon = Calculator;
+                      if (sub.subject.includes('Türkçe')) { barColor = 'bg-rose-500'; SubjectIcon = PenLine; }
+                      if (sub.subject.includes('Fen')) { barColor = 'bg-emerald-500'; SubjectIcon = FlaskConical; }
+                      if (sub.subject.includes('Sosyal')) { barColor = 'bg-amber-500'; SubjectIcon = Globe; }
 
                       return (
                         <div key={i} className="space-y-2">
                           <div className="flex justify-between items-center text-xs">
                             <span className="font-bold flex items-center gap-2">
-                              <span>{iconStr}</span>
+                              <span className={`p-1 rounded-md ${activeTheme.lightBg}`}>
+                                <SubjectIcon className={`h-3.5 w-3.5 ${activeTheme.text}`} />
+                              </span>
                               <span>{sub.subject}</span>
                             </span>
                             <div className="flex items-center gap-2 font-black">
@@ -2099,8 +2183,8 @@ export default function App() {
                           <Radar 
                             name="Performans %" 
                             dataKey="Ort. Alanı" 
-                            stroke={themeColor === 'indigo' ? '#4f46e5' : themeColor === 'pink' ? '#db2777' : themeColor === 'amber' ? '#f59e0b' : themeColor === 'teal' ? '#0d9488' : '#7c3aed'} 
-                            fill={themeColor === 'indigo' ? '#4f46e5' : themeColor === 'pink' ? '#db2777' : themeColor === 'amber' ? '#f59e0b' : themeColor === 'teal' ? '#0d9488' : '#7c3aed'} 
+                            stroke={activeTheme.chartStroke}
+                            fill={activeTheme.chartFill} 
                             fillOpacity={0.3} 
                           />
                         </RadarChart>
@@ -2116,24 +2200,38 @@ export default function App() {
             <div className="space-y-6">
               
               {/* AI KOÇ INTERACTIVE CHAT */}
-              <div className={`p-6 rounded-3xl border relative overflow-hidden ${
-                darkMode ? 'bg-slate-800/20 border-slate-700/60' : 'bg-indigo-50/30 border-indigo-100'
+              <div className={`intel-card p-6 rounded-3xl relative overflow-hidden border ${activeTheme.intelBorder} ${
+                darkMode ? 'bg-slate-800/30' : activeTheme.surfaceTint
               }`}>
                 {/* Arka Plan AI Halo Efekti */}
                 <div className={`absolute top-0 right-0 w-36 h-36 rounded-full filter blur-3xl opacity-10 ${activeTheme.bg}`} />
 
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="p-1.5 rounded-xl bg-indigo-500 text-white shadow-sm">
-                    <Sparkles className="h-4 w-4 animate-bounce" />
-                  </div>
-                  <div>
-                    <h3 className="font-extrabold text-base tracking-tight">{SITE_NAME}</h3>
-                    <p className="text-[9px] text-slate-400 font-bold uppercase">YKS REHBERLİK & SINAV ORTAĞIN</p>
-                  </div>
+                <div className="mb-4">
+                  <BrandWordmark
+                    as="h3"
+                    size="md"
+                    gradientClass={activeTheme.logoGradient}
+                    frameClassName={`bg-gradient-to-tr ${activeTheme.gradient}`}
+                  />
+                  <p className="text-[9px] text-slate-400 font-bold uppercase mt-1">ULUSAL SINAV KOÇLUĞU & KİŞİSEL REHBER</p>
                 </div>
 
+                {trafficHighlights.totalEvents > 0 && (
+                  <div className={`mb-3 text-[10px] font-semibold rounded-xl px-3 py-2.5 border ${darkMode ? 'bg-slate-900/50 border-slate-700 text-slate-300' : 'bg-white/70 border-slate-200 text-slate-600'}`}>
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <Activity className={`h-3 w-3 ${activeTheme.text}`} />
+                      <span className="font-bold uppercase tracking-wide">Kişisel trafik özeti</span>
+                    </div>
+                    <span>
+                      {trafficHighlights.topTabs.length > 0 && `En aktif: ${trafficHighlights.topTabs.join(' · ')}`}
+                      {trafficHighlights.inferredExam && ` · Odak: ${trafficHighlights.inferredExam}`}
+                      {` · ${trafficHighlights.chatCount} sohbet · ${trafficHighlights.examAdds} deneme`}
+                    </span>
+                  </div>
+                )}
+
                 <p className="mb-3 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/40 rounded-xl px-3 py-2">
-                  Üst seviye yerel AI — hava, namaz, takvim ve güncel bilimi takip eder. API anahtarı gerekmez.
+                  LGS, YKS, KPSS, ALES ve tüm ulusal sınavlarda kişisel koçluk — site trafiğinizi analiz eder. API anahtarı gerekmez.
                   {worldSnapshot && (
                     <span className="block mt-1 text-slate-500 dark:text-slate-400">
                       {worldSnapshot.settlement.displayName} · {worldSnapshot.currentTemp ?? '—'}°C · {worldSnapshot.prayer.nextPrayer} {worldSnapshot.prayer.nextPrayerTime}
@@ -2154,16 +2252,16 @@ export default function App() {
 
                 {aiAnalysis && (
                   <div className={`mb-4 rounded-2xl p-4 border text-xs leading-relaxed whitespace-pre-wrap ${
-                    darkMode ? 'bg-slate-900/70 border-slate-700 text-slate-200' : 'bg-white border-indigo-100 text-slate-700'
+                    darkMode ? 'bg-slate-900/70 border-slate-700 text-slate-200' : `bg-white ${activeTheme.surfacePanel} text-slate-700`
                   }`}>
-                    <p className="text-[9px] font-extrabold uppercase tracking-wider text-indigo-500 mb-2">Detaylı AI Analizi</p>
+                    <p className={`text-[9px] font-extrabold uppercase tracking-wider ${activeTheme.textMuted} mb-2`}>Detaylı AI Analizi</p>
                     {aiAnalysis}
                   </div>
                 )}
 
                 {/* Sohbet Kutusu Akışı */}
                 <div className={`rounded-2xl p-4 border mb-4 ${
-                  darkMode ? 'bg-slate-900/60 border-slate-800' : 'bg-white border-indigo-50'
+                  darkMode ? 'bg-slate-900/60 border-slate-800' : `bg-white ${activeTheme.surfaceBorder}`
                 }`}>
                   <div className="space-y-3 h-64 overflow-y-auto mb-3 pr-1 scrollbar-thin">
                     {chatHistory.map((msg) => (
@@ -2173,8 +2271,16 @@ export default function App() {
                             ? `${activeTheme.bg} text-white`
                             : darkMode ? 'bg-slate-800 text-slate-200' : 'bg-slate-50 text-slate-700'
                         }`}>
-                          <p className="font-extrabold text-[9px] uppercase tracking-wider mb-1 opacity-70">
-                            {msg.role === 'user' ? 'Siz' : SITE_NAME}
+                          <p className="font-extrabold text-[9px] uppercase tracking-wider mb-1 opacity-70 flex items-center gap-1.5">
+                            {msg.role === 'user' ? (
+                              'Siz'
+                            ) : (
+                              <BrandWordmark
+                                size="xs"
+                                gradient={false}
+                                className="normal-case opacity-100"
+                              />
+                            )}
                           </p>
                           <p className="whitespace-pre-wrap">{msg.text}</p>
                         </div>
@@ -2183,8 +2289,14 @@ export default function App() {
                     {aiLoadingMode === 'chat' && (
                       <div className="flex justify-start">
                         <div className="max-w-[80%] rounded-2xl p-3 text-xs bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-indigo-500 animate-ping" />
-                          <span>{SITE_NAME} analiz ediyor...</span>
+                          <BrandWordmark
+                            size="xs"
+                            gradient={false}
+                            logoVariant="loading"
+                            frameClassName={`bg-gradient-to-tr ${activeTheme.gradient}`}
+                            className="normal-case"
+                          />
+                          <span>analiz ediyor...</span>
                         </div>
                       </div>
                     )}
@@ -2195,10 +2307,13 @@ export default function App() {
                     <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-2">Önerilen Sorular:</p>
                     <div className="flex flex-col gap-1.5">
                       {[
-                        `Benim gibi bir ${userProfile.field} öğrencisi için ders çalışma tüyoları nelerdir?`,
-                        `Hedefim ${userProfile.targetDept}. Sınava nasıl odaklanmalıyım?`,
+                        `Benim gibi bir ${effectiveProfile.field} öğrencisi için ders çalışma tüyoları nelerdir?`,
+                        effectiveProfile.targetDept !== GUEST_PROFILE.targetDept
+                          ? `Hedefim ${effectiveProfile.targetDept}. Sınava nasıl odaklanmalıyım?`
+                          : 'YKS için kişisel çalışma planı önerir misin?',
+                        'Ulusal sınav arşivi istatistiklerime göre hangi alanlara odaklanmalıyım?',
+                        'Site trafiğime göre bana özel koçluk önerisi verir misin?',
                         'Matematik netlerimi nasıl artırabilirim?',
-                        'Zaman yönetimi için pratik ipuçları verir misin?'
                       ].map((q, idx) => (
                         <button
                           key={idx}
@@ -2230,7 +2345,7 @@ export default function App() {
                       disabled={aiLoadingMode === 'chat'}
                       className={`p-2.5 rounded-xl text-white font-bold text-xs flex items-center justify-center ${activeTheme.bg} ${activeTheme.hover} transition-all disabled:opacity-50`}
                     >
-                      ✈
+                      <Send className="h-4 w-4" />
                     </button>
                   </form>
                 </div>
@@ -2254,7 +2369,9 @@ export default function App() {
                       translateDirection === 'TR_EN' ? `${activeTheme.bg} text-white` : 'bg-slate-100 dark:bg-slate-800'
                     }`}
                   >
-                    Türkçe ➔ İngilizce
+                    <span className="inline-flex items-center justify-center gap-1">
+                      TR <ArrowRight className="h-3 w-3" /> EN
+                    </span>
                   </button>
                   <button
                     onClick={() => setTranslateDirection('EN_TR')}
@@ -2262,7 +2379,9 @@ export default function App() {
                       translateDirection === 'EN_TR' ? `${activeTheme.bg} text-white` : 'bg-slate-100 dark:bg-slate-800'
                     }`}
                   >
-                    İngilizce ➔ Türkçe
+                    <span className="inline-flex items-center justify-center gap-1">
+                      EN <ArrowRight className="h-3 w-3" /> TR
+                    </span>
                   </button>
                 </div>
 
@@ -2345,7 +2464,13 @@ export default function App() {
                           }`}
                         >
                           <span className="truncate max-w-[120px]">{item.term}</span>
-                          <span className="text-[8px] opacity-60 uppercase">{item.direction === 'TR_EN' ? 'TR ➔ EN' : 'EN ➔ TR'}</span>
+                          <span className="text-[8px] opacity-60 uppercase inline-flex items-center gap-0.5">
+                            {item.direction === 'TR_EN' ? (
+                              <>TR <ArrowRight className="h-2.5 w-2.5" /> EN</>
+                            ) : (
+                              <>EN <ArrowRight className="h-2.5 w-2.5" /> TR</>
+                            )}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -2380,10 +2505,39 @@ export default function App() {
             <p className="text-sm text-slate-500 mb-4">Üye paneline erişmek için giriş yapın veya üyelik oluşturun.</p>
             <button
               type="button"
-              onClick={() => setShowMemberAuth(true)}
+              onClick={() => openMemberAuth('register')}
               className={`text-xs px-5 py-2.5 rounded-xl font-bold text-white ${activeTheme.bg}`}
             >
               Üye Ol / Giriş Yap
+            </button>
+          </div>
+        )}
+
+        {activeTab === 'admin' && admin && (
+          <AdminPanel
+            darkMode={darkMode}
+            activeTheme={activeTheme}
+            admin={admin}
+            onLogout={handleAdminLogout}
+            onMemberDeleted={(deletedId) => {
+              if (member?.id === deletedId) {
+                handleMemberLogout();
+              }
+            }}
+          />
+        )}
+
+        {activeTab === 'admin' && !admin && (
+          <div className={`p-8 rounded-2xl border text-center ${darkMode ? 'bg-slate-800/40 border-slate-700' : 'bg-white border-slate-100'}`}>
+            <p className="text-sm text-slate-500 mb-4">
+              Admin paneline erişmek için üye girişi ekranından admin e-postanız ile giriş yapın.
+            </p>
+            <button
+              type="button"
+              onClick={() => openMemberAuth('login')}
+              className={`text-xs px-5 py-2.5 rounded-xl font-bold text-white ${activeTheme.bg}`}
+            >
+              Giriş Yap
             </button>
           </div>
         )}
@@ -2415,7 +2569,7 @@ export default function App() {
               
               <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
                 <div className="flex items-center gap-2 border-b pb-4 mb-4 dark:border-slate-700">
-                  <QuestionIcon className={`h-5 w-5 ${activeTheme.text}`} />
+                  <BrandLogo size={24} variant="mark" />
                   <div>
                     <h2 className="font-extrabold text-lg tracking-tight uppercase">YKS ADIM ADIM SORU ÇÖZÜCÜ</h2>
                     <p className="text-[11px] text-slate-400 font-semibold uppercase">Çözemediğin sorunun metnini yaz veya net bir fotoğrafını yükle</p>
@@ -2451,8 +2605,8 @@ export default function App() {
                     <div className="md:col-span-2">
                       <label className="block text-[10px] font-bold text-slate-400 mb-2 uppercase">SORU FOTOĞRAFI (OPSİYONEL)</label>
                       <div className="flex gap-2">
-                        <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 border border-dashed rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ${
-                          darkMode ? 'border-slate-700' : 'border-slate-300'
+                        <label className={`upload-zone flex-1 ${
+                          darkMode ? 'border-slate-700 hover:border-slate-500' : 'border-slate-300 hover:border-slate-400'
                         }`}>
                           <Image className="h-4 w-4 text-slate-400" />
                           <span className="text-[11px] font-bold text-slate-500 truncate">
@@ -2475,7 +2629,7 @@ export default function App() {
                             className="p-2.5 bg-rose-500 hover:bg-rose-600 text-white rounded-xl transition-all"
                             title="Görseli Kaldır"
                           >
-                            ✕
+                            <X className="h-4 w-4" />
                           </button>
                         )}
                       </div>
@@ -2524,9 +2678,13 @@ export default function App() {
                   <button
                     type="submit"
                     disabled={loadingSolution}
-                    className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                    className={`w-full py-3.5 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50 ${activeTheme.bg} ${activeTheme.hover}`}
                   >
-                    <Sparkles className="h-4 w-4 animate-spin-slow" />
+                    <BrandLogo
+                      size={18}
+                      variant={loadingSolution ? 'loading' : 'mark'}
+                      frameClassName={`bg-gradient-to-tr ${activeTheme.gradient}`}
+                    />
                     <span>{loadingSolution ? 'Yerel AI Çözüm Hazırlıyor...' : 'Soruyu Yerel AI ile Çöz'}</span>
                   </button>
                 </form>
@@ -2535,16 +2693,16 @@ export default function App() {
               {/* Çözüm Sonuç Kartı */}
               {activeSolution && (
                 <div className={`p-6 rounded-2xl border animate-fadeIn relative overflow-hidden ${
-                  darkMode ? 'bg-indigo-950/20 border-indigo-900/40' : 'bg-indigo-50/40 border-indigo-100'
+                  darkMode ? 'bg-slate-900/40 border-slate-700/60' : `${activeTheme.lightBgMuted} ${activeTheme.surfacePanel}`
                 }`}>
-                  <div className="flex justify-between items-center border-b pb-3 mb-4 dark:border-indigo-900/60 border-indigo-100">
+                  <div className={`flex justify-between items-center border-b pb-3 mb-4 ${darkMode ? activeTheme.borderDark : activeTheme.surfacePanel}`}>
                     <div className="flex items-center gap-2">
-                      <Sparkles className="h-5 w-5 text-indigo-500" />
-                      <h3 className="font-extrabold text-sm uppercase tracking-wider text-indigo-600 dark:text-indigo-400">YAPAY ZEKA DETAYLI DERS ÇÖZÜMÜ</h3>
+                      <BrandLogo size={22} variant="mark" />
+                      <h3 className={`font-extrabold text-sm uppercase tracking-wider ${activeTheme.text} ${activeTheme.darkText}`}>YAPAY ZEKA DETAYLI DERS ÇÖZÜMÜ</h3>
                     </div>
                     <button
                       onClick={() => handleSaveSolutionToNotes(questionText || "Görsel Soru", activeSolution)}
-                      className="text-[10px] font-bold bg-indigo-600 text-white px-3 py-1.5 rounded-xl hover:bg-indigo-700 transition-all flex items-center gap-1 shadow"
+                      className={`text-[10px] font-bold text-white px-3 py-1.5 rounded-xl transition-all flex items-center gap-1 shadow ${activeTheme.bg} ${activeTheme.hover}`}
                     >
                       <BookMarked className="h-3.5 w-3.5" />
                       <span>Çözümü Notlarıma Kaydet</span>
@@ -2555,7 +2713,9 @@ export default function App() {
                   {questionImage && (
                     <div className="mb-4">
                       <p className="text-[10px] font-bold text-slate-400 mb-1.5 uppercase">Analiz Edilen Görsel:</p>
-                      <img src={questionImage} alt="Analiz" className="max-h-36 rounded-xl border border-indigo-200 dark:border-indigo-900 object-contain bg-white" />
+                      <div className="image-showcase inline-block p-2 max-w-full">
+                        <img src={questionImage} alt="Analiz" className="max-h-44 rounded-xl object-contain" />
+                      </div>
                     </div>
                   )}
 
@@ -2576,7 +2736,7 @@ export default function App() {
                     <h3 className="font-extrabold text-sm uppercase">Yapamadığım Sorular</h3>
                     <p className="text-[10px] text-slate-400 font-semibold uppercase">Soruları tekrar durumuna göre listele</p>
                   </div>
-                  <span className="text-[10px] font-black px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950 text-indigo-500">
+                  <span className={`text-[10px] font-black px-2 py-0.5 rounded-md ${activeTheme.lightBg} dark:bg-slate-800 ${activeTheme.textMuted}`}>
                     {unsolvedArchive.length} Soru
                   </span>
                 </div>
@@ -2621,7 +2781,10 @@ export default function App() {
                             }}
                             className={`text-[9px] font-bold ${activeTheme.text} hover:underline`}
                           >
-                            Çözümü Gör ➔
+                            <span className="inline-flex items-center gap-1">
+                              Çözümü Gör
+                              <ArrowRight className="h-3 w-3" />
+                            </span>
                           </button>
 
                           <div className="flex items-center gap-2">
@@ -2740,7 +2903,7 @@ export default function App() {
                           type="checkbox"
                           checked={task.done}
                           onChange={() => toggleTaskDone(task.id)}
-                          className="h-4 w-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
+                          className={`h-4 w-4 rounded border-slate-300 ${activeTheme.text} ${activeTheme.ring}`}
                         />
                         <span className={`text-xs font-bold ${task.done ? 'line-through text-slate-400' : 'text-slate-700 dark:text-slate-200'}`}>
                           {task.text}
@@ -2810,7 +2973,7 @@ export default function App() {
                         type="button"
                         onClick={() => setNewNoteColor(color)}
                         className={`w-5 h-5 rounded-full border transition-transform ${
-                          color === 'blue' ? 'bg-indigo-400' :
+                          color === 'blue' ? activeTheme.bg :
                           color === 'pink' ? 'bg-rose-400' :
                           color === 'amber' ? 'bg-amber-400' : 'bg-emerald-400'
                         } ${newNoteColor === color ? 'scale-125 ring-2 ring-slate-400' : 'hover:scale-110'}`}
@@ -2830,8 +2993,8 @@ export default function App() {
               {/* Kaydedilmiş Notlar Akışı */}
               <div className="space-y-4 max-h-[300px] overflow-y-auto pr-1">
                 {notes.map((note) => {
-                  let accentClass = 'border-l-indigo-500 bg-indigo-50/40 dark:bg-indigo-950/20';
-                  let textAccent = 'text-indigo-600 dark:text-indigo-400';
+                  let accentClass = `${activeTheme.accentLine} ${activeTheme.lightBgMuted} dark:bg-slate-800/30`;
+                  let textAccent = `${activeTheme.text} ${activeTheme.darkText}`;
                   if (note.color === 'pink') {
                     accentClass = 'border-l-rose-500 bg-rose-50/40 dark:bg-rose-950/20';
                     textAccent = 'text-rose-600 dark:text-rose-400';
@@ -2871,112 +3034,119 @@ export default function App() {
           </div>
         )}
 
-        {/* TAB 3: YKS HIZLANDIRILMIŞ KÜTÜPHANE REHBERİ */}
         {activeTab === 'kutuphane' && (
-          <div className="space-y-6 animate-fadeIn">
-            
-            {/* Kütüphane Üst Bilgi Kartı */}
-            <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
-              <h2 className="font-extrabold text-xl tracking-tight uppercase mb-2">{SITE_NAME} KÜTÜPHANE REHBERİ</h2>
-              <p className="text-xs text-slate-400 font-semibold uppercase">Sınav tüyoları, derece öğrencilerinin taktikleri ve {SITE_NAME} ders çalışma kılavuzları.</p>
-              <button
-                type="button"
-                onClick={() => setSelectedArticle(USAGE_GUIDE)}
-                className={`mt-4 inline-flex items-center gap-2 text-xs px-4 py-2.5 rounded-xl font-bold text-white ${activeTheme.bg} ${activeTheme.hover}`}
-              >
-                <BookOpen className="h-4 w-4" />
-                Site Kullanım Kılavuzunu Aç
-              </button>
-            </div>
-
-            {/* Kütüphane Makaleleri Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {LIBRARY_WITH_GUIDE.map((art) => (
-                <div 
-                  key={art.id}
-                  onClick={() => setSelectedArticle(art)}
-                  className={`p-6 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between hover:scale-[1.01] ${
-                    art.id === 'guide-main'
-                      ? darkMode
-                        ? 'bg-sky-950/30 border-sky-800/50 hover:bg-sky-950/50 ring-1 ring-sky-800/40'
-                        : 'bg-sky-50 border-sky-200 hover:bg-sky-100/80 ring-1 ring-sky-200'
-                      : darkMode
-                        ? 'bg-slate-800/30 border-slate-700/40 hover:bg-slate-800/60'
-                        : 'bg-white border-slate-100 hover:bg-slate-50'
-                  }`}
-                >
-                  <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-md text-white ${
-                        art.category === 'KULLANIM KILAVUZU' ? 'bg-sky-600' :
-                        art.category === 'MATEMATİK' ? 'bg-violet-500' :
-                        art.category === 'YAPAY ZEKA' ? 'bg-indigo-500' :
-                        art.category === 'MOTİVASYON' ? 'bg-amber-500' : 'bg-rose-500'
-                      }`}>
-                        {art.category}
-                      </span>
-                      <span className="text-[10px] font-bold text-slate-400">{art.readTime}</span>
-                    </div>
-
-                    <h3 className="font-extrabold text-sm mb-2 text-slate-800 dark:text-slate-100">{art.title}</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">{art.summary}</p>
-                  </div>
-
-                  <div className="flex justify-between items-center border-t pt-3 dark:border-slate-800 text-[10px] font-bold text-slate-400">
-                    <span>👤 {art.author}</span>
-                    <span className={activeTheme.text}>Daha Fazlası ➔</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Seçili Makale Modal / Pop-up Okuma Penceresi */}
-            {selectedArticle && (
-              <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-                <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 overflow-y-auto max-h-[85vh] shadow-2xl relative ${
-                  darkMode ? 'bg-slate-800 text-slate-100' : 'bg-white text-slate-800'
-                }`}>
-                  <button
-                    onClick={() => setSelectedArticle(null)}
-                    className="absolute top-4 right-4 text-slate-400 hover:text-rose-500 font-extrabold text-lg"
-                  >
-                    ✕
-                  </button>
-
-                  <div className="flex gap-2 items-center mb-4">
-                    <span className={`text-[10px] font-extrabold px-2.5 py-1 text-white rounded-md ${
-                      selectedArticle.category === 'KULLANIM KILAVUZU' ? 'bg-sky-600' : 'bg-indigo-500'
-                    }`}>
-                      {selectedArticle.category}
-                    </span>
-                    <span className="text-[10px] text-slate-400">{selectedArticle.readTime}</span>
-                  </div>
-
-                  <h2 className="font-extrabold text-lg md:text-xl mb-4 text-slate-900 dark:text-white">{selectedArticle.title}</h2>
-                  <p className="text-[11px] font-bold text-slate-400 mb-6">Yazar: {selectedArticle.author}</p>
-
-                  <div className="text-xs md:text-sm leading-relaxed whitespace-pre-wrap text-slate-700 dark:text-slate-300 space-y-4">
-                    {selectedArticle.content}
-                  </div>
-
-                  <div className="mt-8 border-t pt-4 dark:border-slate-700 flex justify-end">
-                    <button
-                      onClick={() => setSelectedArticle(null)}
-                      className={`px-6 py-2 rounded-xl text-white font-bold text-xs ${activeTheme.bg} ${activeTheme.hover}`}
-                    >
-                      Kapat
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-          </div>
+          <LibraryPanel
+            darkMode={darkMode}
+            activeTheme={activeTheme}
+            submitterName={member ? getMemberDisplayName(member) : 'Misafir'}
+          />
         )}
 
-        {/* TAB 4: GRAFİKLER VE GEÇMİŞ LİSTESİ */}
-        {activeTab === 'sinavlar' && (
+        {activeTab === 'ulusalsinav' && (
+          <NationalExamPanel
+            darkMode={darkMode}
+            activeTheme={activeTheme}
+            profileName={effectiveProfile.name}
+            onCoachInsight={member ? pushCoachInsight : undefined}
+            onStatsUpdate={member ? bumpArchiveStats : undefined}
+          />
+        )}
+
+        {/* TAB: GRAFİKLER — üyelere özel */}
+        {activeTab === 'sinavlar' && member && (
           <div className="space-y-6 animate-fadeIn">
+
+            {/* Ulusal sınav arşivi — alan bazlı */}
+            <div className={`chart-panel ${darkMode ? 'border-slate-700/60' : 'border-slate-100'}`}>
+              <h3 className="font-extrabold text-lg mb-2 flex items-center gap-2">
+                <Activity className={activeTheme.text} />
+                <span>ULUSAL SINAV ARŞİVİ — ALAN BAZLI İSTATİSTİK</span>
+              </h3>
+              <p className="text-xs text-slate-500 mb-6">
+                Arşivde tamamladığınız testlerin ders/alan kırılımı. AI koç bu verileri plan ve motivasyon önerilerinde kullanır.
+              </p>
+
+              {archivePaperStats.length === 0 ? (
+                <div className="empty-state-art text-center py-10 text-slate-400 text-sm">
+                  <Activity className={`h-10 w-10 mx-auto mb-3 opacity-30 ${activeTheme.text}`} />
+                  Henüz arşiv testi tamamlanmadı. Ulusal Sınavlar sekmesinden test çözün.
+                </div>
+              ) : (
+                <div className="space-y-6">
+                  <div className="flex flex-wrap gap-3 text-xs font-bold">
+                    <span className={`px-3 py-1.5 rounded-full ${activeTheme.lightBg} ${activeTheme.darkText}`}>
+                      {archivePaperStats.length} tamamlanan test
+                    </span>
+                    <span className="px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">
+                      Son: {archivePaperStats[0].title} (%{archivePaperStats[0].accuracy})
+                    </span>
+                  </div>
+
+                  {archiveChartData.length > 0 && (
+                    <div className="h-72 w-full">
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={archiveChartData} margin={{ top: 8, right: 16, left: 0, bottom: 48 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? '#334155' : '#f1f5f9'} />
+                          <XAxis
+                            dataKey="subject"
+                            stroke={darkMode ? '#94a3b8' : '#64748b'}
+                            fontSize={10}
+                            angle={-25}
+                            textAnchor="end"
+                            height={56}
+                          />
+                          <YAxis domain={[0, 100]} stroke={darkMode ? '#94a3b8' : '#64748b'} fontSize={10} unit="%" />
+                          <Tooltip
+                            formatter={(value: number, _name, props) => [
+                              `%${value} (${props.payload.correct}/${props.payload.total})`,
+                              props.payload.fullSubject,
+                            ]}
+                            contentStyle={{
+                              backgroundColor: darkMode ? '#1e293b' : '#ffffff',
+                              borderColor: darkMode ? '#475569' : '#e2e8f0',
+                              borderRadius: '12px',
+                            }}
+                          />
+                          <Bar dataKey="accuracy" radius={[6, 6, 0, 0]}>
+                            {archiveChartData.map((entry, index) => (
+                              <Cell
+                                key={`cell-${index}`}
+                                fill={
+                                  entry.accuracy >= 70
+                                    ? '#10b981'
+                                    : entry.accuracy >= 50
+                                      ? activeTheme.chartStroke
+                                      : '#f43f5e'
+                                }
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {archiveSubjectStats.map((s) => (
+                      <div
+                        key={s.subject}
+                        className={`p-4 rounded-xl border ${
+                          darkMode ? 'bg-slate-800/30 border-slate-700/40' : 'bg-slate-50 border-slate-100'
+                        }`}
+                      >
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-bold text-sm truncate">{s.subject}</span>
+                          <span className={`text-xs font-black ${activeTheme.text}`}>%{s.accuracy}</span>
+                        </div>
+                        <p className="text-[10px] text-slate-500">
+                          {s.correct} doğru · {s.wrong} yanlış · {s.blank} boş · {s.papersTouched} test
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
             
             {/* Net Değişim Grafiği */}
             <div className={`p-6 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700/60' : 'bg-white border-slate-100'} shadow-sm`}>
@@ -3004,7 +3174,7 @@ export default function App() {
                       <Line 
                         type="monotone" 
                         dataKey="totalNet" 
-                        stroke={themeColor === 'indigo' ? '#4f46e5' : themeColor === 'pink' ? '#db2777' : themeColor === 'amber' ? '#f59e0b' : themeColor === 'teal' ? '#0d9488' : '#7c3aed'} 
+                        stroke={activeTheme.chartStroke}
                         strokeWidth={3}
                         activeDot={{ r: 8 }} 
                       />
@@ -3042,7 +3212,7 @@ export default function App() {
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-base font-black tracking-tight">{exam.totalNet} Net</span>
                       <span className={`text-[8px] px-2 py-0.5 rounded-full font-bold text-white ${
-                        exam.type === 'TYT' ? 'bg-indigo-500' : 'bg-pink-500'
+                        exam.type === 'TYT' ? activeTheme.bg : 'bg-pink-500'
                       }`}>
                         {exam.type}
                       </span>
@@ -3075,6 +3245,23 @@ export default function App() {
         )}
 
       </main>
+
+      <CoachChatCorner
+        darkMode={darkMode}
+        activeTheme={activeTheme}
+        open={coachCornerOpen}
+        onOpenChange={setCoachCornerOpen}
+        chatHistory={chatHistory}
+        aiChatQuery={aiChatQuery}
+        setAiChatQuery={setAiChatQuery}
+        onSend={handleSendMessage}
+        onSuggested={handleSuggestedQuestion}
+        loading={aiLoadingMode === 'chat'}
+        autoSpeak={autoSpeakCoach}
+        onAutoSpeakChange={setAutoSpeakCoach}
+        member={Boolean(member)}
+        profileName={effectiveProfile.name}
+      />
 
     </div>
   );

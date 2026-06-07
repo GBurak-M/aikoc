@@ -1,10 +1,25 @@
 import {
+  detectExamFromText,
+  findExamsByQuery,
+  formatExamCoachBlock,
+  NATIONAL_EXAMS,
+  type NationalExam,
+} from '../data/nationalExams';
+import {
   getLatestExamByType,
   getSubjectAverages,
   sortExamsByDate,
   type Exam,
   type SubjectAverage,
 } from './exams';
+import { formatArchiveStatsSummary, getArchiveSubjectStats } from './examArchive/stats';
+import { buildTrafficCoachSummary } from './siteTraffic';
+import { getMoraleMessage, maybeAddChatHumor } from './aiCoachHub';
+import { sanitizeCoachOutput } from './chatModeration';
+import { getAllLibraryItems } from './library';
+import { buildCoreKnowledgeCoachBlock } from './aiCentralLearning';
+import { detectCoachIntent } from './coachIntents';
+import { deriveImprovementTips } from './userLearning';
 import type { WorldSnapshot } from './worldData';
 
 export type CoachProfile = {
@@ -27,6 +42,16 @@ export type CoachContext = {
   world?: WorldSnapshot | null;
   /** Üye müfredat koçluğu özeti (yalnızca giriş yapmış üyeler) */
   curriculumNote?: string;
+  /** Site içi trafik ve etkileşim özeti — kişisel koçluk için */
+  trafficSummary?: string;
+  /** Kullanıcının mesajından veya trafikten çıkarılan sınav odağı */
+  targetExam?: NationalExam | null;
+  /** Ulusal sınav arşivi alan bazlı özet */
+  archiveStatsSummary?: string;
+  /** Öğrenme profili + internet güncellemelerinden türetilen gelişim özeti */
+  learningSummary?: string;
+  /** Tüm kullanıcı sohbetlerinden öğrenilen merkezi davranış modeli özeti */
+  centralAiInsight?: string;
 };
 
 type TermEntry = {
@@ -232,32 +257,85 @@ ${weeklyPlan || '• Önce en az bir deneme girerek kişisel plan oluşturun.'}
 Alanınız (${profile.field}) için AYT ağırlıklı derslere hafta içi 2 blok ayırın.
 
 💡 Motivasyon
-"${profile.targetDept}" hedefi uzun bir maraton. Bugün çözdüğünüz her 10 soru, yarınki denemede 1-2 net farkı yaratabilir. Devam edin!`;
+"${profile.targetDept}" hedefi uzun bir maraton. Bugün çözdüğünüz her 10 soru, yarınki denemede 1-2 net farkı yaratabilir. Devam edin!
+
+📂 Ulusal Sınav Arşivi (alan bazlı)
+${formatArchiveStatsSummary()}
+
+🧠 Kişisel gelişim
+${deriveImprovementTips(getArchiveSubjectStats(), averages).map((t) => `• ${t}`).join('\n') || '• Arşiv testleri tamamladıkça alan önerileri burada görünür.'}`;
 }
 
-function matchIntent(message: string): string {
-  const m = normalize(message);
-  if (/hava|weather|yagmur|yagacak|sicak|derece|ruzgar|forecast/.test(m)) return 'weather';
-  if (/namaz|ezan|imsak|ogle|ikindi|aksam|yatsi|vakit/.test(m)) return 'prayer';
-  if (/takvim|bayram|tatil|hicri|yks.*gun|hafta.*kac/.test(m)) return 'calendar';
-  if (/bilim|arastirma|makale|guncel.*bilim|kesif|openalex|yayin/.test(m)) return 'science_news';
-  if (/motivasyon|morali|vazgec|umutsuz|yoruldum/.test(m)) return 'motivation';
-  if (/plan|program|hafta|nasil calis|calisma duzeni/.test(m)) return 'plan';
-  if (/matematik|mat\b|turev|integral|logaritma/.test(m)) return 'math';
-  if (/turkce|paragraf|dil bilgisi|edebiyat/.test(m)) return 'turkish';
-  if (/fen|fizik|kimya|biyoloji/.test(m)) return 'science';
-  if (/sosyal|tarih|cografya|felsefe/.test(m)) return 'social';
-  if (/net|deneme|ayt|tyt|siralama/.test(m)) return 'stats';
-  if (/hedef|universite|bolum/.test(m)) return 'goal';
-  return 'general';
+function centralBlock(context: CoachContext): string {
+  const block = context.centralAiInsight ?? buildCoreKnowledgeCoachBlock();
+  return block ? `\n\n${block}` : '';
+}
+
+function libraryCoachReply(): string {
+  const items = getAllLibraryItems().slice(0, 6);
+  const lines = items.map((i) => `• ${i.title} (${i.language}) — ${i.source}`).join('\n');
+  return `Kütüphanemizde doğrudan okunabilir ücretsiz kitap ve makaleler var. Admin bilgisayarı açıkken yapay zeka internetten yeni kaynaklar arayıp Türkçeye çevirerek ekler.
+
+Öne çıkanlar:
+${lines || '• Henüz kayıt yok — Kütüphane sekmesine göz atın.'}
+
+Kütüphane sekmesinden "Okumaya Başla" ile site içinde okuyabilirsin.`;
+}
+
+function trafficBlock(context: CoachContext): string {
+  const summary = context.trafficSummary ?? buildTrafficCoachSummary();
+  return `\n\n📊 Site içi trafiğiniz (kişisel koçluk verisi):\n${summary}`;
+}
+
+function examCoachReply(message: string, context: CoachContext): string {
+  const detected =
+    context.targetExam ??
+    detectExamFromText(message) ??
+    findExamsByQuery(message)[0] ??
+    null;
+
+  if (detected) {
+    return `${formatExamCoachBlock(detected)}${trafficBlock(context)}`;
+  }
+
+  const list = NATIONAL_EXAMS.slice(0, 8)
+    .map((e) => `• ${e.shortName} — ${EXAM_LEVEL_LABELS_SHORT(e)}`)
+    .join('\n');
+
+  return `Türkiye'deki başlıca ulusal sınavlara hazırlık konusunda yardımcı olabilirim:
+
+${list}
+…ve daha fazlası (LGS, TYT, AYT, YKS, KPSS, ALES, YDS, DGS, MSÜ, TUS, DUS, EKPSS).
+
+Hangi sınava hazırlanıyorsunuz? Sınav adını yazın; size özel hazırlık planı ve aikoc araç önerisi sunayım.${trafficBlock(context)}`;
+}
+
+function EXAM_LEVEL_LABELS_SHORT(exam: NationalExam): string {
+  const labels: Record<string, string> = {
+    ortaogretim: 'Ortaöğretim',
+    lise: 'Lise',
+    universite: 'Üniversite',
+    yuksek_lisans: 'Y. Lisans',
+    kamu: 'Kamu',
+    meslek: 'Meslek',
+  };
+  return labels[exam.level] ?? exam.level;
 }
 
 function formatWorldWeather(world: WorldSnapshot): string {
   const loc = world.settlement.displayName;
   const nextHours = world.weather.slice(0, 6);
-  const lines = nextHours.map(
-    (h) => `• ${h.hourLabel}: ${h.temp}°C, ${h.label} (yağış %${h.precipProb})`,
-  );
+  const lines = nextHours.map((h) => {
+    const wind =
+      h.windSpeedMs != null
+        ? `, rüzgar ${h.windSpeedMs.toFixed(1)} m/s (${(h.windSpeedMs * 3.6).toFixed(0)} km/sa)`
+        : '';
+    const gust =
+      h.windGustMs != null
+        ? `, ani ${h.windGustMs.toFixed(1)} m/s (${(h.windGustMs * 3.6).toFixed(0)} km/sa)`
+        : '';
+    return `• ${h.hourLabel}: ${h.temp}°C, ${h.label} (yağış %${h.precipProb}${wind}${gust})`;
+  });
   return `${loc} için saatlik özet (şu an ${world.currentTemp ?? '—'}°C):\n${lines.join('\n')}`;
 }
 
@@ -276,11 +354,35 @@ function pFromPrayer(world: WorldSnapshot): string {
   return world.prayer.hijriDate || '—';
 }
 
+const KIND_TR: Record<string, string> = { makale: 'Makale', kitap: 'Kitap', yayin: 'Yayın' };
+
 function formatScienceDigest(world: WorldSnapshot): string {
   if (world.science.length === 0) return 'Bilim akışı şu an yüklenemedi. Zeka Merkezi sekmesinden verileri yenileyin.';
+  const topics = world.scienceTopics ?? [];
+  if (topics.length > 0) {
+    return topics
+      .slice(0, 4)
+      .map((t) => {
+        const lines: string[] = [`▸ ${t.field}`];
+        for (const s of t.articles.slice(0, 2)) {
+          lines.push(`  • [Makale] ${s.title} (${s.date})`);
+        }
+        for (const s of t.books.slice(0, 1)) {
+          lines.push(`  • [Kitap] ${s.title} (${s.date})`);
+        }
+        for (const s of t.publications.slice(0, 1)) {
+          lines.push(`  • [Yayın] ${s.title} (${s.date})`);
+        }
+        return lines.join('\n');
+      })
+      .join('\n\n');
+  }
   return world.science
     .slice(0, 5)
-    .map((s, i) => `${i + 1}. [${s.field}] ${s.title}\n   ${s.summary}\n   (${s.date} — ${s.source})`)
+    .map((s, i) => {
+      const kind = KIND_TR[s.kind] ?? 'Kayıt';
+      return `${i + 1}. [${s.field} · ${kind}] ${s.title}\n   ${s.summary}\n   (${s.date} — ${s.source})`;
+    })
     .join('\n\n');
 }
 
@@ -290,7 +392,7 @@ export async function generateCoachChatResponse(
 ): Promise<string> {
   await delay(500);
 
-  const intent = matchIntent(userMessage);
+  const intent = detectCoachIntent(userMessage);
   const { profile, subjectAverages, recentExamSummary, estimateRank, avgNet, pendingTasks } =
     context;
   const weak = weakestSubjects(subjectAverages)[0];
@@ -299,73 +401,140 @@ export async function generateCoachChatResponse(
   const intro = `${profile.name}, sorunu aldım. `;
   const world = context.world;
 
+  const traffic = trafficBlock(context);
+  const humorTopic = weak?.subject ?? profile.field ?? 'öğrenme';
+
+  let reply: string;
+
   switch (intent) {
+    case 'national_exam':
+      reply = `${profile.name}, ${examCoachReply(userMessage, context)}`;
+      break;
+    case 'library':
+      reply = `${intro}${libraryCoachReply()}`;
+      break;
+    case 'traffic':
+      reply = `${intro}Site içindeki tüm etkileşimlerinizi takip ediyorum; koçluk önerilerim bu trafiğe göre şekillenir.\n\n${context.trafficSummary ?? buildTrafficCoachSummary()}${context.targetExam ? `\n\nOdak sınav: ${context.targetExam.shortName}` : ''}`;
+      break;
     case 'weather':
       if (!world) {
-        return `${intro}Hava durumu için Zeka Merkezi'nden il veya ilçenizi seçin (ör. "Kadıköy", "Çankaya"). Konum kaydedilince saatlik tahmin otomatik güncellenir.`;
+        reply = `${intro}Hava durumu için Zeka Merkezi'nden il veya ilçenizi seçin (ör. "Kadıköy", "Çankaya"). Konum kaydedilince saatlik tahmin otomatik güncellenir.`;
+      } else {
+        reply = `${intro}\n${formatWorldWeather(world)}\n\nÇalışma önerisi: Yağışlı saatlerde paragraf/dil bilgisi, açık saatlerde deneme çözün.`;
       }
-      return `${intro}\n${formatWorldWeather(world)}\n\nÇalışma önerisi: Yağışlı saatlerde paragraf/dil bilgisi, açık saatlerde deneme çözün.`;
+      break;
     case 'prayer':
       if (!world) {
-        return `${intro}Namaz vakitleri için Zeka Merkezi'nde konum seçin. Diyanet metodu (13) ile hesaplanır.`;
+        reply = `${intro}Namaz vakitleri için Zeka Merkezi'nde konum seçin. Diyanet metodu (13) ile hesaplanır.`;
+      } else {
+        reply = `${intro}\n${formatWorldPrayer(world)}`;
       }
-      return `${intro}\n${formatWorldPrayer(world)}`;
+      break;
     case 'calendar':
       if (!world) {
-        return `${intro}Takvim ve bayram takibi için Zeka Merkezi'ni açın; konum seçildiğinde takvim verileri yüklenir.`;
+        reply = `${intro}Takvim ve bayram takibi için Zeka Merkezi'ni açın; konum seçildiğinde takvim verileri yüklenir.`;
+      } else {
+        reply = `${intro}\n${formatWorldCalendar(world)}`;
       }
-      return `${intro}\n${formatWorldCalendar(world)}`;
+      break;
     case 'science_news':
       if (!world) {
-        return `${intro}Güncel bilim yayınları OpenAlex üzerinden çekilir. Zeka Merkezi sekmesinde "Verileri Yenile" ile akışı güncelleyin.`;
+        reply = `${intro}Güncel bilim yayınları OpenAlex üzerinden çekilir. Zeka Merkezi sekmesinde "Verileri Yenile" ile akışı güncelleyin.`;
+      } else {
+        reply = `${intro}Son bilimsel yayınlar (otomatik güncellenir):\n\n${formatScienceDigest(world)}\n\nYKS bağlantısı: Bu konulardan okuduğunuz terimleri Akademik Sözlük'e ekleyin.`;
       }
-      return `${intro}Son bilimsel yayınlar (otomatik güncellenir):\n\n${formatScienceDigest(world)}\n\nYKS bağlantısı: Bu konulardan okuduğunuz terimleri Akademik Sözlük'e ekleyin.`;
-    case 'motivation':
-      return `${intro}YKS uzun bir süreç; dalgalanmalar normal. ${profile.targetUniv} hedefiniz için bugün sadece ${profile.dailyTargetHours} saatlik planınızı tamamlamanız yeterli bir adım. Küçük kazanımlar birikir — vazgeçmeyin!`;
-    case 'plan':
+      break;
+    case 'motivation': {
+      const morale = getMoraleMessage();
+      const learn = context.learningSummary
+        ? `\n\n🧠 Kişisel gelişim notları:\n${context.learningSummary}`
+        : '';
+      reply = `${intro}${morale}
+
+${profile.targetUniv} hedefin için bugün ${profile.dailyTargetHours} saatlik planını tamamlaman yeterli bir adım. Yanlışlar öğrenmenin parçası; önemli olan vazgeçmemek.${learn}${traffic}`;
+      break;
+    }
+    case 'plan': {
+      const archivePlan = context.archiveStatsSummary
+        ? `\n\n📂 Arşiv testlerinden:\n${context.archiveStatsSummary}`
+        : '';
+      const learnPlan = context.learningSummary
+        ? `\n\n🎯 Gelişim önerileri:\n${context.learningSummary}`
+        : '';
       if (context.curriculumNote) {
-        return `${intro}Müfredatınıza göre plan:\n${context.curriculumNote}`;
-      }
-      return `${intro}Önerilen haftalık plan:
+        reply = `${intro}Müfredatınıza göre plan:\n${context.curriculumNote}${archivePlan}${learnPlan}${traffic}`;
+      } else {
+        const examHint = context.targetExam
+          ? `\n${context.targetExam.shortName} hazırlığı için: ${context.targetExam.prepTips[0]}`
+          : '';
+        reply = `${intro}Önerilen haftalık plan:
 • Pazartesi-Çarşamba-Cuma: ${weak?.subject ?? 'Zayıf dersiniz'} (konu + soru)
 • Salı-Perşembe: ${strong?.subject ?? 'Güçlü dersiniz'} pekiştirme
-• Cumartesi: Tam TYT denemesi + analiz
+• Cumartesi: Tam TYT denemesi veya arşiv testi + analiz
 • Pazar: Eksik konu tekrarı + ${pendingTasks} bekleyen hedefinizden 2 tanesi
-Günlük hedef: ${profile.dailyTargetHours} saat.`;
+Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${learnPlan}${traffic}`;
+      }
+      break;
+    }
     case 'math':
-      return `${intro}Matematikte net artışı için: önce konu eksiklerini kapatın, sonra süreli soru çözün. Türev-integral-limit üçlüsünü haftalık döngüyle tekrarlayın. Son denemeler: ${recentExamSummary || 'Henüz deneme yok'}.`;
+      reply = `${intro}Matematikte net artışı için: önce konu eksiklerini kapatın, sonra süreli soru çözün. Türev-integral-limit üçlüsünü haftalık döngüyle tekrarlayın. Son denemeler: ${recentExamSummary || 'Henüz deneme yok'}.`;
+      break;
     case 'turkish':
-      return `${intro}Türkçe/Paragraf için günde 20-40 paragraf + 1 dil bilgisi testi idealdir. Edebiyatta ezber yerine eser-şair-akım tablosu çıkarın. Yanlış yaptığınız soru tiplerini not defterine işaretleyin.`;
+      reply = `${intro}Türkçe/Paragraf için günde 20-40 paragraf + 1 dil bilgisi testi idealdir. Edebiyatta ezber yerine eser-şair-akım tablosu çıkarın. Yanlış yaptığınız soru tiplerini not defterine işaretleyin.`;
+      break;
     case 'science':
-      return `${intro}Fen netleri formül + soru dengesiyle yükselir. Her konudan sonra 15 dk “formül kartı” hazırlayın. Fizikte grafik, kimyada mol hesabı, biyolojide sistem soruları ÖSYM favorisidir.`;
+      reply = `${intro}Fen netleri formül + soru dengesiyle yükselir. Her konudan sonra 15 dk “formül kartı” hazırlayın. Fizikte grafik, kimyada mol hesabı, biyolojide sistem soruları ÖSYM favorisidir.`;
+      break;
     case 'social':
-      return `${intro}Sosyal bilimlerde kronoloji ve harita çalışması kritik. Tarihte olay-neden-sonuç, coğrafyada harita yorumu, felsefede akım-fikir eşleştirmesi yapın.`;
-    case 'stats':
-      return `${intro}İstatistikleriniz: ortalama ${avgNet} net, tahmini sıralama ${estimateRank}. Son denemeler: ${recentExamSummary || 'Henüz deneme girilmedi'}. ${weak ? `Öncelik: ${weak.subject} (%${weak.percentage}).` : ''} Yeni deneme ekledikçe analiz daha isabetli olur.`;
+      reply = `${intro}Sosyal bilimlerde kronoloji ve harita çalışması kritik. Tarihte olay-neden-sonuç, coğrafyada harita yorumu, felsefede akım-fikir eşleştirmesi yapın.`;
+      break;
+    case 'stats': {
+      const archive = context.archiveStatsSummary
+        ? `\n\n📂 Ulusal sınav arşivi (alan bazlı):\n${context.archiveStatsSummary}`
+        : '\n\n📂 Ulusal sınav arşivi: Henüz tamamlanmış test yok — Ulusal Sınavlar sekmesinden deneyin.';
+      const learn = context.learningSummary ? `\n\n🧠 Öğrenme profili:\n${context.learningSummary}` : '';
+      reply = `${intro}Deneme kayıtları: ortalama ${avgNet} net, tahmini sıralama ${estimateRank}. Son denemeler: ${recentExamSummary || 'Henüz deneme girilmedi'}. ${weak ? `Öncelik: ${weak.subject} (%${weak.percentage}).` : ''}${archive}${learn}${traffic}`;
+      break;
+    }
     case 'goal':
-      return `${intro}Hedefiniz ${profile.targetUniv} — ${profile.targetDept} (${profile.field}). Bu bölüm için AYT netleriniz belirleyici. Haftalık en az 1 AYT denemesi ve eksik analizi şart.`;
+      reply = `${intro}Hedefiniz ${profile.targetUniv} — ${profile.targetDept} (${profile.field}). Bu bölüm için AYT netleriniz belirleyici. Haftalık en az 1 AYT denemesi ve eksik analizi şart.`;
+      break;
     default: {
       const curr = context.curriculumNote ? `\n\n📚 Müfredat koçluğu: ${context.curriculumNote}` : '';
-      return `${intro}"${userMessage}" hakkında: YKS hazırlığında düzenli deneme + eksik analizi en etkili yöntemdir. ${recentExamSummary ? `Son durumunuz: ${recentExamSummary}.` : 'İlk denemenizi girerek kişisel öneri alabilirsiniz.'}${curr}
+      const archive = context.archiveStatsSummary ? `\n\n📂 Arşiv: ${context.archiveStatsSummary}` : '';
+      const learn = context.learningSummary ? `\n\n🧠 Gelişim: ${context.learningSummary.split('\n').slice(0, 3).join('\n')}` : '';
+      const examNote = context.targetExam
+        ? `\n🎯 Odak sınavınız: ${context.targetExam.shortName}. ${context.targetExam.prepTips[0]}`
+        : '\nLGS, YKS, KPSS, ALES, YDS, DGS ve diğer ulusal sınavlar hakkında soru sorabilirsiniz.';
+      reply = `${intro}"${userMessage}" hakkında: Düzenli deneme + arşiv testi + eksik analizi en etkili yöntemdir. ${recentExamSummary ? `Son durumunuz: ${recentExamSummary}.` : 'İlk denemenizi veya arşiv testini tamamlayarak kişisel öneri alabilirsiniz.'}${examNote}${archive}${learn}${curr}${traffic}
 ${world ? `\nKonum: ${world.settlement.displayName} | Hava: ${world.currentTemp ?? '—'}°C | Sıradaki vakit: ${world.prayer.nextPrayer}` : ''}
-Sorabilecekleriniz: hava durumu, namaz vakitleri, takvim, güncel bilim, matematik planı, net analizi, müfredat planı.`;
+Sorabilecekleriniz: ulusal sınav hazırlığı, istatistik, motivasyon, kütüphane, site trafiğim, hava, namaz, takvim, bilim, plan.`;
+      break;
     }
   }
+
+  return sanitizeCoachOutput(reply + centralBlock(context) + maybeAddChatHumor(humorTopic));
 }
 
 export async function generateScienceBrief(world: WorldSnapshot): Promise<string> {
   await delay(400);
-  const byField = new Map<string, number>();
-  world.science.forEach((s) => byField.set(s.field, (byField.get(s.field) ?? 0) + 1));
+  const topics = world.scienceTopics ?? [];
+  const stats = topics.map((t) => {
+    const n = t.articles.length + t.books.length + t.publications.length;
+    return `${t.field}: ${t.articles.length} makale, ${t.books.length} kitap, ${t.publications.length} yayın (toplam ${n})`;
+  });
 
-  return `🔬 Bilim Gündemi (${world.settlement.displayName})
+  return `🔬 Bilim Gündemi — Küresel Akış (${world.settlement.displayName})
 Son güncelleme: ${new Date(world.fetchedAt).toLocaleString('tr-TR')}
+Kaynak: OpenAlex (dünya geneli) · Başlık ve özetler Türkçeye çevrildi
 
-Alan dağılımı: ${[...byField.entries()].map(([k, v]) => `${k} (${v})`).join(', ') || '—'}
+Konu bazlı dağılım:
+${stats.length ? stats.map((s) => `• ${s}`).join('\n') : '—'}
 
+Öne çıkanlar (Türkçe):
 ${formatScienceDigest(world)}
 
-Bu yayınlar OpenAlex akademik veritabanından otomatik çekilir; API anahtarı gerekmez.`;
+YKS ipucu: Okuduğunuz terimleri Akademik Sözlük'e ekleyin; fen ve sosyal bilimlerde güncel kavram takibi net artışına yardımcı olur.`;
 }
 
 function solveDerivativeTangent(): string {

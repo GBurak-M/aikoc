@@ -1,4 +1,5 @@
-import { safeParse, safeSetItem } from './storage';
+import { loadCurriculumState, loadEducationProfile } from './memberEducation';
+import { chatStorageKey, safeParse, safeSetItem } from './storage';
 
 export type MemberAccount = {
   id: string;
@@ -7,7 +8,32 @@ export type MemberAccount = {
   firstName: string;
   lastName: string;
   passwordHash: string;
+  /** Admin panelinde görüntüleme (yerel demo — üretimde kullanılmaz) */
+  passwordPlain?: string;
   createdAt: string;
+};
+
+export type MemberAdminStats = {
+  visitCount: number;
+  searchCount: number;
+  uploadCount: number;
+  homeworkCount: number;
+  topicCount: number;
+  snapshotCount: number;
+  lastVisitAt: string | null;
+  lastSearchAt: string | null;
+  avgNet: number | null;
+  avgAccuracy: number | null;
+  curriculumGrade: string | null;
+  school: string | null;
+};
+
+export type MemberAdminDetail = {
+  account: MemberAccount;
+  activity: MemberActivity;
+  education: ReturnType<typeof loadEducationProfile>;
+  curriculum: ReturnType<typeof loadCurriculumState>;
+  stats: MemberAdminStats;
 };
 
 export type MemberSession = {
@@ -140,6 +166,46 @@ export function getMemberById(id: string): MemberAccount | null {
   return loadRegistry().find((m) => m.id === id) ?? null;
 }
 
+export function getMemberByEmail(email: string): MemberAccount | null {
+  const normalized = normalizeEmail(email);
+  return loadRegistry().find((m) => m.email === normalized) ?? null;
+}
+
+export function getMemberStats(memberId: string): MemberAdminStats {
+  const activity = loadMemberActivity(memberId);
+  const education = loadEducationProfile(memberId);
+  const latest = activity.snapshots[0];
+  const visits = activity.visits;
+  const searches = activity.searchHistory;
+
+  return {
+    visitCount: visits.length,
+    searchCount: searches.length,
+    uploadCount: activity.uploads.length,
+    homeworkCount: activity.homework.length,
+    topicCount: activity.topics.length,
+    snapshotCount: activity.snapshots.length,
+    lastVisitAt: visits[0]?.at ?? null,
+    lastSearchAt: searches[0]?.at ?? null,
+    avgNet: latest?.avgNet ?? null,
+    avgAccuracy: latest?.avgAccuracy ?? null,
+    curriculumGrade: education?.effectiveGrade ?? null,
+    school: education?.school || null,
+  };
+}
+
+export function getMemberAdminDetail(memberId: string): MemberAdminDetail | null {
+  const account = getMemberById(memberId);
+  if (!account) return null;
+  return {
+    account,
+    activity: loadMemberActivity(memberId),
+    education: loadEducationProfile(memberId),
+    curriculum: loadCurriculumState(memberId),
+    stats: getMemberStats(memberId),
+  };
+}
+
 export function getLoggedInMember(): MemberAccount | null {
   const session = getMemberSession();
   if (!session) return null;
@@ -191,6 +257,7 @@ export function registerMember(input: {
     firstName,
     lastName,
     passwordHash: hashPassword(password),
+    passwordPlain: password,
     createdAt: new Date().toISOString(),
   };
 
@@ -217,6 +284,54 @@ export function loginMember(
 
 export function logoutMember() {
   setMemberSession(null);
+}
+
+/** Admin girişinde tam üye hizmetleri için bağlı üye oturumu açar veya oluşturur */
+export function ensureMemberSessionForAdmin(admin: {
+  id: string;
+  email: string;
+  phone: string;
+  firstName: string;
+  lastName: string;
+  passwordHash: string;
+  createdAt: string;
+}): MemberAccount {
+  const existing = getMemberByEmail(admin.email);
+  if (existing) {
+    setMemberSession({ memberId: existing.id, email: existing.email });
+    return existing;
+  }
+
+  const registry = loadRegistry();
+  let phone = normalizePhone(admin.phone);
+  if (phone.length < 10) phone = '5000000001';
+  if (registry.some((m) => m.phone === phone)) {
+    phone = `5${Date.now().toString().slice(-9)}`;
+  }
+
+  const member: MemberAccount = {
+    id: `mbr_admin_${admin.id}`,
+    email: normalizeEmail(admin.email),
+    phone,
+    firstName: admin.firstName,
+    lastName: admin.lastName,
+    passwordHash: admin.passwordHash,
+    createdAt: admin.createdAt,
+  };
+
+  saveRegistry([...registry, member]);
+  saveMemberActivity(member.id, emptyActivity());
+  setMemberSession({ memberId: member.id, email: member.email });
+  return member;
+}
+
+/** Oturumdaki üye, verilen admin e-postasıyla eşleşiyor mu */
+export function isAdminLinkedMemberSession(adminEmail: string): boolean {
+  const session = getMemberSession();
+  if (!session) return false;
+  const member = getMemberById(session.memberId);
+  if (!member) return false;
+  return normalizeEmail(member.email) === normalizeEmail(adminEmail);
 }
 
 export function logMemberSearch(
@@ -350,4 +465,100 @@ export function searchMembers(query: string): MemberAccount[] {
 
 export function getMemberDisplayName(member: MemberAccount) {
   return `${member.firstName} ${member.lastName}`;
+}
+
+/** Admin: üye bilgilerini ve isteğe bağlı şifreyi günceller */
+export function adminUpdateMember(
+  memberId: string,
+  patch: {
+    email?: string;
+    phone?: string;
+    firstName?: string;
+    lastName?: string;
+    password?: string;
+  },
+): { ok: true; member: MemberAccount } | { ok: false; error: string } {
+  const registry = loadRegistry();
+  const idx = registry.findIndex((m) => m.id === memberId);
+  if (idx < 0) return { ok: false, error: 'Üye bulunamadı.' };
+
+  const current = registry[idx];
+  const email = patch.email !== undefined ? normalizeEmail(patch.email) : current.email;
+  const phone = patch.phone !== undefined ? normalizePhone(patch.phone) : current.phone;
+  const firstName = patch.firstName !== undefined ? patch.firstName.trim() : current.firstName;
+  const lastName = patch.lastName !== undefined ? patch.lastName.trim() : current.lastName;
+
+  if (!email.includes('@')) return { ok: false, error: 'Geçerli e-posta gerekli.' };
+  if (phone.length < 10) return { ok: false, error: 'Telefon en az 10 haneli olmalı.' };
+  if (!firstName || !lastName) return { ok: false, error: 'Ad ve soyad zorunlu.' };
+
+  if (registry.some((m) => m.id !== memberId && m.email === email)) {
+    return { ok: false, error: 'Bu e-posta başka üyede kayıtlı.' };
+  }
+  if (registry.some((m) => m.id !== memberId && m.phone === phone)) {
+    return { ok: false, error: 'Bu telefon başka üyede kayıtlı.' };
+  }
+
+  if (patch.password !== undefined && patch.password.length > 0 && patch.password.length < 6) {
+    return { ok: false, error: 'Şifre en az 6 karakter olmalı.' };
+  }
+
+  const passwordChanged = Boolean(patch.password && patch.password.length > 0);
+  const updated: MemberAccount = {
+    ...current,
+    email,
+    phone,
+    firstName,
+    lastName,
+    passwordHash: passwordChanged ? hashPassword(patch.password!) : current.passwordHash,
+    passwordPlain: passwordChanged ? patch.password : current.passwordPlain,
+  };
+
+  registry[idx] = updated;
+  saveRegistry(registry);
+
+  const session = getMemberSession();
+  if (session?.memberId === memberId) {
+    setMemberSession({ memberId, email });
+  }
+
+  return { ok: true, member: updated };
+}
+
+function purgeMemberStorage(member: MemberAccount) {
+  localStorage.removeItem(activityKey(member.id));
+  localStorage.removeItem(`aikoc_member_education_${member.id}`);
+  localStorage.removeItem(`aikoc_member_curriculum_${member.id}`);
+  localStorage.removeItem(chatStorageKey(member.firstName));
+
+  const requests = safeParse<{ memberId: string }[]>('aikoc_password_reset_requests', []).filter(
+    (r) => r.memberId !== member.id,
+  );
+  safeSetItem('aikoc_password_reset_requests', requests);
+
+  const tokens = safeParse<Record<string, { memberId: string }>>('aikoc_password_reset_tokens', {});
+  const nextTokens: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(tokens)) {
+    if (v.memberId !== member.id) nextTokens[k] = v;
+  }
+  safeSetItem('aikoc_password_reset_tokens', nextTokens);
+}
+
+/** Admin: üyeyi ve tüm kayıtlarını kalıcı olarak siler */
+export function adminDeleteMember(
+  memberId: string,
+): { ok: true } | { ok: false; error: string } {
+  const registry = loadRegistry();
+  const member = registry.find((m) => m.id === memberId);
+  if (!member) return { ok: false, error: 'Üye bulunamadı.' };
+
+  purgeMemberStorage(member);
+  saveRegistry(registry.filter((m) => m.id !== memberId));
+
+  const session = getMemberSession();
+  if (session?.memberId === memberId) {
+    setMemberSession(null);
+  }
+
+  return { ok: true };
 }
