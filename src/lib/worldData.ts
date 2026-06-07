@@ -42,6 +42,8 @@ export type PrayerTimes = {
   hijriDate: string;
   nextPrayer: string;
   nextPrayerTime: string;
+  source?: string;
+  regionName?: string;
 };
 
 export type CalendarEvent = {
@@ -467,9 +469,14 @@ export async function fetchScienceDigest(): Promise<{
 export { KIND_LABEL as SCIENCE_KIND_LABEL };
 
 export async function fetchWorldSnapshot(settlement: Settlement): Promise<WorldSnapshot> {
+  const { fetchFaziletPrayerForSettlement } = await import('./faziletPrayer');
   const [weatherResult, prayer, calendar, scienceResult] = await Promise.all([
     fetchHourlyWeather(settlement.lat, settlement.lon),
-    fetchPrayerTimes(settlement.lat, settlement.lon),
+    fetchFaziletPrayerForSettlement(
+      settlement.displayName,
+      settlement.admin1,
+      settlement.admin2,
+    ).catch(() => fetchPrayerTimes(settlement.lat, settlement.lon)),
     buildCalendarInfo(),
     fetchScienceDigest(),
   ]);

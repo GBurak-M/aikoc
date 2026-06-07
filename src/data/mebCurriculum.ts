@@ -52,6 +52,102 @@ const TUR_9: CurriculumSubject = {
   ],
 };
 
+const FIZ_9: CurriculumSubject = {
+  id: 'fiz', name: 'Fizik', mebCode: 'FIZ.9',
+  topics: [
+    { id: 'fiz9-1', name: 'Hareket ve Kuvvet', unit: 'Fizik', priority: 'temel' },
+    { id: 'fiz9-2', name: 'Enerji', unit: 'Fizik', priority: 'temel' },
+  ],
+};
+
+const KIM_9: CurriculumSubject = {
+  id: 'kim', name: 'Kimya', mebCode: 'KIM.9',
+  topics: [
+    { id: 'kim9-1', name: 'Kimya Bilimi', unit: 'Kimya', priority: 'temel' },
+    { id: 'kim9-2', name: 'Atom ve Periyodik Sistem', unit: 'Kimya', priority: 'temel' },
+  ],
+};
+
+const BIY_9: CurriculumSubject = {
+  id: 'biy', name: 'Biyoloji', mebCode: 'BIY.9',
+  topics: [
+    { id: 'biy9-1', name: 'Yaşam Bilimi Biyoloji', unit: 'Biyoloji', priority: 'temel' },
+    { id: 'biy9-2', name: 'Hücre', unit: 'Biyoloji', priority: 'yks' },
+  ],
+};
+
+const TAR_9: CurriculumSubject = {
+  id: 'tar', name: 'Tarih', mebCode: 'TAR.9',
+  topics: [
+    { id: 'tar9-1', name: 'Tarih ve Zaman', unit: 'Tarih', priority: 'temel' },
+    { id: 'tar9-2', name: 'İlk ve Orta Çağ', unit: 'Tarih', priority: 'temel' },
+  ],
+};
+
+const COG_9: CurriculumSubject = {
+  id: 'cog', name: 'Coğrafya', mebCode: 'COG.9',
+  topics: [
+    { id: 'cog9-1', name: 'Doğal Sistemler', unit: 'Coğrafya', priority: 'temel' },
+    { id: 'cog9-2', name: 'Beşeri Sistemler', unit: 'Coğrafya', priority: 'temel' },
+  ],
+};
+
+const KIM_10: CurriculumSubject = {
+  id: 'kim', name: 'Kimya', mebCode: 'KIM.10',
+  topics: [
+    { id: 'kim10-1', name: 'Kimyasal Türler Arası Etkileşimler', unit: 'Kimya', priority: 'yks' },
+    { id: 'kim10-2', name: 'Asit-Baz', unit: 'Kimya', priority: 'yks' },
+  ],
+};
+
+const BIY_10: CurriculumSubject = {
+  id: 'biy', name: 'Biyoloji', mebCode: 'BIY.10',
+  topics: [
+    { id: 'biy10-1', name: 'Hücre Bölünmeleri', unit: 'Biyoloji', priority: 'yks' },
+    { id: 'biy10-2', name: 'Kalıtım', unit: 'Biyoloji', priority: 'yks' },
+  ],
+};
+
+const TAR_10: CurriculumSubject = {
+  id: 'tar', name: 'Tarih', mebCode: 'TAR.10',
+  topics: [
+    { id: 'tar10-1', name: '20. Yüzyıl Başlarında Osmanlı', unit: 'Tarih', priority: 'yks' },
+    { id: 'tar10-2', name: 'Kurtuluş Savaşı', unit: 'Tarih', priority: 'yks' },
+  ],
+};
+
+const COG_10: CurriculumSubject = {
+  id: 'cog', name: 'Coğrafya', mebCode: 'COG.10',
+  topics: [
+    { id: 'cog10-1', name: 'Çevre ve Toplum', unit: 'Coğrafya', priority: 'yks' },
+    { id: 'cog10-2', name: 'Ekonomik Faaliyetler', unit: 'Coğrafya', priority: 'tekrar' },
+  ],
+};
+
+const TAR_11: CurriculumSubject = {
+  id: 'tar', name: 'Tarih', mebCode: 'TAR.11',
+  topics: [
+    { id: 'tar11-1', name: 'Atatürk İlkeleri', unit: 'Tarih', priority: 'yks' },
+    { id: 'tar11-2', name: 'İki Savaş Arası Dönem', unit: 'Tarih', priority: 'yks' },
+  ],
+};
+
+const COG_11: CurriculumSubject = {
+  id: 'cog', name: 'Coğrafya', mebCode: 'COG.11',
+  topics: [
+    { id: 'cog11-1', name: 'Nüfus Politikaları', unit: 'Coğrafya', priority: 'yks' },
+    { id: 'cog11-2', name: 'Türkiye Ekonomisi', unit: 'Coğrafya', priority: 'yks' },
+  ],
+};
+
+const FEL_11: CurriculumSubject = {
+  id: 'fel', name: 'Felsefe', mebCode: 'FEL.11',
+  topics: [
+    { id: 'fel11-1', name: 'Felsefeyi Tanıma', unit: 'Felsefe', priority: 'yks' },
+    { id: 'fel11-2', name: 'Bilgi Felsefesi', unit: 'Felsefe', priority: 'yks' },
+  ],
+};
+
 const MAT_10: CurriculumSubject = {
   id: 'mat', name: 'Matematik', mebCode: 'MAT.10',
   topics: [
@@ -143,28 +239,28 @@ export const GRADE_CURRICULA: Record<GradeLevel, GradeCurriculum> = {
     label: '9. Sınıf',
     mebFramework: 'MEB Ortaöğretim 9. Sınıf Müfredatı',
     yokAlignment: 'YKS temel kavramlar hazırlığı',
-    subjects: [MAT_9, FEN_9, TUR_9],
+    subjects: [MAT_9, TUR_9, FIZ_9, KIM_9, BIY_9, TAR_9, COG_9],
   },
   '10': {
     grade: '10',
     label: '10. Sınıf',
     mebFramework: 'MEB Ortaöğretim 10. Sınıf Müfredatı',
     yokAlignment: 'TYT ön hazırlık',
-    subjects: [MAT_10, FIZ_10, TUR_9],
+    subjects: [MAT_10, TUR_9, FIZ_10, KIM_10, BIY_10, TAR_10, COG_10],
   },
   '11': {
     grade: '11',
     label: '11. Sınıf',
     mebFramework: 'MEB Ortaöğretim 11. Sınıf Müfredatı',
     yokAlignment: 'TYT + AYT konu tamamlama',
-    subjects: [MAT_11, FIZ_11, KIM_11, BIY_11, TUR_9],
+    subjects: [MAT_11, TUR_9, FIZ_11, KIM_11, BIY_11, TAR_11, COG_11, FEL_11],
   },
   '12': {
     grade: '12',
     label: '12. Sınıf',
     mebFramework: 'MEB 12. Sınıf + YKS Hazırlık',
     yokAlignment: 'YÖK YKS AYT/TYT müfredat uyumu',
-    subjects: [MAT_12, EDE_12, FIZ_11, KIM_11, BIY_11],
+    subjects: [MAT_12, EDE_12, FIZ_11, KIM_11, BIY_11, TAR_11, COG_11, FEL_11],
   },
   mezun: {
     grade: 'mezun',

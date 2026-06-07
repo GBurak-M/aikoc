@@ -40,11 +40,24 @@ import {
 } from './lib/storage';
 import {
   getExamsForChart,
+  getGradeSubjectAverages,
   getLatestExamByType,
   getSubjectAverages,
   sortExamsByDate,
   type Exam,
 } from './lib/exams';
+import {
+  createEmptyScoreMap,
+  getMaxQuestionsForSubject,
+  getSubjectsForExamType,
+} from './lib/examSubjects';
+import {
+  extractTextFromQuestionImage,
+  formatImageSize,
+  isSupportedQuestionImage,
+  MAX_QUESTION_IMAGE_BYTES,
+} from './lib/questionOcr';
+import { buildStudyTimeReport, formatStudyTimeReport } from './lib/studyTimeAdvisor';
 import { USAGE_GUIDE } from './data/usageGuide';
 import { SITE_NAME, SITE_TAGLINE } from './config/site';
 import MemberAuthModal from './components/MemberAuthModal';
@@ -232,19 +245,8 @@ export default function App() {
   const [examNotes, setExamNotes] = useState('');
   
   // Derslere göre doğru yanlış state'leri
-  const [tytScores, setTytScores] = useState({
-    Matematik: { correct: 0, wrong: 0 },
-    Türkçe: { correct: 0, wrong: 0 },
-    Fen: { correct: 0, wrong: 0 },
-    Sosyal: { correct: 0, wrong: 0 }
-  });
-
-  const [aytScores, setAytScores] = useState({
-    Matematik: { correct: 0, wrong: 0 },
-    Edebiyat: { correct: 0, wrong: 0 },
-    Fen: { correct: 0, wrong: 0 },
-    Sosyal: { correct: 0, wrong: 0 }
-  });
+  const [tytScores, setTytScores] = useState(() => createEmptyScoreMap('TYT'));
+  const [aytScores, setAytScores] = useState(() => createEmptyScoreMap('AYT'));
 
   // AI Koç State'leri
   const [aiAnalysis, setAiAnalysis] = useState('');
@@ -284,6 +286,7 @@ export default function App() {
   const [questionImage, setQuestionImage] = useState(null); // base64 string
   const [questionImageName, setQuestionImageName] = useState('');
   const [loadingSolution, setLoadingSolution] = useState(false);
+  const [ocrProgress, setOcrProgress] = useState(0);
   const [activeSolution, setActiveSolution] = useState('');
   const [unsolvedArchive, setUnsolvedArchive] = useState(() =>
     safeParse('guidance_core_unsolved_archive', []),
@@ -676,22 +679,6 @@ export default function App() {
   const activeTheme = getThemeClasses(themeColor);
   const surfaceStyle = getThemeSurfaceStyle(themeColor, darkMode);
 
-  // Maksimum soru sınırları
-  const getMaxQuestions = (examType, subject) => {
-    if (examType === 'TYT') {
-      if (subject === 'Matematik') return 40;
-      if (subject === 'Türkçe') return 40;
-      if (subject === 'Fen') return 20;
-      if (subject === 'Sosyal') return 20;
-    } else { // AYT
-      if (subject === 'Matematik') return 40;
-      if (subject === 'Edebiyat') return 24;
-      if (subject === 'Fen') return 40;
-      if (subject === 'Sosyal') return 40;
-    }
-    return 40;
-  };
-
   // Doğru/Yanlış değiştiğinde Net hesaplama (Net = Doğru - Yanlış * 0.25)
   const calculateNet = (correct, wrong) => {
     const net = correct - (wrong * 0.25);
@@ -700,7 +687,7 @@ export default function App() {
 
   const handleScoreChange = (subject, field, value) => {
     const numValue = Math.max(0, parseInt(value) || 0);
-    const maxQ = getMaxQuestions(examType, subject);
+    const maxQ = getMaxQuestionsForSubject(examType, subject);
 
     if (examType === 'TYT') {
       const current = { ...tytScores[subject] };
@@ -752,23 +739,41 @@ export default function App() {
 
   const liveStats = getLiveStats();
 
-  const subjectAverages = getSubjectAverages(exams);
+  const memberGrade = useMemo(() => {
+    if (!member) return null;
+    const edu = loadEducationProfile(member.id);
+    return edu?.effectiveGrade ?? null;
+  }, [member?.id, memberActivityTick]);
+
+  const subjectAverages = useMemo(() => {
+    if (memberGrade) return getGradeSubjectAverages(exams, memberGrade);
+    return getSubjectAverages(exams);
+  }, [exams, memberGrade]);
+
+  const studyTimeReport = useMemo(() => {
+    if (!memberGrade) return null;
+    return buildStudyTimeReport(exams, memberGrade);
+  }, [exams, memberGrade]);
+
   const chartExams = getExamsForChart(exams);
+
+  const subjectBarStyle = (name: string) => {
+    const n = name.toLowerCase();
+    if (n.includes('matematik')) return { bar: 'bg-indigo-500', Icon: Calculator };
+    if (n.includes('türk') || n.includes('edebiyat')) return { bar: 'bg-rose-500', Icon: PenLine };
+    if (n.includes('fizik') || n.includes('kimya') || n.includes('biyoloji') || n.includes('fen')) {
+      return { bar: 'bg-emerald-500', Icon: FlaskConical };
+    }
+    return { bar: 'bg-amber-500', Icon: Globe };
+  };
 
   // Radar Grafiği için Verileri Formatlama
   const getRadarData = () => {
-    return subjectAverages.map(item => {
-      let subjectShort = 'MAT';
-      if (item.subject.includes('Türkçe')) subjectShort = 'TÜR/EDB';
-      if (item.subject.includes('Fen')) subjectShort = 'FEN';
-      if (item.subject.includes('Sosyal')) subjectShort = 'SOS';
-      
-      return {
-        subject: subjectShort,
-        "Ort. Alanı": item.percentage,
-        fullMark: 100
-      };
-    });
+    return subjectAverages.map((item) => ({
+      subject: item.subject.length > 12 ? `${item.subject.slice(0, 11)}…` : item.subject,
+      'Ort. Alanı': item.percentage,
+      fullMark: 100,
+    }));
   };
 
   const radarData = getRadarData();
@@ -878,21 +883,13 @@ export default function App() {
     // Formu Temizleme ve Başarılı Analiz Mesajı tetikleme
     setExamName('');
     setExamNotes('');
-    setTytScores({
-      Matematik: { correct: 0, wrong: 0 },
-      Türkçe: { correct: 0, wrong: 0 },
-      Fen: { correct: 0, wrong: 0 },
-      Sosyal: { correct: 0, wrong: 0 }
-    });
-    setAytScores({
-      Matematik: { correct: 0, wrong: 0 },
-      Edebiyat: { correct: 0, wrong: 0 },
-      Fen: { correct: 0, wrong: 0 },
-      Sosyal: { correct: 0, wrong: 0 }
-    });
+    setTytScores(createEmptyScoreMap('TYT'));
+    setAytScores(createEmptyScoreMap('AYT'));
 
     // Otomatik AI Koç Yorumu
-    const introText = `Harika! "${newExam.name}" isimli yeni deneme sınavı sonucunu başarıyla kaydettim.\n\n📊 Sınav Özetin:\n• Tür: ${newExam.type}\n• Toplam Net: ${newExam.totalNet}\n• Doğruluk Oranı: %${newExam.accuracy}\n\nÖzellikle ${Object.entries(newExam.scores).map(([k,v]) => `${k} dersinde ${v.net} net`).join(', ')} yaptığını görüyorum. Bu veriyi gelişim geçmişine işledim. Nasıl çalışman gerektiği konusunda benden tavsiye almak için alt kısımdaki hazır sorulardan birine tıklayabilirsin! 🌟`;
+    const grade = member ? loadEducationProfile(member.id)?.effectiveGrade : null;
+    const studyBlock = grade ? `\n\n${formatStudyTimeReport(buildStudyTimeReport(nextExams, grade))}` : '';
+    const introText = `Harika! "${newExam.name}" isimli yeni deneme sınavı sonucunu başarıyla kaydettim.\n\n📊 Sınav Özetin:\n• Tür: ${newExam.type}\n• Toplam Net: ${newExam.totalNet}\n• Doğruluk Oranı: %${newExam.accuracy}\n\nÖzellikle ${Object.entries(newExam.scores).map(([k,v]) => `${k} dersinde ${v.net} net`).join(', ')} yaptığını görüyorum. Bu veriyi gelişim geçmişine işledim.${studyBlock}`;
     setChatHistory(prev => [...prev, { id: Date.now().toString(), role: 'assistant', text: introText }]);
   };
 
@@ -996,23 +993,18 @@ export default function App() {
     };
   };
 
-  useEffect(() => {
-    if (!member || activeTab === 'uyepanel') return;
-    const coachTabs = new Set(['panel', 'sinavlar']);
-    if (!coachTabs.has(activeTab) || coachedTabsRef.current.has(activeTab)) return;
-    coachedTabsRef.current.add(activeTab);
-    const tip = generateContextualCoachTip('tab_visit', activeTab, buildCoachContext());
-    if (tip) pushCoachInsight(tip);
-  }, [activeTab, member, pushCoachInsight]);
-
   const askLocalCoach = async (userMessage: string) => {
     const context = buildCoachContext();
+    const history = chatHistory
+      .filter((m) => m.id !== 'welcome')
+      .slice(-12)
+      .map((m) => ({ role: m.role, text: m.text }));
 
     setLoadingAi(true);
     setAiLoadingMode('chat');
 
     try {
-      const aiText = await generateCoachChatResponse(userMessage, context);
+      const aiText = await generateCoachChatResponse(userMessage, context, history);
       recordChatExchange(userMessage, aiText, { memberType: member ? 'member' : 'guest' });
       setChatHistory((prev) => [...prev, { id: Date.now().toString(), role: 'assistant', text: aiText }]);
     } catch (error) {
@@ -1166,12 +1158,33 @@ export default function App() {
     }
 
     setLoadingSolution(true);
+    setOcrProgress(0);
 
     try {
+      let resolvedText = questionText.trim();
+      let fromOcr = false;
+
+      if (!resolvedText && questionImage) {
+        resolvedText = await extractTextFromQuestionImage(questionImage, setOcrProgress);
+        fromOcr = Boolean(resolvedText);
+        if (resolvedText && !questionText.trim()) {
+          setQuestionText(resolvedText);
+        }
+      }
+
+      if (!resolvedText) {
+        setNotification({
+          title: 'METİN OKUNAMADI',
+          message: 'Fotoğraftan metin çıkarılamadı. Soruyu metin kutusuna yazın veya daha net bir fotoğraf yükleyin.',
+        });
+        setLoadingSolution(false);
+        return;
+      }
+
       const solutionText = await generateQuestionSolution(
         questionSubject,
-        questionText,
-        Boolean(questionImage),
+        resolvedText,
+        { fromOcr },
       );
       setActiveSolution(solutionText);
 
@@ -1212,15 +1225,23 @@ export default function App() {
     const file = e.target.files[0];
     if (!file) return;
 
-    if (file.size > 2 * 1024 * 1024) {
+    if (!isSupportedQuestionImage(file)) {
       setNotification({
-        title: "DOSYA ÇOK BÜYÜK",
-        message: "Lütfen 2MB'tan daha küçük bir görsel yükleyin."
+        title: 'DESTEKLENMEYEN FORMAT',
+        message: 'JPEG, PNG, GIF, WebP, BMP, TIFF, HEIC, AVIF veya SVG yükleyebilirsiniz.',
       });
       return;
     }
 
-    setQuestionImageName(file.name);
+    if (file.size > MAX_QUESTION_IMAGE_BYTES) {
+      setNotification({
+        title: 'DOSYA ÇOK BÜYÜK',
+        message: `Lütfen ${formatImageSize(MAX_QUESTION_IMAGE_BYTES)} altında bir görsel yükleyin.`,
+      });
+      return;
+    }
+
+    setQuestionImageName(`${file.name} (${formatImageSize(file.size)})`);
     const reader = new FileReader();
     reader.onloadend = () => {
       setQuestionImage(reader.result);
@@ -2034,25 +2055,22 @@ export default function App() {
                       <div className="col-span-2 text-right">NET</div>
                     </div>
 
-                    {Object.keys(examType === 'TYT' ? tytScores : aytScores).map(subject => {
+                    {getSubjectsForExamType(examType).map(({ key: subject }) => {
                       const currentScores = examType === 'TYT' ? tytScores : aytScores;
-                      const maxQ = getMaxQuestions(examType, subject);
-                      const currentObj = currentScores[subject];
+                      const maxQ = getMaxQuestionsForSubject(examType, subject);
+                      const currentObj = currentScores[subject] ?? { correct: 0, wrong: 0 };
                       const net = calculateNet(currentObj.correct, currentObj.wrong);
+                      const bar = subjectBarStyle(subject);
 
                       return (
-                        <div 
+                        <div
                           key={subject}
                           className={`grid grid-cols-12 items-center p-3 rounded-xl border ${
                             darkMode ? 'bg-slate-800/30 border-slate-700/40 hover:bg-slate-800/60' : 'bg-slate-50 border-slate-100 hover:bg-slate-100'
                           } transition-all`}
                         >
                           <div className="col-span-6 flex items-center gap-2">
-                            <span className={`w-1.5 h-8 rounded-full ${
-                              subject === 'Matematik' ? 'bg-indigo-500' :
-                              subject === 'Türkçe' || subject === 'Edebiyat' ? 'bg-rose-500' :
-                              subject === 'Fen' ? 'bg-emerald-500' : 'bg-amber-500'
-                            }`} />
+                            <span className={`w-1.5 h-8 rounded-full ${bar.bar}`} />
                             <div>
                               <p className="text-sm font-bold">{subject}</p>
                               <p className="text-[10px] text-slate-400 font-semibold uppercase">MAX SORU: {maxQ}</p>
@@ -2138,11 +2156,7 @@ export default function App() {
                         Henüz deneme sınavı yok. Sol panelden ilk sınavınızı kaydettiğinizde ders bazlı grafikler burada görünecek.
                       </div>
                     ) : subjectAverages.map((sub, i) => {
-                      let barColor = 'bg-violet-500';
-                      let SubjectIcon = Calculator;
-                      if (sub.subject.includes('Türkçe')) { barColor = 'bg-rose-500'; SubjectIcon = PenLine; }
-                      if (sub.subject.includes('Fen')) { barColor = 'bg-emerald-500'; SubjectIcon = FlaskConical; }
-                      if (sub.subject.includes('Sosyal')) { barColor = 'bg-amber-500'; SubjectIcon = Globe; }
+                      const { bar: barColor, Icon: SubjectIcon } = subjectBarStyle(sub.subject);
 
                       return (
                         <div key={i} className="space-y-2">
@@ -2193,6 +2207,36 @@ export default function App() {
                   </div>
                 </div>
               </div>
+
+              {studyTimeReport && memberGrade && (
+                <div className="intel-card p-6">
+                  <div className="flex justify-between items-start border-b pb-4 mb-4 dark:border-slate-700">
+                    <div>
+                      <h3 className="font-display font-extrabold text-base tracking-tight uppercase">
+                        Günlük Çalışma Planı
+                      </h3>
+                      <p className="text-[11px] text-slate-400 font-semibold uppercase">
+                        {memberGrade === 'mezun' ? 'Mezun' : `${memberGrade}. sınıf`} · AI istatistik önerisi · {studyTimeReport.totalDailyLabel}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">{studyTimeReport.summary}</p>
+                  <div className="space-y-2">
+                    {studyTimeReport.subjects.slice(0, 8).map((p) => (
+                      <div
+                        key={p.subject}
+                        className={`flex justify-between items-center text-xs p-2.5 rounded-xl border ${
+                          darkMode ? 'border-slate-700/60 bg-slate-800/30' : 'border-slate-100 bg-slate-50'
+                        }`}
+                      >
+                        <span className="font-bold">{p.subject}</span>
+                        <span className={`font-black ${activeTheme.text}`}>{p.minutes} dk/gün</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-[10px] text-slate-400 mt-4">{studyTimeReport.researchNote}</p>
+                </div>
+              )}
 
             </div>
 
@@ -2610,11 +2654,11 @@ export default function App() {
                         }`}>
                           <Image className="h-4 w-4 text-slate-400" />
                           <span className="text-[11px] font-bold text-slate-500 truncate">
-                            {questionImageName ? questionImageName : "Fotoğraf Seç (Max 2MB)"}
+                            {questionImageName ? questionImageName : 'Fotoğraf Seç (Max 25 MB)'}
                           </span>
                           <input
                             type="file"
-                            accept="image/*"
+                            accept="image/*,.heic,.heif,.avif"
                             onChange={handleImageUpload}
                             className="hidden"
                           />
@@ -2685,7 +2729,13 @@ export default function App() {
                       variant={loadingSolution ? 'loading' : 'mark'}
                       frameClassName={`bg-gradient-to-tr ${activeTheme.gradient}`}
                     />
-                    <span>{loadingSolution ? 'Yerel AI Çözüm Hazırlıyor...' : 'Soruyu Yerel AI ile Çöz'}</span>
+                    <span>
+                      {loadingSolution
+                        ? ocrProgress > 0 && ocrProgress < 100
+                          ? `Fotoğraf okunuyor %${ocrProgress}…`
+                          : 'Yerel AI Çözüm Hazırlıyor...'
+                        : 'Soruyu Yerel AI ile Çöz'}
+                    </span>
                   </button>
                 </form>
               </div>

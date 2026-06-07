@@ -5,11 +5,16 @@ import {
   type LibraryItem,
 } from '../data/libraryCatalog';
 import type { DiscoveredResource } from './libraryDiscovery';
+import { canEmbedInReader, embeddableDomainsHint } from './libraryEmbed';
 import { safeParse, safeSetItem } from './storage';
 
 const PENDING_KEY = 'aikoc_library_pending';
 const APPROVED_USER_KEY = 'aikoc_library_user_approved';
+const ADMIN_ADDED_KEY = 'aikoc_library_admin_added';
+const REMOVED_IDS_KEY = 'aikoc_library_removed_ids';
 const EDITOR_SESSION_KEY = 'aikoc_library_editor_session';
+
+export { canEmbedInReader, embeddableDomainsHint };
 
 export type LibrarySubmission = {
   id: string;
@@ -33,9 +38,61 @@ function normalizeLibraryItem(item: LibraryItem): LibraryItem {
   };
 }
 
+function getRemovedIds(): Set<string> {
+  return new Set(safeParse<string[]>(REMOVED_IDS_KEY, []));
+}
+
+function getAdminAddedItems(): LibraryItem[] {
+  return safeParse<LibraryItem[]>(ADMIN_ADDED_KEY, []).map(normalizeLibraryItem);
+}
+
+function getUserApprovedItems(): LibraryItem[] {
+  return safeParse<LibraryItem[]>(APPROVED_USER_KEY, []).map(normalizeLibraryItem);
+}
+
+function mergeCatalogItems(): LibraryItem[] {
+  const removed = getRemovedIds();
+  const merged = [
+    ...CURATED_LIBRARY,
+    ...getAdminAddedItems(),
+    ...getUserApprovedItems(),
+  ];
+  const seen = new Set<string>();
+  const out: LibraryItem[] = [];
+  for (const item of merged) {
+    if (removed.has(item.id) || seen.has(item.id)) continue;
+    seen.add(item.id);
+    out.push(normalizeLibraryItem(item));
+  }
+  return out;
+}
+
+/** Kullanıcıya gösterilen kaynaklar — yalnızca kütüphane içi okunabilir */
 export function getAllLibraryItems(): LibraryItem[] {
-  const userApproved = safeParse<LibraryItem[]>(APPROVED_USER_KEY, []);
-  return [...CURATED_LIBRARY, ...userApproved.map(normalizeLibraryItem)];
+  return mergeCatalogItems().filter((item) => canEmbedInReader(item.url));
+}
+
+/** Admin paneli — kaldırılmış ve gömülemeyen dahil tam liste */
+export function getLibraryCatalogForAdmin(): (LibraryItem & { removed: boolean; embeddable: boolean })[] {
+  const removed = getRemovedIds();
+  const merged = [
+    ...CURATED_LIBRARY,
+    ...getAdminAddedItems(),
+    ...getUserApprovedItems(),
+  ];
+  const seen = new Set<string>();
+  const out: (LibraryItem & { removed: boolean; embeddable: boolean })[] = [];
+  for (const item of merged) {
+    if (seen.has(item.id)) continue;
+    seen.add(item.id);
+    const normalized = normalizeLibraryItem(item);
+    out.push({
+      ...normalized,
+      removed: removed.has(item.id),
+      embeddable: canEmbedInReader(normalized.url),
+    });
+  }
+  return out.sort((a, b) => a.title.localeCompare(b.title, 'tr'));
 }
 
 export function searchLibraryItems(query: string, items: LibraryItem[]): LibraryItem[] {
@@ -103,6 +160,8 @@ export function approveSubmission(id: string, reviewNote = ''): boolean {
   sub.reviewNote = reviewNote;
   safeSetItem(PENDING_KEY, list);
 
+  if (!canEmbedInReader(sub.url)) return false;
+
   const approved = safeParse<LibraryItem[]>(APPROVED_USER_KEY, []);
   approved.unshift({
     id: `user_${sub.id}`,
@@ -157,12 +216,13 @@ export function revokeEditorSessionForAdmin(): void {
 
 function urlExistsInCatalog(url: string): boolean {
   const lower = url.toLowerCase();
-  return getAllLibraryItems().some((i) => i.url.toLowerCase() === lower);
+  return mergeCatalogItems().some((i) => i.url.toLowerCase() === lower);
 }
 
 /** AI keşif veya editör tarafından doğrudan onaylı kütüphaneye ekler */
 export function importDiscoveredItem(resource: DiscoveredResource): boolean {
   if (!resource.url?.trim() || urlExistsInCatalog(resource.url)) return false;
+  if (!canEmbedInReader(resource.url)) return false;
 
   const approved = safeParse<LibraryItem[]>(APPROVED_USER_KEY, []);
   approved.unshift({
@@ -180,4 +240,95 @@ export function importDiscoveredItem(resource: DiscoveredResource): boolean {
   });
   safeSetItem(APPROVED_USER_KEY, approved);
   return true;
+}
+
+export function adminRemoveLibraryItem(id: string): boolean {
+  const catalog = mergeCatalogItems();
+  if (!catalog.some((i) => i.id === id)) return false;
+  const removed = safeParse<string[]>(REMOVED_IDS_KEY, []);
+  if (!removed.includes(id)) {
+    removed.push(id);
+    safeSetItem(REMOVED_IDS_KEY, removed);
+  }
+  return true;
+}
+
+export function adminRestoreLibraryItem(id: string): boolean {
+  const removed = safeParse<string[]>(REMOVED_IDS_KEY, []);
+  const next = removed.filter((x) => x !== id);
+  if (next.length === removed.length) return false;
+  safeSetItem(REMOVED_IDS_KEY, next);
+  return true;
+}
+
+export function adminDeleteLibraryItem(id: string): boolean {
+  let changed = false;
+  const adminAdded = getAdminAddedItems().filter((i) => {
+    if (i.id === id) {
+      changed = true;
+      return false;
+    }
+    return true;
+  });
+  if (changed) safeSetItem(ADMIN_ADDED_KEY, adminAdded);
+
+  const userApproved = getUserApprovedItems();
+  const filteredUser = userApproved.filter((i) => {
+    if (i.id === id) {
+      changed = true;
+      return false;
+    }
+    return true;
+  });
+  if (filteredUser.length !== userApproved.length) {
+    safeSetItem(APPROVED_USER_KEY, filteredUser);
+    changed = true;
+  }
+
+  adminRemoveLibraryItem(id);
+  return changed || getRemovedIds().has(id);
+}
+
+export function adminAddLibraryItem(input: {
+  category: LibraryCategory;
+  title: string;
+  summary: string;
+  url: string;
+  author: string;
+  tags: string[];
+  language?: string;
+}): { ok: true; item: LibraryItem } | { ok: false; error: string } {
+  const url = input.url.trim();
+  if (!url) return { ok: false, error: 'URL gerekli.' };
+  if (!canEmbedInReader(url)) {
+    return {
+      ok: false,
+      error: `Bu bağlantı kütüphane içinde açılamaz. Desteklenen kaynaklar: ${embeddableDomainsHint()}`,
+    };
+  }
+  if (urlExistsInCatalog(url)) return { ok: false, error: 'Bu URL zaten kütüphanede.' };
+
+  const item: LibraryItem = {
+    id: `adm_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    category: input.category,
+    title: input.title.trim(),
+    summary: input.summary.trim() || 'Admin tarafından eklenen kaynak.',
+    author: input.author.trim() || 'Admin',
+    url,
+    format: url.toLowerCase().endsWith('.pdf') ? 'pdf' : 'html',
+    tags: input.tags,
+    language: input.language ?? 'TR',
+    source: 'Admin',
+    approved: true,
+  };
+
+  const list = getAdminAddedItems();
+  list.unshift(item);
+  safeSetItem(ADMIN_ADDED_KEY, list);
+
+  const removed = safeParse<string[]>(REMOVED_IDS_KEY, []);
+  if (removed.includes(item.id)) {
+    safeSetItem(REMOVED_IDS_KEY, removed.filter((x) => x !== item.id));
+  }
+  return { ok: true, item };
 }

@@ -20,6 +20,7 @@ export function detectCoachIntent(message: string): string {
   if (/namaz|ezan|imsak|vakit/.test(m)) return 'prayer';
   if (/takvim|bayram|tatil/.test(m)) return 'calendar';
   if (/bilim|arastirma|makale|openalex|yayin/.test(m)) return 'science_news';
+  if (/gramer|grammar|dil bilgisi|ingilizce kelime|turkce kelime|ceviri|çeviri|translate|tense|zaman|article|baglac|bağlaç/.test(m)) return 'language';
   if (/motivasyon|morali|vazgec|umutsuz|yoruldum|stres|kayg/.test(m)) return 'motivation';
   if (/plan|program|hafta|nasil calis/.test(m)) return 'plan';
   if (/matematik|mat\b|turev|integral/.test(m)) return 'math';

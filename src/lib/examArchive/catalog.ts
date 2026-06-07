@@ -109,6 +109,14 @@ const SPECS: ExamSpec[] = [
     subjects: ['TYT Benzeri', 'Matematik', 'Fen'],
     sessions: () => ['Askeri Öğrenci'],
   },
+  {
+    type: 'AOL',
+    startYear: 2015,
+    questions: 100,
+    duration: 120,
+    subjects: ['Türkçe', 'Matematik', 'Fen', 'Sosyal', 'Seçmeli'],
+    sessions: () => ['Dönem Sınavı', 'Mezuniyet'],
+  },
 ];
 
 const FREE_PRACTICE: Array<{ type: ExamArchiveType; title: string; questions: number; duration: number }> = [
@@ -120,6 +128,7 @@ const FREE_PRACTICE: Array<{ type: ExamArchiveType; title: string; questions: nu
   { type: 'ALES', title: 'Ücretsiz ALES Karma Deneme', questions: 50, duration: 90 },
   { type: 'YDS', title: 'Ücretsiz YDS Okuma Denemesi', questions: 40, duration: 60 },
   { type: 'DGS', title: 'Ücretsiz DGS Tam Deneme', questions: 120, duration: 150 },
+  { type: 'AOL', title: 'Ücretsiz AÖL Model Deneme', questions: 80, duration: 100 },
 ];
 
 function paperId(type: ExamArchiveType, year: number, session: string, source: PaperSource): string {

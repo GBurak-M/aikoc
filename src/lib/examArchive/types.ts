@@ -10,7 +10,8 @@ export type ExamArchiveType =
   | 'ALES'
   | 'YDS'
   | 'DGS'
-  | 'MSÜ';
+  | 'MSÜ'
+  | 'AOL';
 
 export type PaperSource = 'cikmis' | 'ucretsiz_deneme';
 
@@ -71,6 +72,7 @@ export const EXAM_TYPE_LABELS: Record<ExamArchiveType, string> = {
   YDS: 'YDS / YÖKDİL',
   DGS: 'DGS',
   MSÜ: 'MSÜ',
+  AOL: 'AÖL (Açık Öğretim Lisesi)',
 };
 
 export const SOURCE_LABELS: Record<PaperSource, string> = {

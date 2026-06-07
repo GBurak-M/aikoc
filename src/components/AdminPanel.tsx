@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import {
-  Brain, KeyRound, Mail, RefreshCw, Shield, Trash2, UserCog, UserPlus, Users, Zap, AlertTriangle,
+  BookOpen, Brain, KeyRound, Mail, Plus, RefreshCw, Shield, Trash2, UserCog, UserPlus, Users, Zap, AlertTriangle,
 } from 'lucide-react';
 import {
   addAdminAccount,
@@ -31,6 +31,19 @@ import {
   setLearningBypass,
 } from '../lib/aiCentralLearning';
 import { logSiteEvent } from '../lib/siteTraffic';
+import {
+  LIBRARY_CATEGORY_LABELS,
+  LIBRARY_CATEGORY_ORDER,
+  type LibraryCategory,
+} from '../data/libraryCatalog';
+import {
+  adminAddLibraryItem,
+  adminDeleteLibraryItem,
+  adminRemoveLibraryItem,
+  adminRestoreLibraryItem,
+  embeddableDomainsHint,
+  getLibraryCatalogForAdmin,
+} from '../lib/library';
 
 type ThemeClasses = {
   bg: string;
@@ -67,6 +80,16 @@ export default function AdminPanel({ darkMode, activeTheme, admin, onLogout, onM
   const [memberTick, setMemberTick] = useState(0);
   const [resetTick, setResetTick] = useState(0);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [libraryTick, setLibraryTick] = useState(0);
+  const [libraryMsg, setLibraryMsg] = useState('');
+  const [libraryForm, setLibraryForm] = useState({
+    category: 'ders_kitabi' as LibraryCategory,
+    title: '',
+    summary: '',
+    url: '',
+    author: '',
+    tags: '',
+  });
 
   const [newAdmin, setNewAdmin] = useState({
     email: '',
@@ -110,6 +133,11 @@ export default function AdminPanel({ darkMode, activeTheme, admin, onLogout, onM
     void resetTick;
     return listSimulatedEmails().slice(0, 10);
   }, [resetTick]);
+
+  const libraryCatalog = useMemo(() => {
+    void libraryTick;
+    return getLibraryCatalogForAdmin();
+  }, [libraryTick]);
 
   const card = `p-5 rounded-2xl border ${darkMode ? 'bg-slate-800/40 border-slate-700' : 'bg-white border-slate-100'}`;
   const input = `w-full text-sm px-3 py-2 rounded-xl border ${darkMode ? 'bg-slate-900 border-slate-700' : 'bg-slate-50 border-slate-200'}`;
@@ -304,6 +332,140 @@ export default function AdminPanel({ darkMode, activeTheme, admin, onLogout, onM
           </button>
         </div>
         {learningMsg && <p className="text-xs text-emerald-600 dark:text-emerald-400">{learningMsg}</p>}
+      </div>
+
+      {/* Kütüphane yönetimi */}
+      <div className={card}>
+        <h3 className="font-extrabold text-sm flex items-center gap-2 mb-1">
+          <BookOpen className="h-4 w-4 text-violet-500" />
+          Kütüphane Yönetimi
+        </h3>
+        <p className="text-xs text-slate-500 mb-4">
+          Kitap ve makaleleri kütüphaneye ekleyin veya çıkarın. Yalnızca site içinde okunabilen kaynaklar listelenir ({embeddableDomainsHint()}).
+        </p>
+
+        <p className="text-[10px] font-bold text-slate-400 uppercase mb-2 flex items-center gap-1">
+          <Plus className="h-3.5 w-3.5" />
+          Yeni kaynak ekle
+        </p>
+        <div className="grid sm:grid-cols-2 gap-2 mb-2">
+          <select
+            className={input}
+            value={libraryForm.category}
+            onChange={(e) => setLibraryForm({ ...libraryForm, category: e.target.value as LibraryCategory })}
+          >
+            {LIBRARY_CATEGORY_ORDER.map((cat) => (
+              <option key={cat} value={cat}>{LIBRARY_CATEGORY_LABELS[cat]}</option>
+            ))}
+          </select>
+          <input className={input} placeholder="Başlık" value={libraryForm.title} onChange={(e) => setLibraryForm({ ...libraryForm, title: e.target.value })} />
+          <input className={`${input} sm:col-span-2`} type="url" placeholder="Okuma URL (kütüphane içi)" value={libraryForm.url} onChange={(e) => setLibraryForm({ ...libraryForm, url: e.target.value })} />
+          <textarea className={`${input} sm:col-span-2`} rows={2} placeholder="Kısa açıklama" value={libraryForm.summary} onChange={(e) => setLibraryForm({ ...libraryForm, summary: e.target.value })} />
+          <input className={input} placeholder="Yazar" value={libraryForm.author} onChange={(e) => setLibraryForm({ ...libraryForm, author: e.target.value })} />
+          <input className={input} placeholder="Etiketler (virgülle)" value={libraryForm.tags} onChange={(e) => setLibraryForm({ ...libraryForm, tags: e.target.value })} />
+        </div>
+        <button
+          type="button"
+          onClick={() => {
+            const result = adminAddLibraryItem({
+              category: libraryForm.category,
+              title: libraryForm.title,
+              summary: libraryForm.summary,
+              url: libraryForm.url,
+              author: libraryForm.author,
+              tags: libraryForm.tags.split(',').map((t) => t.trim()).filter(Boolean),
+            });
+            if (result.ok) {
+              setLibraryForm({ category: 'ders_kitabi', title: '', summary: '', url: '', author: '', tags: '' });
+              setLibraryMsg(`"${result.item.title}" kütüphaneye eklendi.`);
+              setLibraryTick((t) => t + 1);
+              logSiteEvent('admin_library_add', { tab: 'admin', detail: result.item.title });
+            } else {
+              setLibraryMsg(result.error);
+            }
+            setTimeout(() => setLibraryMsg(''), 6000);
+          }}
+          className={`text-xs px-4 py-2 rounded-xl font-bold text-white ${activeTheme.bg}`}
+        >
+          Kütüphaneye Ekle
+        </button>
+        {libraryMsg && <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-2">{libraryMsg}</p>}
+
+        <div className="mt-5 overflow-x-auto">
+          <table className="w-full text-[11px]">
+            <thead>
+              <tr className="text-left text-slate-400 border-b border-slate-200 dark:border-slate-700">
+                <th className="py-2 pr-2">Başlık</th>
+                <th className="py-2 pr-2">Kategori</th>
+                <th className="py-2 pr-2">Durum</th>
+                <th className="py-2">İşlem</th>
+              </tr>
+            </thead>
+            <tbody>
+              {libraryCatalog.map((item) => (
+                <tr key={item.id} className="border-b border-slate-100 dark:border-slate-800">
+                  <td className="py-2 pr-2 font-semibold max-w-[200px] truncate">{item.title}</td>
+                  <td className="py-2 pr-2">{LIBRARY_CATEGORY_LABELS[item.category]}</td>
+                  <td className="py-2 pr-2">
+                    {item.removed ? (
+                      <span className="text-rose-500">Kaldırıldı</span>
+                    ) : item.embeddable ? (
+                      <span className="text-emerald-600">Aktif</span>
+                    ) : (
+                      <span className="text-amber-600">Dış bağlantı</span>
+                    )}
+                  </td>
+                  <td className="py-2">
+                    <div className="flex gap-1">
+                      {item.removed ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            adminRestoreLibraryItem(item.id);
+                            setLibraryTick((t) => t + 1);
+                            setLibraryMsg(`"${item.title}" geri yüklendi.`);
+                            setTimeout(() => setLibraryMsg(''), 4000);
+                          }}
+                          className="text-[10px] px-2 py-1 rounded-lg border border-emerald-500 text-emerald-600"
+                        >
+                          Geri al
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            adminRemoveLibraryItem(item.id);
+                            setLibraryTick((t) => t + 1);
+                            setLibraryMsg(`"${item.title}" kütüphaneden çıkarıldı.`);
+                            logSiteEvent('admin_library_remove', { tab: 'admin', detail: item.title });
+                            setTimeout(() => setLibraryMsg(''), 4000);
+                          }}
+                          className="text-[10px] px-2 py-1 rounded-lg border border-rose-400 text-rose-500"
+                        >
+                          Çıkar
+                        </button>
+                      )}
+                      {(item.id.startsWith('adm_') || item.id.startsWith('user_') || item.id.startsWith('disc_')) && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            adminDeleteLibraryItem(item.id);
+                            setLibraryTick((t) => t + 1);
+                            setLibraryMsg(`"${item.title}" kalıcı silindi.`);
+                            setTimeout(() => setLibraryMsg(''), 4000);
+                          }}
+                          className="text-[10px] px-2 py-1 rounded-lg text-slate-400 hover:text-rose-600"
+                        >
+                          Sil
+                        </button>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* Şifre sıfırlama talepleri */}

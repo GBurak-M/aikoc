@@ -1,5 +1,5 @@
 import { getCurriculumForGrade, type GradeLevel } from '../data/mebCurriculum';
-import type { Exam } from './exams';
+import { findExamScoresForCurriculumSubject, type Exam } from './exams';
 import type {
   CurriculumCoachReport,
   MemberCurriculumState,
@@ -9,26 +9,6 @@ import type {
 import { syncEffectiveGrade } from './memberEducation';
 import type { MemberActivity } from './membership';
 
-const SUBJECT_ALIASES: Record<string, string[]> = {
-  mat: ['matematik', 'mat', 'geometri', 'analiz'],
-  fiz: ['fizik', 'fiz'],
-  kim: ['kimya', 'kim'],
-  biy: ['biyoloji', 'biy'],
-  tur: ['türkçe', 'tur', 'edebiyat', 'tde', 'ede'],
-  fen: ['fen', 'fen bilimleri'],
-};
-
-function matchSubject(examSubject: string, subjectId: string, subjectName: string): boolean {
-  const s = examSubject.toLowerCase();
-  const aliases = SUBJECT_ALIASES[subjectId] ?? [subjectId, subjectName.toLowerCase()];
-  return aliases.some((a) => s.includes(a) || a.includes(s));
-}
-
-function scoreFromExam(net: number, total: number): number {
-  if (total <= 0) return 0;
-  return Math.round((net / total) * 100);
-}
-
 export function analyzeExamsAgainstCurriculum(
   exams: Exam[],
   grade: GradeLevel,
@@ -37,7 +17,7 @@ export function analyzeExamsAgainstCurriculum(
   const result = new Map<string, { subject: string; avgScore: number; weakTopics: string[] }>();
 
   for (const subj of curriculum.subjects) {
-    const related = exams.filter((e) => matchSubject(e.subject, subj.id, subj.name));
+    const related = findExamScoresForCurriculumSubject(exams, subj.id, subj.name);
     if (related.length === 0) {
       result.set(subj.id, {
         subject: subj.name,
@@ -47,7 +27,7 @@ export function analyzeExamsAgainstCurriculum(
       continue;
     }
 
-    const scores = related.map((e) => scoreFromExam(e.net, e.totalQuestions));
+    const scores = related.map((r) => r.pct);
     const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
 
     const weakTopics = subj.topics
@@ -71,13 +51,10 @@ export function buildTopicProgress(
   const now = new Date().toISOString();
 
   for (const subj of curriculum.subjects) {
-    const relatedExams = exams.filter((e) => matchSubject(e.subject, subj.id, subj.name));
+    const relatedScores = findExamScoresForCurriculumSubject(exams, subj.id, subj.name);
     const avg =
-      relatedExams.length > 0
-        ? Math.round(
-            relatedExams.reduce((s, e) => s + scoreFromExam(e.net, e.totalQuestions), 0) /
-              relatedExams.length,
-          )
+      relatedScores.length > 0
+        ? Math.round(relatedScores.reduce((s, r) => s + r.pct, 0) / relatedScores.length)
         : 0;
 
     const manualTopics = activity.topics.filter(
@@ -98,7 +75,7 @@ export function buildTopicProgress(
         topicName: topic.name,
         progress: combined,
         status,
-        source: manual ? 'manual' : relatedExams.length ? 'exam' : 'coach',
+        source: manual ? 'manual' : relatedScores.length ? 'exam' : 'coach',
         updatedAt: now,
       });
     }

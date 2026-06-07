@@ -1,3 +1,4 @@
+import { findGrammarByKeyword, formatGrammarReply } from '../data/languageKnowledge';
 import {
   detectExamFromText,
   findExamsByQuery,
@@ -14,13 +15,21 @@ import {
 } from './exams';
 import { formatArchiveStatsSummary, getArchiveSubjectStats } from './examArchive/stats';
 import { buildTrafficCoachSummary } from './siteTraffic';
-import { getMoraleMessage, maybeAddChatHumor } from './aiCoachHub';
+import { formatGenericTerm, formatTermResult, findTerm } from './academicTerms';
+import { getMoraleMessage } from './aiCoachHub';
 import { sanitizeCoachOutput } from './chatModeration';
+import {
+  buildDirectAnswerFallback,
+  tryConversationalReply,
+  type ChatTurn,
+} from './conversationEngine';
 import { getAllLibraryItems } from './library';
 import { buildCoreKnowledgeCoachBlock } from './aiCentralLearning';
 import { detectCoachIntent } from './coachIntents';
 import { deriveImprovementTips } from './userLearning';
 import type { WorldSnapshot } from './worldData';
+
+export type { ChatTurn };
 
 export type CoachProfile = {
   name: string;
@@ -54,133 +63,7 @@ export type CoachContext = {
   centralAiInsight?: string;
 };
 
-type TermEntry = {
-  tr: string;
-  en: string;
-  category: string;
-  definition: string;
-  yksTip: string;
-  analogy: string;
-};
-
-const ACADEMIC_DICTIONARY: TermEntry[] = [
-  {
-    tr: 'Türev',
-    en: 'Derivative',
-    category: 'MAT',
-    definition: 'Bir fonksiyonun belirli bir noktadaki anlık değişim hızını gösteren matematiksel işlemdir.',
-    yksTip: 'TYT/AYT’de grafik yorumu, teğet eğimi ve maksimum-minimum sorularında sık çıkar.',
-    analogy: 'Bir arabanın hız göstergesi gibi: konumu değil, o anda ne kadar hızlı değiştiğini söyler.',
-  },
-  {
-    tr: 'Mitokondri',
-    en: 'Mitochondrion',
-    category: 'BİY',
-    definition: 'Hücrede ATP üretiminden sorumlu, çift zarlı organeldir; “hücrenin enerji santrali” olarak bilinir.',
-    yksTip: 'Aerobik solunum, ATP sentezi ve hücresel solunum sorularında doğrudan sorulur.',
-    analogy: 'Şehirdeki elektrik santrali gibi; hücrenin çalışması için enerji üretir.',
-  },
-  {
-    tr: 'Momentum',
-    en: 'Momentum',
-    category: 'FİZ',
-    definition: 'p = m·v formülüyle tanımlanan fiziksel büyüklük; cismin hareket miktarını ifade eder.',
-    yksTip: 'İmpuls-momentum teoremi ve çarpışma sorularında Δp = F·Δt ilişkisine dikkat edin.',
-    analogy: 'Koşan birinin durması zorlaşır; kütle ve hız arttıkça “durma direnci” artar.',
-  },
-  {
-    tr: 'Kovalent Bağ',
-    en: 'Covalent Bond',
-    category: 'KİM',
-    definition: 'İki atomun ortaklaşa elektron çifti paylaşmasıyla oluşan kimyasal bağdır.',
-    yksTip: 'Lewis yapısı, molekül geometrisi ve polar/apolar ayrımında temel kavramdır.',
-    analogy: 'İki kişinin aynı kitabı birlikte okuması gibi; elektronları ortak kullanırlar.',
-  },
-  {
-    tr: 'Ozmotik Basınç',
-    en: 'Osmotic Pressure',
-    category: 'BİY',
-    definition: 'Yarı geçirgen zardan su geçişini durdurmak için gereken ek basınçtır.',
-    yksTip: 'Hücre zarı, plazmoliz ve turgor konularında yoğun sorulur.',
-    analogy: 'Tuzlu suya konan salatalığın buruşması; suyun yoğun taraftan seyrek tarafa gitmesi.',
-  },
-  {
-    tr: 'İvme',
-    en: 'Acceleration',
-    category: 'FİZ',
-    definition: 'Hızın zamana göre değişim oranıdır; birimi m/s².',
-    yksTip: 'Grafik sorularında eğim = ivme; sabit ivmeli hareket formüllerini bilin.',
-    analogy: 'Gaz pedalına bastığınızda hızın artma hızı; fren yaptığınızda negatif ivme.',
-  },
-  {
-    tr: 'İntegral',
-    en: 'Integral',
-    category: 'MAT',
-    definition: 'Bir fonksiyonun belirli aralıktaki toplam değişimini veya alanını hesaplayan işlemdir.',
-    yksTip: 'Alan-hacim ve hız-yol integral sorularında sınır değerlerine dikkat edin.',
-    analogy: 'Hız grafiğinin altındaki alan, gidilen yolu verir.',
-  },
-  {
-    tr: 'Fotosentez',
-    en: 'Photosynthesis',
-    category: 'BİY',
-    definition: 'Bitkilerin ışık enerjisiyle CO₂ ve sudan glikoz üretmesi sürecidir.',
-    yksTip: 'Klorofil, ışık/karanlık reaksiyonları ve Calvin döngüsü sorulur.',
-    analogy: 'Güneş paneli gibi; ışığı kimyasal enerjiye çevirir.',
-  },
-  {
-    tr: 'Logaritma',
-    en: 'Logarithm',
-    category: 'MAT',
-    definition: 'Üslü ifadenin ters işlemidir; log_a(b) = c ise a^c = b.',
-    yksTip: 'Taban değiştirme, logaritma özellikleri ve denklem çözümünde sık çıkar.',
-    analogy: 'Üslü sayıyı “indirgeme” aracı; büyük sayıları yönetilebilir hale getirir.',
-  },
-  {
-    tr: 'Elektrokimya',
-    en: 'Electrochemistry',
-    category: 'KİM',
-    definition: 'Kimyasal reaksiyonlarla elektrik enerjisi arasındaki dönüşümü inceleyen bilim dalıdır.',
-    yksTip: 'Pil, elektroliz ve indirgenme-yükseltgenme numaraları birlikte sorulur.',
-    analogy: 'Pil: içerideki reaksiyon dışarıya elektrik verir.',
-  },
-];
-
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
-function normalize(text: string): string {
-  return text
-    .toLocaleLowerCase('tr-TR')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .trim();
-}
-
-function findTerm(term: string): TermEntry | null {
-  const n = normalize(term);
-  return (
-    ACADEMIC_DICTIONARY.find(
-      (e) => normalize(e.tr) === n || normalize(e.en) === n,
-    ) ?? null
-  );
-}
-
-function formatTermResult(entry: TermEntry, direction: 'TR_EN' | 'EN_TR'): string {
-  const translation = direction === 'TR_EN' ? entry.en : entry.tr;
-  return `Çeviri: ${translation}
-Tanım: ${entry.definition}
-YKS İpucu: ${entry.yksTip}
-Analoji (Benzetme): ${entry.analogy}`;
-}
-
-function formatGenericTerm(term: string, direction: 'TR_EN' | 'EN_TR'): string {
-  const from = direction === 'TR_EN' ? 'Türkçe' : 'İngilizce';
-  const to = direction === 'TR_EN' ? 'İngilizce' : 'Türkçe';
-  return `Çeviri: [${term} — ${to} karşılığı sözlükte henüz yok]
-Tanım: "${term}" terimi YKS ${from} kaynaklarında geçen akademik bir kavramdır. Ders kitabınızda ve konu anlatım notlarınızda bu terimin tanımını mutlaka işaretleyin.
-YKS İpucu: Bilmediğiniz terimleri deneme sonrası not defterine ekleyin; tekrar sıklığı net artışı sağlar.
-Analoji (Benzetme): Yeni bir kelimeyi öğrenmek, haritaya yeni bir sokak eklemek gibidir — bir kez öğrenince o konuya her gidişiniz hızlanır.`;
-}
 
 export async function translateAcademicTerm(
   term: string,
@@ -273,13 +156,13 @@ function centralBlock(context: CoachContext): string {
 
 function libraryCoachReply(): string {
   const items = getAllLibraryItems().slice(0, 6);
-  const lines = items.map((i) => `• ${i.title} (${i.language}) — ${i.source}`).join('\n');
-  return `Kütüphanemizde doğrudan okunabilir ücretsiz kitap ve makaleler var. Admin bilgisayarı açıkken yapay zeka internetten yeni kaynaklar arayıp Türkçeye çevirerek ekler.
+  const lines = items.map((i) => `• ${i.title} (${i.language}) — ${i.author}`).join('\n');
+  return `Kütüphanede kitap ve makaleler doğrudan site içinde açılır; dış siteye yönlendirme yok.
 
 Öne çıkanlar:
 ${lines || '• Henüz kayıt yok — Kütüphane sekmesine göz atın.'}
 
-Kütüphane sekmesinden "Okumaya Başla" ile site içinde okuyabilirsin.`;
+Kütüphane sekmesinden "Kütüphanede Oku" ile okuyabilirsin.`;
 }
 
 function trafficBlock(context: CoachContext): string {
@@ -389,8 +272,14 @@ function formatScienceDigest(world: WorldSnapshot): string {
 export async function generateCoachChatResponse(
   userMessage: string,
   context: CoachContext,
+  history: ChatTurn[] = [],
 ): Promise<string> {
-  await delay(500);
+  await delay(400);
+
+  const conversational = tryConversationalReply(userMessage, context, history);
+  if (conversational) {
+    return sanitizeCoachOutput(conversational);
+  }
 
   const intent = detectCoachIntent(userMessage);
   const { profile, subjectAverages, recentExamSummary, estimateRank, avgNet, pendingTasks } =
@@ -398,122 +287,143 @@ export async function generateCoachChatResponse(
   const weak = weakestSubjects(subjectAverages)[0];
   const strong = strongestSubjects(subjectAverages)[0];
 
-  const intro = `${profile.name}, sorunu aldım. `;
   const world = context.world;
-
-  const traffic = trafficBlock(context);
-  const humorTopic = weak?.subject ?? profile.field ?? 'öğrenme';
+  const includeTraffic = intent === 'traffic' || intent === 'stats';
+  const traffic = includeTraffic ? trafficBlock(context) : '';
+  const central = intent === 'traffic' || intent === 'stats' ? centralBlock(context) : '';
 
   let reply: string;
 
   switch (intent) {
     case 'national_exam':
-      reply = `${profile.name}, ${examCoachReply(userMessage, context)}`;
+      reply = examCoachReply(userMessage, context);
       break;
     case 'library':
-      reply = `${intro}${libraryCoachReply()}`;
+      reply = libraryCoachReply();
       break;
     case 'traffic':
-      reply = `${intro}Site içindeki tüm etkileşimlerinizi takip ediyorum; koçluk önerilerim bu trafiğe göre şekillenir.\n\n${context.trafficSummary ?? buildTrafficCoachSummary()}${context.targetExam ? `\n\nOdak sınav: ${context.targetExam.shortName}` : ''}`;
+      reply = `Site içindeki etkileşimlerini takip ediyorum; önerilerim buna göre şekillenir.\n\n${context.trafficSummary ?? buildTrafficCoachSummary()}${context.targetExam ? `\n\nOdak sınav: ${context.targetExam.shortName}` : ''}`;
       break;
     case 'weather':
       if (!world) {
-        reply = `${intro}Hava durumu için Zeka Merkezi'nden il veya ilçenizi seçin (ör. "Kadıköy", "Çankaya"). Konum kaydedilince saatlik tahmin otomatik güncellenir.`;
+        reply = `Hava durumu için Zeka Merkezi'nden il veya ilçeni seç (ör. "Kadıköy"). Konum kaydedilince saatlik tahmin güncellenir.`;
       } else {
-        reply = `${intro}\n${formatWorldWeather(world)}\n\nÇalışma önerisi: Yağışlı saatlerde paragraf/dil bilgisi, açık saatlerde deneme çözün.`;
+        reply = `${formatWorldWeather(world)}\n\nÇalışma önerisi: Yağışlı saatlerde paragraf/dil bilgisi, açık saatlerde deneme çöz.`;
       }
       break;
     case 'prayer':
       if (!world) {
-        reply = `${intro}Namaz vakitleri için Zeka Merkezi'nde konum seçin. Diyanet metodu (13) ile hesaplanır.`;
+        reply = `Namaz vakitleri için Zeka Merkezi'nde konum seç. Diyanet metodu (13) ile hesaplanır.`;
       } else {
-        reply = `${intro}\n${formatWorldPrayer(world)}`;
+        reply = formatWorldPrayer(world);
       }
       break;
     case 'calendar':
       if (!world) {
-        reply = `${intro}Takvim ve bayram takibi için Zeka Merkezi'ni açın; konum seçildiğinde takvim verileri yüklenir.`;
+        reply = `Takvim ve bayram takibi için Zeka Merkezi'ni aç; konum seçildiğinde veriler yüklenir.`;
       } else {
-        reply = `${intro}\n${formatWorldCalendar(world)}`;
+        reply = formatWorldCalendar(world);
       }
       break;
     case 'science_news':
       if (!world) {
-        reply = `${intro}Güncel bilim yayınları OpenAlex üzerinden çekilir. Zeka Merkezi sekmesinde "Verileri Yenile" ile akışı güncelleyin.`;
+        reply = `Güncel bilim yayınları OpenAlex üzerinden çekilir. Zeka Merkezi sekmesinde "Verileri Yenile" ile akışı güncelle.`;
       } else {
-        reply = `${intro}Son bilimsel yayınlar (otomatik güncellenir):\n\n${formatScienceDigest(world)}\n\nYKS bağlantısı: Bu konulardan okuduğunuz terimleri Akademik Sözlük'e ekleyin.`;
+        reply = `Son bilimsel yayınlar:\n\n${formatScienceDigest(world)}\n\nOkuduğun terimleri Akademik Sözlük'e eklemeyi unutma.`;
       }
       break;
+    case 'language': {
+      const rule = findGrammarByKeyword(userMessage);
+      if (rule) {
+        const preferEn = /[a-z]/i.test(userMessage) && !/ğ|ü|ş|ı|ö|ç/i.test(userMessage);
+        reply = formatGrammarReply(rule, preferEn);
+      } else {
+        reply = `Türkçe ve İngilizce gramer, kelime ve çeviri konularında yardımcı olurum. Örneğin "present continuous nedir?" veya "evidence kelimesi ne demek?" diye sorabilirsin.`;
+      }
+      break;
+    }
     case 'motivation': {
       const morale = getMoraleMessage();
       const learn = context.learningSummary
-        ? `\n\n🧠 Kişisel gelişim notları:\n${context.learningSummary}`
+        ? `\n\nKişisel gelişim notların:\n${context.learningSummary}`
         : '';
-      reply = `${intro}${morale}
+      reply = `${morale}
 
-${profile.targetUniv} hedefin için bugün ${profile.dailyTargetHours} saatlik planını tamamlaman yeterli bir adım. Yanlışlar öğrenmenin parçası; önemli olan vazgeçmemek.${learn}${traffic}`;
+${profile.targetUniv} hedefin için bugün ${profile.dailyTargetHours} saatlik planın bile iyi bir adım. Yanlışlar öğrenmenin parçası.${learn}`;
       break;
     }
     case 'plan': {
       const archivePlan = context.archiveStatsSummary
-        ? `\n\n📂 Arşiv testlerinden:\n${context.archiveStatsSummary}`
+        ? `\n\nArşiv testlerinden:\n${context.archiveStatsSummary}`
         : '';
       const learnPlan = context.learningSummary
-        ? `\n\n🎯 Gelişim önerileri:\n${context.learningSummary}`
+        ? `\n\nGelişim önerileri:\n${context.learningSummary}`
         : '';
       if (context.curriculumNote) {
-        reply = `${intro}Müfredatınıza göre plan:\n${context.curriculumNote}${archivePlan}${learnPlan}${traffic}`;
+        reply = `Müfredatına göre plan:\n${context.curriculumNote}${archivePlan}${learnPlan}`;
       } else {
         const examHint = context.targetExam
-          ? `\n${context.targetExam.shortName} hazırlığı için: ${context.targetExam.prepTips[0]}`
+          ? `\n${context.targetExam.shortName} için: ${context.targetExam.prepTips[0]}`
           : '';
-        reply = `${intro}Önerilen haftalık plan:
-• Pazartesi-Çarşamba-Cuma: ${weak?.subject ?? 'Zayıf dersiniz'} (konu + soru)
-• Salı-Perşembe: ${strong?.subject ?? 'Güçlü dersiniz'} pekiştirme
-• Cumartesi: Tam TYT denemesi veya arşiv testi + analiz
-• Pazar: Eksik konu tekrarı + ${pendingTasks} bekleyen hedefinizden 2 tanesi
-Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${learnPlan}${traffic}`;
+        reply = `Önerilen haftalık plan:
+• Pazartesi-Çarşamba-Cuma: ${weak?.subject ?? 'zayıf dersin'} (konu + soru)
+• Salı-Perşembe: ${strong?.subject ?? 'güçlü dersin'} pekiştirme
+• Cumartesi: TYT denemesi veya arşiv testi + analiz
+• Pazar: Eksik tekrar + bekleyen ${pendingTasks} hedefinden 2 tanesi
+Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${learnPlan}`;
       }
       break;
     }
     case 'math':
-      reply = `${intro}Matematikte net artışı için: önce konu eksiklerini kapatın, sonra süreli soru çözün. Türev-integral-limit üçlüsünü haftalık döngüyle tekrarlayın. Son denemeler: ${recentExamSummary || 'Henüz deneme yok'}.`;
+      reply = `Matematikte net artışı için önce konu eksiklerini kapat, sonra süreli soru çöz. Türev-integral-limit üçlüsünü haftalık döngüyle tekrarla.${recentExamSummary ? ` Son denemeler: ${recentExamSummary}.` : ''}`;
       break;
     case 'turkish':
-      reply = `${intro}Türkçe/Paragraf için günde 20-40 paragraf + 1 dil bilgisi testi idealdir. Edebiyatta ezber yerine eser-şair-akım tablosu çıkarın. Yanlış yaptığınız soru tiplerini not defterine işaretleyin.`;
+      reply = `Türkçe/paragraf için günde 20-40 paragraf + 1 dil bilgisi testi iyi bir ritim. Edebiyatta eser-şair-akım tablosu çıkar; gramer sorularında zaman ve bağlaçlara dikkat et.`;
       break;
     case 'science':
-      reply = `${intro}Fen netleri formül + soru dengesiyle yükselir. Her konudan sonra 15 dk “formül kartı” hazırlayın. Fizikte grafik, kimyada mol hesabı, biyolojide sistem soruları ÖSYM favorisidir.`;
+      reply = `Fen netleri formül + soru dengesiyle yükselir. Her konudan sonra kısa formül kartı hazırla. Fizikte grafik, kimyada mol, biyolojide sistem soruları sık çıkar.`;
       break;
     case 'social':
-      reply = `${intro}Sosyal bilimlerde kronoloji ve harita çalışması kritik. Tarihte olay-neden-sonuç, coğrafyada harita yorumu, felsefede akım-fikir eşleştirmesi yapın.`;
+      reply = `Sosyal bilimlerde kronoloji ve harita çalışması kritik. Tarihte olay-neden-sonuç, coğrafyada harita yorumu, felsefede akım-fikir eşleştirmesi yap.`;
       break;
     case 'stats': {
       const archive = context.archiveStatsSummary
-        ? `\n\n📂 Ulusal sınav arşivi (alan bazlı):\n${context.archiveStatsSummary}`
-        : '\n\n📂 Ulusal sınav arşivi: Henüz tamamlanmış test yok — Ulusal Sınavlar sekmesinden deneyin.';
-      const learn = context.learningSummary ? `\n\n🧠 Öğrenme profili:\n${context.learningSummary}` : '';
-      reply = `${intro}Deneme kayıtları: ortalama ${avgNet} net, tahmini sıralama ${estimateRank}. Son denemeler: ${recentExamSummary || 'Henüz deneme girilmedi'}. ${weak ? `Öncelik: ${weak.subject} (%${weak.percentage}).` : ''}${archive}${learn}${traffic}`;
+        ? `\n\nUlusal sınav arşivi:\n${context.archiveStatsSummary}`
+        : '\n\nArşiv: Henüz tamamlanmış test yok — Ulusal Sınavlar sekmesinden dene.';
+      const learn = context.learningSummary ? `\n\nÖğrenme profili:\n${context.learningSummary}` : '';
+      reply = `Deneme kayıtlarına göre ortalama ${avgNet} net, tahmini sıralama ${estimateRank}. Son denemeler: ${recentExamSummary || 'henüz deneme yok'}.${weak ? ` Öncelik: ${weak.subject} (%${weak.percentage}).` : ''}${archive}${learn}${traffic}`;
       break;
     }
     case 'goal':
-      reply = `${intro}Hedefiniz ${profile.targetUniv} — ${profile.targetDept} (${profile.field}). Bu bölüm için AYT netleriniz belirleyici. Haftalık en az 1 AYT denemesi ve eksik analizi şart.`;
+      reply = `Hedefin ${profile.targetUniv} — ${profile.targetDept} (${profile.field}). Bu bölüm için AYT netleri belirleyici; haftada en az bir AYT denemesi ve eksik analizi öneririm.`;
+      break;
+    case 'machine':
+      reply = `Yapay zeka ve teknoloji konularında temel kavramları (algoritma, veri, model) not defterine yaz. Kütüphanede arXiv makaleleri var; "Attention Is All You Need" gibi giriş metinleri okuyabilirsin.`;
+      break;
+    case 'human':
+      reply = `İnsan ilişkileri ve duygular çalışma motivasyonunu doğrudan etkiler. Stres olduğunda hedefi küçült, küçük bir başarıyı kutla. İstersen bugün sadece 30 dakika odaklı çalışma planı yapalım — ne dersin?`;
+      break;
+    case 'society':
+      reply = `Toplum ve güncel konular sosyal bilimler netlerine yansır. Haber okurken olay-neden-sonuç çıkar; coğrafya ve tarih sorularında güncel örnekleri not al.`;
       break;
     default: {
-      const curr = context.curriculumNote ? `\n\n📚 Müfredat koçluğu: ${context.curriculumNote}` : '';
-      const archive = context.archiveStatsSummary ? `\n\n📂 Arşiv: ${context.archiveStatsSummary}` : '';
-      const learn = context.learningSummary ? `\n\n🧠 Gelişim: ${context.learningSummary.split('\n').slice(0, 3).join('\n')}` : '';
-      const examNote = context.targetExam
-        ? `\n🎯 Odak sınavınız: ${context.targetExam.shortName}. ${context.targetExam.prepTips[0]}`
-        : '\nLGS, YKS, KPSS, ALES, YDS, DGS ve diğer ulusal sınavlar hakkında soru sorabilirsiniz.';
-      reply = `${intro}"${userMessage}" hakkında: Düzenli deneme + arşiv testi + eksik analizi en etkili yöntemdir. ${recentExamSummary ? `Son durumunuz: ${recentExamSummary}.` : 'İlk denemenizi veya arşiv testini tamamlayarak kişisel öneri alabilirsiniz.'}${examNote}${archive}${learn}${curr}${traffic}
-${world ? `\nKonum: ${world.settlement.displayName} | Hava: ${world.currentTemp ?? '—'}°C | Sıradaki vakit: ${world.prayer.nextPrayer}` : ''}
-Sorabilecekleriniz: ulusal sınav hazırlığı, istatistik, motivasyon, kütüphane, site trafiğim, hava, namaz, takvim, bilim, plan.`;
+      const direct = buildDirectAnswerFallback(userMessage, context, intent);
+      if (direct) {
+        reply = direct;
+        break;
+      }
+      const shortQ = userMessage.length > 80 ? `${userMessage.slice(0, 80)}…` : userMessage;
+      reply = `"${shortQ}" diye sordun — net cevap vereyim:
+
+Sorunu biraz daha açarsan (hangi ders, hangi konu, ne takıldın) doğrudan o noktaya odaklanırım. ${recentExamSummary ? `Deneme tarafında son durum: ${recentExamSummary}.` : 'İlk denemeni girersen kişisel öneri verebilirim.'}
+
+İstersen şunlardan birini de yazabilirsin: plan, matematik, Türkçe/gramer, kütüphane, sınav hazırlığı.`;
       break;
     }
   }
 
-  return sanitizeCoachOutput(reply + centralBlock(context) + maybeAddChatHumor(humorTopic));
+  const prefix = profile.name ? `${profile.name}, ` : '';
+  return sanitizeCoachOutput(`${prefix}${reply}${central}${traffic}`);
 }
 
 export async function generateScienceBrief(world: WorldSnapshot): Promise<string> {
@@ -587,17 +497,82 @@ Aerobik solunumun hızlandığı bir hücrede ATP ve CO₂ üretimi nasıl deği
 Doğru Cevap: İkisi de artar.`;
 }
 
+function tryEvaluateExpression(question: string): string | null {
+  const exprMatch = question.match(/(\d+)\s*([+\-×x*÷/])\s*(\d+)/);
+  if (!exprMatch) return null;
+  const a = Number(exprMatch[1]);
+  const op = exprMatch[2];
+  const b = Number(exprMatch[3]);
+  let result: number | null = null;
+  if (op === '+' || op === '×' || op === 'x' || op === '*') result = op === '+' ? a + b : a * b;
+  else if (op === '-') result = a - b;
+  else if (op === '÷' || op === '/') result = b !== 0 ? a / b : null;
+  if (result == null || Number.isNaN(result)) return null;
+  return `1. **İlgili Formüller/Kurallar:** Temel aritmetik işlem.
+
+2. **Adım Adım Detaylı Çözüm:**
+${a} ${op} ${b} = **${Number.isInteger(result) ? result : result.toFixed(2)}**
+
+3. **Kritik YKS Püf Noktası:** İşlem önceliğini (parantez → çarpma/bölme → toplama/çıkarma) kontrol edin.
+
+4. **Pekiştirme:** Benzer 3 işlem sorusunu zihinden çözün.`;
+}
+
+function solveQuadratic(): string {
+  return `1. **İlgili Formüller/Kurallar:**
+İkinci derece denklem: ax² + bx + c = 0 → Δ = b² - 4ac
+
+2. **Adım Adım Detaylı Çözüm:**
+Katsayıları belirleyin → diskriminantı hesaplayın → kökleri x = (-b ± √Δ) / 2a ile bulun.
+
+3. **Kritik YKS Püf Noktası:**
+Δ < 0 ise reel kök yok; Δ = 0 tek kök; Δ > 0 iki farklı kök.
+
+4. **Pekiştirme:** x² - 5x + 6 = 0 → kökler 2 ve 3.`;
+}
+
+function solveOhm(): string {
+  return `1. **İlgili Formüller/Kurallar:**
+Ohm yasası: V = I · R
+
+2. **Adım Adım Detaylı Çözüm:**
+Verilen iki büyüğü formüle yerleştirin, üçüncüyü bulun. Birim: V (volt), I (amper), R (ohm).
+
+3. **Kritik YKS Püf Noktası:**
+Seri devrede dirençler toplanır; paralelde 1/R = 1/R₁ + 1/R₂.
+
+4. **Pekiştirme:** 12 V ve 4 Ω için akım kaç A? → 3 A`;
+}
+
 function solveBySubject(subject: string, question: string): string {
   const q = normalize(question);
 
-  if (/teğet|teget|egim|eğim|türev|trev/.test(q) && /fonksiyon|f\(x\)|3x/.test(q)) {
+  const arithmetic = tryEvaluateExpression(question);
+  if (arithmetic) return arithmetic;
+
+  if (/teğet|teget|egim|eğim|türev|trev/.test(q) && /fonksiyon|f\(x\)|3x|x\^2|x²/.test(q)) {
     return solveDerivativeTangent();
   }
-  if (/momentum|kuvvet.*uygulan|impuls/.test(q)) {
+  if (/x\^2|x²|ikinci derece|diskriminant|kök/.test(q) && /denklem|x/.test(q)) {
+    return solveQuadratic();
+  }
+  if (/momentum|kuvvet.*uygulan|impuls|10\s*n.*5\s*s/i.test(q)) {
     return solveMomentum();
+  }
+  if (/ohm|direnç|akım|volt|amper/.test(q)) {
+    return solveOhm();
   }
   if (/mitokondri|ozmotik|osmotik|turgor|ph/.test(q)) {
     return solveMitochondria();
+  }
+  if (/paragraf|ana (fikir|düşünce)|çıkarım/.test(q)) {
+    return `1. **İlgili Kurallar:** Ana düşünce genelde giriş veya sonuç cümlesinde; yardımcı düşünce detay verir.
+
+2. **Adım Adım Çözüm:** Metni bölümlere ayırın → her bölümün konusunu tek cümleyle yazın → seçenekleri metin kanıtıyla eleyin.
+
+3. **Kritik YKS Püf Noktası:** "En", "hiç", "daima" gibi mutlak ifadeler çoğu zaman yanlış şıktır.
+
+4. **Pekiştirme:** Günlük 2 paragraf sorusu + yanlış analizi.`;
   }
 
   const guides: Record<string, string> = {
@@ -635,27 +610,18 @@ Yerel AI çözücü bu soruyu örnek veritabanında tam eşleştiremedi; yukarı
 export async function generateQuestionSolution(
   subject: string,
   questionText: string,
-  hasImage: boolean,
+  options?: { fromOcr?: boolean },
 ): Promise<string> {
-  await delay(700);
+  await delay(500);
 
-  if (hasImage && !questionText.trim()) {
-    return `📷 **Görsel soru (ücretsiz yerel mod)**
-
-Görseldeki metni otomatik okumak için ücretli bulut API kullanılmıyor; gizliliğiniz ve maliyet için tüm AI işlemleri cihazınızda çalışır.
-
-**Ne yapmalısınız?**
-1. Sorunun metnini "Soru Metni" alanına yazın (veya fotoğraftaki ifadeyi kopyalayın)
-2. Dersi doğru seçin: ${subject}
-3. Tekrar "Çözümü Getir" deyin — adım adım çözüm üretilir
-
-**${subject} için genel strateji:**
-• Verilenleri listeleyin
-• Kullanılacak formül/kuralı belirleyin
-• İşlemleri sırayla yazın
-• Sonucu birim/kavram ile kontrol edin`;
+  const text = questionText.trim();
+  if (!text) {
+    return `Soru metni okunamadı. Lütfen fotoğrafın net olduğundan emin olun veya metni elle yazın. Ders: ${subject}`;
   }
 
-  const text = questionText.trim() || '(Görsel soru — metin eklenirse daha iyi çözüm)';
-  return solveBySubject(subject, text);
+  const ocrNote = options?.fromOcr
+    ? '📷 **Fotoğraftan okunan metin** ile çözüm:\n\n'
+    : '';
+
+  return `${ocrNote}${solveBySubject(subject, text)}`;
 }

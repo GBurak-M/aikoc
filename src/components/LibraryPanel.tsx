@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { logSiteEvent } from '../lib/siteTraffic';
 import {
-  ArrowRight, BookOpen, ExternalLink, FileText, Filter, Plus, Search, ShieldCheck, Upload, X,
+  ArrowRight, BookOpen, Filter, Plus, Search, ShieldCheck, Upload, X,
 } from 'lucide-react';
 import { LIBRARY_COVER } from '../lib/visuals';
 import {
@@ -14,6 +14,8 @@ import {
 import { LIBRARY_EDITOR_PIN } from '../config/site';
 import {
   approveSubmission,
+  canEmbedInReader,
+  embeddableDomainsHint,
   filterByCategory,
   getAllLibraryItems,
   getPendingSubmissions,
@@ -27,6 +29,7 @@ import {
 } from '../lib/library';
 import { discoverFreeResources, type DiscoveredResource } from '../lib/libraryDiscovery';
 import { loadCrawlerState, runLibraryCrawlCycle, syncCrawlerWithEditorSession } from '../lib/libraryCrawler';
+import { resolveLibraryContent, type LibraryContentResult } from '../lib/libraryContent';
 import {
   deepenCoreLearning,
   exportKnowledgeBundle,
@@ -60,12 +63,6 @@ const FORMAT_LABELS: Record<LibraryReadFormat, string> = {
   epub: 'E-kitap',
 };
 
-function canEmbedInReader(url: string): boolean {
-  return /gutenberg\.org|wikisource\.org|wikibooks\.org|openstax\.org|arxiv\.org|ncbi\.nlm\.nih\.gov|plos\.org|frontiersin\.org|plato\.stanford\.edu|quran\.com|sunnah\.com|diyanet\.gov\.tr/i.test(
-    url,
-  );
-}
-
 const CATEGORY_COLORS: Record<LibraryCategory, string> = {
   bilimsel_makale: 'bg-blue-600',
   ders_kitabi: 'bg-violet-600',
@@ -82,6 +79,9 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
   const [category, setCategory] = useState<LibraryCategory | 'all'>('all');
   const [selected, setSelected] = useState<LibraryItem | null>(null);
   const [reading, setReading] = useState<LibraryItem | null>(null);
+  const [readerContent, setReaderContent] = useState<LibraryContentResult | null>(null);
+  const [readerLoading, setReaderLoading] = useState(false);
+  const [readerError, setReaderError] = useState('');
   const [showSubmit, setShowSubmit] = useState(false);
   const [submitOk, setSubmitOk] = useState('');
   const [editorOpen, setEditorOpen] = useState(isEditorSessionActive());
@@ -106,6 +106,33 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
     tags: '',
   });
 
+  useEffect(() => {
+    if (!reading) {
+      setReaderContent(null);
+      setReaderError('');
+      return;
+    }
+    let cancelled = false;
+    setReaderLoading(true);
+    setReaderError('');
+    resolveLibraryContent(reading)
+      .then((result) => {
+        if (!cancelled) setReaderContent(result);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setReaderError('İçerik yüklenemedi. Bağlantıyı kontrol edin.');
+          setReaderContent({ mode: 'iframe', url: reading.url, reason: 'Yedek' });
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setReaderLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [reading]);
+
   const items = useMemo(() => {
     void refresh;
     const all = getAllLibraryItems();
@@ -121,6 +148,11 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.title.trim() || !form.url.trim()) return;
+    if (!canEmbedInReader(form.url.trim())) {
+      setSubmitOk(`Bu bağlantı kütüphane içinde açılamaz. Yalnızca şu kaynaklar desteklenir: ${embeddableDomainsHint()}`);
+      setTimeout(() => setSubmitOk(''), 8000);
+      return;
+    }
     const submittedTitle = form.title.trim();
     submitLibraryItem({
       category: form.category,
@@ -394,19 +426,8 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-bold text-xs ${activeTheme.bg} ${activeTheme.hover}`}
               >
                 <BookOpen className="h-4 w-4" />
-                Okumaya Başla
+                Kütüphanede Oku
               </button>
-              <a
-                href={selected.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs border ${
-                  darkMode ? 'border-slate-600 text-slate-300 hover:bg-slate-700' : 'border-slate-200 text-slate-600 hover:bg-slate-50'
-                }`}
-              >
-                <ExternalLink className="h-4 w-4" />
-                Yeni sekmede aç
-              </a>
             </div>
           </div>
         </div>
@@ -421,52 +442,38 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
               <p className="font-extrabold text-sm truncate">{reading.title}</p>
               <p className="text-[10px] text-slate-400 truncate">{reading.author} · {FORMAT_LABELS[reading.format]}</p>
             </div>
-            <div className="flex items-center gap-2 shrink-0">
-              <a
-                href={reading.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold border ${
-                  darkMode ? 'border-slate-600 hover:bg-slate-800' : 'border-slate-200 hover:bg-slate-50'
-                }`}
-              >
-                <ExternalLink className="h-3.5 w-3.5" />
-                Yeni sekme
-              </a>
-              <button
-                type="button"
-                onClick={() => setReading(null)}
-                className="p-2 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-800"
-                aria-label="Okuyucuyu kapat"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={() => setReading(null)}
+              className="p-2 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-800 shrink-0"
+              aria-label="Okuyucuyu kapat"
+            >
+              <X className="h-5 w-5" />
+            </button>
           </div>
-          <div className={`flex-1 min-h-0 ${darkMode ? 'bg-slate-950' : 'bg-slate-100'}`}>
-            {canEmbedInReader(reading.url) ? (
+          <div className={`flex-1 min-h-0 relative ${darkMode ? 'bg-slate-950' : 'bg-slate-100'}`}>
+            {readerLoading && (
+              <div className="absolute inset-0 flex items-center justify-center text-sm text-slate-400 z-10">
+                Kitap yükleniyor…
+              </div>
+            )}
+            {readerError && (
+              <p className="absolute top-2 left-4 right-4 text-xs text-amber-600 z-10">{readerError}</p>
+            )}
+            {readerContent?.mode === 'html' ? (
               <iframe
                 title={reading.title}
-                src={reading.url}
+                srcDoc={readerContent.html}
+                className="w-full h-full border-0 bg-white"
+                sandbox="allow-same-origin"
+              />
+            ) : (
+              <iframe
+                title={reading.title}
+                src={readerContent?.mode === 'iframe' ? readerContent.url : reading.url}
                 className="w-full h-full border-0 bg-white"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
-            ) : (
-              <div className="flex flex-col items-center justify-center h-full p-8 text-center">
-                <FileText className={`h-12 w-12 mb-4 opacity-40 ${activeTheme.text}`} />
-                <p className="text-sm font-semibold text-slate-500 mb-4">
-                  Bu içerik site içinde gömülemiyor; tam metin için yeni sekmede açın.
-                </p>
-                <a
-                  href={reading.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-bold text-xs ${activeTheme.bg}`}
-                >
-                  <ExternalLink className="h-4 w-4" />
-                  Okumaya Başla
-                </a>
-              </div>
             )}
           </div>
         </div>

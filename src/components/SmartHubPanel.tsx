@@ -279,7 +279,16 @@ export default function SmartHubPanel({
               <Clock className={activeTheme.text} />
               Namaz Vakitleri (Diyanet)
             </h3>
-            <p className="text-[10px] text-slate-400 mb-3">{world.prayer.date} · Hicri: {world.prayer.hijriDate}</p>
+            <p className="text-[10px] text-slate-400 mb-1">
+              {world.prayer.date} · Hicri: {world.prayer.hijriDate}
+            </p>
+            {world.prayer.source && (
+              <p className="text-[10px] text-slate-400 mb-3">
+                {world.prayer.regionName ? `${world.prayer.regionName} · ` : ''}
+                {world.prayer.source}
+              </p>
+            )}
+            {!world.prayer.source && <div className="mb-3" />}
             <div className="grid grid-cols-2 gap-2 text-xs">
               {[
                 ['İmsak', world.prayer.imsak],

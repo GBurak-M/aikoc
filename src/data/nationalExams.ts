@@ -30,6 +30,22 @@ export const EXAM_LEVEL_LABELS: Record<ExamLevel, string> = {
 /** Türkiye ulusal sınavları — koçluk ve arama için */
 export const NATIONAL_EXAMS: NationalExam[] = [
   {
+    id: 'aol',
+    name: 'Açık Öğretim Lisesi Sınavı',
+    shortName: 'AÖL',
+    level: 'lise',
+    aliases: ['aöl', 'aol', 'açık öğretim', 'acik ogretim', 'açık lise', 'meb aöl'],
+    description:
+      'Açık Öğretim Lisesi öğrencilerinin dönem sonu ve mezuniyet süreçlerinde girdiği MEB merkezi sınavlar.',
+    subjects: ['Türkçe', 'Matematik', 'Fizik', 'Kimya', 'Biyoloji', 'Tarih', 'Coğrafya', 'Felsefe', 'Din Kültürü'],
+    prepTips: [
+      'MEB AÖL ders kitaplarını ünite ünite bitirip her ünite sonunda mini test çözün.',
+      'Açık öğretim takvimindeki sınav tarihlerini Planlayıcıya işleyin.',
+      'Eksik konuları AI Soru Çözücü ile pekiştirip not defterine kaydedin.',
+    ],
+    siteFeatures: ['Planlayıcı', 'AI Soru Çözücü', 'Kütüphane', 'Müfredat haritası'],
+  },
+  {
     id: 'lgs',
     name: 'Liselere Geçiş Sistemi Sınavı',
     shortName: 'LGS',

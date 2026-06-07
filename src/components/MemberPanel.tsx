@@ -16,6 +16,7 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 } from 'recharts';
 import type { Exam } from '../lib/exams';
+import { buildStudyTimeReport } from '../lib/studyTimeAdvisor';
 import {
   computeAllPeriodStats,
   PERIOD_LABELS,
@@ -138,6 +139,11 @@ export default function MemberPanel({
   );
 
   const activeStats = periodStats.find((p) => p.period === growthPeriod) ?? periodStats[2];
+
+  const studyPlan = useMemo(() => {
+    const grade = education?.effectiveGrade ?? '11';
+    return buildStudyTimeReport(exams, grade);
+  }, [exams, education?.effectiveGrade]);
 
   const memberSearchResults = useMemo(() => {
     if (!memberSearchQuery.trim()) return [];
@@ -286,6 +292,22 @@ export default function MemberPanel({
       </div>
 
       {section === 'ozet' && (
+        <>
+        <div className={`p-5 rounded-2xl border mb-4 ${card}`}>
+          <h3 className="font-extrabold text-sm mb-2 flex items-center gap-2">
+            <Target className={`h-4 w-4 ${activeTheme.text}`} />
+            Günlük ders çalışma önerisi
+          </h3>
+          <p className="text-xs text-slate-500 mb-3">{studyPlan.summary}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {studyPlan.subjects.slice(0, 6).map((p) => (
+              <div key={p.subject} className={`text-xs p-2.5 rounded-xl border ${darkMode ? 'border-slate-700' : 'border-slate-100'}`}>
+                <span className="font-bold">{p.subject}</span>
+                <span className={`float-right font-black ${activeTheme.text}`}>{p.minutes} dk</span>
+              </div>
+            ))}
+          </div>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { label: 'Deneme', value: exams.length, icon: Target },
@@ -304,6 +326,7 @@ export default function MemberPanel({
             </div>
           ))}
         </div>
+        </>
       )}
 
       {section === 'mufredat' && (

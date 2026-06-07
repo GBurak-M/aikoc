@@ -1,3 +1,10 @@
+import { getCurriculumForGrade, type GradeLevel } from '../data/mebCurriculum';
+import {
+  getMaxQuestionsForSubject,
+  getSubjectsForExamType,
+  matchExamScoreSubject,
+} from './examSubjects';
+
 export type ExamType = 'TYT' | 'AYT';
 
 export type Exam = {
@@ -43,56 +50,88 @@ export type SubjectAverage = {
   percentage: number;
 };
 
+/** Her ders için ayrı ortalama — 4 gruba sıkıştırmaz */
 export function getSubjectAverages(exams: Exam[]): SubjectAverage[] {
-  const buckets = {
-    Matematik: { net: 0, count: 0, maxTotal: 0 },
-    'Türkçe / Edebiyat': { net: 0, count: 0, maxTotal: 0 },
-    'Fen Bilimleri': { net: 0, count: 0, maxTotal: 0 },
-    'Sosyal Bilimler': { net: 0, count: 0, maxTotal: 0 },
+  const buckets = new Map<string, { net: number; count: number; maxTotal: number }>();
+
+  const ensure = (subject: string, maxQ: number) => {
+    if (!buckets.has(subject)) {
+      buckets.set(subject, { net: 0, count: 0, maxTotal: 0 });
+    }
+    const b = buckets.get(subject)!;
+    b.maxTotal += maxQ;
   };
 
-  exams.forEach((exam) => {
-    if (exam.scores?.Matematik) {
-      buckets.Matematik.net += exam.scores.Matematik.net || 0;
-      buckets.Matematik.count += 1;
-      buckets.Matematik.maxTotal += 40;
+  for (const exam of exams) {
+    for (const [subject, score] of Object.entries(exam.scores ?? {})) {
+      const maxQ = getMaxQuestionsForSubject(exam.type, subject);
+      ensure(subject, maxQ);
+      const b = buckets.get(subject)!;
+      b.net += score.net || 0;
+      b.count += 1;
     }
+  }
 
-    if (exam.scores?.Türkçe) {
-      buckets['Türkçe / Edebiyat'].net += exam.scores.Türkçe.net || 0;
-      buckets['Türkçe / Edebiyat'].count += 1;
-      buckets['Türkçe / Edebiyat'].maxTotal += 40;
-    }
+  if (buckets.size === 0) {
+    return getSubjectsForExamType('TYT').map((s) => ({
+      subject: s.key,
+      avgNet: 0,
+      maxQ: s.maxQuestions,
+      percentage: 0,
+    }));
+  }
 
-    if (exam.scores?.Edebiyat) {
-      buckets['Türkçe / Edebiyat'].net += exam.scores.Edebiyat.net || 0;
-      buckets['Türkçe / Edebiyat'].count += 1;
-      buckets['Türkçe / Edebiyat'].maxTotal += 24;
-    }
-
-    if (exam.scores?.Fen) {
-      buckets['Fen Bilimleri'].net += exam.scores.Fen.net || 0;
-      buckets['Fen Bilimleri'].count += 1;
-      buckets['Fen Bilimleri'].maxTotal += exam.type === 'TYT' ? 20 : 40;
-    }
-
-    if (exam.scores?.Sosyal) {
-      buckets['Sosyal Bilimler'].net += exam.scores.Sosyal.net || 0;
-      buckets['Sosyal Bilimler'].count += 1;
-      buckets['Sosyal Bilimler'].maxTotal += exam.type === 'TYT' ? 20 : 40;
-    }
-  });
-
-  return Object.entries(buckets).map(([subject, data]) => {
+  return [...buckets.entries()].map(([subject, data]) => {
     const avgNet = data.count > 0 ? parseFloat((data.net / data.count).toFixed(1)) : 0;
-    const avgMax = data.count > 0 ? data.maxTotal / data.count : 40;
+    const avgMax = data.count > 0 ? data.maxTotal / data.count : getMaxQuestionsForSubject('TYT', subject);
     const percentage = avgMax > 0 ? Math.round((avgNet / avgMax) * 100) : 0;
-
     return {
       subject,
       avgNet,
       maxQ: Math.round(avgMax),
       percentage: Math.min(100, percentage),
     };
+  });
+}
+
+/** Müfredat koçu: sınav skorlarını ders bazında düzleştirir */
+export function flattenExamScores(exam: Exam): Array<{ subject: string; net: number; maxQ: number; pct: number }> {
+  return Object.entries(exam.scores ?? {}).map(([subject, s]) => {
+    const maxQ = getMaxQuestionsForSubject(exam.type, subject);
+    const pct = maxQ > 0 ? Math.round((s.net / maxQ) * 100) : 0;
+    return { subject, net: s.net, maxQ, pct };
+  });
+}
+
+export function findExamScoresForCurriculumSubject(
+  exams: Exam[],
+  subjectId: string,
+  subjectName: string,
+): Array<{ net: number; maxQ: number; pct: number }> {
+  const rows: Array<{ net: number; maxQ: number; pct: number }> = [];
+  for (const exam of exams) {
+    for (const [key, val] of Object.entries(exam.scores ?? {})) {
+      if (matchExamScoreSubject(key, subjectId, subjectName)) {
+        const maxQ = getMaxQuestionsForSubject(exam.type, key);
+        rows.push({ net: val.net, maxQ, pct: maxQ > 0 ? Math.round((val.net / maxQ) * 100) : 0 });
+      }
+    }
+  }
+  return rows;
+}
+
+/** Üyenin sınıfına göre müfredat dersleri + deneme istatistikleri */
+export function getGradeSubjectAverages(exams: Exam[], grade: GradeLevel): SubjectAverage[] {
+  const curriculum = getCurriculumForGrade(grade);
+  const all = getSubjectAverages(exams);
+  const latestType = getLatestExamByType(exams, 'TYT') ? 'TYT' : 'AYT';
+
+  return curriculum.subjects.map((subj) => {
+    const match = all.find((a) => matchExamScoreSubject(a.subject, subj.id, subj.name));
+    if (match) {
+      return { ...match, subject: subj.name };
+    }
+    const maxQ = getMaxQuestionsForSubject(latestType, subj.name);
+    return { subject: subj.name, avgNet: 0, maxQ, percentage: 0 };
   });
 }
