@@ -65,6 +65,14 @@ export type CoachContext = {
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function normalize(text: string): string {
+  return text
+    .toLocaleLowerCase('tr-TR')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+}
+
 export async function translateAcademicTerm(
   term: string,
   direction: 'TR_EN' | 'EN_TR',
@@ -374,9 +382,18 @@ Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${lear
       }
       break;
     }
-    case 'math':
-      reply = `Matematikte net artışı için önce konu eksiklerini kapat, sonra süreli soru çöz. Türev-integral-limit üçlüsünü haftalık döngüyle tekrarla.${recentExamSummary ? ` Son denemeler: ${recentExamSummary}.` : ''}`;
+    case 'math': {
+      const m = normalize(userMessage);
+      if (/logaritma/.test(m)) {
+        const entry = findTerm('Logaritma');
+        reply = entry
+          ? `Logaritmayı adım adım toparlayalım:\n\n${formatTermResult(entry, 'TR_EN')}\n\n**Mini özet:** log_a(b) = c demek a^c = b demektir. Özellikler: log çarpım → toplam; log bölüm → fark; taban değiştirme formülünü ezberle.\n\n**Hemen dene:** log₂8 = ? (İpucu: 2³ = 8 → cevap 3)\n\nTakıldığın alt başlığı yaz (tanım, özellikler, denklem); oradan devam edelim.`
+          : `Logaritma, üslü ifadenin ters işlemidir. log_a(b) = c ise a^c = b. Önce tanım + özellikleri (çarpım, bölüm, taban değiştirme), sonra denklem soruları çöz. Hangi kısımda takıldığını yazarsan netleştiririm.`;
+      } else {
+        reply = `Matematikte net artışı için önce konu eksiklerini kapat, sonra süreli soru çöz. Türev-integral-limit üçlüsünü haftalık döngüyle tekrarla.${recentExamSummary ? ` Son denemeler: ${recentExamSummary}.` : ''}`;
+      }
       break;
+    }
     case 'turkish':
       reply = `Türkçe/paragraf için günde 20-40 paragraf + 1 dil bilgisi testi iyi bir ritim. Edebiyatta eser-şair-akım tablosu çıkar; gramer sorularında zaman ve bağlaçlara dikkat et.`;
       break;

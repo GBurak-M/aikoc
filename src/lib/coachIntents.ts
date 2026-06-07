@@ -23,7 +23,7 @@ export function detectCoachIntent(message: string): string {
   if (/gramer|grammar|dil bilgisi|ingilizce kelime|turkce kelime|ceviri|çeviri|translate|tense|zaman|article|baglac|bağlaç/.test(m)) return 'language';
   if (/motivasyon|morali|vazgec|umutsuz|yoruldum|stres|kayg/.test(m)) return 'motivation';
   if (/plan|program|hafta|nasil calis/.test(m)) return 'plan';
-  if (/matematik|mat\b|turev|integral/.test(m)) return 'math';
+  if (/matematik|mat\b|turev|integral|logaritma/.test(m)) return 'math';
   if (/turkce|paragraf|edebiyat/.test(m)) return 'turkish';
   if (/fen|fizik|kimya|biyoloji/.test(m)) return 'science';
   if (/sosyal|tarih|cografya|felsefe/.test(m)) return 'social';

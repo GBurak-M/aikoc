@@ -1213,8 +1213,10 @@ export default function App() {
         refreshMemberActivity();
       }
     } catch (error) {
-      console.error(error);
-      setActiveSolution('Soru çözümü oluşturulamadı. Soru metnini sadeleştirip tekrar deneyin.');
+      console.error('Soru çözücü hatası:', error);
+      setActiveSolution(
+        'Soru çözümü şu an üretilemedi. Metni kısaltıp tekrar deneyin veya alttaki örnek sorulardan birini seçin. Sorun sürerse sayfayı yenileyin (Ctrl+F5).',
+      );
     } finally {
       setLoadingSolution(false);
     }
