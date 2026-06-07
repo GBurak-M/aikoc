@@ -1,4 +1,5 @@
 import { findCityInQuestion, listKnownCityNames, type CityInfo } from '../data/turkeyCities';
+import { tryTeacherKnowledge } from './teacherKnowledge';
 import {
   formatTeacherLesson,
   isConceptualQuestion,
@@ -276,6 +277,9 @@ export function tryConceptLesson(subject: string, question: string): string | nu
     if (pattern.test(q)) return build(question);
   }
 
+  const teacherLesson = tryTeacherKnowledge(question);
+  if (teacherLesson) return teacherLesson;
+
   if (subject === 'Coğrafya') {
     const city = tryCityLocation(question);
     if (city) return city;
@@ -337,21 +341,84 @@ const SUBJECT_TEACHING_HINTS: Record<string, TeacherSection[]> = {
       body: `Benzer 5 örnek çöz; her adımın «neden»ini kısa not olarak yaz.`,
     },
   ],
+  Felsefe: [
+    {
+      title: 'Felsefe sorusuna yaklaşım',
+      body: `Önce **sorunun alanını** belirle (bilgi, varlık, ahlak). Ardından ilgili filozof veya akımı kısa tanımla; kendi cümlenle örneklendir.`,
+    },
+  ],
+  Edebiyat: [
+    {
+      title: 'Edebiyat sorusuna yaklaşım',
+      body: `Tür (şiir/roman), tema, anlatıcı ve söz sanatlarını ayır. Ana duygu + yardımcı düşünce ilişkisini kur.`,
+    },
+  ],
+  'Din Kültürü ve Ahlak Bilgisi': [
+    {
+      title: 'Din Kültürü sorusuna yaklaşım',
+      body: `Kavram tanımı → şartlar → örnek uygulama sırasını izle. İbadet konularında farz, sünnet ve bozucu durumları tablo halinde çalış.`,
+    },
+  ],
+  Astronomi: [
+    {
+      title: 'Astronomi sorusuna yaklaşım',
+      body: `Gök cismi → konum/hareket → Dünya ile ilişki. Birim olarak ışık yılı ve AU kullanımına dikkat et.`,
+    },
+  ],
+  Zooloji: [
+    {
+      title: 'Hayvan bilimleri',
+      body: `Sınıflandırma (âlem, şube, sınıf), ayırt edici yapı ve yaşam alanı üçlüsünü birlikte yaz.`,
+    },
+  ],
+  Botanik: [
+    {
+      title: 'Bitki bilimleri',
+      body: `Organ (kök, gövde, yaprak) + doku (ksilem, floem) + yaşam döngüsü bağlantısını kur.`,
+    },
+  ],
 };
+
+const DOMAIN_KEYWORDS: { subject: string; pattern: RegExp; examples: string }[] = [
+  { subject: 'Kimya', pattern: /kimya|asit|baz|mol|cozelti|çözelti|element|periyodik/, examples: '«asit nedir», «mol kavramı»' },
+  { subject: 'Fizik', pattern: /fizik|kuvvet|enerji|elektrik|dalga|momentum|ohm/, examples: '«Newton yasaları», «Ohm yasası»' },
+  { subject: 'Biyoloji', pattern: /biyoloji|hucre|hücre|dna|fotosentez|ekosistem|genetik/, examples: '«fotosentez nedir», «mitokondri»' },
+  { subject: 'Matematik', pattern: /matematik|turev|türev|integral|olasilik|olasılık|fonksiyon/, examples: '«türev nedir», «olasılık»' },
+  { subject: 'Felsefe', pattern: /felsefe|filozof|etik|epistemoloji|ontoloji/, examples: '«Sokrates», «bilgi teorisi»' },
+  { subject: 'Edebiyat', pattern: /edebiyat|siir|şiir|roman|metafor|benzetme/, examples: '«söz sanatları», «şiir türleri»' },
+  { subject: 'Tarih', pattern: /tarih|osmanli|osmanlı|cumhuriyet|inkilap|inkılap/, examples: '«Kurtuluş Savaşı», «Lozan»' },
+  { subject: 'Coğrafya', pattern: /cografya|coğrafya|iklim|levha|deprem|bolge|bölge/, examples: '«iklim tipleri», «tektonik»' },
+  { subject: 'Astronomi', pattern: /astronomi|gezegen|yildiz|yıldız|galaksi|evren/, examples: '«Güneş sistemi», «Ay evreleri»' },
+  { subject: 'Deniz Bilimleri', pattern: /deniz|okyanus|gelgit|plankton|mercan/, examples: '«gelgit nedir», «okyanus tabanı»' },
+  { subject: 'Din Kültürü ve Ahlak Bilgisi', pattern: /fikih|fıkıh|namaz|abdest|oruc|oruç|zekat|hac|ibadet/, examples: '«namaz farzları», «abdest»' },
+  { subject: 'Zooloji', pattern: /hayvan|memeli|kus|kuş|surungen|sürüngen|zooloji/, examples: '«omurgalı sınıfları»' },
+  { subject: 'Botanik', pattern: /bitki|botanik|ksilem|floem|tohum/, examples: '«bitki organları»' },
+  { subject: 'Sosyal Bilimler', pattern: /sosyoloji|psikoloji|demokrasi|anayasa|toplum/, examples: '«sosyoloji nedir»' },
+];
+
+function detectDomainFromQuestion(q: string): string | null {
+  for (const { subject, pattern } of DOMAIN_KEYWORDS) {
+    if (pattern.test(q)) return subject;
+  }
+  return null;
+}
 
 export function buildTeacherFallback(subject: string, question: string): string {
   const q = normalize(question);
   if (isLocationQuestion(q)) return buildLocationNotFound(question);
 
-  const hints = SUBJECT_TEACHING_HINTS[subject] ?? SUBJECT_TEACHING_HINTS.Matematik;
+  const detected = detectDomainFromQuestion(q);
+  const effectiveSubject = detected ?? subject;
+  const hints = SUBJECT_TEACHING_HINTS[effectiveSubject] ?? SUBJECT_TEACHING_HINTS.Matematik;
+  const domainHint = DOMAIN_KEYWORDS.find((d) => d.subject === effectiveSubject)?.examples ?? 'konu adını net yaz';
 
   return formatTeacherLesson({
-    subject,
+    subject: effectiveSubject,
     topic: 'Konu Anlatımı',
     question,
-    directAnswer: `Bu soru için henüz hazır bir ders notum yok; aşağıda ${subject} dersinde benzer konuları nasıl çalışacağını anlattım. Soruyu daha net yazarsan (örnek: «çözeltiler nasıl oluşur», «amip nasıl beslenir») doğrudan konu anlatımı üretebilirim.`,
+    directAnswer: `Bu soruyu henüz özel bir ders notuyla eşleştiremedim; ${effectiveSubject} dersinde nasıl düşüneceğini aşağıda özetledim. Daha net sorular için doğrudan anlatım üretebilirim — örnek: ${domainHint}.`,
     sections: hints,
-    summary: `${subject} dersinde tanım → örnek → uygulama sırasıyla çalış.`,
-    yksNote: `${subject} konularında YKS; kavramı kendi cümlelerinle özetleyebilmen önemlidir.`,
+    summary: `${effectiveSubject}: tanım → mekanizma → örnek → pekiştirme.`,
+    yksNote: `YKS'de ${effectiveSubject} sorularında kavramı kendi cümlelerinle özetleyebilmen ve örnek vermen beklenir.`,
   });
 }

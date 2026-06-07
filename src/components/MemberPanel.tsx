@@ -256,7 +256,7 @@ export default function MemberPanel({
             </p>
             {curriculumState?.lastBackgroundRunAt && (
               <p className="text-[9px] text-indigo-500 mt-0.5">
-                Yerel AI koç: {formatDate(curriculumState.lastBackgroundRunAt)} (arka planda aktif)
+                Gemini AI koç: {formatDate(curriculumState.lastBackgroundRunAt)} (arka planda aktif)
               </p>
             )}
           </div>

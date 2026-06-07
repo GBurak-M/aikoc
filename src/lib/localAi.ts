@@ -24,7 +24,20 @@ import {
 } from './scienceKnowledge';
 import { getMoraleMessage } from './aiCoachHub';
 import { buildTeacherFallback, tryConceptLesson } from './conceptLessons';
+import { tryTeacherKnowledge } from './teacherKnowledge';
+import { isConceptualQuestion } from './teacherStyle';
 import { resolveWorldLocation } from './worldLocations';
+import { askGemini, isGeminiLikelyEnabled } from './geminiClient';
+import {
+  buildCoachSystemPrompt,
+  buildExamAnalysisSystemPrompt,
+  buildScienceBriefSystemPrompt,
+  buildSolverSystemPrompt,
+  buildTranslationSystemPrompt,
+  mapHistoryForGemini,
+  parseDataUrlImage,
+  type CoachPromptContext,
+} from './geminiPrompts';
 import { sanitizeCoachOutput } from './chatModeration';
 import {
   buildDirectAnswerFallback,
@@ -85,7 +98,15 @@ export async function translateAcademicTerm(
   term: string,
   direction: 'TR_EN' | 'EN_TR',
 ): Promise<string> {
-  await delay(400);
+  if (isGeminiLikelyEnabled()) {
+    const gemini = await askGemini({
+      systemPrompt: buildTranslationSystemPrompt(direction),
+      userText: `Terim: ${term.trim()}`,
+    });
+    if (gemini) return `✨ **Gemini AI**\n\n${gemini}`;
+  }
+
+  await delay(200);
   const entry = findTerm(term);
   if (entry) return formatTermResult(entry, direction);
   const discipline = findDiscipline(term);
@@ -101,12 +122,33 @@ function strongestSubjects(averages: SubjectAverage[]): SubjectAverage[] {
   return [...averages].sort((a, b) => b.percentage - a.percentage);
 }
 
+function buildExamDataSummary(
+  exams: Exam[],
+  profile: CoachProfile,
+  sorted: Exam[],
+  averages: SubjectAverage[],
+  weak: SubjectAverage[],
+  strong: SubjectAverage[],
+  latestTyt: Exam | undefined,
+  latestAyt: Exam | undefined,
+  totalAvg: string,
+  trendText: string,
+): string {
+  return `Deneme sayısı: ${exams.length}
+Ortalama net: ${totalAvg}
+Son TYT: ${latestTyt ? `${latestTyt.totalNet} net (${latestTyt.name})` : 'yok'}
+Son AYT: ${latestAyt ? `${latestAyt.totalNet} net (${latestAyt.name})` : 'yok'}
+Trend: ${trendText}
+Güçlü: ${strong.map((s) => `${s.subject} %${s.percentage}`).join(', ') || '—'}
+Zayıf: ${weak.map((s) => `${s.subject} %${s.percentage}`).join(', ') || '—'}
+Arşiv: ${formatArchiveStatsSummary()}
+Gelişim: ${deriveImprovementTips(getArchiveSubjectStats(), averages).join('; ') || '—'}`;
+}
+
 export async function generateFullExamAnalysis(
   exams: Exam[],
   profile: CoachProfile,
 ): Promise<string> {
-  await delay(600);
-
   const sorted = sortExamsByDate(exams);
   const averages = getSubjectAverages(exams);
   const weak = weakestSubjects(averages).slice(0, 2);
@@ -136,7 +178,29 @@ export async function generateFullExamAnalysis(
     )
     .join('\n');
 
-  return `Merhaba ${profile.name}! aikoc deneme analizin hazır. (Ücretsiz — API anahtarı gerekmez)
+  if (isGeminiLikelyEnabled()) {
+    const examData = buildExamDataSummary(
+      exams,
+      profile,
+      sorted,
+      averages,
+      weak,
+      strong,
+      latestTyt,
+      latestAyt,
+      totalAvg,
+      trendText,
+    );
+    const gemini = await askGemini({
+      systemPrompt: buildExamAnalysisSystemPrompt(profile),
+      userText: `Deneme verileri:\n${examData}\n\nKişisel deneme analizi ve haftalık plan üret.`,
+    });
+    if (gemini) return `✨ **Gemini AI Deneme Analizi**\n\n${gemini}`;
+  }
+
+  await delay(300);
+
+  return `Merhaba ${profile.name}! aikoc deneme analizin hazır.
 
 📊 Genel Durum
 • Toplam deneme: ${exams.length}
@@ -305,12 +369,50 @@ export async function generateCoachChatResponse(
   }
 
   const intent = detectCoachIntent(userMessage);
+  const world = context.world;
+
+  if (isGeminiLikelyEnabled()) {
+    const worldParts: string[] = [];
+    if (world) {
+      worldParts.push(formatWorldWeather(world));
+      worldParts.push(formatWorldPrayer(world));
+      worldParts.push(formatWorldCalendar(world));
+    }
+    const promptContext: CoachPromptContext = {
+      profile: context.profile,
+      subjectAverages: context.subjectAverages,
+      recentExamSummary: context.recentExamSummary,
+      estimateRank: context.estimateRank,
+      curriculumNote: context.curriculumNote,
+      trafficSummary: context.trafficSummary,
+      learningSummary: context.learningSummary,
+      archiveStatsSummary: context.archiveStatsSummary,
+      centralAiInsight: context.centralAiInsight,
+    };
+    const geminiReply = await askGemini({
+      systemPrompt: buildCoachSystemPrompt(promptContext, {
+        intent,
+        worldContext: worldParts.length ? worldParts.join('\n\n') : undefined,
+      }),
+      userText: userMessage,
+      history: mapHistoryForGemini(history),
+    });
+    if (geminiReply) {
+      const prefix = context.profile.name ? `${context.profile.name}, ` : '';
+      return sanitizeCoachOutput(`${prefix}${geminiReply}`);
+    }
+  }
+
+  const qNorm = normalize(userMessage);
+  if (isConceptualQuestion(qNorm)) {
+    const teacherLesson = tryTeacherKnowledge(userMessage);
+    if (teacherLesson) return sanitizeCoachOutput(teacherLesson);
+  }
   const { profile, subjectAverages, recentExamSummary, estimateRank, avgNet, pendingTasks } =
     context;
   const weak = weakestSubjects(subjectAverages)[0];
   const strong = strongestSubjects(subjectAverages)[0];
 
-  const world = context.world;
   const includeTraffic = intent === 'traffic' || intent === 'stats';
   const traffic = includeTraffic ? trafficBlock(context) : '';
   const central = intent === 'traffic' || intent === 'stats' ? centralBlock(context) : '';
@@ -470,12 +572,22 @@ Sorunu biraz daha açarsan (hangi ders, hangi konu, ne takıldın) doğrudan o n
 }
 
 export async function generateScienceBrief(world: WorldSnapshot): Promise<string> {
-  await delay(400);
   const topics = world.scienceTopics ?? [];
   const stats = topics.map((t) => {
     const n = t.articles.length + t.books.length + t.publications.length;
     return `${t.field}: ${t.articles.length} makale, ${t.books.length} kitap, ${t.publications.length} yayın (toplam ${n})`;
   });
+  const digest = formatScienceDigest(world);
+
+  if (isGeminiLikelyEnabled()) {
+    const gemini = await askGemini({
+      systemPrompt: buildScienceBriefSystemPrompt(world.settlement.displayName),
+      userText: `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar:\n${digest}`,
+    });
+    if (gemini) return `✨ **Gemini AI Bilim Gündemi** (${world.settlement.displayName})\n\n${gemini}`;
+  }
+
+  await delay(200);
 
   return `🔬 Bilim Gündemi — Küresel Akış (${world.settlement.displayName})
 Son güncelleme: ${new Date(world.fetchedAt).toLocaleString('tr-TR')}
@@ -485,7 +597,7 @@ Konu bazlı dağılım:
 ${stats.length ? stats.map((s) => `• ${s}`).join('\n') : '—'}
 
 Öne çıkanlar (Türkçe):
-${formatScienceDigest(world)}
+${digest}
 
 YKS ipucu: Okuduğunuz terimleri Akademik Sözlük'e ekleyin; fen ve sosyal bilimlerde güncel kavram takibi net artışına yardımcı olur.`;
 }
@@ -666,12 +778,14 @@ function solveBySubject(subject: string, question: string): string {
 export async function generateQuestionSolution(
   subject: string,
   questionText: string,
-  options?: { fromOcr?: boolean },
+  options?: { fromOcr?: boolean; imageDataUrl?: string | null },
 ): Promise<string> {
-  await delay(500);
+  await delay(300);
 
   const text = questionText.trim();
-  if (!text) {
+  const image = options?.imageDataUrl ? parseDataUrlImage(options.imageDataUrl) : null;
+
+  if (!text && !image) {
     return `Soru metni okunamadı. Lütfen fotoğrafın net olduğundan emin olun veya metni elle yazın. Ders: ${subject}`;
   }
 
@@ -679,8 +793,35 @@ export async function generateQuestionSolution(
     ? '📷 **Fotoğraftan okunan metin** ile çözüm:\n\n'
     : '';
 
-  const worldLocation = await resolveWorldLocation(text);
-  if (worldLocation) return `${ocrNote}${worldLocation}`;
+  if (text) {
+    const worldLocation = await resolveWorldLocation(text);
+    if (worldLocation) return `${ocrNote}${worldLocation}`;
+  }
+
+  const q = normalize(text || 'gorsel soru');
+  const arithmetic = text ? tryEvaluateExpression(text) : null;
+  if (arithmetic) return `${ocrNote}${arithmetic}`;
+
+  const topicSolution = tryTopicSolvers(subject, q);
+  if (topicSolution) return `${ocrNote}${topicSolution}`;
+
+  if (isGeminiLikelyEnabled()) {
+    const promptText =
+      text ||
+      'Ekteki soru fotoğrafını incele. Soruyu Türkçe olarak yeniden yaz ve adım adım çöz.';
+    const geminiSolution = await askGemini({
+      systemPrompt: buildSolverSystemPrompt(subject),
+      userText: `Ders: ${subject}\n\nSoru:\n${promptText}`,
+      image: image ?? undefined,
+    });
+    if (geminiSolution) {
+      return `${ocrNote}✨ **Gemini AI çözümü**\n\n${geminiSolution}`;
+    }
+  }
+
+  if (!text) {
+    return `${ocrNote}Görsel soru için Gemini API anahtarı gerekir (GEMINI_API_KEY). Vercel ortam değişkenine ücretsiz Google AI Studio anahtarını ekleyin veya soruyu metin olarak yazın.`;
+  }
 
   return `${ocrNote}${solveBySubject(subject, text)}`;
 }

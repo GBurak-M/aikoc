@@ -116,7 +116,7 @@ Adımlar:
 • Namaz vakitleri — Diyanet metodu (Aladhan)
 • Takvim — resmi tatiller, hicri tarih, YKS geri sayımı
 • Bilim akışı — OpenAlex üzerinden güncel akademik yayınlar
-• AI Özet — yerel AI ile bilim özeti oluşturur
+• AI Özet — Gemini AI ile bilim özeti oluşturur
 
 Veriler 30 dakikada bir otomatik yenilenir. Seçtiğiniz konum tarayıcıda saklanır.
 
@@ -130,7 +130,7 @@ Not: Çok küçük köyler listede çıkmayabilir; en yakın yerleşim yeri seç
 
 • Soru metnini yazın veya net bir fotoğraf yükleyin
 • Örnek sorulardan birini seçerek deneyebilirsiniz
-• 「Çözümü Getir」 ile yerel AI adım adım açıklama üretir
+• 「Çözümü Getir」 ile Gemini AI adım adım açıklama üretir
 • Çözülemeyen sorular arşive eklenir; daha sonra tekrar bakabilirsiniz
 
 İpucu: Fotoğraf yerine sorunun metnini yazmak daha güvenilir sonuç verir.

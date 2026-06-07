@@ -1189,7 +1189,7 @@ export default function App() {
       const solutionText = await generateQuestionSolution(
         questionSubject,
         resolvedText,
-        { fromOcr },
+        { fromOcr, imageDataUrl: questionImage },
       );
       setActiveSolution(solutionText);
 
@@ -2296,7 +2296,7 @@ export default function App() {
                 )}
 
                 <p className="mb-3 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/40 rounded-xl px-3 py-2">
-                  LGS, YKS, KPSS, ALES ve tüm ulusal sınavlarda kişisel koçluk — site trafiğinizi analiz eder. API anahtarı gerekmez.
+                  LGS, YKS, KPSS, ALES koçluğu — Google Gemini AI ile desteklenir. Canlı yayında GEMINI_API_KEY ortam değişkeni gerekir.
                   {worldSnapshot && (
                     <span className="block mt-1 text-slate-500 dark:text-slate-400">
                       {worldSnapshot.settlement.displayName} · {worldSnapshot.currentTemp ?? '—'}°C · {worldSnapshot.prayer.nextPrayer} {worldSnapshot.prayer.nextPrayerTime}
@@ -2530,7 +2530,7 @@ export default function App() {
                     disabled={loadingTranslation}
                     className="w-full py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-1"
                   >
-                    {loadingTranslation ? 'Yerel AI Analiz Ediyor...' : 'Terimi Çevir ve Analiz Et'}
+                    {loadingTranslation ? 'Gemini AI Analiz Ediyor...' : 'Terimi Çevir ve Analiz Et'}
                   </button>
                 </form>
 
@@ -2703,8 +2703,12 @@ export default function App() {
                         <option value="Biyoloji">Biyoloji</option>
                         <option value="Türkçe">Türkçe</option>
                         <option value="Edebiyat">Edebiyat</option>
+                        <option value="Felsefe">Felsefe</option>
                         <option value="Tarih">Tarih</option>
                         <option value="Coğrafya">Coğrafya</option>
+                        <option value="Sosyal Bilimler">Sosyal Bilimler</option>
+                        <option value="Astronomi">Astronomi</option>
+                        <option value="Din Kültürü ve Ahlak Bilgisi">Din Kültürü ve Ahlak Bilgisi</option>
                       </select>
                     </div>
 
@@ -2797,8 +2801,8 @@ export default function App() {
                       {loadingSolution
                         ? ocrProgress > 0 && ocrProgress < 100
                           ? `Fotoğraf okunuyor %${ocrProgress}…`
-                          : 'Yerel AI Çözüm Hazırlıyor...'
-                        : 'Soruyu Yerel AI ile Çöz'}
+                          : 'Gemini AI Çözüm Hazırlıyor...'
+                        : 'Soruyu Gemini AI ile Çöz'}
                     </span>
                   </button>
                 </form>
