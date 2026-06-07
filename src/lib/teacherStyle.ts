@@ -50,9 +50,9 @@ ${direct}${greet}${sectionText}
 ${input.summary.trim()}${yks}${practice}`;
 }
 
-/** «nerede», «hangi bölge» gibi konum soruları */
+/** «nerede», «hangi ülke/kıta» gibi konum soruları */
 export function isLocationQuestion(normalized: string): boolean {
-  return /nerede|neredir|hangi bolge|hangi bölge|hangi il|konumu|konumda|haritada nerede/.test(
+  return /nerede|neredir|hangi bolge|hangi bölge|hangi il|hangi ulke|hangi ülke|hangi kita|hangi kıta|hangi sehir|hangi şehir|konumu|konumda|haritada nerede|where is|where's|located in|konum bilgisi/.test(
     normalized,
   );
 }

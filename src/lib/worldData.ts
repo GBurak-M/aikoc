@@ -8,6 +8,14 @@ export type Settlement = {
   displayName: string;
 };
 
+export type GeocodePlace = Settlement & {
+  featureCode?: string;
+  population?: number;
+  timezone?: string;
+  countryCode?: string;
+  elevation?: number;
+};
+
 export type HourlyWeather = {
   time: string;
   hourLabel: string;
@@ -192,36 +200,65 @@ function pickNextPrayer(timings: Record<string, string>): { name: string; time: 
   return { name: 'İmsak (yarın)', time: timings.Fajr };
 }
 
-export async function searchSettlements(query: string): Promise<Settlement[]> {
-  const q = query.trim();
-  if (q.length < 2) return [];
+type GeocodeApiRow = {
+  name: string;
+  latitude: number;
+  longitude: number;
+  country: string;
+  country_code?: string;
+  admin1?: string;
+  admin2?: string;
+  feature_code?: string;
+  population?: number;
+  timezone?: string;
+  elevation?: number;
+};
 
-  const url = new URL('https://geocoding-api.open-meteo.com/v1/search');
-  url.searchParams.set('name', q);
-  url.searchParams.set('count', '12');
-  url.searchParams.set('language', 'tr');
-  url.searchParams.set('countryCode', 'TR');
-
-  const res = await fetch(url.toString());
-  if (!res.ok) return [];
-
-  const data = await res.json();
-  return (data.results ?? []).map((r: {
-    name: string;
-    latitude: number;
-    longitude: number;
-    country: string;
-    admin1?: string;
-    admin2?: string;
-  }) => ({
+function mapGeocodeRow(r: GeocodeApiRow): GeocodePlace {
+  return {
     name: r.name,
     lat: r.latitude,
     lon: r.longitude,
     country: r.country,
     admin1: r.admin1,
     admin2: r.admin2,
-    displayName: [r.name, r.admin2, r.admin1].filter(Boolean).join(', '),
-  }));
+    displayName: [r.name, r.admin2, r.admin1, r.country].filter(Boolean).join(', '),
+    featureCode: r.feature_code,
+    population: r.population,
+    timezone: r.timezone,
+    countryCode: r.country_code,
+    elevation: r.elevation,
+  };
+}
+
+async function fetchGeocodePlaces(
+  query: string,
+  options?: { countryCode?: string; count?: number },
+): Promise<GeocodePlace[]> {
+  const q = query.trim();
+  if (q.length < 2) return [];
+
+  const url = new URL('https://geocoding-api.open-meteo.com/v1/search');
+  url.searchParams.set('name', q);
+  url.searchParams.set('count', String(options?.count ?? 10));
+  url.searchParams.set('language', 'tr');
+  if (options?.countryCode) url.searchParams.set('countryCode', options.countryCode);
+
+  const res = await fetch(url.toString());
+  if (!res.ok) return [];
+
+  const data = await res.json();
+  return (data.results ?? []).map((r: GeocodeApiRow) => mapGeocodeRow(r));
+}
+
+/** Türkiye odaklı yerleşim araması (Zeka Merkezi vb.) */
+export async function searchSettlements(query: string): Promise<Settlement[]> {
+  return fetchGeocodePlaces(query, { countryCode: 'TR', count: 12 });
+}
+
+/** Dünya genelinde şehir, il, ülke ve yerleşim araması */
+export async function searchGlobalPlaces(query: string, count = 10): Promise<GeocodePlace[]> {
+  return fetchGeocodePlaces(query, { count });
 }
 
 export async function fetchHourlyWeather(lat: number, lon: number): Promise<{

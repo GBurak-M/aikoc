@@ -24,6 +24,7 @@ import {
 } from './scienceKnowledge';
 import { getMoraleMessage } from './aiCoachHub';
 import { buildTeacherFallback, tryConceptLesson } from './conceptLessons';
+import { resolveWorldLocation } from './worldLocations';
 import { sanitizeCoachOutput } from './chatModeration';
 import {
   buildDirectAnswerFallback,
@@ -296,6 +297,11 @@ export async function generateCoachChatResponse(
   const conversational = tryConversationalReply(userMessage, context, history);
   if (conversational) {
     return sanitizeCoachOutput(conversational);
+  }
+
+  const worldLocation = await resolveWorldLocation(userMessage);
+  if (worldLocation) {
+    return sanitizeCoachOutput(worldLocation);
   }
 
   const intent = detectCoachIntent(userMessage);
@@ -672,6 +678,9 @@ export async function generateQuestionSolution(
   const ocrNote = options?.fromOcr
     ? '📷 **Fotoğraftan okunan metin** ile çözüm:\n\n'
     : '';
+
+  const worldLocation = await resolveWorldLocation(text);
+  if (worldLocation) return `${ocrNote}${worldLocation}`;
 
   return `${ocrNote}${solveBySubject(subject, text)}`;
 }

@@ -199,7 +199,7 @@ function lessonPhotosynthesis(question: string): string {
   });
 }
 
-function formatCityLesson(question: string, city: CityInfo): string {
+export function formatTurkeyCityLesson(question: string, city: CityInfo): string {
   return formatTeacherLesson({
     subject: 'Coğrafya',
     topic: `${city.name} — Nerede?`,
@@ -231,7 +231,7 @@ function formatCityLesson(question: string, city: CityInfo): string {
 function tryCityLocation(question: string): string | null {
   const city = findCityInQuestion(question);
   if (!city) return null;
-  return formatCityLesson(question, city);
+  return formatTurkeyCityLesson(question, city);
 }
 
 export function buildLocationNotFound(question: string): string {
@@ -266,11 +266,9 @@ const CONCEPT_LESSONS: LessonDef[] = [
 export function tryConceptLesson(subject: string, question: string): string | null {
   const q = normalize(question);
 
-  // Konum soruları — ders seçimi önemli değil, önce doğrudan cevap ver
+  // Türkiye illeri — anında yanıt; diğer dünya konumları async (worldLocations)
   if (isLocationQuestion(q)) {
-    const city = tryCityLocation(question);
-    if (city) return city;
-    return buildLocationNotFound(question);
+    return tryCityLocation(question);
   }
 
   for (const { subjects, pattern, build } of CONCEPT_LESSONS) {
