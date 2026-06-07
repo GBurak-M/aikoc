@@ -23,6 +23,7 @@ import {
   tryScienceDisciplineReply,
 } from './scienceKnowledge';
 import { getMoraleMessage } from './aiCoachHub';
+import { buildTeacherFallback, tryConceptLesson } from './conceptLessons';
 import { sanitizeCoachOutput } from './chatModeration';
 import {
   buildDirectAnswerFallback,
@@ -580,39 +581,6 @@ Seri devrede dirençler toplanır; paralelde 1/R = 1/R₁ + 1/R₂.
 4. **Pekiştirme:** 12 V ve 4 Ω için akım kaç A? → 3 A`;
 }
 
-function solveAmoeba(): string {
-  return `1. **İlgili Kavramlar:**
-Amip (Amoeba), tek hücreli ökaryot bir protisttir. Yapısında hücre zarı, sitoplazma, çekirdek ve besin kofulları bulunur; kloroplast ve hücre duvarı yoktur.
-
-2. **Adım Adım: Amip Nasıl Yaşar?**
-• **Habitat:** Genellikle tatlı su (göller, dere kenarları); nemli ortamlarda yaşar.
-• **Hareket:** Sahte ayaklar (pöd) oluşturarak amipoid hareket yapar; sitoplazma akışıyla yön değiştirir.
-• **Beslenme:** Heterotroftur. Fagositoz ile küçük organizmaları veya organik parçacıkları yutar; besin kofulunda sindirir, artıkları egzositoz ile atar.
-• **Solunum:** Hücre zarından difüzyonla O₂ alır, CO₂ verir (aerobik solunum).
-• **Boşaltım:** Kontraktıl koful ile fazla suyu dışarı atar (ozmoregülasyon).
-• **Üreme:** Uygun koşullarda ikili bölünme (mitoz) ile ürer; genetik çeşitlilik sınırlıdır.
-
-3. **Kritik YKS Püf Noktası (ÖSYM Tarzı):**
-Amip sorularında **fagositoz**, **pöd**, **ökaryot tek hücre** ve **kloroplastsız** özellikler birlikte aranır. Öglena ile karıştırmayın: öglenada kloroplast vardır ve fotosentez yapabilir.
-
-4. **Pekiştirme Sorusu:**
-Amipte besin alımı hangi yolla gerçekleşir?
-Doğru Cevap: Fagositoz`;
-}
-
-function solvePhotosynthesis(): string {
-  return `1. **İlgili Formüller/Kurallar:**
-6CO₂ + 6H₂O + ışık → C₆H₁₂O₆ + 6O₂. Kloroplastta ışığa bağımlı ve ışıktan bağımsız reaksiyonlar.
-
-2. **Adım Adım Detaylı Çözüm:**
-Işık fazında klorofil ışığı soğurur → ATP ve NADPH üretilir → Calvin döngüsünde CO₂ organik besine dönüşür.
-
-3. **Kritik YKS Püf Noktası:**
-Fotosentez hızını ışık yoğunluğu, CO₂ miktarı ve sıcaklık belirler; sınırlayıcı faktör kavramını kullanın.
-
-4. **Pekiştirme:** Fotosentezde O₂ hangi reaksiyondan açığa çıkar? → Işığa bağımlı reaksiyon (su yarılanması).`;
-}
-
 type TopicSolver = {
   subjects?: string[];
   pattern: RegExp;
@@ -620,8 +588,6 @@ type TopicSolver = {
 };
 
 const TOPIC_SOLVERS: TopicSolver[] = [
-  { subjects: ['Biyoloji'], pattern: /amip|amoeba|ameba/, solve: solveAmoeba },
-  { subjects: ['Biyoloji'], pattern: /fotosentez|klorofil|kloroplast/, solve: solvePhotosynthesis },
   { subjects: ['Biyoloji'], pattern: /mitokondri|ozmotik|osmotik|turgor|ph/, solve: solveMitochondria },
   { pattern: /momentum|kuvvet.*uygulan|impuls|10\s*n.*5\s*s/i, solve: solveMomentum },
   { pattern: /ohm|direnç|akım|volt|amper/, solve: solveOhm },
@@ -660,32 +626,6 @@ function tryAcademicTermAnswer(question: string): string | null {
   return null;
 }
 
-function buildSubjectGuide(subject: string): string {
-  const guides: Record<string, string> = {
-    Matematik: `1. **İlgili Formüller/Kurallar:** Sorudaki ana kavramı (denklem, fonksiyon, geometri) belirleyin; TYT'de temel, AYT'de ileri formüller gerekir.
-2. **Adım Adım Detaylı Çözüm:** Verilenleri yazın → bilinmeyeni tanımlayın → işlem adımlarını sırayla uygulayın.
-3. **Kritik YKS Püf Noktası:** İşaret hataları ve sınır durumları en yaygın tuzaktır.
-4. **Pekiştirme Sorusu:** Aynı konudan 5 benzer soru çözün.`,
-    Fizik: `1. **İlgili Formüller/Kurallar:** SI birimleri, vektör yönü ve uygun fizik yasasını (Newton, enerji, elektrik) seçin.
-2. **Adım Adım Detaylı Çözüm:** Şema çizin, verilenleri listeleyin, birim analizi yapın.
-3. **Kritik YKS Püf Noktası:** "Sürtünmesiz", "ihmal edilebilir" gibi anahtar ifadelere dikkat edin.
-4. **Pekiştirme Sorusu:** Konu testinden 10 soru çözüp yanlışları analiz edin.`,
-    Kimya: `1. **İlgili Formüller/Kurallar:** Mol, denge, asit-baz ve redoks formüllerini kontrol edin.
-2. **Adım Adım Detaylı Çözüm:** Denklemi dengeleyin, mol oranlarını adım adım kurun.
-3. **Kritik YKS Püf Noktası:** Periyodik özellikler ve çözelti hesapları sık sorulur.
-4. **Pekiştirme Sorusu:** Benzer 3 soruyu zamanlayarak çözün.`,
-    Biyoloji: `1. **İlgili Formüller/Kurallar:** Hücre, sistem ve ekoloji kavramlarını eşleştirin.
-2. **Adım Adım Detaylı Çözüm:** Süreç akışı (ör. fotosentez, solunum) çizerek ilerleyin.
-3. **Kritik YKS Püf Noktası:** "Artar/azalır" tipi sorularda neden-sonuç zinciri kurun.
-4. **Pekiştirme Sorusu:** Konu şeması çıkarıp 24 saat sonra tekrar edin.`,
-    Türkçe: `1. **İlgili Kurallar:** Paragraf (ana düşünce, yapı), dil bilgisi (ses, yapım, çekim) kuralları.
-2. **Adım Adım Çözüm:** Seçenekleri elemine edin; metin kanıtı olmayan şıkları eleyin.
-3. **Kritik YKS Püf Noktası:** "En", "dışında", "yalnızca" gibi mutlak ifadelere dikkat.
-4. **Pekiştirme:** 1 paragraf testi + yanlış analizi.`,
-  };
-  return guides[subject] ?? guides.Matematik;
-}
-
 function solveBySubject(subject: string, question: string): string {
   const q = normalize(question);
 
@@ -694,6 +634,9 @@ function solveBySubject(subject: string, question: string): string {
 
   const topicSolution = tryTopicSolvers(subject, q);
   if (topicSolution) return topicSolution;
+
+  const conceptLesson = tryConceptLesson(subject, question);
+  if (conceptLesson) return conceptLesson;
 
   if (/x\^2|x²|ikinci derece|diskriminant|kök/.test(q) && /denklem|x/.test(q)) {
     return solveQuadratic();
@@ -711,14 +654,7 @@ function solveBySubject(subject: string, question: string): string {
   const termAnswer = tryAcademicTermAnswer(question);
   if (termAnswer) return termAnswer;
 
-  const body = buildSubjectGuide(subject);
-  const shortQ = question.slice(0, 200) + (question.length > 200 ? '…' : '');
-  return `${body}
-
----
-**Sorunuz:** "${shortQ}"
-
-Bu soru için özel bir çözüm şablonu henüz yok; yukarıdaki ${subject} stratejisini uygulayın. Sayıları, şıkları veya denklemi ekleyerek tekrar gönderirseniz adım adım çözüm üretilir.`;
+  return buildTeacherFallback(subject, question);
 }
 
 export async function generateQuestionSolution(
