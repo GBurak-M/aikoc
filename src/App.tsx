@@ -1426,12 +1426,12 @@ export default function App() {
   // ANA UYGULAMA EKRANI (misafir olarak doğrudan açılır; üyelik isteğe bağlı)
   return (
     <div
-      className={`min-h-screen font-sans transition-colors duration-500 mesh-bg ${darkMode ? 'dark text-slate-100' : 'text-slate-800'}`}
+      className={`min-h-[100dvh] font-sans transition-colors duration-500 mesh-bg ${darkMode ? 'dark text-slate-100' : 'text-slate-800'}`}
       style={surfaceStyle}
     >
       
       {/* ÜST BAR (HEADER) */}
-      <header className={`site-content-layer sticky top-0 z-50 border-b glass-panel ${darkMode ? activeTheme.borderDark : activeTheme.borderLight}`}>
+      <header className={`site-content-layer safe-area-top sticky top-0 z-50 border-b glass-panel ${darkMode ? activeTheme.borderDark : activeTheme.borderLight}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
             <div className="min-w-0">
@@ -1462,7 +1462,7 @@ export default function App() {
               <Settings className="h-3 w-3 opacity-60 shrink-0" />
             </button>
 
-            <div className={`hidden sm:flex items-center gap-1 p-1 rounded-xl border ${darkMode ? 'bg-slate-800/80 border-slate-700' : 'bg-white/80 border-slate-200'}`}>
+            <div className={`flex items-center gap-0.5 sm:gap-1 p-0.5 sm:p-1 rounded-xl border ${darkMode ? 'bg-slate-800/80 border-slate-700' : 'bg-white/80 border-slate-200'}`}>
               {THEME_OPTIONS.map((color) => {
                 const swatchTheme = getThemeClasses(color);
                 return (
@@ -1470,10 +1470,11 @@ export default function App() {
                     key={color}
                     type="button"
                     onClick={() => setThemeColor(color)}
-                    className={`w-4 h-4 rounded-full transition-transform ${swatchTheme.swatch} ${
+                    className={`w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full transition-transform ${swatchTheme.swatch} ${
                       themeColor === color ? `scale-125 ring-2 ${activeTheme.pickerRing}` : 'hover:scale-110'
                     }`}
                     title={THEME_LABELS[color]}
+                    aria-label={`Tema: ${THEME_LABELS[color]}`}
                   />
                 );
               })}
@@ -1546,7 +1547,7 @@ export default function App() {
         </div>
 
         <nav className="max-w-7xl mx-auto px-4 md:px-8 pb-3">
-          <div className={`nav-rail flex flex-wrap gap-1 p-1.5 rounded-2xl border ${activeTheme.navRail}`}>
+          <div className={`nav-rail nav-rail-scroll flex gap-1 p-1.5 rounded-2xl border ${activeTheme.navRail}`}>
             {[
               ...(member ? [{ id: 'panel', label: 'Panel' }] : []),
               { id: 'merkez', label: 'Zeka Merkezi' },
@@ -1793,7 +1794,7 @@ export default function App() {
 
       {showGuideModal && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 overflow-y-auto max-h-[85vh] shadow-2xl relative ${
+          <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 overflow-y-auto modal-safe shadow-2xl relative ${
             darkMode ? 'bg-slate-800 text-slate-100' : 'bg-white text-slate-800'
           }`}>
             <button
@@ -1940,7 +1941,7 @@ export default function App() {
       )}
 
       {/* ANA İÇERİK ALANI */}
-      <main className="site-content-layer px-4 md:px-8 pb-16 max-w-7xl mx-auto">
+      <main className="site-content-layer main-with-coach px-4 md:px-8 max-w-7xl mx-auto">
         
         {/* TAB 1: PANEL (SINAV GİRİŞİ, DERS ORTALAMALARI & AI KOÇ CHAT) — üyelere özel */}
         {activeTab === 'panel' && member && (
@@ -2184,7 +2185,7 @@ export default function App() {
                   </div>
 
                   {/* Sağ Sütun: Radar/Spider Chart */}
-                  <div className="md:col-span-5 flex justify-center h-56">
+                  <div className="md:col-span-5 flex justify-center h-52 sm:h-56 min-w-0 w-full">
                     {exams.length === 0 ? (
                       <div className="text-center text-xs text-slate-400 flex flex-col justify-center">
                         <span>Radar grafiği oluşturmak için</span>
@@ -2690,8 +2691,9 @@ export default function App() {
                       value={questionText}
                       onChange={(e) => setQuestionText(e.target.value)}
                       placeholder="Soruyu buraya yazabilirsin. Eğer fotoğraf yüklediysen, sorunun çözümünü başlatmak için doğrudan alttaki butona basabilirsin."
-                      rows={3}
-                      className={`w-full text-xs px-4 py-3 rounded-xl border focus:outline-none focus:ring-1 ${activeTheme.ring} ${
+                      rows={4}
+                      enterKeyHint="done"
+                      className={`w-full text-base sm:text-xs px-4 py-3 rounded-xl border focus:outline-none focus:ring-1 ${activeTheme.ring} ${
                         darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200 text-slate-800'
                       }`}
                     />
@@ -3135,9 +3137,9 @@ export default function App() {
                   </div>
 
                   {archiveChartData.length > 0 && (
-                    <div className="h-72 w-full">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={archiveChartData} margin={{ top: 8, right: 16, left: 0, bottom: 48 }}>
+                    <div className="h-64 sm:h-72 w-full min-w-0 overflow-x-auto">
+                      <ResponsiveContainer width="100%" height="100%" minWidth={280}>
+                        <BarChart data={archiveChartData} margin={{ top: 8, right: 12, left: 0, bottom: 48 }}>
                           <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? '#334155' : '#f1f5f9'} />
                           <XAxis
                             dataKey="subject"
@@ -3210,9 +3212,9 @@ export default function App() {
               {exams.length === 0 ? (
                 <div className="text-center py-12 text-slate-400">Yeterli veri bulunamadı. Lütfen önce deneme sınavı ekleyin.</div>
               ) : (
-                <div className="h-80 w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={chartExams} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                <div className="h-64 sm:h-80 w-full min-w-0 overflow-x-auto">
+                  <ResponsiveContainer width="100%" height="100%" minWidth={280}>
+                    <LineChart data={chartExams} margin={{ top: 10, right: 16, left: 0, bottom: 4 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke={darkMode ? "#334155" : "#f1f5f9"} />
                       <XAxis dataKey="chartLabel" stroke={darkMode ? "#94a3b8" : "#64748b"} fontSize={10} tickLine={false} interval={0} angle={-20} textAnchor="end" height={60} />
                       <YAxis stroke={darkMode ? "#94a3b8" : "#64748b"} fontSize={10} tickLine={false} />

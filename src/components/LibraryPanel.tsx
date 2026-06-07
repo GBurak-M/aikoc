@@ -386,7 +386,7 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
 
       {selected && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 overflow-y-auto max-h-[85vh] shadow-2xl relative ${
+          <div className={`w-full max-w-2xl rounded-2xl p-6 md:p-8 overflow-y-auto modal-safe shadow-2xl relative ${
             darkMode ? 'bg-slate-800 text-slate-100' : 'bg-white text-slate-800'
           }`}>
             <button
@@ -434,8 +434,8 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
       )}
 
       {reading && (
-        <div className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex flex-col">
-          <div className={`flex items-center justify-between gap-3 px-4 py-3 border-b shrink-0 ${
+        <div className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm flex flex-col safe-area-top">
+          <div className={`reader-safe-top flex items-center justify-between gap-3 px-4 py-3 border-b shrink-0 ${
             darkMode ? 'bg-slate-900 border-slate-700 text-slate-100' : 'bg-white border-slate-200 text-slate-800'
           }`}>
             <div className="min-w-0">
@@ -445,7 +445,7 @@ export default function LibraryPanel({ darkMode, activeTheme, submitterName }: P
             <button
               type="button"
               onClick={() => setReading(null)}
-              className="p-2 rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-800 shrink-0"
+              className="p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg text-slate-400 hover:text-rose-500 hover:bg-slate-100 dark:hover:bg-slate-800 shrink-0"
               aria-label="Okuyucuyu kapat"
             >
               <X className="h-5 w-5" />

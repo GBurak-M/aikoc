@@ -103,7 +103,7 @@ export default function CoachChatCorner({
       <button
         type="button"
         onClick={() => onOpenChange(true)}
-        className={`fixed bottom-6 right-6 z-[60] flex items-center gap-2 px-4 py-3 rounded-2xl shadow-xl text-white font-bold text-sm bg-gradient-to-tr ${activeTheme.gradient} hover:scale-105 transition-transform`}
+        className={`fixed-coach-fab fixed z-[60] flex items-center gap-2 px-4 py-3 min-h-[44px] rounded-2xl shadow-xl text-white font-bold text-sm bg-gradient-to-tr ${activeTheme.gradient} active:scale-95 transition-transform`}
         aria-label="AI koç sohbetini aç"
       >
         <MessageCircle className="h-5 w-5" />
@@ -114,10 +114,9 @@ export default function CoachChatCorner({
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-[60] w-[min(100vw-2rem,380px)] rounded-3xl border shadow-2xl overflow-hidden flex flex-col ${
+      className={`fixed-coach-panel fixed z-[60] w-[min(100vw-2rem,380px)] rounded-3xl border shadow-2xl overflow-hidden flex flex-col ${
         darkMode ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200'
       }`}
-      style={{ maxHeight: 'min(70vh, 520px)' }}
     >
       <div className={`flex items-center justify-between px-4 py-3 border-b ${darkMode ? 'border-slate-700 bg-slate-800/80' : 'border-slate-100 bg-slate-50'}`}>
         <div>
@@ -156,7 +155,7 @@ export default function CoachChatCorner({
         {speaking && <span className="block mt-1 text-sky-500">🔊 Konuşuyor…</span>}
       </p>
 
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-3 space-y-2 min-h-[200px] max-h-[280px]">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto overscroll-contain px-4 py-3 space-y-2 min-h-[160px] sm:min-h-[200px] max-h-[min(42dvh,280px)] sm:max-h-[280px]">
         {chatHistory.length === 0 && (
           <p className="text-xs text-slate-400 text-center py-6">
             Merhaba! Ben {SITE_NAME}. Sorunu yaz veya mikrofonla söyle.
@@ -219,7 +218,9 @@ export default function CoachChatCorner({
           value={aiChatQuery}
           onChange={(e) => setAiChatQuery(e.target.value)}
           placeholder="Koça sor…"
-          className={`flex-1 text-xs px-3 py-2 rounded-xl border focus:outline-none focus:ring-1 ${activeTheme.ring} ${
+          enterKeyHint="send"
+          autoComplete="off"
+          className={`flex-1 text-base sm:text-xs px-3 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded-xl border focus:outline-none focus:ring-1 ${activeTheme.ring} ${
             darkMode ? 'bg-slate-800 border-slate-700 text-white' : 'bg-slate-50 border-slate-200'
           }`}
         />
