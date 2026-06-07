@@ -1,7 +1,8 @@
-import { TURKEY_CITIES } from '../data/turkeyCities';
+import { findCityInQuestion, listKnownCityNames, type CityInfo } from '../data/turkeyCities';
 import {
   formatTeacherLesson,
   isConceptualQuestion,
+  isLocationQuestion,
   type TeacherSection,
 } from './teacherStyle';
 
@@ -18,8 +19,10 @@ function lessonCozelti(question: string): string {
     subject: 'Kimya',
     topic: 'Çözeltilerin Oluşumu',
     question,
+    directAnswer:
+      'Çözelti; çözücü ve çözünenin moleküler düzeyde etkileşerek homojen bir karışım oluşturmasıdır. Çözünen parçacıkları çözücü içine dağılır ve gözle görülmeyecek kadar küçük tanecikler halinde tüm hacme yayılır.',
     greeting:
-      'Çözelti konusu hem günlük hayatta hem YKS\'de sık karşına çıkar. Önce tanımı netleştirip ardından oluşum sürecini parça parça inceleyelim.',
+      'Şimdi bu süreci adım adım inceleyelim.',
     sections: [
       {
         title: 'Çözelti nedir?',
@@ -196,38 +199,54 @@ function lessonPhotosynthesis(question: string): string {
   });
 }
 
+function formatCityLesson(question: string, city: CityInfo): string {
+  return formatTeacherLesson({
+    subject: 'Coğrafya',
+    topic: `${city.name} — Nerede?`,
+    question,
+    directAnswer: `**${city.name}**, Türkiye'nin **${city.region}**'nde yer alır. ${city.location}`,
+    sections: [
+      {
+        title: 'Coğrafi konum',
+        body: city.location,
+      },
+      {
+        title: 'Komşu iller',
+        body: `${city.name} ile sınır komşusu olan iller: **${city.neighbors.join(', ')}**. Harita üzerinde bu komşulukları işaretleyerek çalışmak konumu kalıcı öğretir.`,
+      },
+      {
+        title: 'Öne çıkan özellikler',
+        body: city.features,
+      },
+    ],
+    summary: `${city.name} → ${city.region} → komşular: ${city.neighbors.slice(0, 3).join(', ')}.`,
+    yksNote: city.yksNote,
+    practice: {
+      question: `${city.name} hangi coğrafi bölgededir?`,
+      answer: city.region,
+    },
+  });
+}
+
 function tryCityLocation(question: string): string | null {
-  const q = normalize(question);
-  for (const [key, city] of Object.entries(TURKEY_CITIES)) {
-    if (q.includes(key) || q.includes(normalize(city.name))) {
-      return formatTeacherLesson({
-        subject: 'Coğrafya',
-        topic: `${city.name} — Konum ve Özellikler`,
-        question,
-        sections: [
-          {
-            title: 'Türkiye\'deki yeri',
-            body: `${city.name}, **${city.region}** içinde yer alır.\n\n${city.location}`,
-          },
-          {
-            title: 'Komşu iller',
-            body: `Haritada ${city.name} çevresinde şu iller bulunur: **${city.neighbors.join(', ')}**. Harita çalışırken bu komşulukları birlikte öğrenmek işini kolaylaştırır.`,
-          },
-          {
-            title: 'Öne çıkan özellikler',
-            body: city.features,
-          },
-        ],
-        summary: `${city.name}; ${city.region}'nda, ${city.neighbors[0]} ve ${city.neighbors[1]} gibi illerle komşu bir ildir.`,
-        yksNote: city.yksNote,
-        practice: {
-          question: `${city.name} hangi coğrafi bölgededir?`,
-          answer: city.region,
-        },
-      });
-    }
-  }
-  return null;
+  const city = findCityInQuestion(question);
+  if (!city) return null;
+  return formatCityLesson(question, city);
+}
+
+export function buildLocationNotFound(question: string): string {
+  const known = listKnownCityNames().join(', ');
+  return `📍 **Coğrafya — Konum Sorusu**
+
+**Sorunuz:** «${question}»
+
+### Cevap
+
+Sorduğunuz il adını tam eşleştiremedim; bu yüzden kesin bir konum veremiyorum.
+
+Şu an doğrudan yanıt verebildiğim iller: **${known}**.
+
+İl adını tam veya yaygın kısaltmasıyla yazın (örnek: «Urfa nerede», «Şanlıurfa hangi bölgede», «Antep nerededir»).`;
 }
 
 type LessonDef = {
@@ -247,12 +266,19 @@ const CONCEPT_LESSONS: LessonDef[] = [
 export function tryConceptLesson(subject: string, question: string): string | null {
   const q = normalize(question);
 
+  // Konum soruları — ders seçimi önemli değil, önce doğrudan cevap ver
+  if (isLocationQuestion(q)) {
+    const city = tryCityLocation(question);
+    if (city) return city;
+    return buildLocationNotFound(question);
+  }
+
   for (const { subjects, pattern, build } of CONCEPT_LESSONS) {
     if (subjects && !subjects.includes(subject)) continue;
     if (pattern.test(q)) return build(question);
   }
 
-  if (subject === 'Coğrafya' || /nerede|neredir|konum|harita/.test(q)) {
+  if (subject === 'Coğrafya') {
     const city = tryCityLocation(question);
     if (city) return city;
   }
@@ -316,22 +342,18 @@ const SUBJECT_TEACHING_HINTS: Record<string, TeacherSection[]> = {
 };
 
 export function buildTeacherFallback(subject: string, question: string): string {
+  const q = normalize(question);
+  if (isLocationQuestion(q)) return buildLocationNotFound(question);
+
   const hints = SUBJECT_TEACHING_HINTS[subject] ?? SUBJECT_TEACHING_HINTS.Matematik;
 
   return formatTeacherLesson({
     subject,
-    topic: 'Kavramsal Çalışma Rehberi',
+    topic: 'Konu Anlatımı',
     question,
-    greeting:
-      'Bu soru sayısal bir test sorusu gibi değil; konuyu öğrenmek istiyorsun. Aşağıdaki çerçeveyi kullanarak konuyu adım adım çalışabilirsin. İstersen soruyu daha net yaz veya örnek sorulardan birini seç; o zaman tam hedefli anlatım üretebilirim.',
-    sections: [
-      {
-        title: 'Sorunu birlikte okuyalım',
-        body: `«${question}» ifadesinde asıl öğrenmen gereken kavram, sorunun öznesi ve yükleminde gizli. Önce **ne** sorulduğunu (tanım mı, süreç mi, konum mu) belirle.`,
-      },
-      ...hints,
-    ],
-    summary: `${subject} dersinde kavram öğrenirken tanım → mekanizma → örnek → sınav sorusu sırasını izle.`,
-    yksNote: `${subject} konularında YKS; ezberden çok **yorum ve ilişki kurma** ister. Konu anlatımını kendi cümlelerinle 5 satırda özetle.`,
+    directAnswer: `Bu soru için henüz hazır bir ders notum yok; aşağıda ${subject} dersinde benzer konuları nasıl çalışacağını anlattım. Soruyu daha net yazarsan (örnek: «çözeltiler nasıl oluşur», «amip nasıl beslenir») doğrudan konu anlatımı üretebilirim.`,
+    sections: hints,
+    summary: `${subject} dersinde tanım → örnek → uygulama sırasıyla çalış.`,
+    yksNote: `${subject} konularında YKS; kavramı kendi cümlelerinle özetleyebilmen önemlidir.`,
   });
 }

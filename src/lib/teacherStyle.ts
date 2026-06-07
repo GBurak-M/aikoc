@@ -9,6 +9,8 @@ export type TeacherLessonInput = {
   subject: string;
   topic: string;
   question: string;
+  /** Soruya doğrudan verilen net cevap — en üstte gösterilir */
+  directAnswer?: string;
   greeting?: string;
   sections: TeacherSection[];
   summary: string;
@@ -17,9 +19,13 @@ export type TeacherLessonInput = {
 };
 
 export function formatTeacherLesson(input: TeacherLessonInput): string {
-  const greet =
-    input.greeting ??
-    `Bu soruyu birlikte, adım adım ve sakin bir tempoda ele alalım.`;
+  const direct = input.directAnswer
+    ? `### Cevap\n\n${input.directAnswer.trim()}\n\n`
+    : '';
+
+  const greet = input.greeting
+    ? `${input.greeting.trim()}\n\n`
+    : '';
 
   const sectionText = input.sections
     .map((s, i) => `### ${i + 1}. ${s.title}\n\n${s.body.trim()}`)
@@ -37,13 +43,18 @@ export function formatTeacherLesson(input: TeacherLessonInput): string {
 
 **Sorunuz:** «${input.question}»
 
-${greet}
-
-${sectionText}
+${direct}${greet}${sectionText}
 
 ### Özet
 
 ${input.summary.trim()}${yks}${practice}`;
+}
+
+/** «nerede», «hangi bölge» gibi konum soruları */
+export function isLocationQuestion(normalized: string): boolean {
+  return /nerede|neredir|hangi bolge|hangi bölge|hangi il|konumu|konumda|haritada nerede/.test(
+    normalized,
+  );
 }
 
 /** Kavramsal soru mu? (nasıl oluşur, nedir, nerede vb.) */
