@@ -23,9 +23,8 @@ import {
   tryScienceDisciplineReply,
 } from './scienceKnowledge';
 import { getMoraleMessage } from './aiCoachHub';
-import { buildTeacherFallback, tryConceptLesson } from './conceptLessons';
-import { tryTeacherKnowledge } from './teacherKnowledge';
-import { isConceptualQuestion } from './teacherStyle';
+import { buildTeacherFallback, tryConceptLesson, tryEducationalAnswer } from './conceptLessons';
+import { askBrowserLlm, isBrowserLlmSupported } from './browserLlm';
 import { resolveWorldLocation } from './worldLocations';
 import { askGemini, isGeminiLikelyEnabled } from './geminiClient';
 import {
@@ -41,9 +40,11 @@ import {
 import { sanitizeCoachOutput } from './chatModeration';
 import {
   buildDirectAnswerFallback,
+  isClearlyAcademicQuery,
   tryConversationalReply,
   type ChatTurn,
 } from './conversationEngine';
+import { tryToneAwareReply } from './conversationTone';
 import { getAllLibraryItems } from './library';
 import { buildCoreKnowledgeCoachBlock } from './aiCentralLearning';
 import { detectCoachIntent } from './coachIntents';
@@ -104,6 +105,14 @@ export async function translateAcademicTerm(
       userText: `Terim: ${term.trim()}`,
     });
     if (gemini) return `✨ **Gemini AI**\n\n${gemini}`;
+  }
+
+  if (isBrowserLlmSupported()) {
+    const browser = await askBrowserLlm({
+      systemPrompt: buildTranslationSystemPrompt(direction),
+      userText: `Terim: ${term.trim()}`,
+    });
+    if (browser) return `🧠 **Yerel AI**\n\n${browser}`;
   }
 
   await delay(200);
@@ -196,6 +205,26 @@ export async function generateFullExamAnalysis(
       userText: `Deneme verileri:\n${examData}\n\nKişisel deneme analizi ve haftalık plan üret.`,
     });
     if (gemini) return `✨ **Gemini AI Deneme Analizi**\n\n${gemini}`;
+  }
+
+  if (isBrowserLlmSupported()) {
+    const examData = buildExamDataSummary(
+      exams,
+      profile,
+      sorted,
+      averages,
+      weak,
+      strong,
+      latestTyt,
+      latestAyt,
+      totalAvg,
+      trendText,
+    );
+    const browser = await askBrowserLlm({
+      systemPrompt: buildExamAnalysisSystemPrompt(profile),
+      userText: `Deneme verileri:\n${examData}\n\nKişisel deneme analizi ve haftalık plan üret.`,
+    });
+    if (browser) return `🧠 **Yerel AI Deneme Analizi**\n\n${browser}`;
   }
 
   await delay(300);
@@ -368,6 +397,13 @@ export async function generateCoachChatResponse(
     return sanitizeCoachOutput(worldLocation);
   }
 
+  if (isClearlyAcademicQuery(userMessage)) {
+    const educationalEarly = tryEducationalAnswer(userMessage, context.profile.field || 'Matematik');
+    if (educationalEarly) {
+      return sanitizeCoachOutput(educationalEarly);
+    }
+  }
+
   const intent = detectCoachIntent(userMessage);
   const world = context.world;
 
@@ -403,11 +439,28 @@ export async function generateCoachChatResponse(
     }
   }
 
-  const qNorm = normalize(userMessage);
-  if (isConceptualQuestion(qNorm)) {
-    const teacherLesson = tryTeacherKnowledge(userMessage);
-    if (teacherLesson) return sanitizeCoachOutput(teacherLesson);
+  if (isBrowserLlmSupported()) {
+    const promptContext: CoachPromptContext = {
+      profile: context.profile,
+      subjectAverages: context.subjectAverages,
+      recentExamSummary: context.recentExamSummary,
+      estimateRank: context.estimateRank,
+      curriculumNote: context.curriculumNote,
+      trafficSummary: context.trafficSummary,
+      learningSummary: context.learningSummary,
+      archiveStatsSummary: context.archiveStatsSummary,
+      centralAiInsight: context.centralAiInsight,
+    };
+    const browserReply = await askBrowserLlm({
+      systemPrompt: buildCoachSystemPrompt(promptContext, { intent }),
+      userText: userMessage,
+    });
+    if (browserReply) {
+      const prefix = context.profile.name ? `${context.profile.name}, ` : '';
+      return sanitizeCoachOutput(`${prefix}🧠 **Yerel AI (tarayıcı modeli)**\n\n${browserReply}`);
+    }
   }
+
   const { profile, subjectAverages, recentExamSummary, estimateRank, avgNet, pendingTasks } =
     context;
   const weak = weakestSubjects(subjectAverages)[0];
@@ -545,9 +598,16 @@ Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${lear
     case 'machine':
       reply = `Yapay zeka ve teknoloji konularında temel kavramları (algoritma, veri, model) not defterine yaz. Kütüphanede arXiv makaleleri var; "Attention Is All You Need" gibi giriş metinleri okuyabilirsin.`;
       break;
-    case 'human':
-      reply = `İnsan ilişkileri ve duygular çalışma motivasyonunu doğrudan etkiler. Stres olduğunda hedefi küçült, küçük bir başarıyı kutla. İstersen bugün sadece 30 dakika odaklı çalışma planı yapalım — ne dersin?`;
+    case 'human': {
+      const humanTone = tryToneAwareReply(userMessage, {
+        name: profile.name || 'arkadaşım',
+        dailyTargetHours: profile.dailyTargetHours,
+      });
+      reply =
+        humanTone ??
+        `İnsan ilişkileri ve duygular çalışma motivasyonunu doğrudan etkiler. Stres olduğunda hedefi küçült, küçük bir başarıyı kutla. İstersen bugün sadece 30 dakika odaklı çalışma planı yapalım — ne dersin?`;
       break;
+    }
     case 'society':
       reply = `Toplum ve güncel konular sosyal bilimler netlerine yansır. Haber okurken olay-neden-sonuç çıkar; coğrafya ve tarih sorularında güncel örnekleri not al.`;
       break;
@@ -557,12 +617,21 @@ Günlük hedef: ${profile.dailyTargetHours} saat.${examHint}${archivePlan}${lear
         reply = direct;
         break;
       }
-      const shortQ = userMessage.length > 80 ? `${userMessage.slice(0, 80)}…` : userMessage;
-      reply = `"${shortQ}" diye sordun — net cevap vereyim:
+      const toneFallback = tryToneAwareReply(userMessage, {
+        name: profile.name || 'arkadaşım',
+        dailyTargetHours: profile.dailyTargetHours,
+      });
+      if (toneFallback) {
+        reply = toneFallback;
+        break;
+      }
+      if (isClearlyAcademicQuery(userMessage)) {
+        reply = buildTeacherFallback(context.profile.field || 'Matematik', userMessage);
+      } else {
+        reply = `${profile.name || 'Arkadaşım'}, bunu ders sorusu gibi okumadım — günlük sohbet veya duygu gibi geldi.
 
-Sorunu biraz daha açarsan (hangi ders, hangi konu, ne takıldın) doğrudan o noktaya odaklanırım. ${recentExamSummary ? `Deneme tarafında son durum: ${recentExamSummary}.` : 'İlk denemeni girersen kişisel öneri verebilirim.'}
-
-İstersen şunlardan birini de yazabilirsin: plan, matematik, Türkçe/gramer, kütüphane, sınav hazırlığı.`;
+Net bir konu sorarsan (ör. "limit nedir", "haftalık plan") adım adım anlatırım; sadece konuşmak istersen de yaz — ikisini ayırt etmeye çalışacağım.`;
+      }
       break;
     }
   }
@@ -585,6 +654,16 @@ export async function generateScienceBrief(world: WorldSnapshot): Promise<string
       userText: `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar:\n${digest}`,
     });
     if (gemini) return `✨ **Gemini AI Bilim Gündemi** (${world.settlement.displayName})\n\n${gemini}`;
+  }
+
+  if (isBrowserLlmSupported()) {
+    const browser = await askBrowserLlm({
+      systemPrompt: buildScienceBriefSystemPrompt(world.settlement.displayName),
+      userText: `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar:\n${digest}`,
+    });
+    if (browser) {
+      return `🧠 **Yerel AI Bilim Gündemi** (${world.settlement.displayName})\n\n${browser}`;
+    }
   }
 
   await delay(200);
@@ -819,8 +898,21 @@ export async function generateQuestionSolution(
     }
   }
 
+  const educational = tryEducationalAnswer(text, subject);
+  if (educational) return `${ocrNote}${educational}`;
+
+  if (isBrowserLlmSupported() && text) {
+    const browserSolution = await askBrowserLlm({
+      systemPrompt: buildSolverSystemPrompt(subject),
+      userText: `Ders: ${subject}\n\nSoru:\n${text}`,
+    });
+    if (browserSolution) {
+      return `${ocrNote}🧠 **Yerel AI (tarayıcı modeli)**\n\n${browserSolution}`;
+    }
+  }
+
   if (!text) {
-    return `${ocrNote}Görsel soru için Gemini API anahtarı gerekir (GEMINI_API_KEY). Vercel ortam değişkenine ücretsiz Google AI Studio anahtarını ekleyin veya soruyu metin olarak yazın.`;
+    return `${ocrNote}Görsel soruyu çözmek için soru metnini yazın veya net bir fotoğraf yükleyin. Tarayıcınız WebGPU destekliyorsa yerel AI modeli de devreye girer.`;
   }
 
   return `${ocrNote}${solveBySubject(subject, text)}`;

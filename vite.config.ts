@@ -67,4 +67,7 @@ function geminiDevApiPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [react(), geminiDevApiPlugin()],
+  optimizeDeps: {
+    exclude: ['@mlc-ai/web-llm'],
+  },
 });

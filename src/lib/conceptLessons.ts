@@ -1,4 +1,5 @@
 import { findCityInQuestion, listKnownCityNames, type CityInfo } from '../data/turkeyCities';
+import { isClearlyAcademicQuery } from './conversationTone';
 import { tryTeacherKnowledge } from './teacherKnowledge';
 import {
   formatTeacherLesson,
@@ -264,30 +265,44 @@ const CONCEPT_LESSONS: LessonDef[] = [
   { subjects: ['Biyoloji'], pattern: /fotosentez|klorofil|kloroplast/, build: lessonPhotosynthesis },
 ];
 
-export function tryConceptLesson(subject: string, question: string): string | null {
-  const q = normalize(question);
+function looksLikeLearningQuestion(q: string): boolean {
+  return (
+    q.length >= 8 &&
+    /\?|nedir|ne demek|nasil|nasıl|acikla|açıkla|anlat|coz|çöz|hesapla|fark|tanim|tanım|olusur|oluşur|ornek|örnek|formul|formül|kanun|yasa|teorem|ipucu|yardim|yardım|soru/.test(
+      q,
+    )
+  );
+}
 
-  // Türkiye illeri — anında yanıt; diğer dünya konumları async (worldLocations)
-  if (isLocationQuestion(q)) {
-    return tryCityLocation(question);
-  }
+/** Öğretmen bankası + konu dersleri + alan bazlı anlatım — API gerektirmez */
+export function tryEducationalAnswer(question: string, subjectHint = 'Matematik'): string | null {
+  const raw = question.trim();
+  if (!raw || raw.length < 4) return null;
 
-  for (const { subjects, pattern, build } of CONCEPT_LESSONS) {
-    if (subjects && !subjects.includes(subject)) continue;
-    if (pattern.test(q)) return build(question);
-  }
-
-  const teacherLesson = tryTeacherKnowledge(question);
+  const teacherLesson = tryTeacherKnowledge(raw);
   if (teacherLesson) return teacherLesson;
 
-  if (subject === 'Coğrafya') {
-    const city = tryCityLocation(question);
+  const q = normalize(raw);
+
+  if (isLocationQuestion(q)) {
+    const city = tryCityLocation(raw);
     if (city) return city;
   }
 
-  if (!isConceptualQuestion(q)) return null;
+  for (const { pattern, build } of CONCEPT_LESSONS) {
+    if (pattern.test(q)) return build(raw);
+  }
+
+  if (looksLikeLearningQuestion(q) && isClearlyAcademicQuery(raw)) {
+    const domain = detectDomainFromQuestion(q) ?? subjectHint;
+    return buildTeacherFallback(domain, raw);
+  }
 
   return null;
+}
+
+export function tryConceptLesson(subject: string, question: string): string | null {
+  return tryEducationalAnswer(question, subject);
 }
 
 const SUBJECT_TEACHING_HINTS: Record<string, TeacherSection[]> = {

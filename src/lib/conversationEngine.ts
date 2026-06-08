@@ -3,14 +3,16 @@ import {
   findVocab,
   formatGrammarReply,
   formatVocabReply,
-  pickEncouragingPhrase,
   EVERYDAY_PHRASES,
 } from '../data/languageKnowledge';
 import { findTerm } from './academicTerms';
 import { tryScienceDisciplineReply } from './scienceKnowledge';
 import type { CoachContext } from './localAi';
+import { isClearlyAcademicQuery, tryToneAwareReply } from './conversationTone';
 
 export type ChatTurn = { role: 'user' | 'assistant'; text: string };
+
+export { isClearlyAcademicQuery } from './conversationTone';
 
 function normalize(text: string): string {
   return text
@@ -46,6 +48,12 @@ export function tryConversationalReply(
   const m = normalize(raw);
   const name = userName(context);
   const preferEn = isMostlyEnglish(raw);
+
+  const toneReply = tryToneAwareReply(raw, {
+    name,
+    dailyTargetHours: context.profile.dailyTargetHours,
+  });
+  if (toneReply) return toneReply;
 
   // Selamlama
   if (/^(merhaba|selam|selamlar|hey|hi|hello|good morning|good evening|günaydın|iyi akşamlar)\b/.test(m)) {
@@ -134,14 +142,6 @@ Doğrudan sorunu yazman yeterli — hazır şablon değil, senin cümleine göre
       return `Süper ${name}. Az önce sorduğum şeyi düşünürsen iyi olur — ya da yeni bir soru yaz, oradan devam edelim.`;
     }
     return `Tamam ${name}. Devam etmek istediğin konuyu bir cümleyle yazman yeterli.`;
-  }
-
-  // Duygusal / stres (hafif — motivation intent'e de düşer)
-  if (/sıkıldım|sikildim|bunaldım|bunaldim|yoruldum|stres|kayg|umutsuz|moralim bozuk/.test(m)) {
-    const phrase = pickEncouragingPhrase();
-    return `${name}, bunu hissetmen normal. ${phrase}
-
-İstersen bugün hedefini küçült: ${context.profile.dailyTargetHours} saat yerine 45 dakika odaklı çalışma bile fark yaratır. Ne seni en çok yordu — ders mi, tempo mu?`;
   }
 
   // İngilizce pratik isteği

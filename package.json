@@ -10,6 +10,7 @@
     "setup:gemini": "powershell -ExecutionPolicy Bypass -File scripts/setup-gemini.ps1"
   },
   "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.84",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

@@ -22,6 +22,7 @@ export function detectCoachIntent(message: string): string {
   if (/bilim dall|bilim dalı|bilim kategori|bilimler neler|tum bilim|butun bilim|disiplin nedir|science field|scientific discipline|bilim dallari/.test(m)) return 'science_fields';
   if (/bilim|arastirma|makale|openalex|yayin/.test(m)) return 'science_news';
   if (/gramer|grammar|dil bilgisi|ingilizce kelime|turkce kelime|ceviri|çeviri|translate|tense|zaman|article|baglac|bağlaç/.test(m)) return 'language';
+  if (/uykum|uyuyorum|uyku\b|yorgunum|bitkin|canim sikildi|canım sıkıldı/.test(m)) return 'human';
   if (/motivasyon|morali|vazgec|umutsuz|yoruldum|stres|kayg/.test(m)) return 'motivation';
   if (/plan|program|hafta|nasil calis/.test(m)) return 'plan';
   if (/matematik|mat\b|turev|integral|logaritma/.test(m)) return 'math';
