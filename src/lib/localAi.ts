@@ -359,13 +359,13 @@ function formatScienceDigest(world: WorldSnapshot): string {
       .map((t) => {
         const lines: string[] = [`▸ ${t.field}`];
         for (const s of t.articles.slice(0, 2)) {
-          lines.push(`  • [Makale] ${s.title} (${s.date})`);
+          lines.push(`  • [Makale] ${s.title} (${s.date})\n    ${s.summary}`);
         }
         for (const s of t.books.slice(0, 1)) {
-          lines.push(`  • [Kitap] ${s.title} (${s.date})`);
+          lines.push(`  • [Kitap] ${s.title} (${s.date})\n    ${s.summary}`);
         }
         for (const s of t.publications.slice(0, 1)) {
-          lines.push(`  • [Yayın] ${s.title} (${s.date})`);
+          lines.push(`  • [Yayın] ${s.title} (${s.date})\n    ${s.summary}`);
         }
         return lines.join('\n');
       })
@@ -641,28 +641,34 @@ Net bir konu sorarsan (ör. "limit nedir", "haftalık plan") adım adım anlatı
 }
 
 export async function generateScienceBrief(world: WorldSnapshot): Promise<string> {
+  const { ensureTurkishScienceBrief } = await import('./scienceTurkish');
   const topics = world.scienceTopics ?? [];
   const stats = topics.map((t) => {
     const n = t.articles.length + t.books.length + t.publications.length;
     return `${t.field}: ${t.articles.length} makale, ${t.books.length} kitap, ${t.publications.length} yayın (toplam ${n})`;
   });
   const digest = formatScienceDigest(world);
+  const userText = `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar (Türkçe özetler):\n${digest}\n\nYanıtın tamamen Türkçe olsun.`;
 
   if (isGeminiLikelyEnabled()) {
     const gemini = await askGemini({
       systemPrompt: buildScienceBriefSystemPrompt(world.settlement.displayName),
-      userText: `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar:\n${digest}`,
+      userText,
     });
-    if (gemini) return `✨ **Gemini AI Bilim Gündemi** (${world.settlement.displayName})\n\n${gemini}`;
+    if (gemini) {
+      const body = await ensureTurkishScienceBrief(gemini);
+      return `✨ **Bilim Gündemi** (${world.settlement.displayName})\n\n${body}`;
+    }
   }
 
   if (isBrowserLlmSupported()) {
     const browser = await askBrowserLlm({
       systemPrompt: buildScienceBriefSystemPrompt(world.settlement.displayName),
-      userText: `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar:\n${digest}`,
+      userText,
     });
     if (browser) {
-      return `🧠 **Yerel AI Bilim Gündemi** (${world.settlement.displayName})\n\n${browser}`;
+      const body = await ensureTurkishScienceBrief(browser);
+      return `🧠 **Bilim Gündemi** (${world.settlement.displayName})\n\n${body}`;
     }
   }
 

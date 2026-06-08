@@ -461,18 +461,25 @@ export function flattenScienceFeed(topics: ScienceTopicFeed[]): ScienceItem[] {
 
 async function localizeScienceItems(items: ScienceItem[]): Promise<ScienceItem[]> {
   if (items.length === 0) return [];
-  const { translateManyToTurkish } = await import('./translate');
+  const { ensureTurkishScienceTexts, needsTurkishTranslation, fallbackTurkishScienceSummary } =
+    await import('./scienceTurkish');
   const titles = items.map((i) => i.title);
   const summaries = items.map((i) => i.summary);
   const [titlesTr, summariesTr] = await Promise.all([
-    translateManyToTurkish(titles, 3, 300),
-    translateManyToTurkish(summaries, 2, 350),
+    ensureTurkishScienceTexts(titles, 3, 300),
+    ensureTurkishScienceTexts(summaries, 2, 350),
   ]);
-  return items.map((item, idx) => ({
-    ...item,
-    title: titlesTr[idx] ?? item.title,
-    summary: summariesTr[idx] ?? item.summary,
-  }));
+  return items.map((item, idx) => {
+    let title = titlesTr[idx] ?? item.title;
+    let summary = summariesTr[idx] ?? item.summary;
+    if (needsTurkishTranslation(title)) {
+      title = `${item.field} alanında yeni bir çalışma`;
+    }
+    if (needsTurkishTranslation(summary)) {
+      summary = fallbackTurkishScienceSummary(item.field, item.kind);
+    }
+    return { ...item, title, summary };
+  });
 }
 
 async function localizeTopicFeed(feed: ScienceTopicFeed): Promise<ScienceTopicFeed> {

@@ -1,5 +1,6 @@
 import type { ChatTurn } from './conversationEngine';
 import type { GeminiChatTurn } from './geminiClient';
+import { withAikocMasterPrompt } from './aikocMasterPrompt';
 
 export type CoachPromptContext = {
   profile: {
@@ -49,16 +50,15 @@ export function buildCoachSystemPrompt(
   if (context.archiveStatsSummary) contextBlocks.push(`Arşiv özeti:\n${context.archiveStatsSummary}`);
   if (context.centralAiInsight) contextBlocks.push(context.centralAiInsight);
 
-  return `Sen "AI Koç"sun — aikoc sitesinin yapay zeka motorusun (Google Gemini). Türkiye'deki öğrencilere LGS, YKS, TYT, AYT, KPSS, ALES ve benzeri sınavlarda tecrübeli bir öğretmen gibi yardım edersin.
+  return withAikocMasterPrompt(`GÖREV: AI Koç sohbeti (MODÜL 4).
+Türkiye'deki öğrencilere LGS, YKS, TYT, AYT, KPSS, ALES ve benzeri sınavlarda yardım et.
 
-KURALLAR:
-- Yanıtların Türkçe, dil bilgisi hatasız ve öğretmen üslubunda olsun.
-- Önce mesajın türünü ayırt et: ders/sınav sorusu mu, günlük sohbet/duygu mu (uyku, yorgunluk, moral), iğneleme/mizah mı? Günlük cümlelere şablon ders yanıtı verme; empati veya hafif mizah kullan.
+EK KURALLAR:
+- Önce mesajın türünü ayırt et: ders/sınav sorusu mu, günlük sohbet/duygu mu (uyku, yorgunluk, moral), iğneleme/mizah mı? Günlük cümlelere şablon ders yanıtı verme.
 - Ders sorusunda önce doğrudan cevabı ver; sonra açıklama, örnek ve gerekirse adım adım çözüm sun.
-- Matematik, fizik, kimya, biyoloji, felsefe, edebiyat, sosyal bilimler, astronomi, deniz bilimleri ve Din Kültürü/fıkıh konularında bilgili ol.
 - Hava, namaz, takvim sorularında CANLI VERİ bloğunu kullan; yoksa Zeka Merkezi'nden konum seçilmesini kısaca söyle.
 - Kişisel fetva verme; Din Kültürü konularında müfredat düzeyinde genel bilgi ver.
-- Markdown kullan (**kalın**, madde işaretleri, başlıklar).
+- Yanıtlarda markdown kullan (**kalın**, madde işaretleri, başlıklar).
 
 ÖĞRENCİ PROFİLİ:
 Ad: ${profile.name || 'Öğrenci'}
@@ -70,7 +70,7 @@ Günlük çalışma hedefi: ${profile.dailyTargetHours} saat
 PERFORMANS:
 ${weakStrongBlock(context) || 'Henüz deneme verisi yok.'}
 
-${contextBlocks.length ? `EK BAĞLAM:\n${contextBlocks.join('\n\n')}` : ''}`;
+${contextBlocks.length ? `EK BAĞLAM:\n${contextBlocks.join('\n\n')}` : ''}`);
 }
 
 export function buildTranslationSystemPrompt(direction: 'TR_EN' | 'EN_TR'): string {
@@ -78,34 +78,47 @@ export function buildTranslationSystemPrompt(direction: 'TR_EN' | 'EN_TR'): stri
     direction === 'TR_EN'
       ? 'Türkçe terimi İngilizce karşılığı, tanım ve YKS ipucu ile açıkla.'
       : 'İngilizce terimi Türkçe karşılığı, tanım ve YKS ipucu ile açıkla.';
-  return `Sen YKS/LGS akademik sözlük asistanısın. ${dir}
+  return withAikocMasterPrompt(`GÖREV: Akademik sözlük asistanı.
+${dir}
 
-Yapı: **Terim** → **Karşılık** → **Tanım** → **YKS ipucu** → **Kısa analoji**`;
+Yapı: **Terim** → **Karşılık** → **Tanım** → **YKS ipucu** → **Kısa analoji`);
 }
 
 export function buildExamAnalysisSystemPrompt(profile: CoachPromptContext['profile']): string {
-  return `Sen deneyimli bir sınav koçusun. Öğrenci deneme verilerine göre kişisel, motive edici ve uygulanabilir analiz yaz.
+  return withAikocMasterPrompt(`GÖREV: Deneme analizi ve sınav koçluğu.
+Öğrenci deneme verilerine göre kişisel, motive edici ve uygulanabilir analiz yaz.
 
 Öğrenci: ${profile.name}
 Hedef: ${profile.targetUniv} — ${profile.targetDept} (${profile.field})
 Günlük hedef: ${profile.dailyTargetHours} saat
 
-Yapı: Genel durum → Güçlü alanlar → Geliştirilmesi gerekenler → Haftalık plan → Motivasyon. Türkçe, markdown.`;
+Yapı: Genel durum → Güçlü alanlar → Geliştirilmesi gerekenler → Haftalık plan → Motivasyon. Markdown kullan.`);
 }
 
 export function buildScienceBriefSystemPrompt(location: string): string {
-  return `Sen bilim gündemi editörüsün. Verilen OpenAlex verilerinden YKS öğrencisine uygun Türkçe bilim özeti yaz. Konum: ${location}. Kısa, okunabilir, madde işaretli.`;
+  return withAikocMasterPrompt(`GÖREV: Bilim gündemi özeti.
+Verilen OpenAlex verilerinden YKS öğrencisine uygun bilim özeti yaz.
+Konum: ${location}.
+
+DİL (İHLAL EDİLEMEZ):
+- Tüm çıktı %100 Türkçe olmalı; İngilizce cümle, paragraf veya başlık yazma.
+- Kaynak metin İngilizce olsa bile özeti Türkçe yaz; terimleri Türkçeleştir veya parantez içinde kısa Türkçe karşılık ver.
+- Yazar adları ve dergi adları dışında Latin alfabesiyle İngilizce kelime kullanma.
+
+Biçim: Kısa, okunabilir, madde işaretli markdown.`);
 }
 
 export function buildSolverSystemPrompt(subject: string): string {
-  return `Sen deneyimli bir ${subject} öğretmenisin. Türkiye YKS/LGS müfredatına uygun çözüm üret.
+  return withAikocMasterPrompt(`GÖREV: Soru çözücü (MODÜL 5) — ${subject} öğretmeni.
+Türkiye YKS/LGS müfredatına uygun çözüm üret.
 
-KURALLAR:
-- Türkçe, net ve öğretici yaz.
-- Yapı: **Doğrudan cevap** → **İlgili kural/formül** → **Adım adım çözüm** → **Özet** → **YKS ipucu** (varsa).
+ÇÖZÜM FORMATI (bu sırayı izle):
+🔍 Konuyu Anlayalım → 📊 Verilen Bilgiler → 🛠️ Çözüm Adımları → ✅ Sonuç → 💡 Dikkat Edilecek Nokta
+
+EK KURALLAR:
 - Hesap sorusunda tüm adımları göster; kavram sorusunda tanım + mekanizma + örnek ver.
 - Bilmediğin şeyi uydurma; emin değilsen varsayımını belirt.
-- Markdown kullan.`;
+- Markdown kullan.`);
 }
 
 export function mapHistoryForGemini(history: ChatTurn[], maxTurns = 10): GeminiChatTurn[] {
