@@ -4,7 +4,11 @@
   "outputDirectory": ".",
   "framework": null,
   "functions": {
-    "api/**/*.js": {
+    "api/*.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    },
+    "api/config/*.js": {
       "memory": 1024,
       "maxDuration": 60
     }
