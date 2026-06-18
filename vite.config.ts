@@ -2,7 +2,7 @@ import { join } from 'path';
 import type { ServerResponse } from 'http';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
-import { generateWithGroq } from './api/lib/groqHandler.js';
+import { generateWithGroq } from './server/lib/groqHandler.js';
 
 function wrapVercelResponse(res: ServerResponse) {
   const patched = res as ServerResponse & {

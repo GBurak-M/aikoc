@@ -1,6 +1,6 @@
 /** Vercel sunucu fonksiyonu — Groq API (öğretmen modu, OpenAI uyumlu) */
 
-import { generateWithGroq } from './lib/groqHandler.js';
+import { generateWithGroq } from '../server/lib/groqHandler.js';
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');

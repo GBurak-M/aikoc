@@ -1,12 +1,12 @@
-import { handleOptions } from './lib/auth-utils.js';
+import { handleOptions } from '../server/lib/auth-utils.js';
 import {
   handleAdd,
   handleAdminStatus,
   handleAdminVerify,
   handleBooks,
   handleRemove,
-} from './lib/library-handlers.js';
-import { handleLibraryFile } from './lib/library-file-handler.js';
+} from '../server/lib/library-handlers.js';
+import { handleLibraryFile } from '../server/lib/library-file-handler.js';
 
 function resolveRoute(req) {
   const q = req.query?.route;

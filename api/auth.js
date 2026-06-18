@@ -1,6 +1,6 @@
-import { hashPassword, signToken, verifyToken, json, handleOptions, getAuthSecret, getSiteUrl } from './lib/auth-utils.js';
-import { getUser, saveUser } from './lib/user-store.js';
-import { sendEmail, verificationEmailHtml, buildVerifyLink, resetEmailHtml, buildResetLink } from './lib/email.js';
+import { hashPassword, signToken, verifyToken, json, handleOptions, getAuthSecret, getSiteUrl } from '../server/lib/auth-utils.js';
+import { getUser, saveUser } from '../server/lib/user-store.js';
+import { sendEmail, verificationEmailHtml, buildVerifyLink, resetEmailHtml, buildResetLink } from '../server/lib/email.js';
 import {
   appendSessionCookie,
   buildGoogleUser,
@@ -14,7 +14,7 @@ import {
   readSessionFromRequest,
   verifyGoogleIdToken,
   verifyOAuthState,
-} from './lib/google-oauth.js';
+} from '../server/lib/google-oauth.js';
 
 function resolveAuthRoute(req) {
   const route = req.query?.route;

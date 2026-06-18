@@ -1,5 +1,5 @@
-import { getSiteUrl, json, handleOptions } from '../lib/auth-utils.js';
-import { getGoogleClientId, isGoogleOAuthReady } from '../lib/google-oauth.js';
+import { getSiteUrl, json, handleOptions } from '../../server/lib/auth-utils.js';
+import { getGoogleClientId, isGoogleOAuthReady } from '../../server/lib/google-oauth.js';
 
 /** Herkese açık site yapılandırması (OAuth istemci kimliği gizli değildir). */
 export default async function handler(req, res) {
@@ -13,9 +13,12 @@ export default async function handler(req, res) {
       ? 'button'
       : 'none';
 
+  const hfSpaceUrl = String(process.env.HF_SPACE_URL || 'https://GBurak-rota-ai-chat.hf.space').trim();
+
   return json(res, 200, {
     googleClientId,
     googleAuthMode,
     siteUrl: getSiteUrl(),
+    hfSpaceUrl,
   });
 }
