@@ -1,0 +1,57 @@
+<section class="chat-module">
+  <div class="module-header chat-header-brand">
+    <img src="assets/brand/rota-ai-logo.png" alt="ROTA AI" class="logo-robot chat-header-logo" width="56" height="56" />
+    <div>
+      <h2>ROTA AI Sohbet</h2>
+      <p id="chat-ai-status">Model durumu kontrol ediliyor…</p>
+    </div>
+  </div>
+
+  <div class="card-grid page-stats-panel" id="page-stats-chat" aria-label="İstatistikler"></div>
+
+  <div class="card chat-google-banner" id="chat-google-banner" hidden>
+    <div class="chat-google-banner-copy">
+      <p id="chat-google-banner-text"></p>
+      <div id="chat-google-signin" class="chat-google-signin-wrap"></div>
+    </div>
+  </div>
+
+  <div class="chat-layout">
+    <aside class="chat-sidebar card card-3d">
+      <button type="button" class="btn btn-primary btn-sm" id="chat-new">Yeni sohbet</button>
+      <ul class="chat-history-list" id="chat-history"></ul>
+    </aside>
+
+    <div class="chat-main card card-3d">
+      <div class="chat-modes-scroll">
+        <div class="chat-modes toolbar" id="chat-modes" role="tablist" aria-label="Ders seçimi"></div>
+      </div>
+
+      <div class="chat-quick toolbar">
+        <button type="button" class="btn btn-secondary btn-sm chat-quick-btn">Matematik sorusunu açıkla</button>
+        <button type="button" class="btn btn-secondary btn-sm chat-quick-btn">Sınav tavsiyesi ver</button>
+        <button type="button" class="btn btn-secondary btn-sm chat-quick-btn">Konu özetle</button>
+      </div>
+
+      <div class="chat-progress" id="chat-progress" hidden>
+        <div class="progress-bar"><div class="progress-fill" id="chat-progress-fill"></div></div>
+        <span id="chat-progress-text"></span>
+      </div>
+
+      <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
+
+      <form class="chat-form" id="chat-form">
+        <textarea class="textarea" id="chat-input" rows="2" placeholder="Sorunu yaz…" aria-label="Mesaj"></textarea>
+        <div class="chat-form-actions">
+          <button type="button" class="btn btn-ghost btn-sm" id="chat-voice" title="Sesle yaz" aria-label="Sesle yaz">
+            <i data-lucide="mic"></i>
+          </button>
+          <button type="button" class="btn btn-ghost btn-sm" id="chat-speak" title="Son yanıtı oku" aria-label="Sesli oku">
+            <i data-lucide="volume-2"></i>
+          </button>
+          <button type="submit" class="btn btn-primary" id="chat-send">Gönder</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,166 @@
+<section class="library-module">
+
+  <div class="module-header lib-header-row">
+
+    <div>
+
+      <h2>Kütüphane</h2>
+
+      <p>Sitede barındırılan ders kitapları — arama, filtre, favoriler</p>
+
+    </div>
+
+    <div class="lib-admin-actions">
+
+      <button type="button" class="btn btn-ghost btn-sm" id="lib-admin-login-btn" title="Yönetici girişi">Yönetici</button>
+
+      <button type="button" class="btn btn-primary btn-sm" id="lib-admin-add" hidden>Kitap ekle</button>
+
+    </div>
+
+  </div>
+
+  <div class="card-grid page-stats-panel" id="page-stats-library" aria-label="İstatistikler"></div>
+
+  <div class="toolbar">
+
+    <input type="search" class="input" id="lib-search" placeholder="Kitap, yazar veya ders ara…" aria-label="Kitap ara" />
+
+    <select class="select" id="lib-grade" aria-label="Sınıf filtresi">
+
+      <option value="">Tüm sınıflar</option>
+
+    </select>
+
+    <select class="select" id="lib-subject" aria-label="Ders filtresi">
+
+      <option value="">Tüm dersler</option>
+
+    </select>
+
+    <button type="button" class="btn btn-ghost" id="lib-view-toggle" aria-label="Görünüm değiştir">
+
+      <i data-lucide="layout-grid"></i>
+
+    </button>
+
+  </div>
+
+
+
+  <div id="lib-recent" class="lib-section"></div>
+
+  <div id="lib-favorites" class="lib-section"></div>
+
+  <div id="lib-results" class="lib-results card-grid"></div>
+
+
+
+  <dialog id="lib-admin-login" class="lib-admin-dialog">
+
+    <form id="lib-admin-login-form" class="lib-admin-form">
+
+      <h3>Yönetici girişi</h3>
+
+      <p class="meta">Kütüphaneye kitap eklemek için yönetici kodunu girin.</p>
+
+      <label class="field">
+
+        <span>Yönetici kodu</span>
+
+        <input type="password" class="input" id="lib-admin-pin" required autocomplete="current-password" />
+
+      </label>
+
+      <p class="lib-form-error" id="lib-admin-login-error"></p>
+
+      <div class="lib-form-actions">
+
+        <button type="button" class="btn btn-ghost" id="lib-admin-login-cancel">İptal</button>
+
+        <button type="submit" class="btn btn-primary">Giriş</button>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+
+
+  <dialog id="lib-admin-add-dialog" class="lib-admin-dialog">
+
+    <form id="lib-admin-add-form" class="lib-admin-form">
+
+      <h3>Kütüphaneye kaynak ekle</h3>
+
+      <p class="meta">PDF, DOC, DOCX veya PPT yükleyin veya doğrudan okunabilir bir bağlantı girin.</p>
+
+      <label class="field">
+
+        <span>Başlık *</span>
+
+        <input type="text" class="input" id="lib-add-title" required />
+
+      </label>
+
+      <label class="field">
+
+        <span>Yazar / yayıncı</span>
+
+        <input type="text" class="input" id="lib-add-author" placeholder="ROTA AI" />
+
+      </label>
+
+      <div class="lib-form-row">
+
+        <label class="field">
+
+          <span>Sınıf</span>
+
+          <input type="number" class="input" id="lib-add-grade" min="9" max="12" value="12" />
+
+        </label>
+
+        <label class="field">
+
+          <span>Ders</span>
+
+          <input type="text" class="input" id="lib-add-subject" placeholder="Matematik" />
+
+        </label>
+
+      </div>
+
+      <label class="field">
+
+        <span>Açıklama</span>
+
+        <textarea class="input" id="lib-add-desc" rows="2"></textarea>
+
+      </label>
+
+      <label class="field">
+
+        <span>Dosya (PDF, DOC, DOCX, PPT — en fazla 8 MB)</span>
+
+        <input type="file" class="input" id="lib-add-file" accept=".pdf,.doc,.docx,.ppt,.pptx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation" />
+
+      </label>
+
+      <p class="lib-form-error" id="lib-admin-add-error"></p>
+
+      <div class="lib-form-actions">
+
+        <button type="button" class="btn btn-ghost" id="lib-admin-add-cancel">İptal</button>
+
+        <button type="submit" class="btn btn-primary">Ekle</button>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+</section>
+

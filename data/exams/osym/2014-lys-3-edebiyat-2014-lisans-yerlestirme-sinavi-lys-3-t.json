@@ -1,0 +1,82 @@
+{
+  "exam": "LYS-3",
+  "year": 2014,
+  "subject": "Edebiyat",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Türk Dili ve Edebiyatı Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2014/LYS/sorucevap/2014_LYS_3_Turk_Dili_ve_Edebiyati.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 3,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:42:31.254Z",
+  "questions": [
+    {
+      "id": "2014-lys-3-edebiyat-2014-lisans-yerlestirme-sinavi-lys-3-t-q4",
+      "number": 4,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "2014 – LYS3 / TDE (I) Bir grup araştırmacı, omurilik zedelenmesi sonucu felç olan kişilerin ellerinde meydana gelen his kaybını ve motor becerilerindeki azalmayı tedavi etmeye yönelik bir aygıt üretti. (II) Bir eldiven gibi görünen ve “Mobile Music Touch” olarak adlandırılan bu aygıt, müzikli ve kablosuz. (III) Üstünde küçük bir kutu bulunan eldiven, bir piyano klavyesi ile birlikte kullanılıyor. (IV) Araştırmacılar, 2011 yılında tamamlanan ön çalışmalardan sonra omurilik zedelenmesi sonucu felç olan kişilerde olumlu sonuç almayı umduklarını ancak aygıtı kullananlarda bu kadar büyük bir gelişme olmasının kendileri için de sürpriz olduğunu belirtiyor. (V) Örneğin, eldiveni kullandıktan sonra bazı kullanıcılar, omurilik zedelenmesinden bu yana ilk defa çarşaflarının ve giysilerinin dokusunu hissedebilmiş. Bu parçadaki numaralanmış cümlelerle ilgili olarak aşağıda verilenlerden hangisi yanlıştır? I. cümlede, amaç-sonuç ilişkisi vardır. II. cümlede, aygıtın özelliklerine değinilmiştir. III. cümlede, aygıtın çalışma şekliyle ilgili bilgi verilmiştir. IV. cümlede, aygıtın beklenenden daha iyi sonuçlar verdiğinden söz edilmiştir. V. cümlede, aygıtın zihinsel gelişime etkileri üzerinde durulmuştur.",
+      "options": {
+        "A": "I.",
+        "B": "II.",
+        "C": "III.",
+        "D": "IV.",
+        "E": "V."
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2014-lys-3-edebiyat-2014-lisans-yerlestirme-sinavi-lys-3-t-q9",
+      "number": 9,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I.",
+        "B": "II.",
+        "C": "III.",
+        "D": "IV.",
+        "E": "V."
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2014-lys-3-edebiyat-2014-lisans-yerlestirme-sinavi-lys-3-t-q12",
+      "number": 12,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "(I) “Ben kendi hesabıma hiçbir zaman yazarlık hevesine kapılmadım; romanlar, kısa öyküler, denemeler, yaşam öyküleri hatta tiyatro oyunları bile yazmak istemiyorum.” der Bergman. (II) Bu sözlerini “Filmciyim ben, yazar değil…” diye bağlamış olması bile beni ikna etmeye yetmiyor. (III) Yazar olmayı o, kendisine temel bir uğraş yahut bir hayat macerası olarak seçmemiş olabilir ama onun sağlam bir yazar damarı taşıdığını söyleyebilirim. (IV) Çocukluğundan söz ettiği; sinemasını anlattığı; sanatçı kişiliğini çözümlemeye, kendisini ifade etmeye çalıştığı çeşitli metinler ve kendi yaşamını anlattığı yazılarından yola çıkarak da bu yargıya ulaşmak mümkün. (V) Dili kullanma yeteneği; duygu ve düşünceleri ifade etme; anları, durumları tanımlama becerisi bize aynı zamanda onun saklı kalmış bir yazar olduğunu gösteriyor. Bu parçadaki numaralanmış cümlelerin hangisinden sonra, düşüncenin akışına göre, “Yalnızca senaryo yazarlığındaki ustalığından yola çıkarak söylemiyorum bunu.” cümlesi getirilmelidir?",
+      "options": {
+        "A": "I.",
+        "B": "II.",
+        "C": "III.",
+        "D": "IV.",
+        "E": "V."
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-3"
+      ]
+    }
+  ]
+}

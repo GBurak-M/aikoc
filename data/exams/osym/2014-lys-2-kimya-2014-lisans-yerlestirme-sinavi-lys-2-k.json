@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-2",
+  "year": 2014,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2014/LYS/sorucevap/2014_LYS_2_Kimya.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 10,
+  "parsedAt": "2026-06-11T13:42:27.241Z",
+  "questions": [
+    {
+      "id": "2014-lys-2-kimya-2014-lisans-yerlestirme-sinavi-lys-2-k-q25",
+      "number": 25,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2014 – LYS2 / KİM I. II. III. IV. Yukarıdaki tepkimelerden hangilerinin sonucunda alken elde edilemez? Yalnız III Yalnız IV I ve III II ve III I, II ve III",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-2"
+      ]
+    }
+  ]
+}

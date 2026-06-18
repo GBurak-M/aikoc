@@ -7,3 +7,7 @@ dist
 
 .vercel
 tsconfig.tsbuildinfo
+.env*
+
+# TYMM PDF'leri (çok büyük; Blob veya yerel sunucu ile sunulur)
+public/library/tymm/*.pdf

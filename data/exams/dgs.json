@@ -1,0 +1,430 @@
+{
+  "exam": "DGS",
+  "year": 2024,
+  "subjects": [
+    "Matematik",
+    "Türkçe"
+  ],
+  "questions": [
+    {
+      "id": "dgs-2024-matematik-001",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 1",
+      "difficulty": "kolay",
+      "question": "1. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-002",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 2",
+      "difficulty": "orta",
+      "question": "2. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-003",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 3",
+      "difficulty": "zor",
+      "question": "3. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-004",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 4",
+      "difficulty": "kolay",
+      "question": "4. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-005",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 5",
+      "difficulty": "orta",
+      "question": "5. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-006",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "zor",
+      "question": "6. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-007",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "kolay",
+      "question": "7. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-008",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 3",
+      "difficulty": "orta",
+      "question": "8. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-009",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 4",
+      "difficulty": "zor",
+      "question": "9. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-010",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 5",
+      "difficulty": "kolay",
+      "question": "10. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-011",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 1",
+      "difficulty": "orta",
+      "question": "11. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-012",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 2",
+      "difficulty": "zor",
+      "question": "12. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-013",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 3",
+      "difficulty": "kolay",
+      "question": "13. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-014",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 4",
+      "difficulty": "orta",
+      "question": "14. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-015",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 5",
+      "difficulty": "zor",
+      "question": "15. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-016",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "kolay",
+      "question": "16. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-017",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "orta",
+      "question": "17. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-018",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 3",
+      "difficulty": "zor",
+      "question": "18. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-matematik-019",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 4",
+      "difficulty": "kolay",
+      "question": "19. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "dgs"
+      ]
+    },
+    {
+      "id": "dgs-2024-türkçe-020",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 5",
+      "difficulty": "orta",
+      "question": "20. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "dgs"
+      ]
+    }
+  ]
+}

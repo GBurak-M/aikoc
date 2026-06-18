@@ -27,10 +27,10 @@ async function translateWithLlm(text: string): Promise<string | null> {
     'Görevin: Verilen İngilizce bilim metnini Türkçeye çevir. Yalnızca Türkçe çeviriyi döndür; açıklama, İngilizce kelime veya ön ek ekleme. TDK imlasına uy.';
 
   try {
-    const { isGeminiLikelyEnabled, askGemini } = await import('./geminiClient');
-    if (isGeminiLikelyEnabled()) {
-      const gemini = await askGemini({ systemPrompt, userText: snippet });
-      if (gemini && !needsTurkishTranslation(gemini)) return gemini.trim();
+    const { isGroqLikelyEnabled, askGroq } = await import('./groqClient');
+    if (isGroqLikelyEnabled()) {
+      const groq = await askGroq({ systemPrompt, userText: snippet });
+      if (groq && !needsTurkishTranslation(groq)) return groq.trim();
     }
   } catch {
     /* gemini yok */

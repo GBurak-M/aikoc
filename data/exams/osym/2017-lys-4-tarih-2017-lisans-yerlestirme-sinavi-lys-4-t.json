@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-4",
+  "year": 2017,
+  "subject": "Tarih",
+  "title": "Lisans Yerleştirme Sınavı (LYS-4) Tarih Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2017/OSYS/LYS/LYS4TARIH18062017.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 43,
+  "parsedAt": "2026-06-11T13:40:30.574Z",
+  "questions": [
+    {
+      "id": "2017-lys-4-tarih-2017-lisans-yerlestirme-sinavi-lys-4-t-q20",
+      "number": 20,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "II",
+        "B": "III",
+        "C": "IV",
+        "D": "V",
+        "E": "VI"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-4"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-2",
+  "year": 2016,
+  "subject": "Biyoloji",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Biyoloji Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/LYS/Sorular/LYS2_BIYOLOJI26062016.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:42:13.347Z",
+  "questions": [
+    {
+      "id": "2016-lys-2-biyoloji-2016-lisans-yerlestirme-sinavi-lys-2-b-q19",
+      "number": 19,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2016-LYS2/BİY Bir ökaryotik hücre içerisindeki bilgi akışının DNA→RNA→Polipeptit yönünde olduğu bilinmektedir. Aşağıda bir DNA molekülü ile üzerinde yer alan ve birbirinden bağımsız olarak çalışan iki gen, bölgesel olarak gösterilmiştir. Bu DNA molekülü üzerinden bilgi akışıyla ilgili, I. DNA zincirlerinden herhangi birinde ortaya çıkan bir nükleotit değişikliği mRNA’da mutlaka kendisini gösterir. II. Kural olarak genlerin birinde meydana gelen bir mutasyonun, diğer genin kontrol ettiği protein sentezini etkilemesi beklenmez. III. 1 nolu zincir, bu genlerin her ikisinin de şifrelediği proteinler için anlamlı zincir olarak işlev görür. ifadelerinden hangileri doğrudur? Yalnız I Yalnız II Yalnız III I ve II II ve III Aşağıdakilerden hangisi genetik çalışmalarda \"model organizma\" olarak kullanılacak bir hayvanda bulunması istenen özelliklerden biri değildir? Bir defada çok sayıda yavru üretmesi Yeni döl verme süresinin uzun olması Yavrularının gelişim evresinin kısa olması Laboratuvar koşullarında üretilebilmesi Üzerinde çalışma yapmaya elverişli olması",
+      "options": {
+        "A": "9",
+        "B": "16",
+        "C": "27",
+        "D": "36",
+        "E": "81"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "exam": "LYS-1",
+  "year": 2016,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/LYS/Sorular/2016_LYS1_MATEMATIK.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 10,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:40:36.136Z",
+  "questions": [
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q4",
+      "number": 4,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/MAT a ve b pozitif tam sayılarının en büyük ortak böleni tek, en küçük ortak katı ise çift sayıdır. Buna göre, I. II. III. ifadelerinden hangileri her zaman tek sayıya eşittir? Yalnız I Yalnız II Yalnız III I ve III II ve III 1’den 100’e kadar numaralandırılmış 100 birim kareden oluşan aşağıdaki tabloda bazı kareler boyanacaktır. Numarası çift sayı olan kareler sarıya, 3’ün katı olan kareler kırmızıya, 5’in katı olan kareler ise maviye boyanıyor. Bir karenin turuncu olması için o kare yalnızca sarı ve kırmızıya boyanmalıdır. Buna göre, tabloda turuncu renkte kaç tane birim kare vardır?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "6",
+        "D": "8",
+        "E": "9"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q6",
+      "number": 6,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Bir A doğal sayısının asal bölenlerinin toplamı;  sayısının asal bölenlerinin toplamından 3 eksiktir.  sayısının asal bölenlerinin toplamından 5 eksiktir. Buna göre, A sayısının alabileceği en küçük değerin rakamları toplamı kaçtır?",
+      "options": {
+        "A": "8",
+        "B": "12",
+        "C": "13",
+        "D": "15",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q8",
+      "number": 8,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/MAT a ve b tam sayıları için olduğuna göre, toplamı kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q12",
+      "number": 12,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/MAT İki sayıdan küçük olanı bu iki sayının aritmetik ortalamasından 3 eksik, büyük olanı ise bu iki sayının geometrik ortalamasından 4 fazladır. Buna göre, bu iki sayının toplamı kaçtır?",
+      "options": {
+        "A": "11",
+        "B": "14",
+        "C": "15",
+        "D": "16",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q21",
+      "number": 21,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/MAT Üçüncü dereceden baş katsayısı 1 olan gerçel katsayılı P(x) polinomu eşitliklerini sağlıyor. Buna göre, P(0) değeri kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "–1",
+        "E": "–8"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q23",
+      "number": 23,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "olduğuna göre, ifadesinin değeri kaçtır? olduğuna göre, I. sin x II. sin 2x III. cos 2x değerlerinden hangileri bir rasyonel sayıya eşittir? Yalnız I Yalnız III I ve II I ve III II ve III",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q35",
+      "number": 35,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "matrisleri eşitliğini sağlıyor. Buna göre, m kaçtır?",
+      "options": {
+        "A": "5",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "11"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q37",
+      "number": 37,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/MAT fonksiyonu noktasında süreklidir. Buna göre, oranı kaçtır? 1 2 4 fonksiyonunun grafiği ile bu fonksiyonun yatay asimptotu (a, b) noktasında kesişiyor. Buna göre, toplamı kaçtır?",
+      "options": {
+        "A": "4",
+        "B": "6",
+        "C": "8",
+        "D": "10",
+        "E": "12"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q45",
+      "number": 45,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/MAT integralinin değeri kaçtır?",
+      "options": {
+        "A": "40",
+        "B": "42",
+        "C": "44",
+        "D": "46",
+        "E": "48"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m-q47",
+      "number": 47,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "[–1, 7] aralığında tanımlı bir f fonksiyonun grafiği birim karelere bölünen şekildeki dik koordinat düzleminde verilmiştir. Buna göre, integralinin değeri kaçtır?",
+      "options": {
+        "A": "18",
+        "B": "19",
+        "C": "20",
+        "D": "21",
+        "E": "22"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    }
+  ]
+}

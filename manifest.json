@@ -1,0 +1,25 @@
+{
+  "name": "ROTA AI — Dijital Eğitim",
+  "short_name": "ROTA AI",
+  "description": "Yolunu bul, hedefe yapay zeka ile var — 3D dijital eğitim platformu",
+  "id": "https://rotaai.vercel.app/",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1026",
+  "theme_color": "#0B1026",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "assets/brand/rota-ai-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

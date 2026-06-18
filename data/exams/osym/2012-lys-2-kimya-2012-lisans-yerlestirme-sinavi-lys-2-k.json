@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-2",
+  "year": 2012,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/183,lys2kimyapdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:43:14.983Z",
+  "questions": [
+    {
+      "id": "2012-lys-2-kimya-2012-lisans-yerlestirme-sinavi-lys-2-k-q8",
+      "number": 8,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2012 – LYS2 / KİM suda az çözünen bir tuzdur ve çözünmesi ek- zotermiktir. Buna göre belirli sıcaklıkta ün sudaki doy- gun çözeltisine, I. aynı sıcaklıkta bir miktar ekleme, II. aynı sıcaklıkta bir miktar ekleme, III. sıcaklığı düşürme işlemlerinden hangilerinin tek başına yapılması, ün çözünürlüğünün azalmasına neden ola- bilir? ( ve suda tam olarak iyonlarına ayrılır.) Yalnız I Yalnız II Yalnız III I ve II I, II ve III Atom numarası 1 olan hidrojen elementinin üç izotopu Bunlarla ilgili aşağıdakilerden hangisi yanlıştır? 1H, 2 H (D) ve 3 H (T) dir. A) B) C) D) E) Döteryum izotopunun çekirdeğinde bir nötron vardır. Trityum izotopunun çekirdeğinde 3 nötron vardır. Trityum izotopu radyoaktiftir. Hidrojen izotopunun çekirdeğinde nötron yoktur. Döteryum izotopunun oksit bileşiği olan döteryum oksit ağır su olarak bilinir.",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0,52",
+        "C": "1,04",
+        "D": "2,08",
+        "E": "3,04"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2012-lys-2-kimya-2012-lisans-yerlestirme-sinavi-lys-2-k-q19",
+      "number": 19,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2012 – LYS2 / KİM Aşağıdaki çekirdek tepkimelerinin hangisinde önce 3 kez ışıması ve ardından 2 kez ışıması yapıl- mıştır? E) 20. Aşağıdaki bileşiklerden hangisi, karşısında verilen kapalı formüle uymaz? A) B) C) D) E) 6 14 C H CH2 CH CH _ _ 2 CH3 _ CH _ 3 CH3 6 8 C H 6 12 C H CH3 10 12 C H 14 20 C H CH2 CH _ _ _",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "exam": "LYS-2",
+  "year": 2015,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2015/LYS/Sorular/2015_LYS_2_Kimya.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 3,
+  "answerKeyCount": 9,
+  "parsedAt": "2026-06-11T13:40:56.910Z",
+  "questions": [
+    {
+      "id": "2015-lys-2-kimya-2015-lisans-yerlestirme-sinavi-lys-2-k-q6",
+      "number": 6,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "40",
+        "E": "50"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2015-lys-2-kimya-2015-lisans-yerlestirme-sinavi-lys-2-k-q9",
+      "number": 9,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Sistem ve ortam ilişkisiyle ilgili aşağıdakilerden hangisi yanlıştır? Kapalı sistemler, ortamla enerji alışverişi yapabilen ancak madde alışverişi yapamayan sistemlerdir. İzole sistemler, ortamla madde ve enerji alışverişi yapan sistemlerdir. İzotermal sistemler, sıcaklığı sabit tutulan sistemler olup ortamla her türlü madde ve enerji alışverişi yaparlar. İzokorik sistemler, hacmi sabit tutulan sistemler olup ortamla enerji alışverişi yaparlar. İzobarik sistemler, basıncı sabit tutulan sistemler olup ortamla hem iş hem de enerji alışverişi yaparlar. Tepkimelerine göre, tepkimesindeki metil alkolün standart oluşum entalpisi kaç kJ/mol’dür?  880  476  476  678  1165",
+      "options": {
+        "A": "0,5",
+        "B": "1,0",
+        "C": "1,5",
+        "D": "2,0",
+        "E": "2,5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2015-lys-2-kimya-2015-lisans-yerlestirme-sinavi-lys-2-k-q15",
+      "number": 15,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bu soru iptal edilmiştir. 2015-LYS2/KİM Şekildeki Galvanik hücre için aşağıdakilerden hangisi doğrudur? Bakır elektrot anot olarak davranmıştır. Demir elektrot katot olarak davranmıştır. Standart hücre potansiyelinin (Eohücre) değeri 0,78 V’dir. Elektronlar bakır elektrottan demir elektrota doğru akarlar. Zamanla çözeltideki Cu2+ derişimi artar.",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "exam": "LYS-1",
+  "year": 2016,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/LYS/Sorular/2016_LYS1_GEOMETRI.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 9,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:40:34.858Z",
+  "questions": [
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q4",
+      "number": 4,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/GEO Şekilde verilen E, F ve G noktaları bulundukları kenarların orta noktalarıdır. H noktası ise [GE] doğru parçasının orta noktasıdır. Buna göre, karenin alanı kaç birimkaredir?",
+      "options": {
+        "A": "8",
+        "B": "9",
+        "C": "10",
+        "D": "11",
+        "E": "12"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q6",
+      "number": 6,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Şekilde verilen E noktası AB kenarı üzerindedir. Buna göre, ABCD yamuğunun alanı kaç birimkaredir? Yukarıdaki verilere göre, x kaç derecedir?",
+      "options": {
+        "A": "102",
+        "B": "105",
+        "C": "108",
+        "D": "111",
+        "E": "114"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q8",
+      "number": 8,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/GEO Yukarıdaki verilere göre, x kaç derecedir?",
+      "options": {
+        "A": "100",
+        "B": "110",
+        "C": "120",
+        "D": "130",
+        "E": "140"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q13",
+      "number": 13,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Şekilde verilen [AB] ve [EC] çaplı yarım çemberler birbirine teğettir. Buna göre, x kaç birimdir?",
+      "options": {
+        "A": "9",
+        "B": "10",
+        "C": "12",
+        "D": "14",
+        "E": "15"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q17",
+      "number": 17,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Zeminde bulunan ve taban çapı ile yüksekliği 6 birim olan dairesel dik silindir biçimindeki bardağın üzerine yarıçapı 5 birim olan bir küre şekildeki gibi yerleştiriliyor. Buna göre, kürenin tepe noktasının zeminden yüksekliği h kaç birimdir?",
+      "options": {
+        "A": "10",
+        "B": "11",
+        "C": "12",
+        "D": "13",
+        "E": "14"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q19",
+      "number": 19,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2016-LYS1/GEO Şekil 1’de verilen taban ayrıtı 3 cm ve yüksekliği 6 cm olan kare dik prizma biçimindeki kabın üçte biri suyla doludur. Bu kap LM ayrıtı üzerine kaptaki su seviyesi KN ayrıtına gelene kadar yatırıldığında Şekil 2’deki görünüm elde ediliyor. Bu durumda su seviyesi BL ve CM ayrıtları üzerinde sırasıyla P ve R noktalarında oluyor. Buna göre, suyun üst yüzeyinde oluşan KPRN dörtgeninin alanı kaç cm2 dir?",
+      "options": {
+        "A": "70",
+        "B": "74",
+        "C": "78",
+        "D": "80",
+        "E": "84"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q21",
+      "number": 21,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Dik koordinat düzleminde, bir kenarı y-ekseni üzerinde olan bir karenin köşegenleri K(3, 4) noktasında kesişmektedir. Bu karenin alanı kaç birimkaredir?",
+      "options": {
+        "A": "5",
+        "B": "4",
+        "C": "3",
+        "D": "2",
+        "E": "1"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q25",
+      "number": 25,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Dik koordinat düzleminde (0, 2), (4, 2) ve (4, 4) noktalarında bulunan üç karınca birer doğrultu seçip aynı anda ve eşit hızlarla yürümeye başlıyor. Bir süre sonra bu üç karınca aynı anda bir P noktasında buluşuyor. Buna göre, P noktasının koordinatları toplamı kaçtır?",
+      "options": {
+        "A": "19",
+        "B": "21",
+        "C": "23",
+        "D": "25",
+        "E": "27"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g-q29",
+      "number": 29,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Uzayda; A(1, 1, 1) noktasından geçen ve düzlemine dik olan doğru, bu düzlemi B noktasında kesmektedir. Buna göre, uzunluğu kaç birimdir?",
+      "options": {
+        "A": "1",
+        "B": "4",
+        "C": "16",
+        "D": "25",
+        "E": "36"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-1"
+      ]
+    }
+  ]
+}

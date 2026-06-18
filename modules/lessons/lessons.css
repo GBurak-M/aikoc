@@ -1,0 +1,78 @@
+.lessons-module .grade-block {
+  margin-bottom: 1.75rem;
+}
+
+.lessons-module .grade-block h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lessons-module .grade-block .level-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(26, 86, 219, 0.1);
+  color: var(--color-primary);
+}
+
+.lessons-module .subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.lessons-module .subject-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  min-height: 88px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.lessons-module .subject-card:hover {
+  transform: none;
+  box-shadow: var(--shadow-3d-md);
+}
+
+.lessons-module .subject-card strong {
+  font-size: 0.95rem;
+}
+
+.lessons-module .subject-card span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.lessons-module .subject-card:hover {
+  border-color: var(--color-primary);
+}
+
+.lessons-module .subject-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.lessons-module .level-section {
+  margin-bottom: 2rem;
+}
+
+.lessons-module .level-section > h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+}

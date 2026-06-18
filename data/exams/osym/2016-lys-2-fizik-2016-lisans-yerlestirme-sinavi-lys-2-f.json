@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-2",
+  "year": 2016,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/LYS/Sorular/LYS2_FIZIK26062016.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:40:38.119Z",
+  "questions": [
+    {
+      "id": "2016-lys-2-fizik-2016-lisans-yerlestirme-sinavi-lys-2-f-q4",
+      "number": 4,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2016-LYS2/FİZ Sürtünmesiz yatay bir zeminde O noktasında duran 5 kg kütleli K bloğuna, yatay doğrultuda 20 N büyüklüğündeki kuvveti, şekilde görülen doğrultuda uygulanmaya başlanıyor. Tam bu anda, bu cisimden 100 metre uzaklıkta bulunan L cismi de 10 m/s lik sabit hızla K cismine doğru harekete başlıyor. Buna göre K ve L noktasal blokları, O noktasından kaç metre uzaklıkta karşılaşır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2016-lys-2-fizik-2016-lisans-yerlestirme-sinavi-lys-2-f-q6",
+      "number": 6,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bir gezegenin kütle-çekim kuvvetinden kurtulabilmek için gerekli olan hızın karesi, o gezegenin kütlesiyle doğru ve yarıçapıyla ters orantılıdır. (vkaçış2 ~ Mgezegen / rgezegen) Güneş sistemindeki bazı gezegenlere ait yuvarlatılmış kütle ve yarıçap değerleri aşağıdaki tabloda verilmiştir. Merkür Venüs Dünya Mars Neptün Kütle (x1024 kg) 0,3 5,0 6,0 0,6 103,0 Yarıçap (x106 m) 2,4 6,0 6,5 3,2 25,0 Buna göre, tabloda görülen gezegenlerin hangisinin kütle çekim kuvvetinden kurtulmak en kolaydır? Merkür Venüs Dünya Mars Neptün",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "40",
+        "D": "50",
+        "E": "60"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-2"
+      ]
+    }
+  ]
+}

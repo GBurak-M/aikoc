@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-3",
+  "year": 2014,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Coğrafya-1 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2014/LYS/sorucevap/2014_LYS_3_Cografya_1.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 16,
+  "parsedAt": "2026-06-11T13:42:29.182Z",
+  "questions": [
+    {
+      "id": "2014-lys-3-cografya-2014-lisans-yerlestirme-sinavi-lys-3-c-q12",
+      "number": 12,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2014-lys-3-cografya-2014-lisans-yerlestirme-sinavi-lys-3-c-q16",
+      "number": 16,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "2014 – LYS3 / COĞ-1 Dünya deniz ticaretinde büyük öneme sahip olan su yollarından bazıları, bulunduğu alanın tek çıkışı konumundadır. Alternatif geçiş olanağı olmayan bu tür su yollarına aşağıdakilerden hangisi örnek gösterilebilir? Korint Kanalı Malakka Boğazı Süveyş Kanalı Cebelitarık Boğazı Hürmüz Boğazı Gelişmiş ve gelişmekte olan iki ülkenin, tarım sektörleri açısından üretim miktarını belirleyen en önemli etken aşağıdakilerden hangisidir? Tarımdaki iş gücü oranı Üretimi yapılan ürünler Birim alandan alınan verim Tarım alanlarının dağılışı Doğal faktörlerin tarıma etkisi",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-3"
+      ]
+    }
+  ]
+}

@@ -1,8 +1,48 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "framework": null,
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/api/auth/(.*)", "destination": "/api/auth?route=$1" },
+    { "source": "/api/library/admin/verify", "destination": "/api/library?route=admin/verify" },
+    { "source": "/api/library/admin/status", "destination": "/api/library?route=admin/status" },
+    { "source": "/api/library/books", "destination": "/api/library?route=books" },
+    { "source": "/api/library/add", "destination": "/api/library?route=add" },
+    { "source": "/api/library/remove", "destination": "/api/library?route=remove" },
+    { "source": "/api/library/file", "destination": "/api/library?route=file" },
+    { "source": "/library/(.*)", "destination": "/public/library/$1" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/service-worker.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/(style\\.css|app\\.js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+      ]
+    }
   ]
 }

@@ -1,0 +1,105 @@
+{
+  "exam": "LYS-2",
+  "year": 2017,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2017/OSYS/LYS/LYS2FIZIK18062017.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 4,
+  "answerKeyCount": 29,
+  "parsedAt": "2026-06-11T13:40:19.624Z",
+  "questions": [
+    {
+      "id": "2017-lys-2-fizik-2017-lisans-yerlestirme-sinavi-lys-2-f-q2",
+      "number": 2,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "áá¡áá¡¡¡á¡¡¡¡¡á¡ 176201019799764601001 áá¡áá¡¡¡á¡¡¡¡¡á¡ áá¡áá¡¡¡á¡¡¡¡¡á¡ áá¡áá¡¡¡á¡¡¡¡¡á¡ 2017-LYS2/FİZ Şekilde görülen platformun K noktasından kaykayla atlama yapmak için durgun hâlden harekete başlayan bir sporcu, L noktasına kadar hızlanıp L noktasında rampadan yatay doğrultuda bir ilk hızla atlayışını gerçekleştirerek M noktasında yere çarpmıştır. Sistemdeki bütün sürtünmelerin etkisi ihmal edilirse hareketi boyunca duruşunu bozmayan sporcu ile ilgili, I. Mekanik enerjisi, M noktasında en büyük değerini alır. II. Rampadan ayrıldıktan sonra anlık ivmesi sıfırdır. III. Rampadan ayrıldıktan sonra yatayda sabit hızla hareket eder. yargılarından hangileri doğrudur? Yalnız I Yalnız II Yalnız III II ve III I, II ve III",
+      "options": {
+        "A": "2",
+        "B": "2,5",
+        "C": "3",
+        "D": "3,5",
+        "E": "4"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2017-lys-2-fizik-2017-lisans-yerlestirme-sinavi-lys-2-f-q6",
+      "number": 6,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "İç dirençleri önemsiz özdeş piller ile özdeş lambalar kullanılarak aynı maddeden yapılmış; uzunlukları ve kesit alanları üzerinde belirtilmiş olan direnç telleriyle şekildeki K, L, M lambalarının bulunduğu üç farklı basit devre kuruluyor. Buna göre ışık veren K, L, M lambalarının parlaklıkları IK , IL ve IM arasındaki ilişki aşağıdakilerden hangisidir? IK < IL < IM IM < IL < IK IK < IL = IM IK = IL < IM IL < IK = IM",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2017-lys-2-fizik-2017-lisans-yerlestirme-sinavi-lys-2-f-q11",
+      "number": 11,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "ááá¡¡¡¡¡á¡ááá¡á¡ 176201019799764601005 ááá¡¡¡¡¡á¡ááá¡á¡ ááá¡¡¡¡¡á¡ááá¡á¡ ááá¡¡¡¡¡á¡ááá¡á¡ 2017-LYS2/FİZ Noktasal sayılabilecek bir bilye hava sürtünmesinin ihmal edildiği bir ortamda yerden düşey ve yukarı doğru fırlatılıyor ve aynı anda, başka bir özdeş bilye de yerden 120 metre yükseklikten serbest bırakılıyor. Bilyeler harekete başladıktan 4 saniye sonra havada çarpıştıklarına göre, çarpışma yerden kaç metre yükseklikte gerçekleşir? (Yer çekimi ivmesini 10 m/s2 alınız.)",
+      "options": {
+        "A": "(0,3)",
+        "B": "(0,4)",
+        "C": "(3,1)",
+        "D": "(3,0)",
+        "E": "(4,0)"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2017-lys-2-fizik-2017-lisans-yerlestirme-sinavi-lys-2-f-q22",
+      "number": 22,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "0,4",
+        "B": "0,6",
+        "C": "0,8",
+        "D": "1,2",
+        "E": "2,4"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-2"
+      ]
+    }
+  ]
+}

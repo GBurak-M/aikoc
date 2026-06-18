@@ -1,0 +1,151 @@
+{
+  "exam": "LYS-1",
+  "year": 2014,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2014/LYS/sorucevap/2014_LYS_1_Matematik.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 6,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:41:11.979Z",
+  "questions": [
+    {
+      "id": "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m-q4",
+      "number": 4,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2014 – LYS1 / MAT a ve b gerçel sayılarının geometrik ortalaması 4, ve sayılarının geometrik ortalaması ise 6’dır. Buna göre, farkı kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m-q6",
+      "number": 6,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "p, q, r birer asal sayı ve olduğuna göre, çarpımının alabileceği kaç farklı değer vardır?",
+      "options": {
+        "A": "50",
+        "B": "52",
+        "C": "56",
+        "D": "60",
+        "E": "64"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m-q14",
+      "number": 14,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "olmak üzere, fonksiyonu için olacak biçimdeki tüm x noktalarının kümesi aşağıdakilerden hangisidir? ve bir fonksiyon olmak üzere, her için koşulunu sağlayan bire bir f fonksiyonlarının sayısı kaçtır?",
+      "options": {
+        "A": "24",
+        "B": "32",
+        "C": "36",
+        "D": "40",
+        "E": "48"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m-q17",
+      "number": 17,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Aşağıda, doğrusu ile fonksiyonunun grafiği verilmiştir. noktasından başlayıp oklar takip edilerek noktasına ulaşıldığına göre, b aşağıdaki- lerden hangisine eşittir?",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m-q42",
+      "number": 42,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2014 – LYS1 / MAT fonksiyonunun 3. mertebeden türevinin nokta- sındaki değeri kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m-q46",
+      "number": 46,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2014 – LYS1 / MAT olduğuna göre, integralinin değeri kaçtır?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    }
+  ]
+}

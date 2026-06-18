@@ -1,0 +1,197 @@
+{
+  "exam": "LYS-1",
+  "year": 2015,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2015/LYS/Sorular/2015_LYS_1_Geometri.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 8,
+  "answerKeyCount": 10,
+  "parsedAt": "2026-06-11T13:40:47.844Z",
+  "questions": [
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q4",
+      "number": 4,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/GEO ABCD bir kare Yukarıda verilen ABCD karesi, ve doğru parçalarıyla eşit alanlı üç bölgeye ayrılmıştır. Buna göre, x kaç birimdir? 8 10",
+      "options": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q6",
+      "number": 6,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/GEO ABCD bir dik yamuk Yukarıdaki şekilde ADC üçgeninin alanı, yamuğun alanının beşte ikisidir. Buna göre, x kaç birimdir? Yukarıda verilen ABCD eşkenar dörtgeninin tüm kenarlarına teğet olan çemberin çapı 24 birimdir. Eşkenar dörtgenin köşegeninin uzunluğu 30 birim olduğuna göre, bir kenar uzunluğu kaç birimdir?",
+      "options": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q8",
+      "number": 8,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Şekildeki ABCDE düzgün beşgeninde F, G ve H noktaları bulundukları kenarların orta noktalarıdır. Buna göre, kaç derecedir?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "27",
+        "D": "30",
+        "E": "32"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q12",
+      "number": 12,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Şekilde, yarıçapları 2 ve 4 birim olan M merkezli iki daire ile açısı gösterilmiştir. Küçük dairenin alanı boyalı bölgenin alanına eşit olduğuna göre, kaç derecedir?",
+      "options": {
+        "A": "22",
+        "B": "24",
+        "C": "28",
+        "D": "32",
+        "E": "34"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q17",
+      "number": 17,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/GEO Küre biçimindeki bir mum tepesinden 1 birim uzaklıktaki yatay düzlemle Şekil 1’deki gibi kesiliyor ve üst kısmı atılıyor. Daha sonra, kalan mum üst yüzünden 1 birim uzaklıktaki yatay düzlemle Şekil 2’deki gibi tekrar kesiliyor ve üst kısmı atılıyor. Şekil 1’de oluşan dairesel kesitin alanı birimkare olduğuna göre, Şekil 2’de oluşan dairesel kesitin alanı kaç birimkaredir?",
+      "options": {
+        "A": "48",
+        "B": "50",
+        "C": "54",
+        "D": "60",
+        "E": "64"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q20",
+      "number": 20,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/GEO Dik koordinat düzleminde parabolü veriliyor. Denklemleri aşağıda verilen elipslerden hangisi bu parabol ile yalnızca 3 noktada kesişir? Dik koordinat düzleminde verilen P(a, 1) noktasıyla orijini birleştiren doğru parçası şekilde gösterilmiştir. P noktasının doğrusuna göre simetriği olan R noktası işaretleniyor. Buna göre, açısının ölçüsü kaç derecedir?",
+      "options": {
+        "A": "12",
+        "B": "16",
+        "C": "18",
+        "D": "24",
+        "E": "27"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q24",
+      "number": 24,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/GEO Dik koordinat düzleminde, köşeleri A(–12, 6) , B(12, 6) ve C noktaları olan ABC üçgeninin açıortayları orijinde kesişmektedir. Buna göre, C noktasının koordinatları toplamı kaçtır?",
+      "options": {
+        "A": "18",
+        "B": "20",
+        "C": "21",
+        "D": "22",
+        "E": "24"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g-q30",
+      "number": 30,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "SINAVDA UYULACAK KURALLAR fotoğrafının çekilmesi, herhangi bir yolla çoğaltılması, yayımlanması ya da kullanılması yasaktır. Bu yasağa uymayanlar gerekli cezai sorumluluğu ve doğacak tüm mali külfeti peşinen kabullenmiş sayılır. 1. Sınav salonunda saate entegre kamera ile kayıt yapılıyor ise; kamera kayıtlarının incelenmesinden sonra sınav kurallarına uymadığı tespit edilen adayların sınavları ÖSYM Yönetim Kurulunca geçersiz sayılacaktır. 2. Cep telefonu ile sınava girmek kesinlikle yasaktır. Her türlü elektronik/mekanik cihazla ve çağrı cihazı, telsiz, fotoğraf makinesi vb. araçlarla; cep bilgisayarı, her türlü saat ile, kablosuz iletişim sağlayan bluetooth, kulaklık vb. her türlü bilgisayar özelliği bulunan cihazlarla; her türlü kesici ve delici alet, ateşli silah vb. teçhizatla; kalem, silgi, kalemtıraş, müsvedde kâğıdı, defter, kitap, ders notu, sözlük, dergi, gazete vb. yayınlar, hesap makinesi, pergel, açıölçer, cetvel vb. araçlarla sınava girmek kesinlikle yasaktır. Adayların sınava kolye, küpe, yüzük (alyans hariç), bilezik, broş, anahtar, anahtarlık, metal para gibi metal içerikli eşyalarla (basit başörtü iğnesi ve ince metal tokalı kemer hariç); plastik veya camdan yapılmış her türlü güneş gözlüğü ile (şeffaf/numaralı gözlük hariç), banka/kredi kartı ulaşım kartı vb. kartlarla; yiyecek, içecek (şeffaf pet şişe içerisindeki su hariç) ve diğer tüketim maddeleri ile gelmeleri kesinlikle yasaktır. Bu araçlarla sınava girmiş adayların adı mutlaka Salon Sınav Tutanağına yazılacak, bu adayların sınavı geçersiz sayılacaktır. Ancak, ÖSYM Başkanlığı tarafından belirlenen Engelli ve Yedek Sınav Evrakı Yönetim Merkezi (YSYM) bina- larında sınava girecek olan engelli adayların sınava giriş belgelerinde yazılı olan araç gereçler, cihazlar vb. yukarıda belirtilen yasakların kapsamı dışında değerlendirilecektir. 3. Bu test için verilen cevaplama süresi 60 dakikadır (1 saat). LYS-1’de adaylar Matematik Testinin cevaplama süresi içinde, Geometri Testinin ilk 15 ve son 15 dakikası içinde sınav salonundan ayrılamazlar. İki test arasında birinci testin soru kitapçığının toplanması ve ikinci testin soru kitapçığının dağıtılması işlemleri dışında ara verilmez. Toplama ve dağıtma işlemi sırasında adayların salondan dışarı çıkmaları kesinlikle yasaktır. Bu süreler dışında, cevaplamayı sınav bitmeden tamamlarsanız cevap kâğıdınızı ve soru kitapçığınızı salon görevlilerine teslim ederek salonu terk edebilirsiniz. Bildirilen sürelere aykırı davranışlardan adayın kendisi sorumludur. 4. Sınav salonundan ayrılan aday, her ne sebeple olursa olsun, tekrar sınava alınmayacaktır. 5. Sınav süresince görevlilerle konuşmak, görevlilere soru sormak yasaktır. Aynı şekilde görevlilerin de adaylarla ya- kından ve alçak sesle konuşmaları ayrıca adayların birbirinden kalem, silgi vb. şeyleri istemeleri kesinlikle yasaktır. 6. Sınav sırasında, görevlilerin her türlü uyarısına uymak zorundasınız. Sınavınızın geçerli sayılması, her şeyden önce, sınav kurallarına uymanıza bağlıdır. Kurallara aykırı davranışta bulunanların ve yapılacak uyarılara uymayanların kimlik bilgileri Salon Sınav Tutanağına yazılacak ve sınavları geçersiz sayılacaktır. 7. Sınav sırasında kopya çeken, çekmeye kalkışan, kopya veren, kopya çekilmesine yardım edenlerin kimlik bilgileri Salon Sınav Tutanağına yazılacak ve bu adayların sınavları geçersiz sayılacaktır. Adayların test sorularına verdikleri cevapların dağılımları bilgi işlem yöntemleriyle incelenecek, bu incelemelerden elde edilen bulgular bireysel veya toplu olarak kopya çekildiğini gösterirse kopya eylemine katılan adayın/adayların sınavı geçersiz sayılacak ayrıca 2 yıl boyunca ÖSYM tarafından düzenlenen tüm sınavlara başvurusu yasaklanabilecektir. Sınav görevlileri bir salondaki sınavın, kurallara uygun biçimde yapılmadığını, toplu kopya girişiminde bulunulduğu- nu raporlarında bildirdiği takdirde, ÖSYM bu salonda sınava giren tüm adayların sınavını geçersiz sayabilir. 8. Cevap kâğıdında doldurmanız gereken alanlar bulunmaktadır. Bu alanları doldurunuz. Cevap kâğıdınızı başkaları tarafından görülmeyecek şekilde tutmanız gerekmektedir. Cevap kâğıdına yazılacak her türlü yazıda ve yapılacak bütün işaretlemelerde kurşun kalem kullanılacaktır. Sınav süresi bittiğinde cevapların cevap kâğıdına işaretlenmiş olması gerekir. Soru kitapçığına işaretlenen cevaplar geçerli değildir. 9. Soru kitapçığınızı alır almaz kapağında bulunan ilgili alanları doldurunuz. Size söylendiği zaman sayfaların eksik olup olmadığını, kitapçıkta basım hatalarının bulunup bulunmadığını ve soru kitapçığının her sayfasında basılı bulu- nan soru kitapçık numarasının, kitapçığın ön kapağında basılı soru kitapçık numarasıyla aynı olup olmadığını kontrol ediniz. Soru kitapçığınızın sayfası eksik veya basımı hatalıysa değiştirilmesi için salon başkanına başvurunuz. Size bu sınavın her bir testi için ayrı ayrı kitapçıklar verilmektedir. Her kitapçığın Soru Kitapçık Numarası birbirinden farklıdır. Bu nedenle her test için aldığınız kitapçığın Soru Kitapçık Numarasını cevap kâğıdınızdaki ilgili alana kod- lamanız çok önemlidir. Cevap kâğıdınızdaki “Soru Kitapçık Numaralarını doğru kodladım.” kutucuğunu işaretleyiniz. LYS-1’de size verilen Geometri Testinin Soru Kitapçık Numarasını cevap kâğıdınızdaki “Geometri Soru Kitap- çık Numarası” alanına kodlayınız. Soru kitapçığı üzerinde yer alan Soru Kitapçık Numarasını doğru kodladığınızı beyan eden alanı imzalayınız. 10. Sınav sonunda soru kitapçıkları toplanacak ve ÖSYM’de incelenecektir. Soru kitapçığınızın sayfalarını koparmayı- nız. Soru kitapçığının bir sayfası bile eksik çıkarsa sınavınız geçersiz sayılacaktır. 11. Cevap kâğıdına ve soru kitapçığına yazılması ve işaretlenmesi gereken bilgilerde bir eksiklik ve/veya yanlışlık olma- sı hâlinde sınavınızın değerlendirilmesi mümkün değildir, bu husustaki özen yükümlülüğü ve sorumluluk size aittir. 12. Soru kitapçığının sayfalarındaki boş yerleri müsvedde için kullanabilirsiniz. 13. Soruları ve/veya bu sorulara verdiğiniz cevapları ayrı bir kâğıda yazıp bu kâğıdı dışarı çıkarmanız kesinlikle yasaktır. 14. Her testin cevaplarını cevap kâğıdındaki ilgili alana işaretleyiniz. 15. Sınav salonundan ayrılmadan önce, soru kitapçığınızı, cevap kâğıdınızı ve sınava giriş belgenizi salon görevli- lerine eksiksiz olarak teslim etmeyi unutmayınız. 16. Sınav süresi salon görevlilerinin “SINAV BAŞLAMIŞTIR” ibaresiyle başlar, “SINAV BİTMİŞTİR” ibaresiyle sona erer. LİSANS YERLEŞTİRME SINAVI-1 GEOMETRİ TESTİ 14.06.2015",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+{
+  "exam": "LYS-1",
+  "year": 2010,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/280,2010lys1geopdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 20,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:44:55.605Z",
+  "questions": [
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q2",
+      "number": 2,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABC bir ikizkenar üçgen AB AD m(DBC) 9 m(BCD) x ° = = = ] ]",
+      "options": {
+        "A": "A) 40",
+        "B": "B) 45",
+        "C": "C) 50",
+        "D": "D) 60",
+        "E": "E) 75"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q3",
+      "number": 3,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABC bir üçgen m(BAC) 90 BD 9 cm DC 4 cm ° = = = ]",
+      "options": {
+        "A": "Yukarıdaki şekilde AC",
+        "B": "BC",
+        "C": "=",
+        "D": "olduğuna göre,"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q4",
+      "number": 4,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABC bir üçgen DE // BC AK h KL h = = Yukarıdaki şekilde ADE üçgeninin alanının BCED dörtgeninin alanına oranı A(ADE) 4 A(BCED) 21 = oldu- ğuna göre, 1 h h oranı kaçtır? A) 1 2 B) 2 3 C) 3 D) 4 5 E) 5",
+      "options": {
+        "A": "Yukarıdaki şekilde [",
+        "B": "]",
+        "C": "AC",
+        "D": "kenarını çap kabul eden"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q7",
+      "number": 7,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABC bir üçgen AB BC BE EC AD DC BF 6 cm ⊥ = = = Yukarıdaki verilere göre, AC uzunluğu kaç cm’dir?",
+      "options": {
+        "A": "6.",
+        "B": "AB",
+        "C": "AC",
+        "D": "=",
+        "E": "olan herhangi bir ABC ikizkenar üçgeni"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q8",
+      "number": 8,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Çeşitkenar bir ABC üçgeninin A köşesinden [ ] BC ke- narına, B köşesinden [ ] AC kenarına ve C köşesin- den [ ] AB kenarına paralel doğrular çizilerek şekildeki gibi bir DEF üçgeni elde ediliyor. H noktası ABC üçgeninin yüksekliklerinin kesim noktası olduğuna göre, DEF üçgeninin nesidir?",
+      "options": {
+        "A": "Kenar ortaylarının kesim noktasıdır.",
+        "B": "İki dış açıortay ve bir iç açıortayının kesim nokta- sıdır.",
+        "C": "Yüksekliklerinin kesim noktasıdır.",
+        "D": "İç teğet çemberinin merkezidir.",
+        "E": "Çevrel çemberinin merkezidir."
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q9",
+      "number": 9,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir dikdörtgen E, köşegenlerin kesim noktası m(BAC) 25 m(EFC) x ° = = ] ] Şekildeki F noktası, FDE bir eşkenar üçgen ola- cak biçimde alındığına göre, x kaç derecedir?",
+      "options": {
+        "A": "narına, B köşesinden [",
+        "B": "]",
+        "C": "AC",
+        "D": "kenarına ve C köşesin-"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q10",
+      "number": 10,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir paralelkenar EH AB EH 3 cm BC 7 cm ⊥ = = Şekildeki ABCD paralelkenarının A ve B açılarının iç açıortayları [ ] DC kenarı üzerindeki E noktasında ke- sişmektedir. Buna göre, ABCD paralelkenarının alanı kaç 2 cm dir?",
+      "options": {
+        "A": "A) 30",
+        "B": "B) 35",
+        "C": "C) 45",
+        "D": "D) 50",
+        "E": "E) 55"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q11",
+      "number": 11,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir kare DF FA AE EB DC 12 cm = = = Yukarıdaki verilere göre, LEB üçgeninin alanı kaç cm dir?",
+      "options": {
+        "A": "A) 42",
+        "B": "B) 40",
+        "C": "C) 36",
+        "D": "D) 28",
+        "E": "E) 24"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q12",
+      "number": 12,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir kare AEFG bir dikdörtgen = = = DC 8 cm FE 3x cm GF x cm Yukarıdaki verilere göre, AEFG dikdörtgeninin alanı kaç 2 cm dir?",
+      "options": {
+        "A": "A) 6",
+        "B": "B) 9",
+        "C": "C) 12",
+        "D": "D) 15",
+        "E": "E) 18"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q13",
+      "number": 13,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir dik yamuk DC // EF // AB DA AB FH AB DE 2 cm EA 2 cm HB 2 cm DC 4 cm ⊥ ⊥ = = = = Yukarıdaki verilere göre, ABCD yamuğunun alanı kaç 2 cm dir?",
+      "options": {
+        "A": "A) 12",
+        "B": "B) 15",
+        "C": "C) 16",
+        "D": "D) 18",
+        "E": "E) 21"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q14",
+      "number": 14,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "O noktası çemberin merkezi AE BC m(BDA) 50 m(BAC) 40 m(CAE) x = = = = D D ] ] ] Yukarıdaki verilere göre, x kaç derecedir?",
+      "options": {
+        "A": "A) 22",
+        "B": "B) 24",
+        "C": "C) 26",
+        "D": "D) 28",
+        "E": "E) 30"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q15",
+      "number": 15,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "AT ve AK doğruları O merkezli çembere teğet m(TAK) 120° = ] AT 3 cm = Yukarıdaki verilere göre, çemberin çevre uzunlu- ğu kaç cm’dir? A) 4π B) 5π C) 6π D) 2 3 π E) 3 3 π",
+      "options": {
+        "A": "A) 10",
+        "B": "B) 15",
+        "C": "C) 20",
+        "D": "D) 25",
+        "E": "E) 30"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q17",
+      "number": 17,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir paralelkenar EC DC = Yukarıda verilen düzlemsel şekilde F noktası AD ve BE doğrularının kesim noktasıdır. FEC üçgeninin alanı 2 3 cm olduğuna göre, ABCD paralelkenarının alanı kaç 2 cm dir?",
+      "options": {
+        "A": "A) 52π",
+        "B": "B) 54π",
+        "C": "C) 56π",
+        "D": "D) 58π",
+        "E": "E) 60π"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q18",
+      "number": 18,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCDE bir beşgen m(ABC) 120 m(BCD) 110 m(CDE) 140 m(DEA) 100 m(EAB) x = = = = = D D D D ] ] ] ] ] Yukarıdaki verilere göre, x kaç derecedir?",
+      "options": {
+        "A": "A) 7",
+        "B": "B) 8",
+        "C": "C) 9",
+        "D": "D) 10",
+        "E": "E) 11"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q19",
+      "number": 19,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "m(DBE) 30 AC 3 cm BD 15 cm ° = = = ] Dik dairesel silindir biçiminde tamamı suyla dolu olan bir bardak, yatay düzlemle 30° lik açı yapacak biçim- de şekildeki gibi eğildiğinde bardaktan bir miktar su dökülüyor. Bardakta kalan su C ve D noktalarında dengeleniyor. Buna göre, bardaktan kaç 3 cm su dökülmüştür?",
+      "options": {
+        "A": "A) 85",
+        "B": "B) 80",
+        "C": "C) 75",
+        "D": "D) 70",
+        "E": "E) 65"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q21",
+      "number": 21,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi bir düzlem belirtmez?",
+      "options": {
+        "A": "Doğrusal olmayan üç nokta",
+        "B": "Bir doğru ile dışındaki bir nokta",
+        "C": "Aykırı iki doğru",
+        "D": "Paralel iki farklı doğru",
+        "E": "Kesişen iki farklı doğru"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q22",
+      "number": 22,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "P düzlemi üzerinde bir ABC üçgeni ve bu düzlemin dışında bir K noktası alınıyor. A, B, C noktaları K nok- tası ile birleştiriliyor. [ ] KB ve [ ] KC üzerinde K, B ve C’den farklı olacak şekilde M ve N noktaları işaretle- niyor ve MN doğrusu çiziliyor. MN doğrusunun P düzlemini kestiği bilindiğine göre, kesim noktası neresidir?",
+      "options": {
+        "A": "AB doğrusu üzerinde bir nokta",
+        "B": "AC doğrusu üzerinde bir nokta",
+        "C": "AK doğrusu üzerinde bir nokta",
+        "D": "BC doğrusu üzerinde bir nokta",
+        "E": "ABC üçgeninin ağırlık merkezi K M N A B C P 2010 – LYS1 / GEO Diğer sayfaya geçiniz. 10"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q23",
+      "number": 23,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Dik koordinat düzleminde verilen şekildeki AOB üçgeninin alanı kaç birim karedir? A) 7 2 3 B) 10 2 3 C) 7 3 D) 25 2 6 E) 25 3",
+      "options": {
+        "A": "tası ile birleştiriliyor. [",
+        "B": "]",
+        "C": "KB",
+        "D": "ve [",
+        "E": "]"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q24",
+      "number": 24,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "( ) ( )2 2 x 2 y 1 100 + − = + çemberinin 12 birim uzun- luğundaki kirişlerinin orta noktalarının geometrik yerinin denklemi aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "( ) ( ) + + − = 2 2 x 2 y 1 64",
+        "B": "( ) ( ) − + − = 2 2 x 2 y 1 64",
+        "C": "( ) ( ) − + + = 2 2 x 2 y 1 64",
+        "D": "( ) ( ) − + + = 2 2 x 2 y 1 36",
+        "E": "( ) ( ) + + + = 2 2 x 2 y 1 81"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g-q26",
+      "number": 26,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir kare = AB 2 birim Yukarıdaki şekle göre, AB , AD DC → → → < + > iç çarpı- mının değeri kaçtır?",
+      "options": {
+        "A": "24.",
+        "B": "(",
+        "C": ")",
+        "D": "(",
+        "E": ")2"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-1"
+      ]
+    }
+  ]
+}

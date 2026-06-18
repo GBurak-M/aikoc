@@ -1,0 +1,493 @@
+{
+  "exam": "LYS-2",
+  "year": 2010,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/282,2010lys2kimpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 21,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:45:01.189Z",
+  "questions": [
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q1",
+      "number": 1,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Pistonlu bir kapta, 298 kelvinde, V litre hacminde, 1 atmosfer basınçta n mol ideal davranıştaki bir X ga- zı bulunmaktadır. Aşağıdaki işlemlerden hangisi uygulandığında gazın basıncı (1 atmosfer) değişmeden kalır?",
+      "options": {
+        "A": "Sıcaklığı değiştirmeden kaba aynı gazdan n mol daha eklemek ve hacmi iki katına çıkarmak",
+        "B": "Mol sayısını değiştirmeden sıcaklığı iki katına çı- karmak ve hacmi yarıya indirmek",
+        "C": "Mol sayısını ve sıcaklığı değiştirmeden hacmi iki katına çıkarmak",
+        "D": "Sıcaklık ve hacmi değiştirmeden mol sayısını ya- rıya indirmek",
+        "E": "Mol sayısını ve hacmi değiştirmeden sıcaklığı yarıya indirmek"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q2",
+      "number": 2,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Hacimleri V litre olan üç ayrı özdeş cam balonda, sa- bit bir T sıcaklığında ideal davranıştaki bir X gazı bu- lunmaktadır. Bu cam balonlar şekildeki gibi açık ve kapalı uçlu manometrelere bağlanmıştır. Buna göre X gazıyla ilgili aşağıdakilerden hangisi yanlıştır?",
+      "options": {
+        "A": "III. balonda X’in mol sayısı, I. balondakinden az- dır.",
+        "B": "II. balonda X’in basıncı hava P ’dan büyüktür.",
+        "C": "III. balonda X’in basıncı hava P ’dan küçüktür.",
+        "D": "II. balonda X’in mol sayısı, III. balondakinden fazladır.",
+        "E": "I. balonda X’in basıncı 40 cm Hg’dır. I. II. III. Phava = 76 cm Hg Phava = 76 cm Hg X gazı X gazı X gazı 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 2"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q6",
+      "number": 6,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "0,1 mol 3 NH ve 0,1 mol 4 NH Cl yeterli miktarda arı suya konarak 1 litrelik çözelti hazırlanıyor. ( 4 NH Cl suda + 4 NH ve − Cl iyonlarına tam olarak ayrışır.) Buna göre hazırlanan çözeltiyle ilgili aşağıdakiler- den hangisi doğrudur? ( ) ( ) ( ) ( ) − + ⎛ ⎞ ⎜ ⎟ ⎜ ⎟ − ⎜ ⎟ ⎝ ⎠ + + = U suda s suda suda 3 2 4 5 b NH H O NH OH K 1 x 10",
+      "options": {
+        "A": "− OH derişimi −9 1 x 10 molardır.",
+        "B": "+ H derişimi −5 1 x 10 molardır.",
+        "C": "Çözeltide − − ⎡ ⎤ ⎡ ⎤ = ⎢ ⎥ ⎢ ⎥ ⎣ ⎦ ⎣ ⎦ Cl OH dir.",
+        "D": "+ − ⎡ ⎤ ⎣ ⎦ = ⎡ ⎤ ⎡ ⎤ ⎣ ⎦ ⎣ ⎦ 3 4 b NH K NH OH dir.",
+        "E": "Tampon çözeltidir."
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q8",
+      "number": 8,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Suda tam olarak iyonlarına ayrışan ( ) 3 2 Pb NO ve KI’nın 0,2’şer molarlık sulu çözeltilerinden eşit hacim- lerde alınıp karıştırılarak bir çözelti oluşturulmuştur. ( 2 PbI az çözünen bir tuzdur ve 25 C D ’de çç K si −8 1, 4 x 10 dir.) Bu çözeltiyle ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+      "options": {
+        "A": "Karışımdaki + 2 Pb ve − I nin başlangıç derişimleri çarpımı ( ) ( ) 2 i PbI K −3 1 x 10 tür.",
+        "B": "Çözeltide + K derişimi 0,2 molardır.",
+        "C": "2 PbI çöker.",
+        "D": "Çözeltide − 3 NO derişimi 0,2 molardır.",
+        "E": "Net iyon denklemi ( ) ( ) ( ) + − + U 2 suda suda k 2 Pb 2I PbI dır. 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 4"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q9",
+      "number": 9,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "( ) ( ) ( ) ( ) + → + g g g s 3 8 2 2 2 C H 5O 3CO 4H O Yukarıda verilen tepkimenin standart tepkime ısı-",
+      "options": {
+        "A": "B)",
+        "B": "II. balonda X’in basıncı",
+        "C": "hava",
+        "D": "P",
+        "E": "’dan büyüktür."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q10",
+      "number": 10,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "+ ZZZX YZZZ 2 2 2 2 X Y X Y Y Yukarıda verilen tepkimenin potansiyel enerji diyag- ramı aşağıdaki gibidir. Buna göre, tepkimeyle ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Tek adımlı bir tepkimedir. B) İleri tepkime (1) ekzotermik (ısı veren)tir. C) İleri tepkimenin (1) aktifleşme enerjisi 26 kkal’dir.",
+      "options": {
+        "A": "sı (",
+        "B": ")",
+        "C": "∆H D",
+        "D": "kaç kj’dür?"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q11",
+      "number": 11,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Sabit sıcaklıkta kapalı bir kapta oluşan ( ) ( ) ( ) + U g g g 2 2 2 2X Y 2X Y tepkimesi için yapılan deney serisinde, tepkimeye gi- renlerin başlangıç derişimleri ve başlangıç tepkime hız değerleri tabloda verilmiştir. [ ] [ ] ( ) ( ) ( ) − − − − 2 2 4 3 2 3 X Y Tepkime hızı Deney mol / L mol / L mol / L s 1 0,05 0,04 1,6 x10 2 0,10 0,08 1,28 x10 3 0,20 0,16 1,024 x10 4 0,10 0,16 5,12 x10 . Buna göre, tepkimeyle ilgili aşağıdaki ifadelerden hangisi yanlıştır?",
+      "options": {
+        "A": "Hız bağıntısı [ ] [ ] = 2 H 2 2 T k X Y dir.",
+        "B": "2 Y ye göre tepkimenin derecesi ikidir.",
+        "C": "Tepkimenin toplam derecesi üçtür.",
+        "D": "2 X ye göre tepkimenin derecesi birdir.",
+        "E": "Hız sabitinin sayısal değeri 2,0’dır."
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q12",
+      "number": 12,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "( ) ( ) ( ) + U g g g 2 2 X Y 2XY tepkimesinin T sıcaklığındaki denge sabiti K’dir. Buna göre aynı sıcaklıkta ( ) ( ) ( ) g g g 2 2",
+      "options": {
+        "A": "D)",
+        "B": "Geri tepkimenin (2) tepkime ısısı (",
+        "C": ")",
+        "D": "∆H"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q13",
+      "number": 13,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Sabit sıcaklıkta, hacmi bir litre olan kapalı bir kapta 2 X ve 2 Y gazları tepkimeye girerek 2 Z ve 2 Q gaz- larını oluşturmaktadır. Tepkimedeki maddelerin deri- şimlerinin zamanla değişimi grafikteki gibidir. Buna göre aşağıdaki ifadelerden hangisi yanlış- tır?",
+      "options": {
+        "A": "Tepkime denklemi + + U (g) (g) (g) (g) 2 2 2 2 X Y Z Q dır.",
+        "B": "Dengeye ulaşıncaya kadar 0,4 mol 2 Y kullanıl- mıştır.",
+        "C": "Dengede 0,2 mol 2 Z ve 0,2 mol 2 Q vardır.",
+        "D": "Dengede 0,2 mol 2 X vardır.",
+        "E": "Denge sabiti K’nin sayısal değeri 0,5’tir. Y (g) 2 X (g) 2 0,2 0,4 0,6 Derişim (mol / L) Zaman 0 Z (g), Q (g) 2 2 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 6"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q15",
+      "number": 15,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Lowry-Brønsted asit-baz tanımına göre, ( ) ( ) ( ) ( ) 2 suda suda suda suda 4 3 4 4 HSO NH NH SO − + − + → + tepkimesiyle ilgili aşağıdakilerden hangisi yanlış- tır?",
+      "options": {
+        "A": "Tepkime bir asit-baz tepkimesidir.",
+        "B": "Tepkimede 3 NH baz gibi davranır.",
+        "C": "Tepkimede − 4 HSO asit gibi davranır.",
+        "D": "+ 4 NH , 3 NH ün konjuge (eşlenik) bazıdır.",
+        "E": "− 2 4 SO , − 4 HSO nin konjuge (eşlenik) bazıdır. 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 7"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q16",
+      "number": 16,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "200 mL 1,0 M HCl çözeltisine, asidi tam olarak nötr- leştirmek için NaOH katısı eklenmiştir. Bu tepkimeyle ilgili aşağıdaki ifadelerden hangisi yanlıştır? ( = NaOH 40 g / mol ve çözeltide hacim değişikliği ol- madığı düşünülecektir.)",
+      "options": {
+        "A": "Nötrleştirme için 8,0 gram NaOH kullanılır.",
+        "B": "Nötrleştirme sonrasında çözeltinin pH’si 7 olur.",
+        "C": "Nötrleştirme sonrasında çözeltide − Cl ve + Na iyonları bulunur.",
+        "D": "Tepkime sonucu oluşan + Na iyonunun derişimi 0,5 M olur.",
+        "E": "Oluşan − Cl nin derişimi 1,0 M’dir."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q17",
+      "number": 17,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "1,0 M ( ) 3 2 Ni NO çözeltisine Ni çubuk, 1,0 M HCl çö- zeltisine de Pt çubuk daldırılarak şekildeki pil oluştu- ruluyor. Bu pil ile ilgili aşağıdakilerden hangisi yanlıştır? + − + − ⎛ ⎞ + → = − ⎜ ⎟ ⎜ ⎟ + → = ⎝ ⎠ D D 2 (suda) (k) (suda) (g) 2 Ni 2e Ni E 0,25 V 2H 2e H E 0,00 V",
+      "options": {
+        "A": "Ni çubuğun daldırıldığı hücre anottur.",
+        "B": "Katotta 2 H gazı çıkışı olur.",
+        "C": "Tepkime süresince elektron akışı Pt çubuktan Ni çubuğa doğrudur.",
+        "D": "Pildeki net tepkime denklemi + + + → + 2 (k) (suda) (suda) (g) 2 Ni 2H Ni H dır.",
+        "E": "Pil gerilimi ( )D pil E 0,25 volttur. Ni Pt Tuz köprüsü 1,0 M HCl V 1,0 M Ni(NO )3 2 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 8"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q18",
+      "number": 18,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Aşağıdaki moleküllerden hangisindeki bağ türü ve sayısı yanlış verilmiştir? Molekül Bağ türü ve sayısı",
+      "options": {
+        "A": "2 CO 2 sigma, 2 pi",
+        "B": "2 O 2 pi",
+        "C": "3 NH 3 sigma",
+        "D": "2 H O 2 sigma",
+        "E": "4 CH 4 sigma"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q20",
+      "number": 20,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "− = − − − 3 2 3 3 CH CH CH CH CH CH I CH Yukarıda verilen bileşiğin IUPAC sistemine göre adı aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "3–metil–4–hekzen",
+        "B": "4–metil–3–hekzen",
+        "C": "4–metil–2–hekzen",
+        "D": "2–etil–4–penten",
+        "E": "4–etil–3–penten 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 9"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q22",
+      "number": 22,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Doymamış yapıdaki ( ) 4 8 X C H ve ( ) 5 8 Y C H organik bileşikleriyle ilgili aşağıdaki bilgiler verilmiştir. • Uygun koşullarda X’in bir molüne bir mol su katıldığında alkol oluşmaktadır. • Uygun koşullarda Y’nin bir molüne bir mol su katıldığında keton oluşmaktadır. Buna göre, X ve Y aşağıdakilerden hangisidir? X Y",
+      "options": {
+        "A": "Alkan Alken",
+        "B": "Alken Alkin",
+        "C": "Alkan Alkin",
+        "D": "Alken Alkan",
+        "E": "Alkin Alkan"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q24",
+      "number": 24,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bütanoik asit ve metil propanoat bileşikleri için aşağıdakilerden hangisi yanlıştır?",
+      "options": {
+        "A": "Kapalı formülleri aynıdır.",
+        "B": "Birbirinin yapı izomeridir.",
+        "C": "Her ikisi de karbonil grubu içerir.",
+        "D": "Her ikisi de indirgenerek alkol oluşturur.",
+        "E": "Her iki bileşiğin de kaynama noktaları aynıdır."
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q26",
+      "number": 26,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Yukarıda verilen I., II. ve III. bileşiklerle ilgili aşağı- daki ifadelerden hangisi yanlıştır? A) I. bileşik sikloalkandır. B) I. ve II. bileşikler alifatik hidrokarbondur. C) III. bileşik aromatiktir. D) III. bileşikteki toplam hidrojen sayısı II.dekinden fazladır. E) II. bileşiğin cis ve trans izomerleri vardır. 27. Karboksilik asitlerle ilgili aşağıdaki açıklamalar- dan hangisi yanlıştır? A) Moleküller arası hidrojen bağı yaparlar.",
+      "options": {
+        "A": "CH",
+        "B": "CH",
+        "C": "CH CH CH",
+        "D": "CH"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q27",
+      "number": 27,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Karboksilik asitlerle ilgili aşağıdaki açıklamalar- dan hangisi yanlıştır?",
+      "options": {
+        "A": "Moleküller arası hidrojen bağı yaparlar.",
+        "B": "Sulu ortamda sodyum bikarbonatla ( ) 3 NaHCO tepkime vermezler.",
+        "C": "Alkollerle tepkimesi sonucu ester oluşur.",
+        "D": "4 LiAlH ile indirgenmeleri sonucu alkol oluşur.",
+        "E": "Fonksiyonel grubu -COOH’dir."
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q28",
+      "number": 28,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "İzopropil bromür bileşiğine sırasıyla aşağıdaki iş- lemler uygulanmıştır: • I. işlem: Uygun koşullarda magnezyum ile tepkimesi sonucunda Grignard bileşiği elde edilmiştir. • II. işlem: Oluşan Grignard bileşiği üzerine hidrojen bromür çözeltisi eklenmiştir. Buna göre I. işlem sonucunda oluşan Grignard bi- leşiği ve II. işlem sonucunda oluşan organik bile- şik aşağıdakilerin hangisinde doğru olarak veril- miştir? I. III. O II. CH CH CH CHCH CH 2 3 3 2 I. işlem II. işlem",
+      "options": {
+        "A": "CH CHCH3 3 MgBr CH CH CH3 3 2",
+        "B": "CH CH CH MgBr 2 3 CH CH CH Br 2 3 2 2 Br",
+        "D": "CH CH CH MgBr 2 3 2 CH 2 CH 2 CH 2",
+        "C": "CH CHCH3 3 MgBr CH CHCH3 3",
+        "E": "CH CHCH3 3 MgBr CH CCH3 3 Br Br 2010 – LYS2 / KİM Diğer sayfaya geçiniz. 12"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q29",
+      "number": 29,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Kapalı formülleri 4 10 C H O olan X, Y ve Z bileşikleriyle ilgili şu bilgiler verilmiştir: • X iki kez, Y bir kez yükseltgenebilmekte, Z ise yükseltgenememektedir. • Her birinin birer mollerinden birer mol su çık- ması sonucunda oluşan bileşiklerin kapalı formülleri 4 8 C H dir. Buna göre X, Y ve Z bileşikleriyle ilgili aşağıdaki- lerden hangisi yanlıştır?",
+      "options": {
+        "A": "X, 3 2 2 2 CH CH CH CH OH olabilir.",
+        "B": "Y, 3 2 3 CH CH CH(OH)CH olabilir.",
+        "C": "Z, 3 3 (CH ) COH olabilir.",
+        "D": "X, 3 2 2 (CH ) CHCH OH olabilir.",
+        "E": "Z, 3 2 2 3 CH CH CH OCH olabilir."
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k-q30",
+      "number": 30,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Yukarıdaki bileşikle ilgili aşağıdaki ifadelerden hangisi yanlıştır? A) Karbonhidrat bileşiğidir. B) 4 tane asimetrik karbonu vardır. C) Basit formülü CHO’dur. D) Tollens ayıracıyla tepkimesi sonucu gümüş ay- nası oluşur. E) Düzlem polarize ışığın yönünü değiştirir. HO C H C H O H C OH H C OH H C OH CH OH 2 SINAVDA UYULACAK KURALLAR 1. Adayların cep telefonu, çağrı cihazı, telsiz, fotoğraf makinesi, cep bilgisayarı, saat fonksiyonu dışında fonksiyonu olan saat, hesap makinesi, sözlük, kitap, defter, müsvedde kâğıdı, pergel, açıölçer, cetvel ve benzeri her türlü araç gereçle, silah ve benzeri teçhizatla sınava girmesi kesinlikle yasaktır. Bu araçlarla sınava girmiş adaylar mutlaka Salon Sınav Tutanağına yazılacak, bu adayların sınavı geçersiz sayılacaktır. 2. Bu test için verilen toplam cevaplama süresi 45 dakikadır. Sınav başladıktan sonra ilk testin cevaplama süresi bitmeden ve son testin son 15 dakikası içinde adayın sınavdan çıkmasına kesinlikle izin verilmeyecektir. İki test arasında birinci testin soru kitapçığının toplanması, ikinci ve üçüncü testin soru kitapçığının dağıtılması işlemleri dışında ara verilmez. Bu toplama ve dağıtma işlemi sırasında adayların salondan dışarı çıkmaları kesinlikle yasaktır. 3. Sınav evrakını teslim ederek salonu terk eden aday, her ne sebeple olursa olsun tekrar sınava alınmayacaktır. 4. Bu süreler dışında cevaplamayı süre bitmeden tamamlarsanız, cevap kâğıdınızı ve soru kitapçığınızı salon görevlilerine teslim ederek salonu terk edebilirsiniz. Sınav süresinin bittiği ilan edildiğinde cevap kâğıtları ve soru kitapçıkları salon görevlileri tarafından toplanıncaya kadar yerlerinizde kalınız. 5. Sınav süresince görevlilerle konuşmak ve görevlilere soru sormak yasaktır. Aynı şekilde görevlilerin de adaylarla yakından ve alçak sesle konuşmaları, ayrıca adayların birbirinden kalem, silgi vb. şeyleri istemeleri kesinlikle yasaktır. 6. Sınav sırasında kopya çeken, çekmeye kalkışan, kopya veren, kopya çekilmesine yardım edenlerin kimlik bilgileri, Salon Sınav Tutanağına yazılacak ve bu adayların sınavları geçersiz sayılacaktır. Görevliler kopya çekmeye ya da vermeye kalkışanları uyarmak zorunda değildir, sorumluluk size aittir. Adayların test sorularına verdikleri cevapların dağılımları bilgi işlem yöntemleriyle incelenecek, bu incelemelerden elde edilen bulgular bireysel ya da toplu olarak herhangi bir şekilde kopya çekildiğini gösterirse kopya eylemine katılan aday/adayların cevaplarının bir kısmı ya da tamamı iptal edilecektir. Cevap kâğıdınızı başkaları tarafından görülmeyecek şekilde tutmanız gerekmektedir. 7. Adaylar, görevlilerin her türlü uyarılarına uymak zorundadır. Sınavınızın geçerli sayılması, her şeyden önce sınav kurallarına uymanıza bağlıdır. 8. Cevap kâğıdına yazılacak her türlü yazıda ve yapılacak bütün işaretlemelerde kurşun kalem kullanılacaktır. Tüken- mez kalem veya dolma kalem kesinlikle kullanılmayacaktır. Cevapların cevap kâğıdına işaretlenmiş olması gerekir. Soru kitapçığına işaretlenen cevaplar geçerli değildir. 9. Soru kitapçığının sayfalarının eksik olup olmadığını, kitapçıkta basım hatalarının bulunup bulunmadığını ve soru kitapçığının her sayfasında basılı bulunan soru kitapçığı türünün, kitapçığın ön kapağında basılı soru kitapçığı türüyle aynı olup olmadığını kontrol ediniz. Soru kitapçığınızın sayfası eksik ya da basımı hatalıysa değiştirilmesi için Salon Başkanına başvurunuz. Cevap kâğıdınızda, size verilen soru kitapçığının türünü “Soru Kitapçığı Türü” alanındaki ilgili yuvarlağı doldurarak belirtiniz. Cevap kâğıdınızda işaretlediğiniz Soru Kitapçığı Türü salon görevlileri tarafından sınav öncesi kontrol edilerek paraflanacaktır. Sizin işaretlediğiniz ile salon görevlilerinin parafladıkları kitapçık türü arasında fark olması hâlinde salon görevlilerinin parafladıkları kitapçık türü dikkate alınacaktır. LYS-2’de alacağınız bütün testlerin soru kitapçığı türü aynı olmalı, birbirinden farklı olmamalıdır. Bu duruma özellikle dikkat ediniz. LYS-2’de size verilen soru kitapçıklarının türleri birbirinin aynı değilse görevlileri hemen uyararak size aynı türden soru kitapçığı vermelerini sağlayınız. 10. Sınav sonunda soru kitapçıkları toplanacak ve ÖSYM’de tek tek incelenecektir. Soru kitapçığının bir sayfası bile eksik çıkarsa sınavınız geçersiz sayılacaktır. 11. Soru kitapçığının sayfalarındaki boş yerleri müsvedde için kullanabilirsiniz. 12. Soruları ve/veya bu sorulara verdiğiniz cevapları ayrı bir kâğıda yazıp bu kâğıdı dışarı çıkarmanız kesinlikle yasaktır. 13. Sınav salonundan ayrılmadan önce soru kitapçığınızı, cevap kâğıdınızı ve 2010 LYS-2 Sınava Giriş ve Kimlik Belgenizi salon görevlilerine teslim etmeyi unutmayınız. 14. Testin cevaplama süresinin bitmesine 15 ve 5 dakika kaldığı salon görevlileri tarafından yüksek sesle hatırlatıla- caktır. 15. Bu testin cevaplarını cevap kâğıdında ilgili alana işaretlemeye dikkat ediniz. LİSANS YERLEŞTİRME SINAVI - 2 (LYS-2) 27 HAZİRAN 2010 KİMYA TESTİ 1. A 2. A 3. B 4. E 5. A 6. E 7. C 8. B 9. D 10. E 11. A 12. C 13. B 14. E 15. D 16. D 17. C 18. B 19. C 20. C 21. D 22. B 23. A 24. E 25. E 26. D 27. B 28. A 29. E 30. C",
+      "options": {
+        "A": "B)",
+        "B": "Sulu ortamda sodyum bikarbonatla (",
+        "C": ")",
+        "D": "3",
+        "E": "NaHCO"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    }
+  ]
+}

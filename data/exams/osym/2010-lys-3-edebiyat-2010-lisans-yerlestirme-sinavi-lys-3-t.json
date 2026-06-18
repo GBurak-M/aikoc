@@ -1,0 +1,794 @@
+{
+  "exam": "LYS-3",
+  "year": 2010,
+  "subject": "Edebiyat",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Türk Dili ve Edebiyatı Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/284,2010lys3turpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 34,
+  "answerKeyCount": 56,
+  "parsedAt": "2026-06-11T13:45:04.145Z",
+  "questions": [
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q1",
+      "number": 1,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Hayatta iki tür insan vardır: Birinci gruptakiler, hayata eldivenle dokunanlar; ikinci gruptakiler, hayata eldi- vensiz dokunanlar. Hayata eldivenle dokunanların hiç yıpranmamak gibi bir ayrıcalıkları vardır. Eldivensiz dokunmaya görün acır, yanar canınız. Ama her şeyi daha derinliğine duyumsar, daha yoğun yaşarsınız. Sanatçının bunlardan birini seçme lüksü yoktur. O, hayata eldivensiz dokunanlardandır. Bu parçada geçen “sanatçının hayata eldivensiz do- kunması” sözüyle anlatılmak istenen aşağıdakiler- den hangisidir?",
+      "options": {
+        "A": "Ümitlendirici ortamlar yaratma",
+        "B": "Yaşamdaki güçlükleri doğrudan anlatma",
+        "C": "Yaşanılanları bir değerlendirmeden geçirme",
+        "D": "Olayları düş gücüyle yeniden yaratma",
+        "E": "Yaşama yeni anlamlar yükleme"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q2",
+      "number": 2,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Özellikleri yönünden hiçbir akım içinde yer almayan şairler var. Bunlar, kendi kuşağından olanların yaz- dıklarına da benzemeyen bir şiir yazıyorlar. Bir kuşak ya da gruba katılmadıkları için şiirlerinin bulutsu bir görünüşü var. Bunları yazanlar, kendilerine özgü bu şiirlerle şiirin bir mozaik olduğunu önümüzdeki birkaç yıl içinde gösterecekler. Bu parçadaki altı çizili sözlerle anlatılmak istenen aşağıdakilerin hangisinde sırasıyla verilmiştir?",
+      "options": {
+        "A": "Özellikleri ve sınırları belirgin olmayan – çeşitlilik içeren",
+        "B": "Düş gücüne ağırlık veren – teknik açıdan kusur- suz",
+        "C": "Duyguları devindiren – sanat değeri taşıyan",
+        "D": "Belirli konular üzerinde yoğunlaşan – birçok öge- si olan",
+        "E": "Kendinden öncekileri yadsıyan – okur duyarlığı- na seslenen"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q3",
+      "number": 3,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki dizelerin hangisinde eylem, nedeniyle birlikte verilmiştir?",
+      "options": {
+        "A": "İnsan balıklama dalmalı içine hayatın Bir kayadan zümrüt bir denize atlarcasına",
+        "B": "Uzandın mı bir kez sımsıcak kumlara Dinleneceksin bir kum tanesi, bir yaprak gibi",
+        "C": "Kederi de yaşamalısın bütün benliğinle Acılar da sevinçler de olgunlaştırır insanı",
+        "D": "Yaşadın mı yoğunluğuna yaşayacaksın bir şeyi Koklamaktan bitkin düşmüşçesine bir çiçeği",
+        "E": "İnsan bütün güzel müzikleri dinlemeli alabildiğine Tüm benliği seslerle, ezgilerle dolarcasına"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q7",
+      "number": 7,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "(I) Yaşlılığın erdemleri üzerine bugüne değin neler söylenmemiş neler yazılmamış… (II) Cicero, Yaşlılık adlı yapıtında nasıl da över, yüceltir yaşlılığı; insanın bilgeleştiği, yaratma gücünün doruğa ulaştığı bir dö- nem diye adlandırır. (III) Yaşamın gerçek anlamına ancak bu dönemde ulaşırmış kişi. (IV) Çünkü yaş- lılık, deneyime dayalı, kavrama ve algılama gücünü keskinleştirip geliştiren bir okulmuş. (V) Bundan da öte, insanı değişik yönlerden durultup dinginleştiren, tutkuların her türünden arındıran sessiz bir güçmüş yaşlılık. Bu parçadaki numaralanmış cümlelerle ilgili ola- rak aşağıda verilenlerden hangisi yanlıştır?",
+      "options": {
+        "A": "I. cümle, biçimce olumsuz fiil cümlesidir.",
+        "B": "II. cümle, bağımlı sıralı cümledir.",
+        "C": "III. cümle, bileşik cümledir.",
+        "D": "IV. cümle, olumlu, kurallı cümledir.",
+        "E": "V. cümle, devrik isim cümlesidir."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q8",
+      "number": 8,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Okuma alışkanlığının gelişmemiş olması, bireylerin, yaşamı yeterince kucaklayamaması, olup bitenleri anlayamaması ve takvim yaşlarını dünyada birkaç yüzyıl yaşamışçasına engin bir zenginlikle donatama- ması sonucunu doğurur. Bu cümlede aşağıda verilenlerden hangisi yok- tur?",
+      "options": {
+        "A": "Yer yön belirteci",
+        "B": "Kalma durumu eki almış sözcük",
+        "C": "Adlaşmış sıfat",
+        "D": "Yeterlik fiilinin olumsuzuyla çekimlenmiş söz- cükler",
+        "E": "Belgisiz sıfat 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 3"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q14",
+      "number": 14,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Yaşadığımız günleri duyurur bize edebiyat dergileri. Yaşamı kalıcı yanlarıyla verir. Hele en taze şiirler, di- zeler! Ataç, “Ölürken bana en genç şairin en son şii- rinden dizeler okusunlar.” demiş. Ben de her sabah uyanır uyanmaz, her gece yatmadan önce, en yeni dizeleri okurum. Taze dizelerle yaşamak kadar kişiyi gençleştiren, yaşama bağlayan bir şey olamaz. Ne demiş Baudelaire: “Sağlıklı bir kişi yirmi dört saat ek- meksiz yaşar ama şiirsiz asla.” Şiir okumanın tadını alırsanız siz de hak verirsiniz bu söze. Bu parçanın anlatımıyla ilgili olarak aşağıdakiler- den hangisi söylenemez?",
+      "options": {
+        "A": "Tanıklıklardan yararlanılmıştır.",
+        "B": "Olasılık dile getirilmiştir.",
+        "C": "Koşul belirtilmiştir.",
+        "D": "Öznellik ağır basmaktadır.",
+        "E": "Nitelendirmelerden yararlanılmıştır."
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q16",
+      "number": 16,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Yazarın kendisi değil, seçtiği anlatıcılar kurmaca dün- yada yaşar. Anlatıcıların her biri de diğer kahraman- lar gibi, yazarın yarattığı kurmaca dünyanın dışına çı- kamazlar. Ne var ki ----. Bu yüzden kurguladığı bir ro- manda kahramanları ile özdeşleştirilen veya kurgu olan bir olayın gerçekmiş gibi kabul edilmesinden ya- kınan birçok yazar vardır. Umberto Eco’nun bir okuru- nun, yazarın anlattığı sokakta çıkan yangını göreme- yişine kızması, Genç Werther’in Acıları’nda anlatılan- ların yaşanmış gibi algılanmasının intihar oranını ar- tırması, okurların edebiyattan nasıl etkilendiklerinin bir göstergesidir. Bu tür olaylar, “Edebiyat nedir ve yaşamı nasıl etkilemektedir?” sorusuna verilecek bir- çok yanıt olduğunun kanıtıdır. Bu parçada boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+      "options": {
+        "A": "çoğu okurun dünyasında, gerçek ve kurmaca kavramları, ayrılmayacak kadar birbirine girmiştir",
+        "B": "edebiyatın, insandan çıkıp yine insana dönen bir yaratıcı yazı etkinliği olduğu unutulmamalıdır",
+        "C": "anlatıcı, kişisel olmayan, evrensel değerleri gös- termeye çalışmalıdır",
+        "D": "yazarların yapıtları, yaşamlarından bağımsız dü- şünülmelidir",
+        "E": "ünlü yazarların, hep dikkate değer konuları ele alacağı yönünde yaygın bir kanı vardır 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 5"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q17",
+      "number": 17,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Dilin kültürle, düşünce dünyasıyla iç içe olduğu hiçbir zaman göz ardı edilmemeli. Bu yüzden daha dil öğ- renme aşamasında çocuklarımıza Türkçenin tadını duyurmak zorundayız. Bu da ancak değerli yapıtlar okunarak olacaktır. Bugün yazık ki çocuklar Türkçeyi, televizyonda seyrettikleri, anlatımı bozuk ve yabancı kültürlere ait çizgi filmlerden öğreniyorlar. Masalları- mızın, bilmecelerimizin, tekerlemelerimizin, türküleri- mizin dili ve o dili besleyen kaynak, giderek yok ol- makta. Biz dilimizi korumayı sadece, “Şu sözcüğü kullandın, bunu kullanmadın.” biçiminde algılarsak bir gün geri dönüp baktığımızda ağzımızdan çıkan söz- cüklerin, Türkçe göründüğü hâlde Türkçenin sıcaklı- ğını taşımadığını büyük bir sarsıntıyla anlayacağız. Bunun sonucunda sanki bir yabancının Türkçe ko- nuşması gibi garip bir Türkçe ortaya çıkacaktır. Bu parçada dilimizle ilgili olarak aşağıdakilerden hangisine değinilmemiştir?",
+      "options": {
+        "A": "Etkileşim içinde olduğu ögelere",
+        "B": "Korumanın önemine",
+        "C": "Öz değerlerini yitirmesine yol açacak etkenlere",
+        "D": "Söz varlığının zenginliğine",
+        "E": "Duyarlığımızın nasıl oluşturulabileceğine"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q18",
+      "number": 18,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Masallar, dokusundaki kendine özgü şifrelerle, hâlâ sırrına erişilmemiş bilgelikleri, insanlığın ve hayatın gizemlerini barındırır. Atalarımızdan kalan birçok de- ğerin erken yaşlarda, bilinçaltımıza yerleşmesini sağ- lar. Böylesine önemli olan masalların yaşatılması, üzerinde önemle durulması gereken bir konudur. Biz de bununla ilgili olarak kayıp masallar konusunda bir çalışma başlatmaya karar verdik. Konuyla ilgili ön araştırma yapmak için gittiğimiz yörük köyündeki bir eve misafir olduk. Evin on yaşındaki oğluna, “Biz ya- kında tekrar geleceğiz. O zamana kadar ninelerinden masal öğrenir misin?” dedim. Çocuğun cevabı şöy- leydi: “Tamam, ben İnternetten indiririm hemen.” Ço- cuk, ninesi yerine İnterneti tercih etmişti. Karşılaş- tığımız bu üzücü durum, tıpkı masallardaki gibi pek çok şeyi anlatıyordu. Bu parçada söylenenlerden aşağıdakilerin hangi- si çıkarılamaz?",
+      "options": {
+        "A": "Yaşamımıza bilgisayarların giderek egemen ol- duğu",
+        "B": "Halkın ortak yaratılarının ancak belirli yerlerde korunabildiği",
+        "C": "Büyüklerden masal dinleme geleneğinin zayıfla- dığı",
+        "D": "Çocukların duygu ve düşünce dünyasını biçim- lendirmede büyüklerin etkisinin azaldığı",
+        "E": "Masallarla birlikte kimi kültürel değerlerin yok ol- maya başladığı"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q19",
+      "number": 19,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Yazarlar herkesten daha iyi gözlemcidir. Birisinin cad- dede karşıdan karşıya geçişi, birbirini tanımayan in- sanların göz göze gelişi sırasında yaşanan anlık geri- lim, bir dudak bükme, köpeğin kediyi kovalayışı… Bunların tümü gerçek hâllerinin imgeye dönüştürül- müş biçimiyle yazarların kurmaca metinler için kullan- dıkları görüntülerdir. Ayrıca aralarına yazınsal bir tut- kal gibi düşsellik de girer hatta olmazsa olmazlardan- dır. Çünkü düşleri boğulmuş, belirli söylem kalıpları- nın içine sıkışmış, sözcük dağarcığı gibi düş dünyası da sürekli zenginleşmeyen bir yazarın yaratıcılığı is- ter istemez donup kalacaktır. Böyle bir yazar herkesin bildiği, sıradan değerlerle yetinecektir. Bu parçada, bir yazarda bulunması gereken nite- likler arasında aşağıdakilerden hangisine yer ve- rilmemiştir?",
+      "options": {
+        "A": "Zengin bir çağrışım dünyasına",
+        "B": "Yorumlama gücünün gelişmişliğine",
+        "C": "Yaşanılan gerçeklere sıkı sıkı bağlı kalmaya",
+        "D": "Alışılmış anlatım biçimlerinin dışına çıkmaya",
+        "E": "Sürekli yenilik arayışı içinde olmaya 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 6"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q20",
+      "number": 20,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Hepimiz dünyaya geldiğimizde bir toplumun, ailenin, kimliğin içinde buluruz kendimizi. Edebiyat işte bu ka- lıpları kırma arayışından doğar. Hayal ve gerçek, ya- şam ve ölüm, ben ve öteki arasındaki bütün duvarları bir bir yıkar. Böylece kendine özgü bir biçimde, haya- tın ve insanın özüne eğilebilmeyi, ona sevgiyle baka- bilmeyi olanaklı kılar. Çünkü roman, öykü, şiir gibi edebiyat ürünleri bir başkasının acısını iliklerinde his- sedebilme, kendini bir başka insanın yerine koyabil- me yeteneği kazandırır. Çok farklı kesimlerden insan- lara seslenir, onların kapılarını çalar; buyur edilir. İn- sanlar ve toplumlar arasında köprüler kurar. Bu parçada edebiyatın işlevleri arasında aşağıda- kilerden hangisine yer verilmemiştir?",
+      "options": {
+        "A": "Toplumsal sorunlara çözümler getirme",
+        "B": "Yerleşik değerleri sorgulama gücüyle donatma",
+        "C": "İnsanların birbirini anlamasını kolaylaştırma",
+        "D": "Kültürleri birbirine yakınlaştırma",
+        "E": "Yaşamı, özgün bir yaklaşımla algılamayı sağ- lama"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q21",
+      "number": 21,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki dizelerin hangisinde ayraç içinde veri- len sanat yoktur?",
+      "options": {
+        "A": "Bizden evvel buraya inen üç dört arkadaş Kurmuştular tutuşan ocağa karşı bağdaş (Mürsel mecaz)",
+        "B": "Karlar etrafı beyaz bir karanlığa gömdü Kar değil, gökyüzünden yağan beyaz ölümdü (Tezat)",
+        "C": "Sardı katil gece dünyayı siyah bir kefene Bir emel yıldızı göz kırpıyor ancak aradan (Teşhis)",
+        "D": "Öyle bir boşandın ki çöle benzer ömrüme Bir Nuh tufanı oldu, sel değil, sağanak değil (Telmih)",
+        "E": "Çiziyorum havaya dünyamı bir çiçekle Ve hayran bakıyorum bu rüya gibi şekle (İstifham)"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q23",
+      "number": 23,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Paylaşırsa dost paylaşırmış İnsanın derdini, sevincini Dost ümidiyle ortalığa düşmeye gör Hangi kapıyı çalsam kimseler yok Hangi omza dokunsam yabancı çıkar Aşağıdakilerden hangisi içerdiği duygu yönünden yukarıdaki şiire anlamca en yakındır?",
+      "options": {
+        "A": "Ne yanar kimse bana âteş-i dilden özge Ne açar kimse kapım bâd-ı sabâdan gayrı",
+        "B": "Hep seninçündür benim dünyâ cefâsın çektiğim Yoksa ömrüm varı sensiz neyleyim dünyâyı ben",
+        "C": "Gülmek ol gonceye münâsibdir Ağlamak bu dil-i hazîne gerek",
+        "D": "Bülbüller öter güller açar şâd gönül yok Hiç böyleliğin görmemişiz fasl-ı bahârın",
+        "E": "Bâğ-ı dehrin hem hazânın hem bahârın görmüşüz Biz neşâtın da gamın da rûzgârın görmüşüz 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 7"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q24",
+      "number": 24,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Olmuyor neyleyim Olmuyor velinimetim efendim Olmuyor yirminci asırda Tarz-ı kadîm üzre gazeller söylemek Bu dizelerle ilgili olarak aşağıdakilerden hangisi söylenemez?",
+      "options": {
+        "A": "Eski edebî anlayışa karşı çıkan bir anlayış dile getirilmiştir.",
+        "B": "Yabancı kökenli sözcükler kullanılmıştır.",
+        "C": "Yinelemeye başvurulmuştur.",
+        "D": "Farklı duygular uyandırma amacı güdülmüştür.",
+        "E": "Devrik cümlelerin etkileyiciliğinden yararlanıl- mıştır."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q26",
+      "number": 26,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "I. Yüceltilmiş sözlerle yazılan, kahramanın iyi bir durumdan kötü bir duruma düşmesiyle duygusal arınmayı sağlayacak acıma ve korku duyguları- na yönelen oyun türü. II. İnsanların ve olayların ilginç yanlarını, güldür- mek ve düşündürmek amacıyla sahneye yansı- tan tiyatro türü. III. Ortaoyununda olduğu gibi, önceden yazılmış bir metne dayanmadan, sahnede akla gelen sözler- le oynanan halk tiyatrosu türü. IV. Romalılar tarafından ortaya atılan, Türk edebi- yatına Tanzimat Döneminde giren, yalnız işaret- lerle oynanan sözsüz tiyatro oyunu. Aşağıdaki terimlerden hangisinin tanımı yukarıda verilmemiştir? A) Monolog B) Pandomim C) Tuluat D) Komedi E) Tragedya",
+      "options": {
+        "A": "A) I.",
+        "B": "B) II.",
+        "C": "C) III.",
+        "D": "D) IV.",
+        "E": "E) V."
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q31",
+      "number": 31,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerin hangisi Karagöz oyununun özel- liklerinden biri değildir?",
+      "options": {
+        "A": "Ciddi ve ağırbaşlı bir hava taşıma",
+        "B": "Müzikten yararlanma",
+        "C": "Usta-çırak geleneği içinde sürdürülme",
+        "D": "Tiplerin aynı kişi tarafından seslendirilmesi",
+        "E": "Değişik ağız ve ses taklitlerine dayanma"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q34",
+      "number": 34,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki dizelerin hangisinde özellikle Tanzimat Dönemine özgü bir kavram yoktur?",
+      "options": {
+        "A": "Memleket bitti yine bitmedi hâlâ sen ü ben Bize bu hâl ile bizden büyük olmaz düşmen",
+        "B": "Olmuş insâna taasub bir onulmaz illet Hüsn-i tedbîrin ile kurtulur andan millet",
+        "C": "Felek her türlü esbâb-ı cefâsın toplasın gelsin Dönersem kahpeyim millet yolunda bir azîmetten",
+        "D": "Kanı ol gül gülerek geldiği demler şimdi Ağlarım hâtıra geldikçe gülüştüklerimiz",
+        "E": "Ne efsûnkâr imişsin âh ey dîdâr-ı hürriyyet Esîr-i aşkın olduk, gerçi kurtulduk esâretten"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q36",
+      "number": 36,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Servet-i Fünûn Edebiyatını oluşturan şairler arasında ----, ----; öykücü ve romancılar arasında ----, ---- adla- rını sayabiliriz. Bu cümlede boş bırakılan yerlere aşağıdakilerden hangisi sırasıyla getirilmelidir?",
+      "options": {
+        "A": "Ziya Paşa’nın – Namık Kemal’in – Recaizade Mahmut Ekrem’in – Ahmet Mithat Efendi’nin",
+        "B": "Tevfik Fikret’in – Cenap Şahabettin’in – Halit Zi- ya Uşaklıgil’in – Mehmet Rauf’un",
+        "C": "Abdülhak Hamit Tarhan’ın – Muallim Naci’nin – Şemsettin Sâmi’nin – Nabizade Nâzım’ın",
+        "D": "Mehmet Emin Yurdakul’un – Mehmet Âkif Ersoy’ un – Hüseyin Rahmi Gürpınar’ın – Ahmet Râ- sim’in",
+        "E": "Ahmet Hâşim’in – Yahya Kemal Beyatlı’nın – Halide Edip Adıvar’ın – Yakup Kadri Karaosma- noğlu’nun"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q38",
+      "number": 38,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Tevfik Fikret’in şiirlerinin özellikleriyle ilgili olarak aşağıda verilen bilgilerden hangisi yanlıştır?",
+      "options": {
+        "A": "Aruzun kalıplarını müzikaliteleri bakımından ilk kez değerlendiren odur.",
+        "B": "Kimilerinde konuşma dilinin anlatım özelliklerini kullanmıştır.",
+        "C": "Özellikle Türkçe sözcüklere yer vermiştir.",
+        "D": "Divan nazmının müstezat şeklini değiştirerek ye- ni bir nazım şekli oluşturmuştur.",
+        "E": "Uyak düzenine büyük bir serbestlik getirmiştir."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q39",
+      "number": 39,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "----, Tasvir-i Efkâr’da yayımlanan “Lisan-ı Osmanînin Edebiyatı Hakkında Bazı Mülahazâtı Şâmildir” adlı makalesinin ---- Dönemindeki dil anlayışını belirleye- cek düzeyde bir içeriği vardır. Bu cümlede boş bırakılan yerlere aşağıdakilerden hangileri sırasıyla getirilmelidir?",
+      "options": {
+        "A": "Namık Kemal’in – Millî Edebiyat",
+        "B": "Şinasi’nin – Tanzimat",
+        "C": "Recaizade Mahmut Ekrem’in – Servet-i Fünûn",
+        "D": "Tevfik Fikret’in – Fecr-i Âtî",
+        "E": "Yahya Kemal Beyatlı’nın – Cumhuriyet"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q41",
+      "number": 41,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Şairler Topluluklar Akımlar ---- Servet-i Fünûn Batıcılık Ziya Gökalp ---- Türkçülük Namık Kemal Encümen-i Şuarâ ---- Yukarıda şairlerin, içinde yer aldıkları topluluklar ve savundukları düşünce akımları verilmiştir. Tab- lodaki boş bırakılan yerlere sırasıyla aşağıdakiler- den hangisi getirilmelidir?",
+      "options": {
+        "A": "Ahmet Hamdi Tanpınar – Beş Hececiler – Türk- çülük",
+        "B": "Mehmet Âkif Ersoy – Genç Kalemler – Batıcılık",
+        "C": "Tevfik Fikret – Genç Kalemler – Osmanlıcılık",
+        "D": "Yahya Kemal Beyatlı – Yedi Meşaleciler – Os- manlıcılık",
+        "E": "Tevfik Fikret – Beş Hececiler – Batıcılık"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q42",
+      "number": 42,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Memleketi ve memleket gerçeklerini yansıtmayı amaçlayan Millî Edebiyat Dönemi roman ve öyküsü- nün anlatımı, büyük ölçüde gözlemci gerçekçiliğe da- yanır. Bu dönemin ünlü yazarlarından biri olan ---- gerçekçilik akımına bağlı kalmıştır. Bu parçada boş bırakılan yere aşağıda verilenler- den hangisi getirilemez?",
+      "options": {
+        "A": "Reşat Nuri Güntekin",
+        "B": "Refik Halit Karay",
+        "C": "Yakup Kadri Karaosmanoğlu",
+        "D": "Memduh Şevket Esendal",
+        "E": "Abdülhak Şinasi Hisar 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 11"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q43",
+      "number": 43,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "----, bir şiiri dışında hece ölçüsünü kullanmamıştır. Birer gereç gözüyle baktığı “aruz”la “uyak”ı, yazdığı her şiirde özenle kullanmıştır. Ayrıca aruz kusuru yapmamak için çaba harcamıştır. Onun için ileri sürü- len, “---- gibi aruzu Türkçe sözcüklere uygulamak için şiiri düz yazıya indirgemeyen bir şairdir.” görüşü tüm eleştirmenlerce onaylanmıştır. Bu parçada boş bırakılan yerlere aşağıdakilerden hangisi getirilmelidir?",
+      "options": {
+        "A": "Yahya Kemal Beyatlı – Mehmet Âkif Ersoy",
+        "B": "Halit Fahri Ozansoy – Orhan Seyfi Orhon",
+        "C": "Ziya Gökalp – Mehmet Emin Yurdakul",
+        "D": "Ahmet Hamdi Tanpınar – Cahit Sıtkı Tarancı",
+        "E": "Faruk Nafiz Çamlıbel – Arif Nihat Asya"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q44",
+      "number": 44,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Özellikle, yarattığı karakterlerle ünlenen, daha çok kadınlar arasından seçtiği kişileri bütün psikolojik incelikleriyle ustaca canlandıran yazarımız ----. Bu cümlede boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+      "options": {
+        "A": "Yakup Kadri Karaosmanoğlu’dur",
+        "B": "Halide Edip Adıvar’dır",
+        "C": "Refik Halit Karay’dır",
+        "D": "Ömer Seyfettin’dir",
+        "E": "Reşat Nuri Güntekin’dir"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q46",
+      "number": 46,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Peyami Safa, Tanzimat’tan itibaren Türk romanının değişmez ana konularından biri olan yanlış Batı- lılaşmanın toplumsal yapıda yol açtığı yıkımları he- men hemen bütün yapıtlarında işler. Bunlardan biri olan ---- adlı yapıtında, farklı kültürleri, dünya görüş- lerini ve yaşama biçimlerini anlatır. Özellikle Doğu ve Batı çatışmasını yansıtmayı amaçlayan romanın ileti- si, roman kahramanlarından Neriman’ın yaşadığı bu- nalımlar ve iç çatışmalar yoluyla biçimlendirilir. Bu parçada boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+      "options": {
+        "A": "Bir Tereddüdün Romanı",
+        "B": "Dokuzuncu Hariciye Koğuşu",
+        "C": "Mahşer",
+        "D": "Fatih-Harbiye",
+        "E": "Yalnızız"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q47",
+      "number": 47,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Servet-i Fünûn Döneminde yaşadığı hâlde bu toplulu- ğun dışında kalan, yönelim ve yaratılarıyla bu toplu- luktan ayrı özellikler taşıyan sanatçılarımızdan biri de ----. Onun ayna tuttuğu yaşam kesiti, Servet-i Fünûn- culardan ayrıdır. Servet-i Fünûncular varsıl, aydın ke- simin köşk ve konak yaşamının görüntüleriyle oluştur- muşlardır yapıtlarını. Onun anlattığı yaşamsa İstan- bul’un yoksullarının ya da orta sınıfının yaşamıdır. Ki- mi romanlarında eski İstanbul yaşamının betimle- melerine de rastlarız. Örneğin Cehennemlik ve Met- res’te, boğaziçi yalılarındaki; İffet, Şıpsevdi ve Tesa- düf’te, Aksaray’daki yaşamı anlatır. Bu parçada boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?",
+      "options": {
+        "A": "Hüseyin Rahmi Gürpınar’dır",
+        "B": "Ahmet Râsim’dir",
+        "C": "Reşat Nuri Güntekin’dir",
+        "D": "Hüseyin Cahit Yalçın’dır",
+        "E": "Halit Ziya Uşaklıgil’dir 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 12"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q48",
+      "number": 48,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "I. Sergüzeşt II. Araba Sevdası III. Felâtun Beyle Râkım Efendi IV. Mâî ve Siyah V. Mürebbiye Yukarıdaki yapıtlardan hangilerinde Batılılaşma- nın yanlış anlaşılmasının yarattığı sonuçlar işlen- miştir? A) I. ve II. B) I. ve IV. C) II. ve III. D) III. ve V. E) IV. ve V. 49. Türk edebiyatının en iyi romanlarından olan ----, 1949’da kitap olarak basılır. ---- İstanbul’a olan derin sevgisini yansıttığı bu romanında, Mümtaz ile Nu- ran’ın aşkı çerçevesinde eski-yeni, Doğu-Batı ve aşk ile toplumsal sorumluluk arasındaki çatışmayı ve bu çatışmaların doğurduğu bireysel bunalımları irdeler. Bu parçada boş bırakılan yerlere aşağıdakilerden hangileri sırasıyla getirilmelidir? A) Baba Evi – Orhan Kemal B) Huzur – Ahmet Hamdi Tanpınar C) Küçük Ağa – Tarık Buğra D) Bir Düğün Gecesi – Adalet Ağaoğlu E) Yorgun Savaşçı – Kemal Tahir 50. Çağdaş Türk şiirinin bütün dönemlerini, bütün akımla- rını kapsayan ortak özelliklerin başında dil gelir. Bu şiirlerin dili yapay bir dil değil, konuşulan Türkçedir. Arada, konuşulan Türkçeden zorlama bir öz Türkçeye ya da divan edebiyatının inceliklerine kapılarak Os- manlıcaya yönelenler olmuştur. Ama bunlar sayılı ör- neklerdi. Genellikle, her gün yeni bir inceliği keşfedi- len konuşma dilimiz işlenmiştir.",
+      "options": {
+        "A": "Yukarıdaki",
+        "B": "numaralanmış",
+        "C": "terimlerden",
+        "D": "hangisi,"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q49",
+      "number": 49,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Türk edebiyatının en iyi romanlarından olan ----, 1949’da kitap olarak basılır. ---- İstanbul’a olan derin sevgisini yansıttığı bu romanında, Mümtaz ile Nu- ran’ın aşkı çerçevesinde eski-yeni, Doğu-Batı ve aşk ile toplumsal sorumluluk arasındaki çatışmayı ve bu çatışmaların doğurduğu bireysel bunalımları irdeler. Bu parçada boş bırakılan yerlere aşağıdakilerden hangileri sırasıyla getirilmelidir?",
+      "options": {
+        "A": "Baba Evi – Orhan Kemal",
+        "B": "Huzur – Ahmet Hamdi Tanpınar",
+        "C": "Küçük Ağa – Tarık Buğra",
+        "D": "Bir Düğün Gecesi – Adalet Ağaoğlu",
+        "E": "Yorgun Savaşçı – Kemal Tahir"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q50",
+      "number": 50,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Çağdaş Türk şiirinin bütün dönemlerini, bütün akımla- rını kapsayan ortak özelliklerin başında dil gelir. Bu şiirlerin dili yapay bir dil değil, konuşulan Türkçedir. Arada, konuşulan Türkçeden zorlama bir öz Türkçeye ya da divan edebiyatının inceliklerine kapılarak Os- manlıcaya yönelenler olmuştur. Ama bunlar sayılı ör- neklerdi. Genellikle, her gün yeni bir inceliği keşfedi- len konuşma dilimiz işlenmiştir. Aşağıdakilerden hangisinin dil tutumu bütün yönleriyle, bu parçada anlatılanlarla uyuşmaz?",
+      "options": {
+        "A": "Faruk Nafiz Çamlıbel",
+        "B": "Fazıl Hüsnü Dağlarca",
+        "C": "Cahit Sıtkı Tarancı",
+        "D": "Mehmet Emin Yurdakul",
+        "E": "Ahmet Hâşim"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q51",
+      "number": 51,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerin hangisinde bir bilgi yanlışı vardır?",
+      "options": {
+        "A": "Epik şiirin ustası olan Fazıl Hüsnü Dağlarca, Kur- tuluş Savaşı ile ilgili destansı, lirik şiirleriyle ta- nınır.",
+        "B": "Metafizik konularla ilgilenen Necip Fazıl Kısakü- rek, uzun yıllar Büyük Doğu adlı dergiyi çıkarmış; tarih, medeniyet, Batılılaşma ve politika konula- rında yazılar yazmıştır.",
+        "C": "Ahmet Muhip Dıranas, öykülerinde şiirsel bir söy- leyişe, insanlar arasındaki sıcak ilişkilere yer vermiştir.",
+        "D": "Arif Nihat Asya, yurt, millet ve bayrak sevgisiyle ilgili şiirler yazmış; şiirleriyle millî duyguları hare- kete geçirmiştir.",
+        "E": "Orhan Veli Kanık, şairane söyleyişlerden, bas- makalıp söz ve benzetmelerden kaçınmış; gün- delik yaşamı, günlük konuşma diliyle, esprili bir biçimde anlatmıştır."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q52",
+      "number": 52,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerin hangisinde bir bilgi yanlışı vardır?",
+      "options": {
+        "A": "Bilge Karasu, Yeni Yalan Zamanlar’da büyük öl- çüde kadın sorunlarını somutlayıcı bir tutumla yansıtmaya çalışmıştır.",
+        "B": "Romanlarında bilinç akışı, iç monolog gibi yeni anlatım teknikleriyle kendine özgü bir yol bulan Adalet Ağaoğlu’nun ilk romanı, Ölmeye Yat- mak’tır.",
+        "C": "Oğuz Atay’ın Tutunamayanlar romanı, ele aldığı konu, konuyu işleyiş tarzı ve kullanılan yeni anla- tım teknikleri bakımından dikkate değer nitelikler taşır.",
+        "D": "Yusuf Atılgan’ın Anayurt Oteli adlı romanı, aynı otelde kâtiplik yapan Zebercet adlı kahramanın ruhsal dünyasının açığa çıkarılması üzerinde şe- killenir.",
+        "E": "Toplumcu gerçekçi tutumla bireyin iç dünyasına kapanışını birlikte anlatan Haldun Taner, Şişha- neye Yağmur Yağıyordu, On İkiye Bir Var adlı ki- tapları ile ödül almıştır. 2010 – LYS3 / TDE Diğer sayfaya geçiniz. 13"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q53",
+      "number": 53,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Göğsü bağrı açıktı. Elinde orak vardı. Ekin biçiyordu. Yüzünü toprağa, sırtını güneşe vermişti. Tarladaki ekini kurtarmaya çalışıyordu. Sırtında kaput bezinden bir iç gömleği vardı. Dışlığı yoktu. İç gömleği kirden meşine dönmüştü. Elindeki orak küçüktü, koç boynu- zu kadar bir şeydi. Bu yılın buğdayı geçen yılın buğ- dayından uzun gibi geliyordu gözüne. Dizine çık- mıyordu ama kıraçta ne buğdaylar olmuştu bundan boysuz. “Biz bu cenabet topraklarda çok buğdaylar gördük bacaksız, çok arpalar biçtik cüce.” dedi için- den. Adam usta orakçıydı. Ama ustalık para etmi- yordu kıracın ortasında. Bunalıyor, ikide bir dikiliyor, elini kalçasına koyup küçük, kaplumbağa gözlerini kı- sarak aşağılara, yola bakıyordu. Gelip geçen “otopos”ları izliyordu. Ama çok dikelemiyordu, karısı mız mız ediyor, oğlu kararıyordu. Gözünün kuyruğuy- la baksa anlardı. Yüzde yüz kızıyorlardı. Bu parçadan edebiyatımızdaki toplumcu gerçekçi hikâye ve roman anlayışıyla ilgili aşağıdaki özel- liklerden hangisi çıkarılamaz?",
+      "options": {
+        "A": "Köye ve köylüye yönelme anlayışı benimsen- miştir.",
+        "B": "Kişiler iç ve dış dünyasıyla birlikte ele alınmıştır.",
+        "C": "Sorunların yansıtılması amaçlanmıştır.",
+        "D": "Gözleme dayalı bir anlatım söz konusudur.",
+        "E": "Halkı aydınlatma amacı güdülmüştür."
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q54",
+      "number": 54,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Dünya edebiyatında, Rus yazarı Çehov’un öncüsü ol- duğu, anlatımı olaya yaslandırmayan, geleneksel an- lamda serimi, düğümü, çözümü olmayan bir öykü tü- rüdür durum öyküsü. Aşağıdaki yazarlardan hangisi özellikle bu öykü türünde ürün vermemiştir?",
+      "options": {
+        "A": "Memduh Şevket Esendal",
+        "B": "Sait Faik Abasıyanık",
+        "C": "Vüsat O. Bener",
+        "D": "Ömer Seyfettin",
+        "E": "Oktay Akbal"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t-q55",
+      "number": 55,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi modernizmi esas alan yapıtların belirleyici özelliklerinden biri değildir?",
+      "options": {
+        "A": "Okurların merak duygusunun kamçılanması amaçlanır.",
+        "B": "Yaşamın çok boyutlu ve kavranması zor ger- çeklerden oluştuğu savunulur.",
+        "C": "Anlatıcı, büyük ölçüde birey bilinciyle kendi “ben”ini öne çıkarır.",
+        "D": "Topluma ait değerleri yansıtma amacı yoktur.",
+        "E": "Anlatılanlar kişilerin iç dünyasının süzgecinden geçirilerek verilir."
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    }
+  ]
+}

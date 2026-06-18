@@ -1,0 +1,240 @@
+{
+  "exam": "LYS-1",
+  "year": 2011,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/211,lys1matematikpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 10,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:43:38.434Z",
+  "questions": [
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q4",
+      "number": 4,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / MAT 000000000 1. Bu testte 50 soru vardır. 2. Cevaplarınızı, cevap kâğıdının Matematik Testi için ayrılan kısmına işaretleyiniz. MATEMATİK TESTİ olduğuna göre, ifadesinin değeri kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "67",
+        "C": "65",
+        "D": "63",
+        "E": "61"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q7",
+      "number": 7,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ifadesinin sadeleştirilmiş biçimi aşağıdakilerden hangisidir? a 1 olduğuna göre, farkı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "22",
+        "C": "23",
+        "D": "24",
+        "E": "25"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q15",
+      "number": 15,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Gerçel katsayılı polinomları veriliyor. Sabit terimi sıfırdan farklı polinomu için eşitliği sağlanıyor. P’nin sabit terimi Q’nun sabit teriminin iki katı olduğuna göre, R’nin katsayılarının toplamı kaçtır? Baş katsayısı 1 olan, ve 2i karmaşık sayılarını kök kabul eden dördüncü dereceden gerçel katsayılı polinomu için kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0",
+        "C": "1",
+        "D": "2",
+        "E": "3"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q17",
+      "number": 17,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / MAT polinomunda ’li terimin katsayısı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "4",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q31",
+      "number": 31,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "parçalı fonksiyonu biçiminde tanımlanıyor. Buna göre, aşağıdakilerden hangisidir? E) f fonksiyonu tam sayıları için eşitliğini sağlıyor. olduğuna göre, kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "25",
+        "C": "20",
+        "D": "17",
+        "E": "13"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q33",
+      "number": 33,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / MAT dizisi biçiminde tanımlanıyor. Buna göre, terimi nedir? k 1 k a 40 a a k (k 1,2,3,...) + = = − =",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "8",
+        "C": "7",
+        "D": "6",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q37",
+      "number": 37,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / MAT → ∞ ⎛ ⎞ + + − + ⎜ ⎟ ⎝ ⎠ 2 2 x x 2x 1 x 1 lim limitinin değeri kaçtır? olduğuna göre, değeri kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q44",
+      "number": 44,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Bir f fonksiyonunun grafiğinin noktasındaki teğetinin eğimi 1, noktasındaki teğetinin eğimi ise ’tür. ikinci türev fonksiyonu aralığında sürekli olduğuna göre, integralinin değeri kaçtır? Aşağıdaki grafikte, A ve B bölgelerinin alanları eşit olacak şekilde doğrusu verilmiştir. Buna göre, k’nin değeri kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q46",
+      "number": 46,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / MAT olduğuna göre, integralinin değeri kaçtır? integralinde dönüşümü yapılırsa aşağıdaki integrallerden hangisi elde edilir? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m-q50",
+      "number": 50,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / MAT 2011 LİSANS YERLEŞTİRME SINAVI-1 (LYS-1) MATEMATİK TESTİ 18 HAZİRAN 2011 1. D 26. D 2. B 27. B 3. C 28. E 4. C 29. D 5. D 30. E 6. D 31. B 7. A 32. D 8. C 33. B 9. D 34. C 10. E 35. E 11. D 36. A 12. E 37. B 13. A 38. D 14. B 39. E 15. E 40. C 16. E 41. E 17. B 42. E 18. A 43. A 19. D 44. C 20. C 45. A 21. A 46. C 22. B 47. C 23. A 48. B 24. A 49. E 25. C 50. B",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0",
+        "C": "1",
+        "D": "2"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    }
+  ]
+}

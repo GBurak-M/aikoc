@@ -1,0 +1,150 @@
+{
+  "exam": "LYS-1",
+  "year": 2012,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/181,lys1geometripdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 6,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:43:02.750Z",
+  "questions": [
+    {
+      "id": "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g-q2",
+      "number": 2,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Merkezi etrafında ve saat yönünde döndürül- düğünde yukarıdaki düzgün çokgenlerden hangile- rinin görüntüleri, başlangıçtaki görünümleriyle aynıdır? E) Yalnız kare Yalnız altıgen Yalnız sekizgen Kare ve altıgen Kare ve sekizgen",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "80",
+        "C": "84",
+        "D": "90",
+        "E": "96"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g-q10",
+      "number": 10,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / GEO Bir düzgün beşgende, bir köşegen uzunluğunun bir kenar uzunluğuna oranı ’dir. ABCDE bir düzgün beşgen Yukarıdaki verilere göre, kaçtır? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "9",
+        "C": "10",
+        "D": "11",
+        "E": "12"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g-q16",
+      "number": 16,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / GEO O merkezli çeyrek çember OABC bir dikdörtgen Şekildeki OABC dikdörtgeninin alanı ve boyalı bölgenin alanı olduğuna göre, x’in radyan cinsinden ölçüsü kaçtır? 17. Aşağıdaki aşamalar izlenerek bir geometrik çizim yapılıyor.  Aralarındaki uzaklık 2 birim olacak şekilde ve paralel doğrularını çiziniz.  üzerinde bir A noktası alıp A merkezli 3 bi- rim yarıçaplı çemberi çiziniz. Bu çemberin, doğrusunu kestiği noktalar B ve C olsun.  C merkezli yarıçaplı çemberi çiziniz. Bu çemberin, doğrusunu kestiği noktalar D ve E olsun. Bu çizime göre, D ile E noktaları arasındaki uzaklık kaç birimdir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "40",
+        "C": "45",
+        "D": "50",
+        "E": "60"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g-q18",
+      "number": 18,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / GEO 5x5’lik bir kareli kâğıdın beş karesi, şekildeki gibi boyan- mıştır. Bu kâğıtta A, B, C, D, E ile belirtilen karelerden biri daha boyanacak ve boyanmış kareler bir küp açınımı olacaktır. Buna göre, boyanacak kare aşağıdakilerden hangisi olamaz?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g-q24",
+      "number": 24,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "doğrusunun doğrusuna göre simetriğinin denklemi aşağıdakilerden hangisidir? E) doğrularının kesim noktalarını köşe kabul eden üçgen bir dik üçgen ise a sayısının alabileceği değerlerin toplamı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "10",
+        "C": "12",
+        "D": "14",
+        "E": "15"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g-q26",
+      "number": 26,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / GEO ve noktalarından geçen doğru düzlemini noktasında kestiğine göre, toplamı kaçtır? Dik koordinat düzleminde , ve noktaları veriliyor. Buna göre, vektörü ile aynı yönde ve vektö- rüyle eşit uzunlukta olan vektörün yer vektörü aşağı- dakilerden hangisidir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0",
+        "C": "1",
+        "D": "2"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    }
+  ]
+}

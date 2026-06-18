@@ -1,0 +1,48 @@
+{
+  "levels": [
+    {
+      "id": "ilkokul",
+      "label": "İlkokul",
+      "grades": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ortaokul",
+      "label": "Ortaokul",
+      "grades": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "lise",
+      "label": "Lise",
+      "grades": [
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "subjects": [
+    "Matematik",
+    "Türkçe",
+    "Fen Bilimleri",
+    "Fizik",
+    "Kimya",
+    "Biyoloji",
+    "Tarih",
+    "Coğrafya",
+    "Felsefe",
+    "Din Kültürü",
+    "İngilizce"
+  ],
+  "note": "MEB müfredatına uyumlu çalışma planı için ders ve sınıf seçimi yapın."
+}

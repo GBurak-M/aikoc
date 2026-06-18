@@ -1,0 +1,423 @@
+{
+  "exam": "LYS-2",
+  "year": 2010,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/281,2010lys2fizpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 18,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:44:59.578Z",
+  "questions": [
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q2",
+      "number": 2,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Sürtünmesiz eğik düzlemde X yayına bağlı 2 kg kütleli K cismi şekildeki konumda dengede kalıyor. Yayın esneklik katsayısı 60 N/m olduğuna göre, yay kaç m sıkışmıştır? ( 2",
+      "options": {
+        "A": "−hacim",
+        "B": "grafikleri",
+        "C": "şekildeki",
+        "D": "gibi",
+        "E": "olan"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q3",
+      "number": 3,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Uzunlukları sırasıyla d, 2d olan düzgün, türdeş X, Y metal çubukları uç uca eklenerek bir iple şekildeki gibi asıldığında yatay dengede kalıyor. Çubukların",
+      "options": {
+        "A": "g 10 m/s ; sin37",
+        "B": "0,6 ; cos37",
+        "C": "0,8",
+        "D": "=",
+        "E": "="
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q5",
+      "number": 5,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Ι ışık ışını düşey kesitleri şekildeki gibi olan K, L, M saydam ortamlarından geçerek P noktasına ulaşıyor. K, L, M ortamlarının ışığı kırma indisleri sırasıyla K L M n , n ,n olduğuna göre, bunların arasındaki ilişki aşağıdakilerden hangisi gibi olabilir? A) K L M n n n = = B) K L M",
+      "options": {
+        "A": "sıcaklıkları",
+        "B": "T",
+        "C": "Δ",
+        "D": "kadar artırıldığında yatay denge"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q7",
+      "number": 7,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki eşit kalınlıklı, ince, türdeş ve özdeş K, L, M, N levhalarının ortak kütle merkezinin koordinatları (x , y) aşağıdakilerden hangisidir? A) (3 , 2) B) (3 , 3) C) (3 , 4) D) (4 , 3) E) (4 , 4)",
+      "options": {
+        "A": "1",
+        "B": "Ι",
+        "C": "ve",
+        "D": "2",
+        "E": "Ι"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q11",
+      "number": 11,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki KLM yolunun K noktasından ilk hızsız hare- kete başlayan X cismi M noktasında duruyor. Yolun KL bölümü sürtünmesiz, LM bölümü sürtünmeli ve sürtünme kuvveti sabittir.",
+      "options": {
+        "A": "K noktasından",
+        "B": "=",
+        "C": "0",
+        "D": "v",
+        "E": "5 m/ s hızla yatay olarak atılan"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q12",
+      "number": 12,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki X makarasına sıkıca sarılı şeridin ucuna uygulanan sabit F → kuvveti makarayı, merkezinden geçen, sayfa düzlemine dik, sabit eksen çevresinde döndürüyor. Makara döndüğü sürece, I. şeritteki gerilme kuvvetinin büyüklüğü, II. X makarasının açısal hızının büyüklüğü, III. X makarasının dönme kinetik enerjisi niceliklerinden hangileri artar? (Şeridin kütlesi ve sürtünmeler önemsenmeyecektir.) A) Yalnız I B) Yalnız II C) Yalnız III D) I ve III E) II ve III",
+      "options": {
+        "A": "LM",
+        "B": "2KL",
+        "C": "=",
+        "D": "olduğuna göre, cisimle LM yolu arasın-"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q13",
+      "number": 13,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "kg : kütle birimi, m : uzunluk birimi, s : zaman birimi olduğuna göre, aşağıda verilenlerden hangisi güç birimidir?",
+      "options": {
+        "A": "2 3 kg m s •",
+        "B": "2 2 kg m s •",
+        "C": "2 kg m s •",
+        "D": "2 2 kg m s •",
+        "E": "kg m s •"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q14",
+      "number": 14,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Yatay ve sürtünmesiz bir düzlem üzerinde hare- ketsiz tutulan K noktasal cismine, aynı düzlemde → → → 1 2 3 F , F , F kuvvetleri şekildeki gibi etki ediyor. Aşağıdaki işlemlerden hangisi yapılırsa bu cismin serbest bırakıldıktan t Δ süre sonra kazanacağı kinetik enerji en büyük olur?",
+      "options": {
+        "A": "Yalnız → 1 F kuvvetini kaldırmak",
+        "B": "Yalnız 2 F → kuvvetini kaldırmak",
+        "C": "Yalnız → 3 F kuvvetini kaldırmak",
+        "D": "→ 1 F ve → 3 F kuvvetlerini birlikte kaldırmak",
+        "E": "2 F → ve → 3 F kuvvetlerini birlikte kaldırmak F X makarası F1 F2 F3 K 2010 – LYS2 / FİZ Diğer sayfaya geçiniz. 6"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q15",
+      "number": 15,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki halkalı L çubuğu ı OO ekseni çevresinde sabit açısal hızla dönüyor. Serbest düşen bir bilye, L çubuğu I konumunda iken 10 m / s hızla, II konu- muna ilk kez geldiğinde de 30 m / s hızla halkadan geçiyor. Buna göre, çubuğun bir devir yapması için geçen süre (çubuğun periyodu) kaç saniyedir? ( 2 g 10 m/s = ; havanın direnci önemsenmeyecektir ; L çubuğu halka düzlemine diktir.)",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "F , F , F",
+        "E": "kuvvetleri şekildeki gibi etki ediyor."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q16",
+      "number": 16,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Esneklik katsayısı k olan X yayına 2m kütleli P cismi, esneklik katsayısı 2k olan Y yayına da m kütleli R cismi şekildeki gibi asılıyor. Bu düzenekler ayrı ayrı düşey doğrultuda titreştirildiğinde P ve R’nin yaptığı",
+      "options": {
+        "A": "A) 1",
+        "B": "B) 2",
+        "C": "C) 4",
+        "D": "D) 6",
+        "E": "E) 8"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q17",
+      "number": 17,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki K, L dişlilerinin yarıçapları sırasıyla R, 2R dir. K dişlisi sabit açısal hızla dönerken dişlilerin dönme kinetik enerjileri birbirlerine eşit oluyor. K, L dişlilerinin merkezlerine göre eylemsizlik momentleri sırasıyla K L , Ι Ι olduğuna göre, K L Ι Ι oranı kaçtır? A) 1 4 B) 1 2 C) 1 D) 2 E) 4",
+      "options": {
+        "A": "harmonik hareketlerin periyotları sırasıyla",
+        "B": "P",
+        "C": "R",
+        "D": "T ,T"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q18",
+      "number": 18,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Kütleleri sırasıyla 2m, m olan K, L vagonları sürtün- mesiz ray üzerinde K L v ,v büyüklüğündeki sabit hız- larla birbirine yaklaşıyor. t 0 = anında şekildeki konuma gelen vagonlar bir süre sonra O noktasında esnek çarpışma yapıyor. Raydaki bölmeler eşit aralıklı olduğuna göre, K ve L’nin çarpışmadan sonraki hızları için aşağıdakilerden hangisi doğrudur?",
+      "options": {
+        "A": "Her ikisinin de hızı ok yönündedir.",
+        "B": "Her ikisinin de hızı oka zıt yöndedir.",
+        "C": "L’nin hızı sıfırdır, K’ninki oka zıt yöndedir.",
+        "D": "Her ikisinin de hızı sıfırdır.",
+        "E": "K’nin hızı oka zıt yönde, L’ninki ok yönündedir. L ΙL 2R K Ι K R K L O vL 2m m vK 2010 – LYS2 / FİZ Diğer sayfaya geçiniz. 8"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q21",
+      "number": 21,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Özdeş X, Y diyotları ile özdeş P, R üreteçlerinden ve S lambasından oluşan şekildeki elektrik devresinde K, L, M anahtarları açıktır. X, Y diyotları akımı yanlarındaki oklar yönünde geçirdiğine göre, aşağıdaki işlemlerden hangisi yapılırsa S lambası ışık verebilir? A) Yalnız K’yi kapatmak B) Yalnız M’yi kapatmak C) K ve L’yi birlikte kapatmak D) K ve M’yi birlikte kapatmak E) L ve M’yi birlikte kapatmak R L K X Y M P S 2010 – LYS2 / FİZ",
+      "options": {
+        "A": "19. Her birinin elektrik yükü",
+        "B": "3q",
+        "C": "+",
+        "D": "olan K, L iletken kürele-"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q22",
+      "number": 22,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki elektrik devresinde, KL kolundan geçen akımın yönü ve büyüklüğü nedir? (Üreteçlerin iç dirençleri önemsizdir.) Yön Büyüklük",
+      "options": {
+        "A": "2 1 A",
+        "B": "2 2 A",
+        "C": "1 1 A",
+        "D": "1 2 A",
+        "E": "1 3 A"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q23",
+      "number": 23,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekildeki alternatif akım devresinde K ve N noktaları arasındaki etkin potansiyel farkı 3 volttur. Direncin K, L uçları arasındaki etkin potansiyel farkı da 3 volt olduğuna göre, makaranın L, M ve kondansatörün M, N uçları arasındaki etkin potan- siyel farkları aşağıdakilerden hangisi olabilir? (Makaranın saf direnci önemsizdir.) L, M arasındaki M, N arasındaki",
+      "options": {
+        "A": "1 V 2 V",
+        "B": "2 V 1 V",
+        "C": "2 V 3 V",
+        "D": "3 V 2 V",
+        "E": "3 V 3 V 1 Ω 2 Ω K 3 V 4 V L 1 2 K direnç L makara kondansatör M N 2010 – LYS2 / FİZ Diğer sayfaya geçiniz. 10"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q25",
+      "number": 25,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Su derinliği değişmeyen bir dalga leğeninde",
+      "options": {
+        "A": "KL ve MN aralıklarında,",
+        "B": "0",
+        "C": "t",
+        "D": "0",
+        "E": "="
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q29",
+      "number": 29,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bohr atom modeline göre, uyarılmış bir hidrojen ato- munda n. enerji düzeyindeki elektron, nʹ. enerji düze- yine geçerken atomun açısal momentumu h π kadar azalıyor. Buna göre, n ve nʹ sayıları aşağıdakilerden han- gisi olabilir? (h: Planck sabiti) n nʹ",
+      "options": {
+        "A": "2 1",
+        "B": "1 2",
+        "C": "4 2",
+        "D": "2 3",
+        "E": "2 4"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f-q30",
+      "number": 30,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Eşit büyüklükteki elektrikle yüklü K, L parçacıkları, sayfa düzlemine dik, düzgün B → manyetik alanına aynı büyüklükteki →",
+      "options": {
+        "A": "0",
+        "B": "t",
+        "C": "0",
+        "D": "=",
+        "E": "anındaki konumu ve hareket yönü şekildeki"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "exam": "LYS-1",
+  "year": 2011,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/212,lys1geometripdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 8,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:43:34.744Z",
+  "questions": [
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q2",
+      "number": 2,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Bir ABC üçgeninin kenarı üzerinde olacak biçimde bir D noktası ve kenarı üzerinde olacak biçimde bir E noktası işaretlenmiştir. ABC üçgeninin alanı 75 olduğuna göre, EDC üçgeninin alanı kaç dir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "6",
+        "C": "7",
+        "D": "8"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q4",
+      "number": 4,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / GEO 000000000 1. Bu testte sırasıyla, Geometri (1–22), Analitik Geometri (23–30) alanlarına ait 30 soru vardır. 2. Cevaplarınızı, cevap kâğıdının Geometri Testi için ayrılan kısmına işaretleyiniz. GEOMETRİ TESTİ Yukarıdaki verilere göre, x kaç cm’dir? AB AC AE BC AC CE AB 20 cm AC 15 cm DE x ⊥ ⊥ ⊥ = = = Şekildeki G noktası ABC üçgeninin ağırlık merkezidir. Buna göre, DGF üçgeninin çevresi kaç cm’dir? [ ] GF / / BC BD kenarortay AC 15 cm BC 18 cm BG 8 cm = = =",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q6",
+      "number": 6,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Şekildeki ABC ikizkenar üçgeninin BD ve CE kenarortayları F noktasında dik kesişmektedir. Buna göre, ABC ikizkenar üçgeninin alanı kaç dir? [ ] [ ] ABC bir ikizkenar üçgen AB AC BD ve CE kenarortay EF 3 cm = =",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "11",
+        "C": "12",
+        "D": "13"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q8",
+      "number": 8,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / GEO Yukarıdaki verilere göre, farkı kaç derecedir? DE / / AB / / CF m(DBC) 110 m(FCG) 30 m(ABC) x m(EDB) y = = = = o o",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "a",
+        "C": "b",
+        "D": "c",
+        "E": "d"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q10",
+      "number": 10,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Yukarıdaki verilere göre, ABCD karesinin alanı kaç dir? ABCD bir kare DF FE FE EB DF FE EB 4 cm ⊥ ⊥ = = =",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q12",
+      "number": 12,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / GEO ABCD bir kare EDC bir üçgen Şekildeki EDC ve EAB üçgenlerinin alanları arasında ilişkisi olduğuna göre, oranı kaçtır? 13. Aşağıda ABCDEFGHK düzgün dokuzgeni verilmiştir. O noktası dokuzgenin köşelerinden geçen çemberin merkezi olduğuna göre, EOC açısının ölçüsü kaç derecedir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "6",
+        "C": "7",
+        "D": "8"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q15",
+      "number": 15,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / GEO Şekildeki O merkezli çember ABC üçgeninin çevrel çemberidir. Buna göre, r kaç cm’dir? 16. Aşağıdaki şekilde ABC üçgeninin yüksekliğini çap kabul eden çember verilmiştir. Bu çember ile üçgenin kenarının kesim noktası E, kenarının kesim noktası ise F’dir. Yukarıdaki verilere göre, x kaç derecedir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "25",
+        "C": "30",
+        "D": "35",
+        "E": "40"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g-q17",
+      "number": 17,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2011 - LYS1 / GEO Aşağıda merkez açısının ölçüsü olan O merkezli daire dilimiyle bu daire dilimine içten teğet olan M merkezli cm yarıçaplı çember verilmiştir. Buna göre, O merkezli dairenin yarıçapı kaç cm’dir? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "112",
+        "C": "114",
+        "D": "116",
+        "E": "118"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-1"
+      ]
+    }
+  ]
+}

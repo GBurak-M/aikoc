@@ -1,0 +1,432 @@
+{
+  "exam": "TYT",
+  "year": 2024,
+  "subjects": [
+    "Türkçe",
+    "Matematik",
+    "Fen",
+    "Sosyal"
+  ],
+  "questions": [
+    {
+      "id": "tyt-2024-türkçe-001",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "kolay",
+      "question": "1. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-matematik-002",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "orta",
+      "question": "2. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-fen-003",
+      "subject": "Fen",
+      "topic": "Fen Konu 3",
+      "difficulty": "zor",
+      "question": "3. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-sosyal-004",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 4",
+      "difficulty": "kolay",
+      "question": "4. TBMM kaç yılında açılmıştır?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1923",
+        "E": "1924"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-türkçe-005",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 5",
+      "difficulty": "orta",
+      "question": "5. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-matematik-006",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 1",
+      "difficulty": "zor",
+      "question": "6. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-fen-007",
+      "subject": "Fen",
+      "topic": "Fen Konu 2",
+      "difficulty": "kolay",
+      "question": "7. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-sosyal-008",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 3",
+      "difficulty": "orta",
+      "question": "8. TBMM kaç yılında açılmıştır?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1923",
+        "E": "1924"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-türkçe-009",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 4",
+      "difficulty": "zor",
+      "question": "9. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-matematik-010",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 5",
+      "difficulty": "kolay",
+      "question": "10. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-fen-011",
+      "subject": "Fen",
+      "topic": "Fen Konu 1",
+      "difficulty": "orta",
+      "question": "11. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-sosyal-012",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 2",
+      "difficulty": "zor",
+      "question": "12. TBMM kaç yılında açılmıştır?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1923",
+        "E": "1924"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-türkçe-013",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 3",
+      "difficulty": "kolay",
+      "question": "13. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-matematik-014",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 4",
+      "difficulty": "orta",
+      "question": "14. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-fen-015",
+      "subject": "Fen",
+      "topic": "Fen Konu 5",
+      "difficulty": "zor",
+      "question": "15. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-sosyal-016",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 1",
+      "difficulty": "kolay",
+      "question": "16. TBMM kaç yılında açılmıştır?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1923",
+        "E": "1924"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-türkçe-017",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 2",
+      "difficulty": "orta",
+      "question": "17. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-matematik-018",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 3",
+      "difficulty": "zor",
+      "question": "18. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-fen-019",
+      "subject": "Fen",
+      "topic": "Fen Konu 4",
+      "difficulty": "kolay",
+      "question": "19. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "tyt"
+      ]
+    },
+    {
+      "id": "tyt-2024-sosyal-020",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 5",
+      "difficulty": "orta",
+      "question": "20. TBMM kaç yılında açılmıştır?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1923",
+        "E": "1924"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "tyt"
+      ]
+    }
+  ]
+}

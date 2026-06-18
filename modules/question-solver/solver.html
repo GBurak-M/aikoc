@@ -1,0 +1,48 @@
+<section class="solver-module">
+  <div class="module-header">
+    <h2>Soru Çözücü</h2>
+    <p>Metin veya görsel yükle — Groq öğretmen modu ile adım adım çözüm</p>
+  </div>
+
+  <div class="card-grid page-stats-panel" id="page-stats-solver" aria-label="İstatistikler"></div>
+
+  <div class="card chat-google-banner" id="solver-google-banner" hidden>
+    <div class="chat-google-banner-copy">
+      <p id="solver-google-banner-text"></p>
+      <div id="solver-google-signin" class="chat-google-signin-wrap"></div>
+    </div>
+  </div>
+
+  <div class="solver-grid">
+    <div class="card">
+      <label class="label" for="solver-text">Soru metni</label>
+      <textarea class="textarea" id="solver-text" rows="6" placeholder="Soruyu buraya yaz veya yapıştır…"></textarea>
+
+      <label class="label" for="solver-image" style="margin-top:1rem">Görsel (isteğe bağlı, max 25 MB)</label>
+      <input type="file" class="input" id="solver-image" accept="image/*" />
+
+      <div id="solver-preview" class="solver-preview"></div>
+
+      <div class="toolbar" style="margin-top:1rem">
+        <select class="select" id="solver-subject" aria-label="Ders">
+          <option value="">Ders seç</option>
+          <option>Matematik</option>
+          <option>Fizik</option>
+          <option>Kimya</option>
+          <option>Biyoloji</option>
+          <option>Türkçe</option>
+          <option>Tarih</option>
+        </select>
+        <button type="button" class="btn btn-primary" id="solver-run">Çöz</button>
+      </div>
+    </div>
+
+    <div class="card solver-result" id="solver-result">
+      <div class="solver-result-head">
+        <img src="assets/brand/rota-ai-logo.png" alt="ROTA AI" class="ai-avatar ai-avatar-sm" width="32" height="32" />
+        <h3>ROTA AI Çözümü</h3>
+      </div>
+      <p class="meta">Henüz soru gönderilmedi.</p>
+    </div>
+  </div>
+</section>

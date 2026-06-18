@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-2",
+  "year": 2011,
+  "subject": "Biyoloji",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Biyoloji Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/215,lys2biyolojipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:44:35.263Z",
+  "questions": [
+    {
+      "id": "2011-lys-2-biyoloji-2011-lisans-yerlestirme-sinavi-lys-2-b-q2",
+      "number": 2,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bir deneyde bir bakteri popülasyonunun bulunduğu ortamda bakterilerin kullandığı besin, zamanla tükeni- yor. Gerçekleşen bir mutasyon sonucunda bazı bakte- riler bu ortamdaki atık maddeleri besin olarak kullanma- ya başlıyor. Bu deney boyunca bakteri popülasyonunun büyük- lüğünde meydana gelen değişimi gösteren grafiğin aşağıdakilerden hangisi gibi olması beklenir? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "I",
+        "C": "II",
+        "D": "III",
+        "E": "IV"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-biyoloji-2011-lisans-yerlestirme-sinavi-lys-2-b-q9",
+      "number": 9,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / BİY Aşağıdaki durumlardan hangisinde oluşan yeni bireylerin, hücre çekirdeklerindeki kalıtsal özel- likleri, atasınınkine bire bir benzemeyebilir? (Mutasyon gerçekleşmediği kabul edilecektir.) A) B) C) D) E) Ana bireyde oluşan bir tomurcuktan gelişen yeni bir bireyin Mitozla oluşan diploit spordan gelişen yeni bir bireyin Hermafrodit iki canlının birbirlerini döllemesiyle oluşan bireylerin Diploit bir canlının diploit yumurtasından parteno- genezle gelişen yeni bir bireyin Planaryanın vücudunun ikiye bölünmesiyle oluşan bireylerin İnsan midesinde gerçekleşen aşağıdaki olaylardan hangisi, salgıladığı salgılardan kendisini korumaya yönelik değildir? A) B) C) D) E) Pepsinin aktif olmayan formda salgılanması Midenin iç yüzeyini kaplayan epitel hücrelerinin sık sık yenilenmesi Midenin iç yüzeyinin mukus tabakasıyla kaplanması İçerdiği besin miktarına göre midenin hacmini değiştirebilmesi Midede HCl ve pepsinojenin farklı hücrelerden salgılanması",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    }
+  ]
+}

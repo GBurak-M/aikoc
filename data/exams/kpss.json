@@ -1,0 +1,430 @@
+{
+  "exam": "KPSS",
+  "year": 2024,
+  "subjects": [
+    "Genel Kültür",
+    "Genel Yetenek"
+  ],
+  "questions": [
+    {
+      "id": "kpss-2024-genel-kültür-001",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 1",
+      "difficulty": "kolay",
+      "question": "1. Türkiye'nin başkenti neresidir?",
+      "options": {
+        "A": "İstanbul",
+        "B": "Ankara",
+        "C": "İzmir",
+        "D": "Bursa",
+        "E": "Antalya"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-002",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 2",
+      "difficulty": "orta",
+      "question": "2. Bir dükkânda 5 gömlek ve 3 pantolonun toplam fiyatı 800 TL'dir. Bir gömlek 80 TL ise bir pantolon kaç TL'dir?",
+      "options": {
+        "A": "120",
+        "B": "140",
+        "C": "160",
+        "D": "180",
+        "E": "200"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-003",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 3",
+      "difficulty": "zor",
+      "question": "3. Türkiye hangi kıtaların birleşim noktasındadır?",
+      "options": {
+        "A": "Asya — Afrika",
+        "B": "Avrupa — Afrika",
+        "C": "Asya — Avrupa",
+        "D": "Avrupa — Amerika",
+        "E": "Asya — Amerika"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-004",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 4",
+      "difficulty": "kolay",
+      "question": "4. Bir sınıfta 24 kız, 16 erkek öğrenci vardır. Kızların oranı yüzde kaçtır?",
+      "options": {
+        "A": "40",
+        "B": "50",
+        "C": "60",
+        "D": "66",
+        "E": "75"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-005",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 5",
+      "difficulty": "orta",
+      "question": "5. Türkiye'nin başkenti neresidir?",
+      "options": {
+        "A": "İstanbul",
+        "B": "Ankara",
+        "C": "İzmir",
+        "D": "Bursa",
+        "E": "Antalya"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-006",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 1",
+      "difficulty": "zor",
+      "question": "6. Bir dükkânda 5 gömlek ve 3 pantolonun toplam fiyatı 800 TL'dir. Bir gömlek 80 TL ise bir pantolon kaç TL'dir?",
+      "options": {
+        "A": "120",
+        "B": "140",
+        "C": "160",
+        "D": "180",
+        "E": "200"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-007",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 2",
+      "difficulty": "kolay",
+      "question": "7. Türkiye hangi kıtaların birleşim noktasındadır?",
+      "options": {
+        "A": "Asya — Afrika",
+        "B": "Avrupa — Afrika",
+        "C": "Asya — Avrupa",
+        "D": "Avrupa — Amerika",
+        "E": "Asya — Amerika"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-008",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 3",
+      "difficulty": "orta",
+      "question": "8. Bir sınıfta 24 kız, 16 erkek öğrenci vardır. Kızların oranı yüzde kaçtır?",
+      "options": {
+        "A": "40",
+        "B": "50",
+        "C": "60",
+        "D": "66",
+        "E": "75"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-009",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 4",
+      "difficulty": "zor",
+      "question": "9. Türkiye'nin başkenti neresidir?",
+      "options": {
+        "A": "İstanbul",
+        "B": "Ankara",
+        "C": "İzmir",
+        "D": "Bursa",
+        "E": "Antalya"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-010",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 5",
+      "difficulty": "kolay",
+      "question": "10. Bir dükkânda 5 gömlek ve 3 pantolonun toplam fiyatı 800 TL'dir. Bir gömlek 80 TL ise bir pantolon kaç TL'dir?",
+      "options": {
+        "A": "120",
+        "B": "140",
+        "C": "160",
+        "D": "180",
+        "E": "200"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-011",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 1",
+      "difficulty": "orta",
+      "question": "11. Türkiye hangi kıtaların birleşim noktasındadır?",
+      "options": {
+        "A": "Asya — Afrika",
+        "B": "Avrupa — Afrika",
+        "C": "Asya — Avrupa",
+        "D": "Avrupa — Amerika",
+        "E": "Asya — Amerika"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-012",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 2",
+      "difficulty": "zor",
+      "question": "12. Bir sınıfta 24 kız, 16 erkek öğrenci vardır. Kızların oranı yüzde kaçtır?",
+      "options": {
+        "A": "40",
+        "B": "50",
+        "C": "60",
+        "D": "66",
+        "E": "75"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-013",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 3",
+      "difficulty": "kolay",
+      "question": "13. Türkiye'nin başkenti neresidir?",
+      "options": {
+        "A": "İstanbul",
+        "B": "Ankara",
+        "C": "İzmir",
+        "D": "Bursa",
+        "E": "Antalya"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-014",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 4",
+      "difficulty": "orta",
+      "question": "14. Bir dükkânda 5 gömlek ve 3 pantolonun toplam fiyatı 800 TL'dir. Bir gömlek 80 TL ise bir pantolon kaç TL'dir?",
+      "options": {
+        "A": "120",
+        "B": "140",
+        "C": "160",
+        "D": "180",
+        "E": "200"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-015",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 5",
+      "difficulty": "zor",
+      "question": "15. Türkiye hangi kıtaların birleşim noktasındadır?",
+      "options": {
+        "A": "Asya — Afrika",
+        "B": "Avrupa — Afrika",
+        "C": "Asya — Avrupa",
+        "D": "Avrupa — Amerika",
+        "E": "Asya — Amerika"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-016",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 1",
+      "difficulty": "kolay",
+      "question": "16. Bir sınıfta 24 kız, 16 erkek öğrenci vardır. Kızların oranı yüzde kaçtır?",
+      "options": {
+        "A": "40",
+        "B": "50",
+        "C": "60",
+        "D": "66",
+        "E": "75"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-017",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 2",
+      "difficulty": "orta",
+      "question": "17. Türkiye'nin başkenti neresidir?",
+      "options": {
+        "A": "İstanbul",
+        "B": "Ankara",
+        "C": "İzmir",
+        "D": "Bursa",
+        "E": "Antalya"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-018",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 3",
+      "difficulty": "zor",
+      "question": "18. Bir dükkânda 5 gömlek ve 3 pantolonun toplam fiyatı 800 TL'dir. Bir gömlek 80 TL ise bir pantolon kaç TL'dir?",
+      "options": {
+        "A": "120",
+        "B": "140",
+        "C": "160",
+        "D": "180",
+        "E": "200"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-kültür-019",
+      "subject": "Genel Kültür",
+      "topic": "Genel Kültür Konu 4",
+      "difficulty": "kolay",
+      "question": "19. Türkiye hangi kıtaların birleşim noktasındadır?",
+      "options": {
+        "A": "Asya — Afrika",
+        "B": "Avrupa — Afrika",
+        "C": "Asya — Avrupa",
+        "D": "Avrupa — Amerika",
+        "E": "Asya — Amerika"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Kültür kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel kültür",
+        "kpss"
+      ]
+    },
+    {
+      "id": "kpss-2024-genel-yetenek-020",
+      "subject": "Genel Yetenek",
+      "topic": "Genel Yetenek Konu 5",
+      "difficulty": "orta",
+      "question": "20. Bir sınıfta 24 kız, 16 erkek öğrenci vardır. Kızların oranı yüzde kaçtır?",
+      "options": {
+        "A": "40",
+        "B": "50",
+        "C": "60",
+        "D": "66",
+        "E": "75"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Genel Yetenek kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "genel yetenek",
+        "kpss"
+      ]
+    }
+  ]
+}

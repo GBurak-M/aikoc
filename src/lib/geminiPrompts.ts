@@ -1,5 +1,5 @@
 import type { ChatTurn } from './conversationEngine';
-import type { GeminiChatTurn } from './geminiClient';
+import type { GroqChatTurn } from './groqClient';
 import { withAikocMasterPrompt } from './aikocMasterPrompt';
 
 export type CoachPromptContext = {
@@ -121,9 +121,9 @@ EK KURALLAR:
 - Markdown kullan.`);
 }
 
-export function mapHistoryForGemini(history: ChatTurn[], maxTurns = 10): GeminiChatTurn[] {
+export function mapHistoryForGroq(history: ChatTurn[], maxTurns = 10): GroqChatTurn[] {
   return history.slice(-maxTurns).map((t) => ({
-    role: t.role === 'assistant' ? 'model' : 'user',
+    role: t.role === 'assistant' ? 'assistant' : 'user',
     text: t.text.slice(0, 4000),
   }));
 }

@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-3",
+  "year": 2016,
+  "subject": "Edebiyat",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Türk Dili ve Edebiyatı Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/LYS/Sorular/LYS3_TURKDILIVEEDEBIYATI26062016.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:42:15.691Z",
+  "questions": [
+    {
+      "id": "2016-lys-3-edebiyat-2016-lisans-yerlestirme-sinavi-lys-3-t-q8",
+      "number": 8,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I.",
+        "B": "II.",
+        "C": "III.",
+        "D": "IV.",
+        "E": "V."
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-3"
+      ]
+    }
+  ]
+}

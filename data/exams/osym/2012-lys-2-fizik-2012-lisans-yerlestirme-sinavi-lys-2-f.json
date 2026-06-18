@@ -1,0 +1,128 @@
+{
+  "exam": "LYS-2",
+  "year": 2012,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/182,lys2fizikpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 5,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:43:12.230Z",
+  "questions": [
+    {
+      "id": "2012-lys-2-fizik-2012-lisans-yerlestirme-sinavi-lys-2-f-q2",
+      "number": 2,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2012 – LYS2 / FİZ ışık ışını, yakınsak X ve Y merceklerinden oluşan düzenekte şekildeki yolu izliyor. X’in odak uzaklığı , Y’ninki de olduğuna göre, oranı kaçtır? Düzgün, türdeş ve özdeş 4 çubuk şekildeki gibi birbirine eklenmiştir. Bu çubukların ortak kütle merkezinin (x , y) koordi- natları nedir? (7 , 5) (8 , 4) (8 , 5) (9 , 4) (10 , 6)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2012-lys-2-fizik-2012-lisans-yerlestirme-sinavi-lys-2-f-q10",
+      "number": 10,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2012 – LYS2 / FİZ Bir su pompasının 2 m derinlikteki kuyudan 2 kg su çıkarıp hızla fırlatması isteniyor. Bu işlemin 5 s’de tamamlanabilmesi için pompanın gücünün en az kaç watt olması gerekir? ( pompanın verimi önemsenmeyecektir.)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2012-lys-2-fizik-2012-lisans-yerlestirme-sinavi-lys-2-f-q14",
+      "number": 14,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2012 – LYS2 / FİZ Özdeş çelik bilyelerden oluşan K, L, M sarkaçları şe- kildeki konumdayken K sarkacı serbest bırakıldığında L’ye esnek olarak çarpıyor. Bu çarpmanın hemen sonunda sarkaçlardan hangi- leri hareketsiz kalır? Yalnız K Yalnız L K ve L L ve M K, L ve M Şekildeki K ve M noktalarına konulan , elektrik yüklerinin, L noktasına konulan yüküne uyguladık- ları kuvvetlerin bileşkesi dir. Buna göre oranı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2012-lys-2-fizik-2012-lisans-yerlestirme-sinavi-lys-2-f-q18",
+      "number": 18,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2012 – LYS2 / FİZ Birbirine paralel, sonsuz uzunluktaki X, Y iletken telleri ile X’ten d, Y’den de 2d uzaklığındaki K noktası aynı düzlemdedir. X’ten 2i, Y’den de 3i şiddetinde elektrik akımları şekilde belirtilen yönlerde geçerken K noktasında manyetik alanı oluşuyor. X’ten geçen akımın yönü ve şiddeti sabit tutulurken Y’den geçenin yalnız yönü değiştirilirse nin yönü ve büyüklüğü için ne söylenebilir? (Yerin manyetik alanı önemsenmeyecektir.) A) B) C) D) E) Değişmez Değişmez Değişmez Artar Değişmez Azalır Değişir Artar Değişir Azalır 19. İletken KLM çubuğu sayfa düzlemine dik ve içeriye doğru yönelmiş manyetik alanı içinde, dönmeden, hızıyla şekildeki yönde hareket ediyor. olduğuna göre, çubuğun K, L, M noktala- rında oluşan yüklerin işareti aşağıdakilerden han- gisi gibidir? (Yerin manyetik alanı önemsenmeyecektir.) A) B) C) D) E)               ",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "12,5",
+        "C": "15,0",
+        "D": "17,5",
+        "E": "20,0"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2012-lys-2-fizik-2012-lisans-yerlestirme-sinavi-lys-2-f-q30",
+      "number": 30,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "LİSANS YERLEŞTİRME SINAVI (LYS) 24.06.2012 LYS – 2 / FİZİK TESTİ CEVAP ANAHTARI 1. B 2. B 3. D 4. A 5. A 6. E 7. D 8. C 9. C 10. B 11. C 12. D 13. E 14. B 15. C 16. C 17. E 18. C 19. B 20. A 21. C 22. D 23. E 24. D 25. E 26. A 27. C 28. B 29. A 30. D",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0,1",
+        "C": "0,2",
+        "D": "0,4",
+        "E": "0,6"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    }
+  ]
+}

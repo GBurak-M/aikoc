@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-2",
+  "year": 2012,
+  "subject": "Biyoloji",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Biyoloji Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/184,lys2biyolojipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:43:07.902Z",
+  "questions": [
+    {
+      "id": "2012-lys-2-biyoloji-2012-lisans-yerlestirme-sinavi-lys-2-b-q30",
+      "number": 30,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "LİSANS YERLEŞTİRME SINAVI (LYS) 24.06.2012 LYS – 2 / BİYOLOJİ TESTİ CEVAP ANAHTARI 1. C 2. B 3. D 4. E 5. A 6. B 7. D 8. E 9. C 10. A 11. B 12. B 13. A 14. D 15. C 16. B 17. E 18. D 19. E 20. A 21. C 22. B 23. E 24. C 25. E 26. D 27. C 28. A 29. E 30. D",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-2"
+      ]
+    }
+  ]
+}

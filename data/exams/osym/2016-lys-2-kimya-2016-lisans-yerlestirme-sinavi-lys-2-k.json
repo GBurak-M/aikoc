@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-2",
+  "year": 2016,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/LYS/Sorular/LYS2_KIMYA26062016.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:44:07.191Z",
+  "questions": [
+    {
+      "id": "2016-lys-2-kimya-2016-lisans-yerlestirme-sinavi-lys-2-k-q12",
+      "number": 12,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2016-LYS2/KİM denge tepkimesinde ∆H > 0 olduğuna göre aşağıdakilerden hangisi yanlıştır? Ürünler yönündeki tepkime endotermiktir. Sıcaklık artırıldığında denge, ürünler yönüne kayar. Basınç artırıldığında denge, ürünler yönüne kayar. Ortama H2 gazı ilave edildiğinde denge, ürünler yönüne kayar. Tepkimede Kp = Kc dir. Baca zehirlenmesi olarak da bilinen karbon monoksit zehirlenmesiyle ilgili, I. Karbon monoksitin hemoglobinle olan tepkimesi, kompleks oluşum tepkimesi olarak sınıflandırılır. II. Vücutta O2-hemoglobin bileşiği yerine, CO-hemoglobin bileşiği oluşur. III. Karbon monoksit zehirlenmesi sonucu dokulara yeterli O2 gitmez. yargılarından hangileri doğrudur? Yalnız I Yalnız III I ve II II ve III I, II ve III",
+      "options": {
+        "A": "1,2",
+        "B": "2,4",
+        "C": "3,6",
+        "D": "4,8",
+        "E": "6,0"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2016-lys-2-kimya-2016-lisans-yerlestirme-sinavi-lys-2-k-q21",
+      "number": 21,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "LYS-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "exam": "LYS-1",
+  "year": 2017,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2017/OSYS/LYS/LYS1MATEMATIK18062017.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 21,
+  "answerKeyCount": 80,
+  "parsedAt": "2026-06-11T13:40:15.244Z",
+  "questions": [
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q2",
+      "number": 2,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "işleminin sonucu kaçtır?",
+      "options": {
+        "A": "2,4",
+        "B": "2,6",
+        "C": "2,8",
+        "D": "3",
+        "E": "3,2"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q4",
+      "number": 4,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT , ve x sayıları küçükten büyüğe doğru sıralanmış ardışık üç çift tam sayıdır. Buna göre, toplamı kaçtır?",
+      "options": {
+        "A": "10",
+        "B": "12",
+        "C": "15",
+        "D": "18",
+        "E": "20"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q6",
+      "number": 6,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "a ve b birbirinden farklı pozitif tam sayılar olmak üzere EKOK(a,b) bir asal sayıya eşittir. Buna göre, I. a ve b aralarında asal sayılardır. II. toplamı bir tek sayıdır. III. çarpımı bir tek sayıdır. ifadelerinden hangileri her zaman doğrudur? Yalnız I Yalnız II Yalnız III I ve II II ve III ifadesinin sadeleştirilmiş biçimi aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q19",
+      "number": 19,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT Aşağıda düzgün altıgen şeklindeki hücrelerden oluşturulmuş bir düzenek verilmiştir. Beyaz hücrelerin bazıları turuncu renge boyanacaktır. Her bir mavi hücrenin içerisinde yazan sayı, o mavi hücre ile ortak kenarı olan ve turuncuya boyanacak toplam hücre sayısını göstermektedir. Buna göre, hücreler kaç farklı biçimde boyanabilir?",
+      "options": {
+        "A": "7",
+        "B": "9",
+        "C": "11",
+        "D": "13",
+        "E": "15"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q20",
+      "number": 20,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Pelin'in hesap makinesi,“3” tuşuna her basıldığında bunu  olasılıkla 3  olasılıkla 4  olasılıkla 6 olarak algılamaktadır. Pelin sadece “3” numaralı tuşu bozuk olan bu hesap makinesiyle işlemini yapacaktır. Buna göre, Pelin’in bu işlemin sonucunu 22 bulma olasılığı kaçtır?",
+      "options": {
+        "A": "24",
+        "B": "28",
+        "C": "30",
+        "D": "32",
+        "E": "36"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q25",
+      "number": 25,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT eşitsizliğini sağlayan tüm gerçel sayıların kümesi aşağıdakilerden hangisidir? Üçüncü dereceden gerçel katsayılı polinomunun kökleri , ve 2’dir. olduğuna göre, li terimin katsayısı kaçtır? 1 2",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q29",
+      "number": 29,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT p, q ve r önermeleri için önermesinin yanlış olduğu biliniyor. Buna göre, I. II. III. önermelerinden hangileri her zaman doğrudur? Yalnız I Yalnız II Yalnız III I ve III II ve III",
+      "options": {
+        "A": "5",
+        "B": "7",
+        "C": "8",
+        "D": "10",
+        "E": "11"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q32",
+      "number": 32,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT işleminin sonucu kaçtır? olduğuna göre, değeri kaçtır?",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q34",
+      "number": 34,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "bir aritmetik dizi olmak üzere, eşitlikleri veriliyor. Buna göre, kaçtır? n pozitif bir tam sayı olmak üzere, eşitliği veriliyor. Buna göre, n kaçtır?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q36",
+      "number": 36,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT limitinin değeri kaçtır? Gerçel sayılar kümesinde tanımlı f fonksiyonu her x için eşitsizliklerini sağlıyor. Buna göre, I. vardır. II. vardır. III. vardır. ifadelerinden hangileri her zaman doğrudur? Yalnız I Yalnız II Yalnız III I ve II II ve III",
+      "options": {
+        "A": "18",
+        "B": "19",
+        "C": "20",
+        "D": "21",
+        "E": "22"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q44",
+      "number": 44,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT integralinde dönüşümü yapılırsa aşağıdaki integrallerden hangisi elde edilir? integralinin değeri kaçtır?",
+      "options": {
+        "A": "ln2",
+        "B": "ln3",
+        "C": "ln4",
+        "D": "ln5",
+        "E": "ln6"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q50",
+      "number": 50,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT Her x gerçel sayısı için A sayısı şeklinde tanımlanıyor. Buna göre, ifadesinin A türünden eşiti nedir?",
+      "options": {
+        "A": "3",
+        "B": "6",
+        "C": "8",
+        "D": "11",
+        "E": "12"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q53",
+      "number": 53,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT Buna göre, x kaç derecedir?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35",
+        "E": "40"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q55",
+      "number": 55,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABC bir dik üçgen ABC üçgeninde D ve E sırasıyla AB ve BC kenarları üzerindedir. ABC üçgeninin alanı BDE üçgeninin alanının 6 katı olduğuna göre, kaç birimdir? 3 6 Buna göre, BFH üçgeninin alanı kaç birimkaredir?",
+      "options": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q59",
+      "number": 59,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Yukarıda verilen ABCD karesi eşit alanlı dört dikdörtgene bölünmüştür. Buna göre, oranı kaçtır? Buna göre, ABCE dik yamuğunun alanı kaç birimkaredir?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "8"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q63",
+      "number": 63,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Yukarıdaki şekilde [AC] ve [BE], O merkezli çemberin çaplarıdır. Buna göre, x kaç derecedir?",
+      "options": {
+        "A": "35",
+        "B": "40",
+        "C": "45",
+        "D": "50",
+        "E": "55"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q65",
+      "number": 65,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT Yarıçapları 1 birim olan 13 çember ile bunları çevreleyen büyük çember, değme noktalarında birbirlerine şekildeki gibi teğettir. Buna göre, boyalı bölgenin alanı kaç birimkaredir?",
+      "options": {
+        "A": "4",
+        "B": "5",
+        "C": "6",
+        "D": "7",
+        "E": "8"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q67",
+      "number": 67,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT Taban yarıçapı 5, yüksekliği 12 birim olan Şekil 1’deki dik dairesel koni, tepe noktasından geçen tabana dik bir düzlem boyunca kesilerek özdeş iki parçaya ayrılıyor. Bu iki eş parça döndürülüp Şekil 2’deki gibi yarım çemberler boyunca birbirine yapıştırılarak bir cisim oluşturuluyor ve bu cisim Şekil 3’teki gibi düz bir masa üzerine konuluyor. Buna göre, bu cismin içine sığabilecek küre biçimindeki en büyük topun yarıçapı kaç birimdir?",
+      "options": {
+        "A": "72",
+        "B": "75",
+        "C": "80",
+        "D": "90",
+        "E": "96"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q72",
+      "number": 72,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Düzlemde sıfırdan farklı ve vektörlerinin toplamı sıfır vektörüne eşit olduğuna göre, I. II. ise ’dir. III. ile arasındaki açı 180 derecedir. ifadelerinden hangileri doğrudur? Yalnız I Yalnız III I ve II I ve III II ve III",
+      "options": {
+        "A": "14",
+        "B": "15",
+        "C": "18",
+        "D": "20",
+        "E": "24"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q74",
+      "number": 74,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Uzayda, doğruları dik kesişmektedir. Buna göre, c kaçtır? a ve b gerçel sayılar olmak üzere, uzayda (1, 1, 1) noktasından geçen düzlemi, düzlemine diktir. Buna göre, toplamı kaçtır?",
+      "options": {
+        "A": "(2,1)",
+        "B": "(3,0)",
+        "C": "(0,4)",
+        "D": "(3,1)",
+        "E": "(4,3)"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m-q76",
+      "number": 76,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2017-LYS1/MAT Şekilde A, B ve C noktaları E düzlemi üzerindedir. Buna göre, uzunluğu kaç birimdir? Yukarıda verilen şekilde A, D ve B noktaları doğrusaldır. Buna göre, x kaç derecedir?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-1"
+      ]
+    }
+  ]
+}

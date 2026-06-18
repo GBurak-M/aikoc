@@ -1,30 +1,200 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#6366f1" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="description" content="aikoc — LGS, YKS, KPSS, ALES ve tüm ulusal sınavlarda kişisel AI koçluk, deneme takibi ve akıllı çalışma merkezi" />
-    <meta name="application-name" content="aikoc" />
-    <meta property="og:title" content="aikoc — Ulusal Sınav AI Koçu" />
-    <meta property="og:description" content="LGS, YKS, KPSS, ALES ve tüm ulusal sınavlarda kişisel AI koçluk, deneme takibi ve akıllı çalışma merkezi" />
-    <meta property="og:image" content="/logo.svg" />
-    <meta property="og:site_name" content="aikoc" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <title>aikoc — Ulusal Sınav AI Koçu</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ROTA AI — Yolunu bul, hedefe yapay zeka ile var. Ücretsiz 3D dijital eğitim platformu." />
+  <meta name="theme-color" content="#0B1026" />
+  <meta name="google-client-id" content="77021897813-cegcabu0g6iikhn6rg8kaukjun53rc57.apps.googleusercontent.com" />
+  <meta property="og:image" content="assets/brand/rota-ai-logo.png" />
+  <title>ROTA AI — Dijital Eğitim</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Nunito:wght@400;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260611b" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+  <div class="scene-3d-bg" aria-hidden="true">
+    <div class="scene-grid"></div>
+    <div class="scene-orb scene-orb-1"></div>
+    <div class="scene-orb scene-orb-2"></div>
+    <div class="scene-orb scene-orb-3"></div>
+  </div>
+
+  <a href="#main-content" class="skip-link">İçeriğe atla</a>
+
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Ana menü">
+      <a href="#/" class="sidebar-brand" aria-label="ROTA AI ana sayfa">
+        <div class="brand-lockup">
+          <img src="assets/brand/rota-ai-logo.png" alt="ROTA AI robot" class="brand-mascot" width="72" height="72" />
+          <div class="brand-wordmark-3d">
+            <span class="word-rota">ROTA</span>
+            <span class="word-ai">AI</span>
+          </div>
+        </div>
+      </a>
+
+      <nav class="sidebar-nav" aria-label="Sayfa gezintisi">
+        <a href="#/" class="nav-link active" data-route="/" data-i18n="nav.dashboard">
+          <i data-lucide="layout-dashboard"></i><span>Pano</span>
+        </a>
+        <a href="#/dersler" class="nav-link" data-route="/dersler" data-i18n="nav.lessons">
+          <i data-lucide="book-open"></i><span>Dersler</span>
+        </a>
+        <a href="#/kutuphane" class="nav-link" data-route="/kutuphane" data-i18n="nav.library">
+          <i data-lucide="library"></i><span>Kütüphane</span>
+        </a>
+        <a href="#/sinavlar" class="nav-link" data-route="/sinavlar" data-i18n="nav.exams">
+          <i data-lucide="clipboard-list"></i><span>Sınavlar</span>
+        </a>
+        <a href="#/ai-sohbet" class="nav-link nav-link-ai" data-route="/ai-sohbet" data-i18n="nav.chat">
+          <img src="assets/brand/rota-ai-logo.png" alt="" class="nav-brand-icon" width="28" height="28" /><span>AI Sohbet</span>
+        </a>
+        <a href="#/soru-coz" class="nav-link" data-route="/soru-coz" data-i18n="nav.solver">
+          <i data-lucide="pen-line"></i><span>Soru Çöz</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="ai-status" id="global-ai-status" title="AI durumu">
+          <img src="assets/brand/rota-ai-logo.png" alt="" class="ai-status-logo" width="28" height="28" />
+          <span id="ai-status-label">Hazırlanıyor</span>
+        </div>
+        <button type="button" class="btn btn-ghost btn-sm" id="theme-toggle" aria-label="Tema değiştir">
+          <i data-lucide="moon"></i>
+        </button>
+        <button type="button" class="btn btn-ghost btn-sm" id="lang-toggle" aria-label="Dil değiştir">TR</button>
+      </div>
+    </aside>
+
+    <div class="main-wrap">
+      <header class="topbar">
+        <button type="button" class="btn btn-ghost mobile-menu" id="menu-toggle" aria-label="Menüyü aç">
+          <i data-lucide="menu"></i>
+        </button>
+        <h1 class="page-title" id="page-title">Pano</h1>
+        <div class="topbar-spacer" aria-hidden="true"></div>
+
+        <div class="topbar-auth-cluster">
+          <div class="topbar-auth-slot">
+            <button type="button" class="topbar-auth-trigger topbar-auth-trigger-member" id="topbar-member-trigger" aria-expanded="false" aria-controls="topbar-member-dropdown">
+              <i data-lucide="user"></i>
+              <span id="topbar-member-trigger-label">Site üyeliği</span>
+            </button>
+            <div class="topbar-auth-dropdown auth-dropdown-member" id="topbar-member-dropdown" hidden>
+              <div class="auth-dropdown-panel sidebar-member-panel" id="sidebar-auth-panel">
+                <p class="sidebar-auth-title">Site üyeliği</p>
+                <p class="meta sidebar-auth-hint">Kütüphane, sınavlar ve profil için e-posta ile giriş.</p>
+
+                <div id="sidebar-auth-guest" class="sidebar-auth-guest">
+                  <form id="sidebar-login-form" class="sidebar-auth-form">
+                    <label class="label" for="sidebar-login-email">E-posta</label>
+                    <input class="input" id="sidebar-login-email" type="email" autocomplete="email" required />
+
+                    <label class="label" for="sidebar-login-password">Şifre</label>
+                    <input class="input" id="sidebar-login-password" type="password" autocomplete="current-password" required />
+
+                    <button type="submit" class="btn btn-primary btn-sm btn-block">Üyelik girişi</button>
+                    <button type="button" class="btn btn-ghost btn-sm btn-block" id="sidebar-forgot-btn">Şifremi unuttum</button>
+                    <p class="auth-msg" id="sidebar-login-msg"></p>
+                  </form>
+                  <button type="button" class="btn btn-secondary btn-sm btn-block sidebar-register-btn" id="sidebar-register-btn">Üye ol</button>
+                </div>
+
+                <div id="sidebar-auth-logged" class="sidebar-auth-logged" hidden>
+                  <img src="" alt="" id="sidebar-user-avatar" class="sidebar-user-avatar" width="40" height="40" hidden />
+                  <div class="sidebar-user-meta">
+                    <strong id="sidebar-user-name"></strong>
+                    <span id="sidebar-user-email"></span>
+                  </div>
+                  <button type="button" class="btn btn-secondary btn-sm btn-block" id="sidebar-panel-link">Profilim</button>
+                  <button type="button" class="btn btn-ghost btn-sm btn-block" id="sidebar-logout-btn">Üyelikten çık</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="topbar-auth-slot">
+            <button type="button" class="topbar-auth-trigger topbar-auth-trigger-google" id="topbar-google-trigger" aria-expanded="false" aria-controls="topbar-google-dropdown">
+              <img src="assets/brand/rota-ai-logo.png" alt="" class="topbar-auth-trigger-icon" width="18" height="18" />
+              <span id="topbar-google-trigger-label">Google AI</span>
+            </button>
+            <div class="topbar-auth-dropdown auth-dropdown-google" id="topbar-google-dropdown" hidden>
+              <div class="auth-dropdown-panel sidebar-google-panel" id="sidebar-google-panel">
+                <p class="sidebar-auth-title sidebar-google-title">Google (isteğe bağlı)</p>
+                <p class="meta sidebar-auth-hint">AI Sohbet ve Soru Çöz, Groq öğretmen modu ile çalışır (sunucu tarafında GROQ_API_KEY).</p>
+
+                <div id="sidebar-google-guest" class="sidebar-google-guest">
+                  <div id="sidebar-google-signin" class="sidebar-google-wrap"></div>
+                  <p class="auth-msg" id="sidebar-google-msg"></p>
+                </div>
+
+                <div id="sidebar-google-logged" class="sidebar-auth-logged" hidden>
+                  <img src="" alt="" id="sidebar-google-avatar" class="sidebar-user-avatar" width="40" height="40" hidden />
+                  <div class="sidebar-user-meta">
+                    <strong id="sidebar-google-name"></strong>
+                    <span id="sidebar-google-email"></span>
+                  </div>
+                  <button type="button" class="btn btn-ghost btn-sm btn-block" id="sidebar-google-logout">Google çıkışı</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main id="main-content" class="main-content" tabindex="-1"></main>
+    </div>
+
+    <nav class="tabbar" aria-label="Mobil menü">
+      <a href="#/" class="tab-link" data-route="/"><i data-lucide="layout-dashboard"></i><span>Pano</span></a>
+      <a href="#/kutuphane" class="tab-link" data-route="/kutuphane"><i data-lucide="library"></i><span>Kütüphane</span></a>
+      <a href="#/sinavlar" class="tab-link" data-route="/sinavlar"><i data-lucide="clipboard-list"></i><span>Sınav</span></a>
+      <a href="#/ai-sohbet" class="tab-link tab-link-ai" data-route="/ai-sohbet"><img src="assets/brand/rota-ai-logo.png" alt="" class="tab-brand-icon" width="22" height="22" /><span>AI</span></a>
+      <a href="#/soru-coz" class="tab-link" data-route="/soru-coz"><i data-lucide="pen-line"></i><span>Soru</span></a>
+    </nav>
+  </div>
+
+  <div class="modal-overlay" id="modal-register" hidden>
+    <div class="modal card card-3d" role="dialog" aria-labelledby="register-title">
+      <button type="button" class="modal-close" data-close-modal="modal-register" aria-label="Kapat">&times;</button>
+      <h3 id="register-title">Üyelik kaydı</h3>
+      <form id="register-form" class="auth-modal-form">
+        <label class="label" for="register-name">Ad Soyad</label>
+        <input class="input" id="register-name" type="text" autocomplete="name" required />
+
+        <label class="label" for="register-email">E-posta</label>
+        <input class="input" id="register-email" type="email" autocomplete="email" required />
+
+        <label class="label" for="register-password">Şifre</label>
+        <input class="input" id="register-password" type="password" minlength="6" autocomplete="new-password" required />
+
+        <label class="label" for="register-password2">Şifre tekrarı</label>
+        <input class="input" id="register-password2" type="password" minlength="6" autocomplete="new-password" required />
+
+        <button type="submit" class="btn btn-primary btn-block">Kaydı tamamla</button>
+        <p class="auth-msg" id="register-msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-forgot" hidden>
+    <div class="modal card card-3d" role="dialog" aria-labelledby="forgot-title">
+      <button type="button" class="modal-close" data-close-modal="modal-forgot" aria-label="Kapat">&times;</button>
+      <h3 id="forgot-title">Şifremi unuttum</h3>
+      <p class="meta">Kayıtlı e-posta adresini yaz; sıfırlama bağlantısı gönderilir.</p>
+      <form id="forgot-form" class="auth-modal-form">
+        <label class="label" for="forgot-email">E-posta</label>
+        <input class="input" id="forgot-email" type="email" autocomplete="email" required />
+        <button type="submit" class="btn btn-primary btn-block">Gönder</button>
+        <p class="auth-msg" id="forgot-msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="app.js?v=20260612b"></script>
+</body>
 </html>

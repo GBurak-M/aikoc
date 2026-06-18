@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-3",
+  "year": 2015,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Coğrafya-1 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2015/LYS/Sorular/2015_LYS_3_Cografya_1.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 16,
+  "parsedAt": "2026-06-11T13:40:58.707Z",
+  "questions": [
+    {
+      "id": "2015-lys-3-cografya-2015-lisans-yerlestirme-sinavi-lys-3-c-q5",
+      "number": 5,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "2015-LYS3/COĞ-1 Tarih boyunca dünya nüfusunun büyük kısmı kırsal alanlarda yaşamış olsa da ekonomik faaliyetlerdeki değişim ve bilgi birikimi, şehirlerin büyümesini ve sayılarının hızla artmasını sağlamıştır. Aşağıdakilerden hangisi bu sürecin yaşanmasında dönüm noktası olmuştur? Sanayi faaliyetlerinin artması Yeni enerji kaynaklarının keşfi Değerli madenlerin çıkarılması Yönetim şekillerinin değişmesi Tarımsal tekniklerin yenilenmesi Bir ülkedeki K ve L şehirlerine her yıl yurt içi ve yurt dışından binlerce insan gelmektedir. K şehrine gelenler, bu şehirde belirli bir süre kalmakta ve şehrin farklı doğal güzelliklerinden yararlanmakta iken L şehrine gelenler, farklı ürünleri görmek ve alışveriş yapmak için bu şehre gelmektedir. Bu şehirlerin etki alanlarının farklılık göstermesindeki temel unsurlar aşağıdakilerin hangisinde verilmiştir? K şehri L şehri Turizm Ticaret Ticaret Ulaşım Sanat Ticaret İletişim Sanayi Ulaşım Turizm",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-3"
+      ]
+    }
+  ]
+}

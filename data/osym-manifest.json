@@ -1,0 +1,444 @@
+{
+  "parsed": {
+    "2017-lys-1-matematik-2017-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 21,
+      "answerKeyCount": 80,
+      "at": "2026-06-11T13:40:15.244Z"
+    },
+    "2017-lys-2-fizik-2017-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 4,
+      "answerKeyCount": 29,
+      "at": "2026-06-11T13:40:19.624Z"
+    },
+    "2017-lys-2-kimya-2017-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 1,
+      "answerKeyCount": 29,
+      "at": "2026-06-11T13:40:22.303Z"
+    },
+    "2017-lys-3-cografya-2017-lisans-yerlestirme-sinavi-lys-3-c": {
+      "questionCount": 2,
+      "answerKeyCount": 23,
+      "at": "2026-06-11T13:40:23.842Z"
+    },
+    "2017-lys-3-edebiyat-2017-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 2,
+      "answerKeyCount": 54,
+      "at": "2026-06-11T13:40:25.428Z"
+    },
+    "2017-lys-4-tarih-2017-lisans-yerlestirme-sinavi-lys-4-t": {
+      "questionCount": 1,
+      "answerKeyCount": 43,
+      "at": "2026-06-11T13:40:30.574Z"
+    },
+    "2017-ygs-karma-2017-yuksekogretime-gecis-sinavi-ygs-s": {
+      "questionCount": 20,
+      "answerKeyCount": 45,
+      "at": "2026-06-11T13:40:33.320Z"
+    },
+    "2016-lys-1-geometri-2016-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 9,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:40:34.858Z"
+    },
+    "2016-lys-1-matematik-2016-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 10,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:40:36.136Z"
+    },
+    "2016-lys-2-fizik-2016-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 2,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:40:38.119Z"
+    },
+    "2015-lys-1-geometri-2015-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 8,
+      "answerKeyCount": 10,
+      "at": "2026-06-11T13:40:47.844Z"
+    },
+    "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 11,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:40:50.726Z"
+    },
+    "2015-lys-2-fizik-2015-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 2,
+      "answerKeyCount": 10,
+      "at": "2026-06-11T13:40:55.056Z"
+    },
+    "2015-lys-2-kimya-2015-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 3,
+      "answerKeyCount": 9,
+      "at": "2026-06-11T13:40:56.910Z"
+    },
+    "2015-lys-3-cografya-2015-lisans-yerlestirme-sinavi-lys-3-c": {
+      "questionCount": 1,
+      "answerKeyCount": 16,
+      "at": "2026-06-11T13:40:58.707Z"
+    },
+    "2015-lys-3-edebiyat-2015-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 3,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:41:00.779Z"
+    },
+    "2015-lys-4-felsefe-2015-lisans-yerlestirme-sinavi-lys-4-f": {
+      "questionCount": 1,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:41:04.907Z"
+    },
+    "2015-lys-4-tarih-2015-lisans-yerlestirme-sinavi-lys-4-t": {
+      "questionCount": 1,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:41:06.131Z"
+    },
+    "2014-lys-1-geometri-2014-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 5,
+      "answerKeyCount": 10,
+      "at": "2026-06-11T13:41:08.612Z"
+    },
+    "2014-lys-1-matematik-2014-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 6,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:41:11.979Z"
+    },
+    "2016-lys-2-biyoloji-2016-lisans-yerlestirme-sinavi-lys-2-b": {
+      "questionCount": 1,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:42:13.347Z"
+    },
+    "2016-lys-3-edebiyat-2016-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 1,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:42:15.691Z"
+    },
+    "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s": {
+      "questionCount": 14,
+      "answerKeyCount": 5,
+      "at": "2026-06-11T13:42:17.289Z"
+    },
+    "2015-ygs-karma-2015-yuksekogretime-gecis-sinavi-ygs-s": {
+      "questionCount": 19,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:42:23.427Z"
+    },
+    "2014-lys-2-fizik-2014-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 2,
+      "answerKeyCount": 10,
+      "at": "2026-06-11T13:42:25.487Z"
+    },
+    "2014-lys-2-kimya-2014-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 1,
+      "answerKeyCount": 10,
+      "at": "2026-06-11T13:42:27.241Z"
+    },
+    "2014-lys-3-cografya-2014-lisans-yerlestirme-sinavi-lys-3-c": {
+      "questionCount": 2,
+      "answerKeyCount": 16,
+      "at": "2026-06-11T13:42:29.182Z"
+    },
+    "2014-lys-3-edebiyat-2014-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 3,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:42:31.254Z"
+    },
+    "2014-ygs-karma-2014-yuksekogretime-gecis-sinavi-ygs-s": {
+      "questionCount": 14,
+      "answerKeyCount": 5,
+      "at": "2026-06-11T13:42:42.600Z"
+    },
+    "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 10,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:42:44.014Z"
+    },
+    "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 6,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:42:45.242Z"
+    },
+    "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 6,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:42:47.414Z"
+    },
+    "2013-lys-2-kimya-2013-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 3,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:42:48.818Z"
+    },
+    "2013-lys-3-cografya-2013-lisans-yerlestirme-sinavi-lys-3-c": {
+      "questionCount": 1,
+      "answerKeyCount": 24,
+      "at": "2026-06-11T13:42:49.598Z"
+    },
+    "2013-lys-3-edebiyat-2013-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 3,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:42:52.293Z"
+    },
+    "2013-ygs-karma-2013-yuksekogretime-gecis-sinavi-ygs-sor": {
+      "questionCount": 16,
+      "answerKeyCount": 5,
+      "at": "2026-06-11T13:42:59.194Z"
+    },
+    "2012-lys-1-geometri-2012-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 6,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:43:02.750Z"
+    },
+    "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 10,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:43:06.266Z"
+    },
+    "2012-lys-2-biyoloji-2012-lisans-yerlestirme-sinavi-lys-2-b": {
+      "questionCount": 1,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:43:07.902Z"
+    },
+    "2012-lys-2-fizik-2012-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 5,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:43:12.230Z"
+    },
+    "2012-lys-2-kimya-2012-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 2,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:43:14.983Z"
+    },
+    "2012-lys-3-edebiyat-2012-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 5,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:43:17.978Z"
+    },
+    "2012-ygs-karma-2012-yuksekogretime-gecis-sinavi-ygs-so": {
+      "questionCount": 15,
+      "answerKeyCount": 40,
+      "at": "2026-06-11T13:43:31.392Z"
+    },
+    "2011-lys-1-geometri-2011-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 8,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:43:34.744Z"
+    },
+    "2011-lys-1-matematik-2011-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 10,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:43:38.434Z"
+    },
+    "2016-lys-2-kimya-2016-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 2,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:44:07.191Z"
+    },
+    "2011-lys-2-biyoloji-2011-lisans-yerlestirme-sinavi-lys-2-b": {
+      "questionCount": 2,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:44:35.263Z"
+    },
+    "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 7,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:44:38.564Z"
+    },
+    "2011-lys-2-kimya-2011-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 4,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:44:42.379Z"
+    },
+    "2011-lys-3-cografya-2011-lisans-yerlestirme-sinavi-lys-3-c": {
+      "questionCount": 1,
+      "answerKeyCount": 24,
+      "at": "2026-06-11T13:44:43.727Z"
+    },
+    "2011-lys-3-edebiyat-2011-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 5,
+      "answerKeyCount": 56,
+      "at": "2026-06-11T13:44:45.265Z"
+    },
+    "2011-lys-4-felsefe-2011-lisans-yerlestirme-sinavi-lys-4-f": {
+      "questionCount": 1,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:44:48.295Z"
+    },
+    "2011-lys-5-genel-2011-lisans-yerlestirme-sinavi-lys-5-y": {
+      "questionCount": 4,
+      "answerKeyCount": 80,
+      "at": "2026-06-11T13:44:52.996Z"
+    },
+    "2011-ygs-karma-2011-yuksekogretime-gecis-sinavi-ygs-s": {
+      "questionCount": 11,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:44:54.502Z"
+    },
+    "2010-lys-1-geometri-2010-lisans-yerlestirme-sinavi-lys-1-g": {
+      "questionCount": 20,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:44:55.605Z"
+    },
+    "2010-lys-1-matematik-2010-lisans-yerlestirme-sinavi-lys-1-m": {
+      "questionCount": 20,
+      "answerKeyCount": 50,
+      "at": "2026-06-11T13:44:56.694Z"
+    },
+    "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b": {
+      "questionCount": 18,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:44:58.047Z"
+    },
+    "2010-lys-2-fizik-2010-lisans-yerlestirme-sinavi-lys-2-f": {
+      "questionCount": 18,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:44:59.578Z"
+    },
+    "2010-lys-2-kimya-2010-lisans-yerlestirme-sinavi-lys-2-k": {
+      "questionCount": 21,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:45:01.189Z"
+    },
+    "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c": {
+      "questionCount": 20,
+      "answerKeyCount": 24,
+      "at": "2026-06-11T13:45:02.629Z"
+    },
+    "2010-lys-3-edebiyat-2010-lisans-yerlestirme-sinavi-lys-3-t": {
+      "questionCount": 34,
+      "answerKeyCount": 56,
+      "at": "2026-06-11T13:45:04.145Z"
+    },
+    "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c": {
+      "questionCount": 12,
+      "answerKeyCount": 16,
+      "at": "2026-06-11T13:45:05.623Z"
+    },
+    "2010-lys-4-felsefe-2010-lisans-yerlestirme-sinavi-lys-4-f": {
+      "questionCount": 29,
+      "answerKeyCount": 30,
+      "at": "2026-06-11T13:45:07.101Z"
+    },
+    "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t": {
+      "questionCount": 32,
+      "answerKeyCount": 44,
+      "at": "2026-06-11T13:45:08.496Z"
+    },
+    "2010-lys-5-almanca-2010-lisans-yerlestirme-sinavi-lys-5-a": {
+      "questionCount": 55,
+      "answerKeyCount": 0,
+      "at": "2026-06-11T13:45:09.923Z"
+    }
+  },
+  "errors": {
+    "2016-lys-2-biyoloji-2016-lisans-yerlestirme-sinavi-lys-2-b": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:40:36.599Z"
+    },
+    "2016-lys-2-kimya-2016-lisans-yerlestirme-sinavi-lys-2-k": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:42:13.807Z"
+    },
+    "2016-lys-3-edebiyat-2016-lisans-yerlestirme-sinavi-lys-3-t": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:40:40.538Z"
+    },
+    "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:40:45.486Z"
+    },
+    "2015-ygs-karma-2015-yuksekogretime-gecis-sinavi-ygs-s": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:41:06.587Z"
+    },
+    "2014-lys-4-cografya-2014-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:16.478Z"
+    },
+    "2014-lys-4-felsefe-2014-lisans-yerlestirme-sinavi-lys-4-f": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:17.714Z"
+    },
+    "2014-lys-4-tarih-2014-lisans-yerlestirme-sinavi-lys-4-t": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:44:18.160Z"
+    },
+    "2013-lys-2-biyoloji-2013-lisans-yerlestirme-sinavi-lys-2-b": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:19.112Z"
+    },
+    "2013-lys-4-cografya-2013-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:20.905Z"
+    },
+    "2013-lys-4-felsefe-2013-lisans-yerlestirme-sinavi-lys-4-f": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:22.008Z"
+    },
+    "2013-lys-4-tarih-2013-lisans-yerlestirme-sinavi-lys-4-t": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:22.877Z"
+    },
+    "2012-lys-3-cografya-2012-lisans-yerlestirme-sinavi-lys-3-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:24.235Z"
+    },
+    "2012-lys-4-cografya-2012-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:27.304Z"
+    },
+    "2012-lys-4-felsefe-2012-lisans-yerlestirme-sinavi-lys-4-f": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:31.536Z"
+    },
+    "2012-lys-4-tarih-2012-lisans-yerlestirme-sinavi-lys-4-t": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:32.678Z"
+    },
+    "2017-lys-2-biyoloji-2017-lisans-yerlestirme-sinavi-lys-2-b": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:02.475Z"
+    },
+    "2017-lys-4-cografya-2017-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:04.574Z"
+    },
+    "2017-lys-4-felsefe-2017-lisans-yerlestirme-sinavi-lys-4-f": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:06.074Z"
+    },
+    "2016-lys-3-cografya-2016-lisans-yerlestirme-sinavi-lys-3-c": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:44:07.641Z"
+    },
+    "2016-lys-4-cografya-2016-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:08.921Z"
+    },
+    "2016-lys-4-felsefe-2016-lisans-yerlestirme-sinavi-lys-4-f": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:44:09.363Z"
+    },
+    "2016-lys-4-tarih-2016-lisans-yerlestirme-sinavi-lys-4-t": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:11.307Z"
+    },
+    "2015-lys-2-biyoloji-2015-lisans-yerlestirme-sinavi-lys-2-b": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:12.897Z"
+    },
+    "2015-lys-4-cografya-2015-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:13.960Z"
+    },
+    "2014-lys-2-biyoloji-2014-lisans-yerlestirme-sinavi-lys-2-b": {
+      "message": "fetch failed",
+      "at": "2026-06-11T13:44:14.412Z"
+    },
+    "2011-lys-4-cografya-2011-lisans-yerlestirme-sinavi-lys-4-c": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:46.721Z"
+    },
+    "2011-lys-4-tarih-2011-lisans-yerlestirme-sinavi-lys-4-t": {
+      "message": "PDF metninden soru çıkarılamadı",
+      "at": "2026-06-11T13:44:49.518Z"
+    }
+  },
+  "updatedAt": "2026-06-11T13:45:09.925Z"
+}

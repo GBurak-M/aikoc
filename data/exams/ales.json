@@ -1,0 +1,430 @@
+{
+  "exam": "ALES",
+  "year": 2024,
+  "subjects": [
+    "Sayısal",
+    "Sözel"
+  ],
+  "questions": [
+    {
+      "id": "ales-2024-sayısal-001",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 1",
+      "difficulty": "kolay",
+      "question": "1. Bir işçi bir işi 12 günde, diğeri 18 günde bitiriyor. Birlikte kaç günde bitirirler?",
+      "options": {
+        "A": "6",
+        "B": "7,2",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-002",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 2",
+      "difficulty": "orta",
+      "question": "2. \"Mütevazı\" kelimesinin eş anlamlısı hangisidir?",
+      "options": {
+        "A": "Kibirli",
+        "B": "Alçakgönüllü",
+        "C": "Cesur",
+        "D": "Hızlı",
+        "E": "Cimri"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-003",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 3",
+      "difficulty": "zor",
+      "question": "3. Bir sayının karesi ile kendisinin toplamı 72 ise sayı kaçtır?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-004",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 4",
+      "difficulty": "kolay",
+      "question": "4. Paragrafın ana düşüncesi genellikle nerede bulunur?",
+      "options": {
+        "A": "Sadece ilk cümlede",
+        "B": "Sadece son cümlede",
+        "C": "Paragrafın tamamında",
+        "D": "Yalnızca örneklerde",
+        "E": "Hiçbir yerde"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-005",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 5",
+      "difficulty": "orta",
+      "question": "5. Bir işçi bir işi 12 günde, diğeri 18 günde bitiriyor. Birlikte kaç günde bitirirler?",
+      "options": {
+        "A": "6",
+        "B": "7,2",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-006",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 1",
+      "difficulty": "zor",
+      "question": "6. \"Mütevazı\" kelimesinin eş anlamlısı hangisidir?",
+      "options": {
+        "A": "Kibirli",
+        "B": "Alçakgönüllü",
+        "C": "Cesur",
+        "D": "Hızlı",
+        "E": "Cimri"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-007",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 2",
+      "difficulty": "kolay",
+      "question": "7. Bir sayının karesi ile kendisinin toplamı 72 ise sayı kaçtır?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-008",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 3",
+      "difficulty": "orta",
+      "question": "8. Paragrafın ana düşüncesi genellikle nerede bulunur?",
+      "options": {
+        "A": "Sadece ilk cümlede",
+        "B": "Sadece son cümlede",
+        "C": "Paragrafın tamamında",
+        "D": "Yalnızca örneklerde",
+        "E": "Hiçbir yerde"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-009",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 4",
+      "difficulty": "zor",
+      "question": "9. Bir işçi bir işi 12 günde, diğeri 18 günde bitiriyor. Birlikte kaç günde bitirirler?",
+      "options": {
+        "A": "6",
+        "B": "7,2",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-010",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 5",
+      "difficulty": "kolay",
+      "question": "10. \"Mütevazı\" kelimesinin eş anlamlısı hangisidir?",
+      "options": {
+        "A": "Kibirli",
+        "B": "Alçakgönüllü",
+        "C": "Cesur",
+        "D": "Hızlı",
+        "E": "Cimri"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-011",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 1",
+      "difficulty": "orta",
+      "question": "11. Bir sayının karesi ile kendisinin toplamı 72 ise sayı kaçtır?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-012",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 2",
+      "difficulty": "zor",
+      "question": "12. Paragrafın ana düşüncesi genellikle nerede bulunur?",
+      "options": {
+        "A": "Sadece ilk cümlede",
+        "B": "Sadece son cümlede",
+        "C": "Paragrafın tamamında",
+        "D": "Yalnızca örneklerde",
+        "E": "Hiçbir yerde"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-013",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 3",
+      "difficulty": "kolay",
+      "question": "13. Bir işçi bir işi 12 günde, diğeri 18 günde bitiriyor. Birlikte kaç günde bitirirler?",
+      "options": {
+        "A": "6",
+        "B": "7,2",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-014",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 4",
+      "difficulty": "orta",
+      "question": "14. \"Mütevazı\" kelimesinin eş anlamlısı hangisidir?",
+      "options": {
+        "A": "Kibirli",
+        "B": "Alçakgönüllü",
+        "C": "Cesur",
+        "D": "Hızlı",
+        "E": "Cimri"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-015",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 5",
+      "difficulty": "zor",
+      "question": "15. Bir sayının karesi ile kendisinin toplamı 72 ise sayı kaçtır?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-016",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 1",
+      "difficulty": "kolay",
+      "question": "16. Paragrafın ana düşüncesi genellikle nerede bulunur?",
+      "options": {
+        "A": "Sadece ilk cümlede",
+        "B": "Sadece son cümlede",
+        "C": "Paragrafın tamamında",
+        "D": "Yalnızca örneklerde",
+        "E": "Hiçbir yerde"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-017",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 2",
+      "difficulty": "orta",
+      "question": "17. Bir işçi bir işi 12 günde, diğeri 18 günde bitiriyor. Birlikte kaç günde bitirirler?",
+      "options": {
+        "A": "6",
+        "B": "7,2",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-018",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 3",
+      "difficulty": "zor",
+      "question": "18. \"Mütevazı\" kelimesinin eş anlamlısı hangisidir?",
+      "options": {
+        "A": "Kibirli",
+        "B": "Alçakgönüllü",
+        "C": "Cesur",
+        "D": "Hızlı",
+        "E": "Cimri"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sayısal-019",
+      "subject": "Sayısal",
+      "topic": "Sayısal Konu 4",
+      "difficulty": "kolay",
+      "question": "19. Bir sayının karesi ile kendisinin toplamı 72 ise sayı kaçtır?",
+      "options": {
+        "A": "6",
+        "B": "7",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sayısal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sayısal",
+        "ales"
+      ]
+    },
+    {
+      "id": "ales-2024-sözel-020",
+      "subject": "Sözel",
+      "topic": "Sözel Konu 5",
+      "difficulty": "orta",
+      "question": "20. Paragrafın ana düşüncesi genellikle nerede bulunur?",
+      "options": {
+        "A": "Sadece ilk cümlede",
+        "B": "Sadece son cümlede",
+        "C": "Paragrafın tamamında",
+        "D": "Yalnızca örneklerde",
+        "E": "Hiçbir yerde"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sözel kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sözel",
+        "ales"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-3",
+  "year": 2017,
+  "subject": "Edebiyat",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Türk Dili ve Edebiyatı Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2017/OSYS/LYS/LYS3TURKDILIEDEBIYAT18062017.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 54,
+  "parsedAt": "2026-06-11T13:40:25.428Z",
+  "questions": [
+    {
+      "id": "2017-lys-3-edebiyat-2017-lisans-yerlestirme-sinavi-lys-3-t-q14",
+      "number": 14,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Yüzlerce yıllık ormanın kuytularında öylece duruyordu işte, dimdik ve mağrur. Gümüş renkli kabuklarla kaplanmış, ormanın bütün ağaçlarından çok daha uzun boylu bir ağaç. Bursa'nın ünlü kumaşları gibi yeşil yapraklarının arasından ateş topu gibi patlayan zakkum, pembemsi çiçekleriyle oracıkta duruyor ve kışın kapanmış bir havuzun sessiz hüznüyle \"Ben buradayım.\" diye ünlemsiz çığlıklar atıyordu. Sonra arduvaz grisi yağmurlar yağdı. Gelin böceklerinin mekân tuttuğu yapraklar hüzünlü hüzünlü sararmaya başladı. \"Perde!\" deyip yavaşça yerlere döküldüler. Sonra meyveler, birer birer uç verdi. Bu parçanın anlatımıyla ilgili olarak aşağıdakilerden hangisi yanlıştır? Kişileştirme yapılmıştır. Karşılaştırmadan yararlanılmıştır. Benzetmelere yer verilmiştir. Örneklemeye başvurulmuştur. Betimleyici ögeler kullanılmıştır.",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2017-lys-3-edebiyat-2017-lisans-yerlestirme-sinavi-lys-3-t-q23",
+      "number": 23,
+      "subject": "Edebiyat",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "II",
+        "B": "III",
+        "C": "IV",
+        "D": "V",
+        "E": "VI"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "exam": "LYS-1",
+  "year": 2015,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2015/LYS/Sorular/2015_LYS_1_Matematik.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 11,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:40:50.726Z",
+  "questions": [
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q2",
+      "number": 2,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "işleminin sonucu aşağıdakilerden hangisine eşittir? işleminin sonucu kaçtır?",
+      "options": {
+        "A": "4",
+        "B": "5",
+        "C": "8",
+        "D": "9",
+        "E": "10"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q4",
+      "number": 4,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/MAT pozitif tam sayılar ve olduğuna göre, toplamının alabileceği en küçük değer kaçtır?",
+      "options": {
+        "A": "5",
+        "B": "10",
+        "C": "15",
+        "D": "20",
+        "E": "25"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q6",
+      "number": 6,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "eşitliğini sağlayan x değeri kaçtır? x bir pozitif tam sayı olmak üzere, ifadesi bir tam sayının karesine eşit olduğuna göre, x’in alabileceği değerler toplamı kaçtır?",
+      "options": {
+        "A": "30",
+        "B": "42",
+        "C": "66",
+        "D": "70",
+        "E": "78"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q8",
+      "number": 8,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/MAT a, b ve c küçükten büyüğe doğru sıralanmış ardışık üç çift tam sayı olmak üzere, b ile c’nin geometrik ortalaması, a ile b’nin geometrik ortalamasının katıdır. Buna göre, toplamı kaçtır?",
+      "options": {
+        "A": "26",
+        "B": "27",
+        "C": "29",
+        "D": "31",
+        "E": "32"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q10",
+      "number": 10,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "a, b, c gerçel sayılar ve olmak üzere, eşitlikleri veriliyor. olduğuna göre, a kaçtır? a, b, c gerçel sayılar ve olmak üzere, olduğuna göre, aşağıdaki sıralamalardan hangisi doğrudur?",
+      "options": {
+        "A": "84",
+        "B": "91",
+        "C": "96",
+        "D": "105",
+        "E": "112"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q16",
+      "number": 16,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/MAT Aşağıda, bir f fonksiyonunun grafiği verilmiştir. Buna göre, fonksiyonunun grafiği aşağıdakilerden hangisi olabilir?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "14",
+        "E": "16"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q19",
+      "number": 19,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/MAT ikinci dereceden bir polinom, sabit bir polinom olmak üzere, eşitlikleri veriliyor. Buna göre, k’nin alabileceği değerler toplamı kaçtır? Baş katsayısı 1 olan üçüncü dereceden P(x) polinomu, ile kalansız bölünebilmektedir. P(2x) polinomunun 2x – 3 ile bölümünden elde edilen kalan 52’dir. Buna göre, P(2) değeri kaçtır?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q21",
+      "number": 21,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "b ve c sıfırdan farklı gerçel sayılar olmak üzere, denkleminin kökleri b ve c’dir. Buna göre, çarpımı kaçtır? açık aralığında, ifadelerinden hangileri doğrudur? Yalnız I Yalnız II I ve III II ve III I, II ve III",
+      "options": {
+        "A": "20",
+        "B": "22",
+        "C": "24",
+        "D": "26",
+        "E": "28"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q32",
+      "number": 32,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Dik koordinat düzleminde, taban köşeleri x-ekseni üzerindeki ardışık çift doğal sayılar olan, tepe noktası ise eğrisi üzerinde bulunan tüm ikizkenar üçgenler çiziliyor. Buna göre, çizilen tüm üçgenlerin alanları toplamı kaç birimkaredir? 1 2 olmak üzere, eşitliklerini sağlayan a ve b gerçel sayıları için toplamı kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q38",
+      "number": 38,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/MAT Aşağıda, f fonksiyonunun grafiği verilmiştir. Buna göre, I. f fonksiyonunun aralığında mutlak maksimum değeri yoktur. II. olacak şekilde vardır. III. ifadelerinden hangileri doğrudur? Yalnız I Yalnız II I ve II II ve III I, II ve III",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2015-lys-1-matematik-2015-lisans-yerlestirme-sinavi-lys-1-m-q44",
+      "number": 44,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2015-LYS1/MAT Gerçel sayılar kümesi üzerinde tanımlı ve iki defa türevlenebilir bir f fonksiyonu için eşitlikleri veriliyor. Buna göre, integralinin değeri kaçtır? –1 –2 –3",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-1"
+      ]
+    }
+  ]
+}

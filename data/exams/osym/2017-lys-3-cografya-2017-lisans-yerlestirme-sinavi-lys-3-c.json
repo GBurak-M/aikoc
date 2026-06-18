@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-3",
+  "year": 2017,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Coğrafya-1 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2017/OSYS/LYS/LYS3COGRAFYA18062017.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 23,
+  "parsedAt": "2026-06-11T13:40:23.842Z",
+  "questions": [
+    {
+      "id": "2017-lys-3-cografya-2017-lisans-yerlestirme-sinavi-lys-3-c-q13",
+      "number": 13,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2017-lys-3-cografya-2017-lisans-yerlestirme-sinavi-lys-3-c-q22",
+      "number": 22,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-3"
+      ]
+    }
+  ]
+}

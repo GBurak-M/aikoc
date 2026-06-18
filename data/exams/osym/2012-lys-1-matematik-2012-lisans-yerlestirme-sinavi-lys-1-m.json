@@ -1,0 +1,241 @@
+{
+  "exam": "LYS-1",
+  "year": 2012,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/180,lys1matematikpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 10,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:43:06.266Z",
+  "questions": [
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q6",
+      "number": 6,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "x ve y birer gerçel sayı olmak üzere, olduğuna göre, toplamı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "40",
+        "C": "45",
+        "D": "50",
+        "E": "60"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q10",
+      "number": 10,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "olmak üzere, pozitif bölenlerinin sayısı 3 olan kaç tane n tam sayısı vardır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q15",
+      "number": 15,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / MAT Gerçel sayılar kümesi üzerinde tanımlı bir f fonksi- yonu, her x gerçel sayısı için eşitsizliğini sağlıyor. Buna göre, I. II. III. ifadelerinden hangileri her zaman doğrudur? Yalnız I Yalnız II I ve III II ve III I, II ve III 16. Bir öğrenci, doğru olduğunu düşündüğü aşağıdaki iddiayı ispatlarken bir hata yapmıştır. İddia: A, B, C herhangi kümeler olmak üzere, ’dir. Öğrencinin ispatı: kümesinin her elemanının kümesinde olduğunu gösterirsem ispat biter. Şimdi, alalım. (I) Buradan olur. (II) Buradan olur. (III) Buradan olur. (IV) Buradan olur. (V) Buradan olur. Bu öğrenci, numaralandırılmış adımların hangisinde hata yapmıştır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "1",
+        "D": "0",
+        "E": "2"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q17",
+      "number": 17,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / MAT a ve b birer pozitif tam sayı olmak üzere, polinomunun katsayılarının toplamı 15 olduğuna göre, toplamı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "I",
+        "C": "II",
+        "D": "III",
+        "E": "IV"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q19",
+      "number": 19,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "parabolü doğrusuna teğet olduğuna göre, a kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "5",
+        "C": "3",
+        "D": "2",
+        "E": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q21",
+      "number": 21,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / MAT Bir torbada 5 kırmızı ve 4 beyaz bilye vardır. Bu torbadan aynı anda rastgele 3 bilye çekildiğinde her bir renkten en fazla 2 bilye olma olasılığı kaçtır? ifadesinin değeri kaçtır? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "15",
+        "C": "20",
+        "D": "25",
+        "E": "40"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q35",
+      "number": 35,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Bir A matrisinin çarpma işlemine göre tersi olmak üzere, matris eşitliğinde a kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q36",
+      "number": 36,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / MAT olmak üzere, matris gösterimi olan doğrusal denklem sistemi aşağıdakilerden hangisidir? E) limitinin değeri kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q38",
+      "number": 38,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "limitinin değeri kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "9",
+        "D": "12",
+        "E": "15"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2012-lys-1-matematik-2012-lisans-yerlestirme-sinavi-lys-1-m-q40",
+      "number": 40,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2012 – LYS1 / MAT fonksiyonu gerçel sayılar kümesinde sürekli olduğu- na göre, farkı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "3",
+        "D": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2012",
+        "LYS-1"
+      ]
+    }
+  ]
+}

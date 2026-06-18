@@ -1,0 +1,81 @@
+{
+  "exam": "LYS-2",
+  "year": 2013,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/145,lys2kimyatestipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 3,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:42:48.818Z",
+  "questions": [
+    {
+      "id": "2013-lys-2-kimya-2013-lisans-yerlestirme-sinavi-lys-2-k-q8",
+      "number": 8,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2013 - LYS2 / KİM Saf suyun 1 atmosfer basınçta kaynama noktası Aynı miktarda su içeren üç ayrı kaba eşit mol sayılarında X, Y, Z maddeleri ayrı ayrı eklendiğinde oluşan çözeltilerin kaynama noktalarının sırasıyla; olduğu gözlenmiştir. Buna göre; X, Y, Z maddeleri aşağıdakilerden hangisi olabilir? A) B) C) D) E) Etil alkol KCl Sakkaroz NaOH Metanol NaCl Sakkaroz 9. Aşağıdaki tabloda, bazı atomlar arasındaki bağ enerjileri verilmiştir. Bağ C H C O O O O H Bağ enerjisi (kJ/mol) 414 736 498 464 Buna göre, tepkimesinin entalpi değişimi kaç kJ’dir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "16",
+        "C": "20",
+        "D": "25",
+        "E": "40"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-kimya-2013-lisans-yerlestirme-sinavi-lys-2-k-q16",
+      "number": 16,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2013 - LYS2 / KİM Aşağıda bir hücre şeması verilmiştir. Buna göre, aşağıdaki ifadelerden hangisi yanlıştır? A) B) C) D) E) Zn elektrodunun kütlesi zamanla azalır. Hücre potansiyeli 0,36 volttur. 2 2 Zn(k) Zn (1M) Cd I II   Hücre diyagramı, (1M) I Cd(k) şeklindedir. Elektron akımı, dış devrede Zn elektrodundan Cd elektroduna doğru olur. I. yarı hücre katot, II. yarı hücre anottur. 17. Grafikte, doğal radyoaktif bozunma serisi verilmiştir. Buna göre, aşağıdakilerden hangisinin sonucunda izotopu oluşur? A) B) C) D) E) izotopunun ışıması yapması izotopunun ışıması yapması izotopunun ışıması yapması izotopunun ışıması yapması izotopunun ışıması yapması",
+      "options": {
+        "A": "(k) (k)",
+        "B": "Cd Cd (1M) Ag (1M) Ag",
+        "C": "I II I",
+        "D": " "
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-kimya-2013-lisans-yerlestirme-sinavi-lys-2-k-q29",
+      "number": 29,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Yukarıda ayna görüntüsü verilen I ve II bileşikleriyle ilgili, I. Erime ve kaynama sıcaklıkları farklıdır. II. Düzlem polarize ışığı aynı açıyla zıt yönde çevirirler. III. Asimetrik moleküllerle yaptıkları tepkimelerde farklı davranırlar. ifadelerinden hangileri doğrudur? Yalnız I Yalnız II Yalnız III II ve III I, II ve III",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    }
+  ]
+}

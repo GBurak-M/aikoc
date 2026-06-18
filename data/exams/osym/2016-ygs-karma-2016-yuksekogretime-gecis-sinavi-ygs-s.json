@@ -1,0 +1,335 @@
+{
+  "exam": "YGS",
+  "year": 2016,
+  "subject": "Karma",
+  "title": "Yükseköğretime Geçiş Sınavı (YGS) Soru Kitapçığı ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2016/YGS/YGS14032016.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 14,
+  "answerKeyCount": 5,
+  "parsedAt": "2026-06-11T13:42:17.289Z",
+  "questions": [
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q2",
+      "number": 2,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "işleminin sonucu kaçtır? işleminin sonucu kaçtır?",
+      "options": {
+        "A": "8",
+        "B": "9",
+        "C": "12",
+        "D": "16",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q12",
+      "number": 12,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Temel Matematik Gerçel sayı ekseninde 2 noktasına olan uzaklığı, – 4 noktasına olan uzaklığının yarısından küçük olan sayılar, aşağıdaki eşitsizliklerden hangisinin çözüm kümesini oluşturur? Pozitif gerçel sayılar kümesi üzerinde işlemi biçiminde tanımlanıyor. olduğuna göre, x kaçtır? 3 5",
+      "options": {
+        "A": "10",
+        "B": "12",
+        "C": "15",
+        "D": "16",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q13",
+      "number": 13,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I.",
+        "B": "II.",
+        "C": "III.",
+        "D": "IV.",
+        "E": "V."
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q17",
+      "number": 17,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "Ardışık iki ya da üç pozitif tam sayının kareleri toplamına eşit olan sayılara kardışık sayılar denir. Örnek: olduğundan 13 ve 14 birer kardışık sayıdır. Buna göre, aşağıdakilerin hangisi kardışık sayı değildir?",
+      "options": {
+        "A": "7",
+        "B": "8",
+        "C": "9",
+        "D": "10",
+        "E": "11"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q18",
+      "number": 18,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Türkçe (I) XIX. yüzyılda dışarıdan gelebilecek herhangi bir salgın hastalık tehlikesine karşı karantina idaresi kurulmuş. (II) Karantina, İtalyancadan alınmış ve “kırk, kırklık, kırktan ibaret” anlamına gelen bir sözcük. (III) Salgın hastalık tehlikesine karşı İstanbul’dan sonra ikinci karantina idaresi 1840’ta İzmir’de kurulmuş. (IV) Önce gemiler İzmir Karantina İdaresinin bulunduğu sahilde kırk gün bekler ve yolcular barakalarda kalırmış. (V) 1846’da Mithat Paşa Meslek Lisesinin yanındaki yerde bir karantina binası inşa edilmiş ve o günden sonra semtin adı Karantina olarak kayıtlara geçmiş. (VI) 1863’te Karantina İdaresi Urla’ya taşınsa da semt sakinleri arasında bu ismin kullanımı günümüze kadar devam etmiş. Bu parçadaki numaralanmış cümlelerden hangisi düşüncenin akışını bozmaktadır?",
+      "options": {
+        "A": "II.",
+        "B": "III.",
+        "C": "IV.",
+        "D": "V.",
+        "E": "VI."
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q19",
+      "number": 19,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Temel Matematik Bir okul müdürü, pazartesi günü okulun bazı öğrencilerine, \"Bu iletiyi alan her öğrenci ertesi gün iki öğrenciye göndersin.\" notu içeren bir elektronik posta gönderiyor. İletiyi alan öğrenciler bu notta yazılanı uyguluyor. Aynı haftanın cuma günü sonunda bu ileti okuldaki tüm öğrencilere ulaşıyor ve her öğrenci bu iletiyi yalnızca bir kez alıyor. Okuldaki öğrenci sayısı 930 olduğuna göre, bu ileti başlangıçta kaç öğrenciye gönderilmiştir?",
+      "options": {
+        "A": "9",
+        "B": "11",
+        "C": "13",
+        "D": "15",
+        "E": "17"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q21",
+      "number": 21,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "Bir balıkçı; 16 kg çinekop, 20 kg mezgit ve 50 kg istavrit yakalamıştır. Daha sonra bu balıkların kg satış fiyatlarını  çinekop mezgitten, mezgit de istavritten % 25 daha pahalı olacak biçimde belirlemiştir. Balıkçı, bu balıkların tamamını belirlediği fiyatlardan satarak 1600 TL gelir elde etmiştir. Buna göre, mezgitin kg satış fiyatı kaç TL’dir?",
+      "options": {
+        "A": "175",
+        "B": "200",
+        "C": "225",
+        "D": "240",
+        "E": "250"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q23",
+      "number": 23,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Temel Matematik Bir taş sanatçısı renkli taşları üst üste koyarak çiçek veya yıldız motifleri elde ediyor. Bu sanatçı, her sırada  25 tane olmak üzere 4 sıra taşla bir çiçek motifi,  30 tane olmak üzere 3 sıra taşla bir yıldız motifi oluşturuyor. Bu sanatçı, toplam 1150 tane taş kullanarak 12 tane motif oluşturmuştur. Buna göre, sanatçının oluşturduğu çiçek motifi sayısı kaçtır?",
+      "options": {
+        "A": "9",
+        "B": "10",
+        "C": "12",
+        "D": "15",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q25",
+      "number": 25,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "Bir terzi ölçüm yapmak için 40 cm ve 50 cm uzunluklarında iki cetvel kullanmaktadır. Zeynep bu terziden 6 metre kumaş sipariş etmiştir. Bu terzi 50 cm uzunluğundaki cetveli kullandığını düşünerek bu siparişi hazırlamış, ancak yanlışlıkla 40 cm uzunluğundaki cetveli kullanmıştır. Bu yanlış ölçümden dolayı Zeynep, alması gerekenden kaç metre daha az kumaş almıştır?",
+      "options": {
+        "A": "14",
+        "B": "15",
+        "C": "16",
+        "D": "17",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q27",
+      "number": 27,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Temel Matematik Bir meyve suyu fabrikasında üretilen portakal suyu 1 litrelik cam şişelere veya 1,5 litrelik karton kutulara doldurulmaktadır. Bu fabrikaya  bir şişe portakal suyunun maliyeti 2,5 TL,  bir kutu portakal suyunun maliyeti 2,7 TL olmaktadır. Bu fabrikaya; bir şişenin maliyeti, bir kutunun maliyetinden 0,6 TL fazladır. Buna göre, bir şişenin maliyeti kaç TL’dir?",
+      "options": {
+        "A": "12",
+        "B": "16",
+        "C": "18",
+        "D": "24",
+        "E": "36"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q29",
+      "number": 29,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "Banu, üç vagonlu bir yolcu treni için bilet satışı yapmaktadır. Belirli sayıda bilet sattıktan sonra Banu; ilk vagonda 6, ikinci vagonda ise 13 koltuğun boş kaldığını görüyor. Banu, her üç vagondan da birer bilet satışını garantilemek için en az kaç bilet satması gerektiğini hesaplıyor ve sonucu 23 buluyor. Buna göre, trendeki toplam boş koltuk sayısı kaçtır?",
+      "options": {
+        "A": "70",
+        "B": "72",
+        "C": "74",
+        "D": "76",
+        "E": "78"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q31",
+      "number": 31,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Temel Matematik Bir yarışmada 1080 TL’lik para ödülü ilk üç dereceyi alan yarışmacılar arasında 3:2:1 oranında paylaştırılacaktır. Para ödüllerini almaya giden bu yarışmacılardan her biri ödüllerinin 50 TL’lik banknotlar hâlinde ödenebilen kısmını alabilmiştir. Buna göre, yarışmacıların alabildiği toplam ödül miktarı kaç TL’dir?",
+      "options": {
+        "A": "54",
+        "B": "48",
+        "C": "45",
+        "D": "42",
+        "E": "35"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q35",
+      "number": 35,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "2016-YGS/Temel Matematik Bir tasarımcının birim kareler üzerine, 2 birim yarıçaplı çeyrek çemberler çizerek oluşturduğu desen şekilde gösterilmiştir. Bu desenin çevre uzunluğu kaç birimdir? Şekilde verilen boyalı üçgenlerin alanları birbirine eşittir. Bu paralelkenarın alanı 30 birimkare olduğuna göre, BCF üçgeninin alanı kaç birimkaredir?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "14",
+        "E": "16"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    },
+    {
+      "id": "2016-ygs-karma-2016-yuksekogretime-gecis-sinavi-ygs-s-q37",
+      "number": 37,
+      "subject": "Karma",
+      "topic": "YGS",
+      "difficulty": "orta",
+      "question": "Taban ayrıtı 1 birim, yüksekliği 3 birim olan bir kare dik prizma ile bu prizmaların dört tanesinin birleştirilmesiyle elde edilen boyutlarındaki ortası boş bir cisim aşağıda gösterilmiştir. Elde edilen bu cismin yüzey alanı kaç birimkaredir?",
+      "options": {
+        "A": "8",
+        "B": "9",
+        "C": "10",
+        "D": "11",
+        "E": "12"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2016",
+        "YGS"
+      ]
+    }
+  ]
+}

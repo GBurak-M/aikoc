@@ -1,0 +1,128 @@
+{
+  "exam": "LYS-1",
+  "year": 2014,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2014/LYS/sorucevap/2014_LYS_1_Geometri.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 5,
+  "answerKeyCount": 10,
+  "parsedAt": "2026-06-11T13:41:08.612Z",
+  "questions": [
+    {
+      "id": "2014-lys-1-geometri-2014-lisans-yerlestirme-sinavi-lys-1-g-q8",
+      "number": 8,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Bu soru iptal edilmiştir. 2014 – LYS1 / GEO ABCD bir dikdörtgen Yukarıdaki verilere göre, FAG üçgeninin alanı kaç dir? Bir düzgün altıgenin tüm köşelerinden geçen dikdörtgenin uzun kenarı 6 cm’dir. Buna göre, dikdörtgenin kısa kenarı kaç cm’dir?",
+      "options": {
+        "A": "8",
+        "B": "9",
+        "C": "10",
+        "D": "12",
+        "E": "15"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-geometri-2014-lisans-yerlestirme-sinavi-lys-1-g-q12",
+      "number": 12,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2014 – LYS1 / GEO O merkezli çeyrek çember AOBC bir deltoid Yukarıdaki verilere göre, boyalı bölgenin alanı kaç dir? Birim kareler üzerine çizilen O merkezli 2 birim yarıçaplı dairenin bir kısmı şekildeki gibi boyanmıştır. Buna göre, boyalı bölgenin çevresi kaç birimdir?",
+      "options": {
+        "A": "A",
+        "B": "B",
+        "C": "C",
+        "D": "D",
+        "E": "E"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-geometri-2014-lisans-yerlestirme-sinavi-lys-1-g-q16",
+      "number": 16,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2014 – LYS1 / GEO Şekildeki O merkezli çemberin çapı 4 eşit parçaya bölünmüş ve ile çaplı yarım çemberler çizilip boyalı bölge oluşturulmuştur. Boyalı bölgenin alanı olduğuna göre, O merkezli çemberin yarıçapı kaç cm’dir?",
+      "options": {
+        "A": "12",
+        "B": "14",
+        "C": "16",
+        "D": "18",
+        "E": "20"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-geometri-2014-lisans-yerlestirme-sinavi-lys-1-g-q23",
+      "number": 23,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Dik koordinat düzleminde doğruları veriliyor. d doğrusunun Ox ekseni doğrultusunda 1 birim sağa, e doğrusunun Oy ekseni doğrultusunda 2 birim aşağı ötelenmesiyle elde edilen doğrular noktasında kesişiyor. Buna göre, toplamı kaçtır?",
+      "options": {
+        "A": "10",
+        "B": "12",
+        "C": "14",
+        "D": "16",
+        "E": "18"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2014-lys-1-geometri-2014-lisans-yerlestirme-sinavi-lys-1-g-q25",
+      "number": 25,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2014 – LYS1 / GEO Dik koordinat düzleminde, ve doğrula- rının çemberini kestiği noktaları köşe kabul eden kirişler dörtgeninin alanı kaç birim karedir? 2 2 x y 25  ",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-1"
+      ]
+    }
+  ]
+}

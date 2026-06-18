@@ -1,0 +1,57 @@
+{
+  "cities": [
+    {
+      "name": "İstanbul",
+      "plate": 34,
+      "region": "Marmara"
+    },
+    {
+      "name": "Ankara",
+      "plate": 6,
+      "region": "İç Anadolu"
+    },
+    {
+      "name": "İzmir",
+      "plate": 35,
+      "region": "Ege"
+    },
+    {
+      "name": "Bursa",
+      "plate": 16,
+      "region": "Marmara"
+    },
+    {
+      "name": "Antalya",
+      "plate": 7,
+      "region": "Akdeniz"
+    },
+    {
+      "name": "Konya",
+      "plate": 42,
+      "region": "İç Anadolu"
+    },
+    {
+      "name": "Gaziantep",
+      "plate": 27,
+      "region": "Güneydoğu Anadolu"
+    },
+    {
+      "name": "Şanlıurfa",
+      "plate": 63,
+      "region": "Güneydoğu Anadolu",
+      "aliases": [
+        "Urfa"
+      ]
+    },
+    {
+      "name": "Adana",
+      "plate": 1,
+      "region": "Akdeniz"
+    },
+    {
+      "name": "Trabzon",
+      "plate": 61,
+      "region": "Karadeniz"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "exam": "LYS-2",
+  "year": 2011,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/214,lys2kimyapdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 4,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:44:42.379Z",
+  "questions": [
+    {
+      "id": "2011-lys-2-kimya-2011-lisans-yerlestirme-sinavi-lys-2-k-q2",
+      "number": 2,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / KİM 000000000 KİMYA TESTİ 1. Bu testte 30 soru vardır. 2. Cevaplarınızı, cevap kâğıdının Kimya Testi için ayrılan kısmına işaretleyiniz. sıcaklıkta, bir miktar magnezyum şeridi hidroklorik asit çözeltisine atıldığında oluşan tepkimenin denklemi dir. Tepkimede açığa çıkan gazı aynı sıcaklıkta şekilde görüldüğü gibi toplanmış ve hacmi 41 mL bulunmuştur. Tepkimede Mg ve HCl’nin tamamı harcanmıştır. Açık hava basıncı 680 mm Hg, suyun buhar basıncı 20 mm Hg’dir. Buna göre, tepkimeyle ilgili aşağıdaki ifadelerden hangisi yanlıştır? (Hidrojen gazının ideal davranışta olduğu düşünülecektir.) , A) B) C) D) E) Toplanan hidrojen gazının kısmi basıncı 660 mm Hg’dir. Magnezyumun mol sayısı HCl’nin mol sayısına eşittir. 2 MgCl nin mol sayısı magnezyumun mol sayısına eşittir. Hidrojen gazının mol sayısı dir. HCl’nin mol sayısı dir. 3. Safsızlık içermeyen m gram alüminyum metalinin tamamı oksijenle tepkimeye girerek 0,51 gram bileşiğini oluşturmaktadır. Buna göre, tepkimede kaç gram alüminyum kullanılmıştır? 0,135 0,240 0,270 0,480 1,020 ve ’nun tepkime denklemi aşağıda verilmiştir. Bu tepkime 10 gram ve 5,4 gram alınarak oluşturulmuştur. Tepkime sonunda, I. Suyun tamamı harcanmıştır. II. den 0,025 mol artmıştır. III. Oluşan nin mol sayısı 0,15’tir. yargılarından hangileri doğrudur? Yalnız I Yalnız II Yalnız III I ve III I, II ve III",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0,15",
+        "C": "0,25",
+        "D": "0,50",
+        "E": "0,75"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-kimya-2011-lisans-yerlestirme-sinavi-lys-2-k-q9",
+      "number": 9,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Fe(k) ile tepkimeye girmektedir. Kapalı bir kapta ve sabit sıcaklıkta tepkime dengeye ulaştığında, denge tepkimesiyle ilgili aşağıdaki yargılardan hangisi doğrudur? 2 3 4 2 3Fe(k) 4H O(s) Fe O (k) 4H (g) + +  Denge homojen bir dengedir. 4 3 4 2 d 4 2 Fe O H K Fe H O ⎡ ⎤ ⎡ ⎤ ⎣ ⎦ ⎣ ⎦ = ⎡ ⎤ ⎡ ⎤ ⎣ ⎦ ⎣ ⎦ nin sayısal değeri ye eşittir.",
+      "options": {
+        "A": "B)",
+        "C": "D)",
+        "E": "2 SO nin molar derişimi 1,6 M’dir. 3 SO ün molar derişimi 1,6 M’dir. 2 O nin mol sayısı, molar derişimine eşittir. 1 p d K K (0,082 x 300)− = dir. d K nin sayısal değeri 80 L/mol’dür.",
+        "D": "Açığa çıkan 2 H gazının bir kısmı ortamdan uzaklaştırıldığında denge sağa (ürünler yönüne) kayar. Kaba, bir miktar daha eklendiğinde denge derişimleri değişmez. 10. 2011 - LYS2 / KİM Diğer sayfaya geçiniz. 000000000 4 ÖSYM 2 mol ile 1 mol gazları 1 litrelik bir kapta ve denklemine göre tepkimeye girmektedir. Dengede 0,2 mol oksijen gazı olduğu bulunmuştur. Buna göre, tepkime dengedeyken aşağıdaki ifadelerden hangisi yanlıştır? 2 2 3 2SO (g) O (g) 2SO (g) + "
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-kimya-2011-lisans-yerlestirme-sinavi-lys-2-k-q10",
+      "number": 10,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / KİM 2 mol ile 1 mol gazları 1 litrelik bir kapta ve denklemine göre tepkimeye girmektedir. Dengede 0,2 mol oksijen gazı olduğu bulunmuştur. Buna göre, tepkime dengedeyken aşağıdaki ifadelerden hangisi yanlıştır? 2 2 3 2SO (g) O (g) 2SO (g) +  A) B) C) D) E) 2 SO nin molar derişimi 1,6 M’dir. 3 SO ün molar derişimi 1,6 M’dir. 2 O nin mol sayısı, molar derişimine eşittir. p d K K (0,082 x 300)− = dir. d K nin sayısal değeri 80 L/mol’dür. 11. çözeltisinin 0,5 litresi ile çözeltisinin 0,5 litresi bir kapta karıştırıldığında bir çökelek oluşmaktadır. Buna göre, tepkime sonunda kaptaki maddelerle ilgili aşağıdaki ifadelerden hangisi yanlıştır? ( )12 2 4 çç Ag CrO için K 2,4 x10− = A) B) C) D) E) için iyon derişimleri çarpımı den büyüktür. Tepkime sonunda çözeltide çökmeden kalan Ag+ iyonları vardır. çöker. nin derişimi 0,25 molardır. nın derişimi 0,10 molardır.",
+      "options": {
+        "A": "2 3 4 2",
+        "B": "3Fe(k) 4H O(s) Fe O (k) 4H (g)",
+        "C": "+ +",
+        "D": ""
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-kimya-2011-lisans-yerlestirme-sinavi-lys-2-k-q30",
+      "number": 30,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / KİM 2011 LİSANS YERLEŞTİRME SINAVI-2 (LYS-2) KİMYA TESTİ 26 HAZİRAN 2011 1. C 16. A 2. D 17. E 3. B 18. A 4. C 19. E 5. D 20. C 6. E 21. B 7. A 22. D 8. C 23. A 9. E 24. E 10. D 25. C 11. A 26. B 12. E 27. D 13. D 28. D 14. C 29. E 15. E 30. B",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-2",
+  "year": 2017,
+  "subject": "Kimya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Kimya Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2017/OSYS/LYS/LYS2KIMYA18062017.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 29,
+  "parsedAt": "2026-06-11T13:40:22.303Z",
+  "questions": [
+    {
+      "id": "2017-lys-2-kimya-2017-lisans-yerlestirme-sinavi-lys-2-k-q20",
+      "number": 20,
+      "subject": "Kimya",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Aşağıdaki Lewis yapılarından hangisi yanlıştır? Polar yapıdaki bileşiklerin sudaki çözünürlüğü daha fazladır. Buna göre aşağıdaki bileşiklerden hangisi suda diğerlerinden daha çok çözünür? Metan Eten 1-Bütanol 2,2-dimetilpropan Siklopropan",
+      "options": {
+        "A": "25",
+        "B": "20",
+        "C": "15",
+        "D": "10",
+        "E": "5"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2017",
+        "LYS-2"
+      ]
+    }
+  ]
+}

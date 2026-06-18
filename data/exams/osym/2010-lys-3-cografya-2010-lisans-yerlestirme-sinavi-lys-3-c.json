@@ -1,0 +1,472 @@
+{
+  "exam": "LYS-3",
+  "year": 2010,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Coğrafya-1 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/285,2010lys3cogpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 20,
+  "answerKeyCount": 24,
+  "parsedAt": "2026-06-11T13:45:02.629Z",
+  "questions": [
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q2",
+      "number": 2,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıda Ankara’daki bulutsuz bir güne ait güneşlen- me ve sıcaklık grafiği verilmiştir. Bu grafikle ilgili aşağıdaki yorumlardan hangisi yanlıştır?",
+      "options": {
+        "A": "B)",
+        "B": "Gün içindeki sıcaklık farkı 10 ºC’den fazladır.",
+        "C": "D)",
+        "D": "Saat 1 ile 6 arasında sıcaklık 5 ºC’nin altındadır.",
+        "E": "m km 400 300 200 100 0 m km 400 300 200 100 0 m 400 300 200 100 0 m 400 300 200 100 0 m km 400 300 200 100 0 5 10 15 15 20 25 5 10 Güneşlenme Sıcaklık 1 6 12 18 24 Saat (kalori/dakika/cm )2 C Güneşlenme Sıcaklık ( ) 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 2"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q3",
+      "number": 3,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Nüfus politikaları, nüfusun niteliğini ve niceliğini etki- leyen bilinçli uygulamalardır. Dünyada, I. nüfus artış hızını azaltma, II. nüfus artış hızını artırma, III. nüfusun niteliğini iyileştirme amacıyla uygulanan üç çeşit nüfus politikası vardır. Aşağıdakilerin hangisinde bu nüfus politikalarını uygulayan ülkeler doğru olarak verilmiştir? I II III",
+      "options": {
+        "A": "İngiltere Türkiye Fransa",
+        "B": "Çin İngiltere Türkiye",
+        "C": "Fransa Çin İngiltere",
+        "D": "Türkiye Hindistan Japonya",
+        "E": "Japonya Fransa Hindistan"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q5",
+      "number": 5,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki haritada ilk yerleşmelerin ve kültür merkez- lerinin kurulduğu başlıca yerler gösterilmiştir. Buna göre, bu uygarlıkların kurulduğu yerlerin or- tak özelliği aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Verimli tarım alanları ve su kaynaklarının olması",
+        "B": "Okyanus kıyısında yer alması",
+        "C": "Zengin orman örtüsüyle kaplı olması",
+        "D": "Sıcaklık ve yağışın fazla olması",
+        "E": "Yer şekillerinin dağlık ve engebeli olması Ekvator 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 3"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q6",
+      "number": 6,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Bu parçaya göre, gözlem yapılan üç dönemde, bu yerleşim merkezinde aşağıdakilerin hangisi bakı- mından değişiklik olmamıştır?",
+      "options": {
+        "A": "Aktif nüfusun sektörel dağılımı",
+        "B": "Göçün yönü",
+        "C": "Toplam nüfus",
+        "D": "Mesken tipi",
+        "E": "Yerleşimin idari yapısı"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q7",
+      "number": 7,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "I. Madencilik ve maden endüstrisinden sağlanan gelir artışı, şehirdeki endüstriyel yatırımların çe- şitlenmesini sağladı. Şehir ve çevresi önemli bir endüstri merkezi oldu. Bu nedenle, maden tü- kense de şehir önemini korudu ve göç almaya devam etti. II. Toprak verimli olduğu için maden tükendikten sonra herhangi bir nüfus kaybı olmadı. Şehirde yaşayan insanların tümü tekrar tarımla uğraş- maya başladı. Şehir göç almaya devam etti. III. Ekonominin canlı olduğu dönemlerde bankacılık ve ticaret önem kazandı. Bunun yanında kültür, sanat ve turizm alanlarında da pek çok yatırım yapıldı. Şehirdeki geçim kaynakları çeşitlendiği için madenin tükenmesinin etkisi çok büyük ol- madı. Bu yerleşim merkezinde, maden tükendikten on beş yıl sonra, yukarıdaki durumlardan hangileri- nin gerçekleşme olasılığı vardır? A) Yalnız I B) Yalnız II C) Yalnız III D) I ve III E) II ve III 2010 – LYS3 / COĞ-1 8. Aşağıdaki tabloda Türkiye arazilerinin eğim derece- leriyle bunların ülke topraklarına oranı verilmiştir. Eğim (%) Ülke topraklarına oranı (%) 0-5 8,5 5-10 12,8 10-15 16,2 15’ten fazla 62,5 Yalnızca bu tablodaki bilgilere dayanarak Türki- ye’yle ilgili aşağıdaki yargılardan hangisine ulaşı- labilir? A) Engebeli bir ülkedir. B) İç kesimlerde ova ve platolar yaygındır. C) Eğimin fazla olduğu yerlerde orman örtüsü azdır. D) Ülke topraklarının yarısından fazlasını sıradağlar oluşturur. E) Kıyı bölgelerinde eğim azdır.",
+      "options": {
+        "A": "1",
+        "B": "6",
+        "C": "12",
+        "D": "18",
+        "E": "24"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q8",
+      "number": 8,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki tabloda Türkiye arazilerinin eğim derece- leriyle bunların ülke topraklarına oranı verilmiştir. Eğim (%) Ülke topraklarına oranı (%) 0-5 8,5 5-10 12,8 10-15 16,2 15’ten fazla 62,5 Yalnızca bu tablodaki bilgilere dayanarak Türki- ye’yle ilgili aşağıdaki yargılardan hangisine ulaşı- labilir?",
+      "options": {
+        "A": "Engebeli bir ülkedir.",
+        "B": "İç kesimlerde ova ve platolar yaygındır.",
+        "C": "Eğimin fazla olduğu yerlerde orman örtüsü azdır.",
+        "D": "Ülke topraklarının yarısından fazlasını sıradağlar oluşturur.",
+        "E": "Kıyı bölgelerinde eğim azdır."
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q10",
+      "number": 10,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki haritada yükseltileri birbirinden farklı beş ova gösterilmiştir. Bu ovaların yükseltilerinin farklı olması aşağıdaki- lerden hangisini etkilemez?",
+      "options": {
+        "A": "Endüstriyel tarım ürünlerinin çeşitliliğini",
+        "B": "Kar yağışlı gün sayısını",
+        "C": "Ürünlerin hasat zamanını",
+        "D": "Sulamaya duyulan gereksinimi",
+        "E": "Tarımda makine kullanımını"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q11",
+      "number": 11,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki haritada beş kent merkezinin yıllık ortala- ma sıcaklıkları verilmiştir. Bu kentlerin yıllık ortalama sıcaklıkları arasındaki farklılıkların nedenleriyle ilgili aşağıdaki bilgiler- den hangisi yanlıştır?",
+      "options": {
+        "A": "Mersin’in yıllık ortalama sıcaklığının İzmir’den yüksek olması enlem etkisinden kaynaklanmak- tadır.",
+        "B": "Aksaray’ın yıllık ortalama sıcaklığının İzmir’den düşük olmasında hem karasallığın hem de yük- seltinin etkisi vardır.",
+        "C": "Kars’ın yıllık ortalama sıcaklığının Sinop’tan dü- şük olması enlem etkisinden kaynaklanmaktadır.",
+        "D": "Aksaray’ın yıllık ortalama sıcaklığının Kars’tan yüksek olmasında hem enlem hem de yükselti etkilidir.",
+        "E": "Mersin’in yıllık ortalama sıcaklığının Aksaray’dan yüksek olmasında hem enlemin hem de yüksel- tinin etkisi vardır. Ergene Yüksekova Erzincan Söke Adapazarı İzmir (17,6 C) Aksaray (11,8 C) Mersin (18,6 C) Sinop (14 C) Kars (4,2 C) 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 6"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q12",
+      "number": 12,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki ekonomik gelişmelerin hangisinde Tür- kiye’nin jeopolitik konumu doğrudan etkilidir?",
+      "options": {
+        "A": "Endüstride gelişmiş olan ülkelerin dünyaca ünlü markalarını üretmek için Türkiye’de fabrika kur- maları",
+        "B": "Bazı ülkelerin Türkiye’de arazi satın alarak orga- nik tarım yapmaları",
+        "C": "Farklı dönem ve kültürlere ait tarihî eserlerin Tür- kiye turizmi açısından önemli bir kaynak oluştur- ması",
+        "D": "Azerbaycan ve Irak petrollerinin Türkiye toprak- ları üzerinden Akdeniz’e ulaştırılması",
+        "E": "Dış piyasalarda, Türkiye’de üretilen tekstil ürün- lerine talebin fazla olması"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q13",
+      "number": 13,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki tabloda, Türkiye’de bazı yıllardaki dış satı- mın dış alımı karşılama oranları verilmiştir. Yıl Dış satımın dış alımı karşılama oranı (%) 1930 102,6 1950 92,2 1970 62,1 1990 58,1 2007 63,0 Yalnızca bu bilgilerden yararlanarak aşağıdaki so- nuçlardan hangisine ulaşılabilir?",
+      "options": {
+        "A": "1950’deki dış satım miktarı, 1970’tekinden faz- ladır.",
+        "B": "1970 ve 2007’deki dış alım giderleri ve dış satım gelirleri birbirine yakındır.",
+        "C": "Dış ticaret hacminin en düşük olduğu yıl 1990’ dır.",
+        "D": "1990’daki dış satım geliri, 1930’dakinden azdır.",
+        "E": "1930’da dış satım geliri, dış alım giderinden faz- ladır. 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 7"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q14",
+      "number": 14,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki grafik, 2000-2006 yılları arasında bir ülke- de enerji kaynaklarına göre elektrik enerjisi üretimini göstermektedir. Bu grafiğe göre, aşağıdaki bilgilerden hangisi doğrudur?",
+      "options": {
+        "A": "Verilen yılların tümünde kömür ve doğal gazdan elde edilen elektrik enerjisi miktarı birbirine çok yakındır.",
+        "B": "En fazla elektrik enerjisi 2004 yılında üretilmiştir.",
+        "C": "Akarsudan elde edilen elektrik enerjisi miktarın- daki en büyük artış 2000-2002 yılları arasın- dadır.",
+        "D": "Elektrik enerjisi üretiminde, kömürün payının en yüksek olduğu yıl 2000’dir.",
+        "E": "2006 yılında, doğal gazdan elde edilen elektrik enerjisi miktarı, kömür ve akarsudan elde edilen- lerin toplamından fazladır."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q15",
+      "number": 15,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Doğu Karadeniz Bölümü’ne tur düzenleyen bir turizm şirketi, gazetelere aşağıdaki ilanı vermiştir: “İlk gün, heyelan sonucu oluşan Sera Gölü ziyaret edilecek; ikinci gün, Trabzon ilindeki Sümela Manas- tırı gezilecek; üçüncü gün, Kaçkar Dağları’nda 2000 metrenin üzerindeki krater göllerine gidilecek; son gün ise buzulları görmek için 3000 metreye çıkılacak- tır. Gezi boyunca, Doğu Karadeniz Dağları’ndaki yay- la yerleşmelerinde mola verilecektir.” Turizm şirketinin ilanında aşağıdakilerden hangi- siyle ilgili olarak verilen bilgi yanlıştır?",
+      "options": {
+        "A": "Doğu Karadeniz Dağları’nda görülen kırsal yer- leşme tiplerinden biri",
+        "B": "Doğu Karadeniz Dağları’nda buzulların indiği yükselti",
+        "C": "Kaçkar Dağları’nda 2000 metrenin üzerinde yay- gın olarak bulunan göllerin oluşum biçimi",
+        "D": "Sera Gölü’nün oluşum biçimi",
+        "E": "Sümela Manastırı’nın bulunduğu il 0 10 20 30 40 50 60 70 80 2000 2002 2004 2006 Akarsu Kömür Doğal gaz (10 kWh) 9 Yıl Elektrik enerjisi üretimi 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 8"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q17",
+      "number": 17,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Ülkelerin gelişmişlik düzeyini belirleyen önemli ölçek- lerden biri de Birleşmiş Milletlerin geliştirdiği insani gelişim endeksidir. Bu endeks, ülkelerin beşerî ve ekonomik özellikleri göz önüne alınarak hesaplanır. Aşağıdaki tabloda, 2007 yılındaki insani gelişim en- deksine göre yapılan sınıflamalarda yer alan bazı ül- keler gösterilmiştir. İnsani Gelişim Endeksi (2007) Çok yüksek (1-0,90) Yüksek (0,89-0,80) Orta (0,79-0,50) Düşük (0,49-0) Norveç Avustralya ABD Belçika Polonya Malezya Brezilya Türkiye Ürdün Mısır Hindistan Nijerya Zambiya Senegal Etiyopya Afganistan Buna göre, bir ülkenin insani gelişim endeksinin yükselmesinde aşağıdakilerden hangisinin en az etkili olduğu savunulabilir?",
+      "options": {
+        "A": "Okuryazar oranının artması",
+        "B": "Ortalama yaşam süresinin uzaması",
+        "C": "Kişi başına düşen ulusal gelirin artması",
+        "D": "Okullaşma oranının artması",
+        "E": "Çalışma çağındaki nüfusun artması 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 9"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q18",
+      "number": 18,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Çin Halk Cumhuriyeti ve Japonya’nın özellikleriy- le ilgili aşağıdaki karşılaştırmalardan hangisi doğ- rudur?",
+      "options": {
+        "A": "Japonya’da görülen iklim çeşitliliği daha fazladır.",
+        "B": "Çin Halk Cumhuriyeti’nde şehirleşme oranı daha yüksektir.",
+        "C": "Çin Halk Cumhuriyeti yer altı kaynakları bakımın- dan daha fakirdir.",
+        "D": "Çin Halk Cumhuriyeti’nde yerel saat farkı daha fazladır.",
+        "E": "Japonya’da tarım ve hayvancılıkla geçinen nüfus oranı daha yüksektir."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q19",
+      "number": 19,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki tabloda iki Avrupa ülkesinin üye olduğu ba- zı uluslararası örgütler verilmiştir. X Ülkesi Y Ülkesi AB Üyeliği 9 BM Güvenlik Konseyi Daimi Üyeliği 9 G-8 Üyeliği 9 9 Buna göre X ve Y ülkeleri aşağıdakilerden hangi- sinde doğru olarak verilmiştir? X Y",
+      "options": {
+        "A": "Almanya Fransa",
+        "B": "Almanya Rusya Federasyonu",
+        "C": "Fransa Rusya Federasyonu",
+        "D": "Fransa Almanya",
+        "E": "Rusya Federasyonu Fransa 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 10"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q20",
+      "number": 20,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Aşağıdaki şemada, bir yörede insan etkinliklerine bağlı olarak ekolojik dengenin bozulmasına yol açan olaylar zinciri gösterilmiştir. Bu zincirdeki neden-sonuç ilişkileri göz önüne alındığında, boş bırakılan yere aşağıdakilerden hangisi gelmelidir?",
+      "options": {
+        "A": "Gölün su seviyesi düşer.",
+        "B": "Tarım ürünü çeşidi azalır.",
+        "C": "Balık türleri ve sayıları azalır.",
+        "D": "Atıklar göl suyundan toprağa karışır.",
+        "E": "Yeni balık türleri yetiştirilmeye başlanır."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q21",
+      "number": 21,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Mısır’da Nil Nehri üzerinde kurulan Aswan (Asuan) Barajı, ülke ekonomisine büyük katkılar sağlamak- tadır. Ancak nehrin taşıdığı alüvyonların önemli bir kısmı baraj gölünde tortulanmakta ve Nil Deltası’na gelen alüvyonun azalmasına neden olmaktadır. Aşağıdakilerden hangisi, bu durumun Nil Del- tası’nda yol açtığı sorunlardan biri değildir?",
+      "options": {
+        "A": "Su sıkıntısının artması",
+        "B": "Tarımsal verimin azalması",
+        "C": "Üretimi artırmak için aşırı gübre kullanılması",
+        "D": "Kırsal nüfusun yıllık gelirinin azalması",
+        "E": "Kırsal kesimden kentlere göçlerin artması Bir göl kıyısına kurulan fabrikalar, sıvı atıklarını arıtmadan göle boşaltır. Göl suyunun kimyasal özelliği değişir. Göldeki birçok mikroorganizma ve bitki türü yok olur. Göl, geçim kaynağı olarak önemini yitirir. 2010 – LYS3 / COĞ-1 Diğer sayfaya geçiniz. 11"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q22",
+      "number": 22,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Bu parçada akarsu ile aşağıdakilerden hangisi arasındaki ilişkiye değinilmemiştir?",
+      "options": {
+        "A": "Çevre koruma",
+        "B": "İnsan etkinlikleri",
+        "C": "Arazi kullanımı",
+        "D": "Sulama sistemleri",
+        "E": "Yol açtığı sorunlar"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q23",
+      "number": 23,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "Bu parçaya göre, nehir boyunca yapay göl yatak- larının oluşturulmasının temel amacı aşağıdakiler- den hangisidir?",
+      "options": {
+        "A": "Suların, yükseldiği dönemlerde çevreye zarar vermesini engellemek",
+        "B": "Nehir seviyesinin yükselmesini önlemek",
+        "C": "Nehir yatağında düzensiz yapılaşmayı engel- lemek",
+        "D": "Nehir sularını depolamak",
+        "E": "Afetleri önleme konusunda bir model geliştirmek"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    },
+    {
+      "id": "2010-lys-3-cografya-2010-lisans-yerlestirme-sinavi-lys-3-c-q24",
+      "number": 24,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "I. Dalga II. Petrol III. Jeotermal Yukarıdaki enerji kaynaklarından hangileri, bulun- duğu bölgenin jeolojik yapısıyla doğrudan ilgi- lidir? A) Yalnız I B) Yalnız II C) Yalnız III D) I ve II E) II ve III SINAVDA UYULACAK KURALLAR 1. Adayların cep telefonu, çağrı cihazı, telsiz, fotoğraf makinesi, cep bilgisayarı, saat fonksiyonu dışında fonksiyonu olan saat, hesap makinesi, sözlük, kitap, defter, müsvedde kâğıdı, pergel, açıölçer, cetvel ve benzeri her türlü araç gereçle, silah ve benzeri teçhizatla sınava girmesi kesinlikle yasaktır. Bu araçlarla sınava girmiş adaylar mutlaka Salon Sınav Tutanağına yazılacak, bu adayların sınavı geçersiz sayılacaktır. 2. Bu test için verilen toplam cevaplama süresi 35 dakikadır. Sınav başladıktan sonra ilk testin cevaplama süresi bitmeden ve son testin son 15 dakikası içinde adayın sınavdan çıkmasına kesinlikle izin verilmeyecektir. İki test arasında birinci testin soru kitapçığının toplanması ve ikinci testin soru kitapçığının dağıtılması işlemleri dışında ara verilmez. Bu toplama ve dağıtma işlemi sırasında adayların salondan dışarı çıkmaları kesinlikle yasaktır. 3. Sınav evrakını teslim ederek salonu terk eden aday, her ne sebeple olursa olsun tekrar sınava alınmayacaktır. 4. Bu süreler dışında cevaplamayı süre bitmeden tamamlarsanız, cevap kâğıdınızı ve soru kitapçığınızı salon görevlilerine teslim ederek salonu terk edebilirsiniz. Sınav süresinin bittiği ilan edildiğinde cevap kâğıtları ve soru kitapçıkları salon görevlileri tarafından toplanıncaya kadar yerlerinizde kalınız. 5. Sınav süresince görevlilerle konuşmak ve görevlilere soru sormak yasaktır. Aynı şekilde görevlilerin de adaylarla yakından ve alçak sesle konuşmaları, ayrıca adayların birbirinden kalem, silgi vb. şeyleri istemeleri kesinlikle yasaktır. 6. Sınav sırasında kopya çeken, çekmeye kalkışan, kopya veren, kopya çekilmesine yardım edenlerin kimlik bilgileri, Salon Sınav Tutanağına yazılacak ve bu adayların sınavları geçersiz sayılacaktır. Görevliler kopya çekmeye ya da vermeye kalkışanları uyarmak zorunda değildir, sorumluluk size aittir. Adayların test sorularına verdikleri cevapların dağılımları bilgi işlem yöntemleriyle incelenecek, bu incelemelerden elde edilen bulgular bireysel ya da toplu olarak herhangi bir şekilde kopya çekildiğini gösterirse kopya eylemine katılan aday/adayların cevaplarının bir kısmı ya da tamamı iptal edilecektir. Cevap kâğıdınızı başkaları tarafından görülmeyecek şekilde tutmanız gerekmektedir. 7. Adaylar, görevlilerin her türlü uyarılarına uymak zorundadır. Sınavınızın geçerli sayılması, her şeyden önce sınav kurallarına uymanıza bağlıdır. 8. Cevap kâğıdına yazılacak her türlü yazıda ve yapılacak bütün işaretlemelerde kurşun kalem kullanılacaktır. Tüken- mez kalem veya dolma kalem kesinlikle kullanılmayacaktır. Cevapların cevap kâğıdına işaretlenmiş olması gerekir. Soru kitapçığına işaretlenen cevaplar geçerli değildir. 9. Soru kitapçığının sayfalarının eksik olup olmadığını, kitapçıkta basım hatalarının bulunup bulunmadığını ve soru kitapçığının her sayfasında basılı bulunan soru kitapçığı türünün, kitapçığın ön kapağında basılı soru kitapçığı türüyle aynı olup olmadığını kontrol ediniz. Soru kitapçığınızın sayfası eksik ya da basımı hatalıysa değiştirilmesi için Salon Başkanına başvurunuz. Cevap kâğıdınızda, size verilen soru kitapçığının türünü “Soru Kitapçığı Türü” alanındaki ilgili yuvarlağı doldurarak belirtiniz. Cevap kâğıdınızda işaretlediğiniz Soru Kitapçığı Türü salon görevlileri tarafından sınav öncesi kontrol edilerek paraflanacaktır. Sizin işaretlediğiniz ile salon görevlilerinin parafladıkları kitapçık türü arasında fark olması hâlinde salon görevlilerinin parafladıkları kitapçık türü dikkate alınacaktır. LYS-3’te alacağınız bütün testlerin soru kitapçığı türü aynı olmalı, birbirinden farklı olmamalıdır. Bu duruma özellikle dikkat ediniz. LYS-3’te size verilen soru kitapçıklarının türleri birbirinin aynı değilse görevlileri hemen uyararak size aynı türden soru kitapçığı vermelerini sağlayınız. 10. Sınav sonunda soru kitapçıkları toplanacak ve ÖSYM’de tek tek incelenecektir. Soru kitapçığının bir sayfası bile eksik çıkarsa sınavınız geçersiz sayılacaktır. 11. Soru kitapçığının sayfalarındaki boş yerleri müsvedde için kullanabilirsiniz. 12. Soruları ve/veya bu sorulara verdiğiniz cevapları ayrı bir kâğıda yazıp bu kâğıdı dışarı çıkarmanız kesinlikle yasaktır. 13. Sınav salonundan ayrılmadan önce soru kitapçığınızı, cevap kâğıdınızı ve 2010 LYS-3 Sınava Giriş ve Kimlik Belgenizi salon görevlilerine teslim etmeyi unutmayınız. 14. Testin cevaplama süresinin bitmesine 15 ve 5 dakika kaldığı salon görevlileri tarafından yüksek sesle hatırlatıla- caktır. 15. Bu testin cevaplarını cevap kâğıdında ilgili alana işaretlemeye dikkat ediniz. LİSANS YERLEŞTİRME SINAVI - 3 (LYS-3) 26 HAZİRAN 2010 COĞRAFYA - 1 TESTİ 1. A 2. C 3. B 4. E 5. A 6. B 7. D 8. A 9. B 10. E 11. C 12. D 13. E 14. D 15. C 16. B 17. E 18. D 19. B 20. C 21. A 22. D 23. A 24. E",
+      "options": {
+        "A": "2000",
+        "B": "2002",
+        "C": "2004",
+        "D": "2006"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-3"
+      ]
+    }
+  ]
+}

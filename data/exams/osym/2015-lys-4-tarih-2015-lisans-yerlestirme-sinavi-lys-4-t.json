@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-4",
+  "year": 2015,
+  "subject": "Tarih",
+  "title": "Lisans Yerleştirme Sınavı (LYS-4) Tarih Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2015/LYS/Sorular/2015_LYS_4_Tarih.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:41:06.131Z",
+  "questions": [
+    {
+      "id": "2015-lys-4-tarih-2015-lisans-yerlestirme-sinavi-lys-4-t-q29",
+      "number": 29,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "A) B) C) D) E)",
+      "options": {
+        "A": "I",
+        "B": "II",
+        "C": "III",
+        "D": "IV",
+        "E": "V"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-4"
+      ]
+    }
+  ]
+}

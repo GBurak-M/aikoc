@@ -1,0 +1,747 @@
+{
+  "exam": "LYS-4",
+  "year": 2010,
+  "subject": "Tarih",
+  "title": "Lisans Yerleştirme Sınavı (LYS-4) Tarih Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/286,2010lys4tarpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 32,
+  "answerKeyCount": 44,
+  "parsedAt": "2026-06-11T13:45:08.496Z",
+  "questions": [
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q2",
+      "number": 2,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "VI. yüzyılda gerçekleşen olaylardan bazıları şunlardır: Orta Asya ipek ticaretinin bir bölümünü elinde tutan Akhunlara karşı, Batı Göktürklerin yöneticisi İstemi Yabgu Sasanilerle anlaştı. Her iki devlet tarafından zorlanan Akhunlar Devleti yıkıldı. Sasaniler, Soğdlu ipek tüccarlarının geçişini yasakladı. İstemi Yabgu bu kez Sasanilere karşı Bizans’la iş birliği yaptı. Bizans’ la Sasaniler arasında savaş oldu. Savaş sonunda Sa- saniler eski gücünü kaybetti. Bu olaylara göre aşağıdaki yargılardan hangisi doğru değildir?",
+      "options": {
+        "A": "İpek Yolu Bizans için önemlidir.",
+        "B": "İpek Yolu’nun Orta Asya ekonomisi için önemi çok büyüktür.",
+        "C": "Sasanilerin zayıflaması İran’ı saldırıya açık du- ruma getirmiştir.",
+        "D": "Batı Göktürk Yabgusu, devletin çıkarları doğrul- tusunda değişken ittifak arayışlarına girmiştir.",
+        "E": "Bizans, Akhun topraklarını ele geçirmiştir. 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 2"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q5",
+      "number": 5,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Türk tarihiyle ilgili aşağıda verilen bilgilerden hangisi doğrudur?",
+      "options": {
+        "A": "Türkistan’ın Sincan özerk bölgesinde yaşayan topluluklardan biri Uygurlardır.",
+        "B": "Orta Asya’da kurulan ilk Türk Devleti Göktürkler- dir.",
+        "C": "Avrupa Hunlarının kurucusu Mete Han’dır.",
+        "D": "Karluklar Avrupa’da devlet kurmuştur.",
+        "E": "Alparslan Malazgirt Savaşı’nı Haçlılara karşı kazanmıştır."
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q6",
+      "number": 6,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Uygurlar, 745 yılında Karluk ve Basmillerle birleşip Göktürk Devleti’ni yıkarak yerine Orhun Nehri kıyıla- rında başkent Ötüken olmak üzere yeni bir devlet kur- muşlardır. Dokuz aile birliğinden oluşan Uygurlar, Karluk ve Basmil topluluklarını da itaatleri altına ala- rak bu sayıyı on bire çıkarmışlardır. Yalnız bu bilgiyle aşağıdaki yargılardan hangisine ulaşılabilir?",
+      "options": {
+        "A": "Göçebe yaşam sürdürülmüştür.",
+        "B": "Uygurlar, farklı toplulukları bir araya getirmişler- dir.",
+        "C": "Çin’in baskısıyla batıya göçler olmuştur.",
+        "D": "Karluklar Uygurlardan önce devlet kurmuştur.",
+        "E": "Karluklar Orta Asya’nın Türk egemenliğinde kal- masında etkili olmuştur. 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 3"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q7",
+      "number": 7,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Türk devlet anlayışında yönetme yetkisi, kurucu ha- nedana özgü sayılmıştır. Bu nedenle başka bir hane- dan saltanat mücadelesinde bulunamamıştır. Bu durumun nedeni aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Yaşça büyük hanedan üyesinin tahta geçmesi",
+        "B": "Hanedan üyelerinin illere vali olarak atanması",
+        "C": "Hükümdarlığın hukuksal kaynağının tanrısal ol- duğuna inanılması",
+        "D": "Yönetimin babadan oğula geçmesi",
+        "E": "Hükümdar eşlerinin devlet yönetiminde söz sahi- bi olabilmesi"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q8",
+      "number": 8,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Moğollar ve Anadolu Selçuklu Devleti’yle komşu olan Harzemşahlar Devleti’nin 1231 yılında yıkılmasından sonra, Anadolu Selçuklu Devleti Moğollarla savaş- mak zorunda kalarak ağır bir yenilgiye uğramıştır. 1243 yılındaki bu yenilgiden sonra Moğolların Anado- lu üzerindeki baskısı giderek artmıştır. Aşağıdakilerden hangisi bu durumun sonuçların- dan biridir?",
+      "options": {
+        "A": "Anadolu Selçuklu Devleti’nin Bizanslılarla Mirya- kefalon Savaşı’nı yapması",
+        "B": "İlk Haçlıların Anadolu’ya gelmesi",
+        "C": "Anadolu’da ilk Türkmen beyliklerinden Saltuklu- ların kurulması",
+        "D": "Moğolların Anadolu Selçuklu Devleti’ni kendileri- ne bağlı bir hükûmet gibi yönetmesi",
+        "E": "Büyük Selçuklu Devleti’nin parçalanması"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q10",
+      "number": 10,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Büyük Selçuklularda iktalar askerî ve sivil devlet gö- revlilerine hizmetleri karşılığında verilirdi. İkta sahip- leri ikta olarak verilen topraklarda oturur, memurlar aracılığıyla vergileri toplardı. Bu vergilerin bir kısmıyla kendi geçimini sağlar, geri kalan kısmıyla da belli sa- yıda atlı asker beslerdi. Sefere çağrıldığı zaman as- kerleriyle birlikte sefere katılırdı. Aşağıdakilerden hangisinin bu düzenlemeyle or- taya çıkan durumlardan biri olduğu savunula- maz?",
+      "options": {
+        "A": "Hazinenin askerî harcamaların büyük bölümün- den kurtarılması",
+        "B": "İktalardan elde edilen vergi gelirlerinin bir kısmı- nın maaş karşılığı olması",
+        "C": "Ordunun tümünün atlı askerlerden oluşması",
+        "D": "Atlı askerlerin masrafının ikta gelirlerinden sağ- lanması",
+        "E": "Toprakların ikta sahiplerinin mülkiyetinde sayıl- maması 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 4"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q11",
+      "number": 11,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "• Kösedağ Savaşı • Ankara Savaşı Yukarıdaki savaşların ortak sonuçlarından biri aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Anadolu’da Selçuklu sultanının gücünün zayıfla- ması",
+        "B": "Anadolu’daki Türk beylerinin Timur’a sığınması",
+        "C": "Memlukların Anadolu işlerine karışma olanağı bulması",
+        "D": "Osmanlı Devleti’nin Balkanlardaki fetihlerinin durması",
+        "E": "Ülkede egemenlik mücadelesinin ortaya çıkması"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q12",
+      "number": 12,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Sultan Baybars verdiği siyasi mücadeleden sonra Memluk Sultanı olmuş ve Moğolların Bağdat katlia- mından kaçarak Mısır’a sığınan Abbasoğullarından El Mustansır’ı halife ilan etmiştir. Baybars’ın bu tutumundaki amaç aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Halifenin dinî nüfuzundan yararlanıp hükümdar- lığını meşrulaştırmak",
+        "B": "Mezhep kavgalarına son vermek",
+        "C": "Moğolların Mısır’a gelmesini engellemek",
+        "D": "Hicaz su yollarını koruma altına almak",
+        "E": "Tahta geçmede saltanat sisteminin uygulanma- sını sağlamak"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q14",
+      "number": 14,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Osmanlı Devleti’yle ilgili aşağıdaki bilgilerden hangisi doğru değildir?",
+      "options": {
+        "A": "Tanzimat Fermanı, Sultan Abdülmecit Dönemin- de ilan edilmiştir.",
+        "B": "İlmiye grubunun en üst yöneticisi beylerbeyidir.",
+        "C": "Kazalarda asayiş ve güvenlikten subaşılar so- rumludur.",
+        "D": "Topkapı Sarayı XIX. yüzyıla kadar devletin yö- netildiği yer olmuştur.",
+        "E": "Osmanlı Devleti’nde ilk para Osman Bey tarafın- dan bastırılmıştır. 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 5"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q15",
+      "number": 15,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Yeniçeri Ocağına asker yetiştirmek için ---- zama- nında ---- kurulmuştur. Yukarıda boş bırakılan yerlere sırasıyla aşağıda- kilerden hangisi getirilmelidir?",
+      "options": {
+        "A": "Osman Bey − Kapıkulu Süvari Birliği",
+        "B": "II. Murat − Sekban-ı Cedit",
+        "C": "III. Murat − Timar sistemi",
+        "D": "I. Murat − Acemioğlanlar Ocağı",
+        "E": "II. Mahmut − Asâkir-i Mansûre-i Muhammediye"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q16",
+      "number": 16,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi, Yavuz Sultan Selim Dö- nemi gelişmelerinden biridir?",
+      "options": {
+        "A": "Veraset sisteminin değiştirilmesi",
+        "B": "Yeniçeri Ocağının kaldırılması",
+        "C": "İngilizlere kapitülasyonların verilmesi",
+        "D": "Anadolu Hisarı’nın yapılması",
+        "E": "Mısır’ın Osmanlı topraklarına katılması"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q17",
+      "number": 17,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Kanuni Sultan Süleyman Döneminde çıkan Can- berdi Gazâli ve Ahmet Paşa ayaklanmalarının or- tak amacı aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Mısır’a egemen olmak",
+        "B": "Toprak düzenini değiştirmek",
+        "C": "Devlet rejimini değiştirmek",
+        "D": "Hanedan değişikliği yapmak",
+        "E": "Islahat hareketlerine karşı çıkmak"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q18",
+      "number": 18,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "I. Sahn-ı semân Med- Kadı ve müderris yetişti- reseleri ren yüksek okullar II. Salyaneli Eyaletler Timar sisteminin uygu- lanmadığı eyaletler III. Reaya Yönetenler IV. Has Yüksek dereceli görev- lilere verilen dirlik V. Vaka-i Hayriye Yeniçeri Ocağının kaldı- rılması Yukarıdakilerden hangisinin açıklaması, karşısın- da yanlış olarak verilmiştir?",
+      "options": {
+        "A": "D)",
+        "B": "Osmanlı",
+        "C": "Devleti’nin",
+        "D": "Balkanlardaki",
+        "E": "fetihlerinin"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q19",
+      "number": 19,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi XVII. yüzyıl ıslahat hare- ketlerinin özelliklerinden biri değildir?",
+      "options": {
+        "A": "Sorunların nedenlerini yeterince araştırmama",
+        "B": "Bozulan düzeni eski durumuna getirme",
+        "C": "Çıkan sorunlar için geçici çözümler getirme",
+        "D": "Kişilere bağlı kalma",
+        "E": "Avrupa’yı örnek alma"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q20",
+      "number": 20,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "I. Leh milliyetçileri II. İsveç Kralı XII. Şarl (Demirbaş Şarl) III. İspanya’dan kaçan Yahudiler",
+      "options": {
+        "A": "A) I.",
+        "B": "B) II.",
+        "C": "C) III.",
+        "D": "D) IV.",
+        "E": "E) V."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q21",
+      "number": 21,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Orhan Gazi Döneminde Divanıhümayun adıyla oluş- turulan kurum, I. Murat Döneminde tam olarak teşki- latlanmış ve devlet işlerinin görüşülüp karara bağlan- dığı yer olmuştur. Önce Divanıhümayun toplantılarına padişahlar başkanlık etmiş, daha sonra Divanıhüma- yun başkanlığı sadrazamlara bırakılmıştır. Divanıhü- mayunun üyeleri seyfiye, ilmiye, kalemiye kolların- dan seçilmişlerdir. Buna göre Divanıhümayun üyeleri temsil ettikleri kollarda aşağıdakilerin hangisinde doğru olarak verilmiştir? Seyfiye İlmiye Kalemiye",
+      "options": {
+        "A": "Sadrazam ve Şeyhülislam Defterdar ve vezirler ve kazasker nişancı",
+        "B": "Defterdar ve Sadrazam Şeyhülislam nişancı ve vezirler ve kazasker",
+        "C": "Şeyhülislam Defterdar ve Sadrazam ve ve kazasker nişancı vezirler",
+        "D": "Sadrazam ve Defterdar ve Şeyhülislam vezirler nişancı ve kazasker",
+        "E": "Şeyhülislam Sadrazam Defterdar ve ve kazasker ve vezirler nişancı"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q23",
+      "number": 23,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "I. Devletin dış işleriyle ilgili bütün yazışmalarını yürüten görevli. II. Devlet adamlarının padişaha bağlılık bildirme- sine verilen ad. III. Olağanüstü hâllerde, özellikle savaş masrafının karşılanması için padişah emriyle halkın doğru- dan ödemek zorunda olduğu vergi. IV. Medrese öğrencilerine verilen ad. Yukarıdaki tanımların karşılıkları aşağıdakilerin hangisinde doğru olarak verilmiştir? 24. Osmanlı Devleti’nde, Sırpların ayrıcalık elde etmesi ve Yunanistan’ın bağımsızlık kazanmasında Çarlık Rusyası etkili olmuştur. Buna göre Çarlık Rusyası’nın aşağıdakilerden hangisini amaçladığı savunulabilir? A) İngiltere’yi Osmanlı Devleti’nin toprak bütünlüğü- nü koruma politikasında desteklemek B) Balkanlarda kendisine nüfuz alanı yaratmak C) Karadeniz’de üs elde etmek D) Deniz gücünü artırmak E) Rejimini korumak",
+      "options": {
+        "A": "Yukarıdaki",
+        "B": "sığınmacılardan",
+        "C": "hangileri",
+        "D": "Osmanlı"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q24",
+      "number": 24,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Osmanlı Devleti’nde, Sırpların ayrıcalık elde etmesi ve Yunanistan’ın bağımsızlık kazanmasında Çarlık Rusyası etkili olmuştur. Buna göre Çarlık Rusyası’nın aşağıdakilerden hangisini amaçladığı savunulabilir?",
+      "options": {
+        "A": "İngiltere’yi Osmanlı Devleti’nin toprak bütünlüğü- nü koruma politikasında desteklemek",
+        "B": "Balkanlarda kendisine nüfuz alanı yaratmak",
+        "C": "Karadeniz’de üs elde etmek",
+        "D": "Deniz gücünü artırmak",
+        "E": "Rejimini korumak"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q25",
+      "number": 25,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi Osmanlı Devleti’nde Fransız İhtilali’nin etkisiyle görülen gelişmelerden biri değildir?",
+      "options": {
+        "A": "Meşrutiyet’in ilan edilmesi",
+        "B": "Tanzimat Fermanı’nın hazırlanması",
+        "C": "Islahat Fermanı’nın ilan edilmesi",
+        "D": "Bağımsızlık hareketlerinin başlaması",
+        "E": "Gayrimüslimlere inanç özgürlüğü tanınması"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q26",
+      "number": 26,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi Osmanlı Devleti’nde XIX. yüzyılda görülen değişimin topluma yansımaların- dan biri değildir?",
+      "options": {
+        "A": "I II IV III",
+        "B": "II I III IV",
+        "C": "II III IV I",
+        "D": "III IV I II",
+        "E": "IV III II I 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 8"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q27",
+      "number": 27,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi Avrupa devletlerinin Os- manlı Devleti’nin iç işlerine karışmasına ortam ha- zırlamamıştır?",
+      "options": {
+        "A": "Sened-i İttifak’ın imzalanması",
+        "B": "Mısır Valisi Mehmet Ali Paşa Olayı",
+        "C": "Küçük Kaynarca Antlaşması",
+        "D": "Cem Sultan Olayı",
+        "E": "Kapitülasyonlar"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q28",
+      "number": 28,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "I. Sakalar Ordunun su ihtiyacını karşılayan sınıf II. Takvim-i Vekayi İlk resmî gazete III. Tuğra Padişah imzası IV. Haraç Gayrimüslimlerden alı- nan vergilerden biri V. Koçi Bey Risalesi Kanun kitaplarından biri Yukarıdakilerden hangisinin açıklaması, karşısın- da yanlış olarak verilmiştir?",
+      "options": {
+        "A": "25. Aşağıdakilerden",
+        "B": "hangisi",
+        "C": "Osmanlı",
+        "D": "Devleti’nde"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q30",
+      "number": 30,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "I. Faşizm − Hayat Sahası II. Nazizim − Hayat Sahası III. Nazizim − Kara Gömlekliler İkinci Dünya Savaşı’ndan önce Almanya’da orta- ya çıkan fikir akımı ve yayılmacı politikayı amaç- layan kavramlar yukarıdakilerin hangilerinde doğ- ru olarak verilmiştir? A) Yalnız I B) Yalnız II C) Yalnız III D) I ve II E) I, II ve III 2010 – LYS4 / TAR",
+      "options": {
+        "A": "A) I.",
+        "B": "B) II.",
+        "C": "C) III.",
+        "D": "D) IV.",
+        "E": "E) V."
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q32",
+      "number": 32,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi, II. Dünya Savaşı’ndan sonra bilim alanındaki gelişmelerden biridir?",
+      "options": {
+        "A": "Atom bombasının yapılması",
+        "B": "Teleskobun icat edilmesi",
+        "C": "Elektrik ampulünün icat edilmesi",
+        "D": "Fotoğraf makinesinin icat edilmesi",
+        "E": "Uzaya uydu gönderilmesi"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q34",
+      "number": 34,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "• Dünya petrol rezervinin % 60’ının Orta Do- ğu’da olması • Irak’ın Kuveyt’i işgal etmesini Amerika Birleşik Devletleri ve Batılı devletlerin tehdit unsuru olarak görmesi Yukarıdaki durumların bir sonucu olarak aşağı- dakilerden hangisi bir dünya sorunu hâline gel- miştir?",
+      "options": {
+        "A": "İsrail Devleti’nin kurulması",
+        "B": "Filistin mültecileri sorunu",
+        "C": "Körfez krizi",
+        "D": "İran-Irak Savaşı",
+        "E": "Orta Doğu’da su sorunu 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 10"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q35",
+      "number": 35,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi 1980’li yıllarda Türkiye’ de görülen gelişmelerden biri değildir?",
+      "options": {
+        "A": "Yapılan referandumla siyasi yasakların kaldırıl- ması",
+        "B": "Kalkınma planları hazırlamak üzere Devlet Plan- lama Teşkilatının kurulması",
+        "C": "İlk renkli televizyon yayınının başlaması",
+        "D": "Yüksek Öğretim Kurulunun kurulması",
+        "E": "Anavatan Partisinin kurulması"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q36",
+      "number": 36,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi 1961 Anayasası’nı 1982 Anayasası’ndan ayıran özelliklerden biridir?",
+      "options": {
+        "A": "Parlamentonun iki ayrı meclisten oluşması",
+        "B": "Kimseye işkence ve eziyet yapılmaması",
+        "C": "Herkesin ayrım gözetilmeksizin kanun önünde eşit olması",
+        "D": "İnsan haysiyetiyle bağdaşmayan ceza konulma- ması",
+        "E": "Herkesin kişiliğine bağlı dokunulmaz, devredil- mez hak ve hürriyetlere sahip olması"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q37",
+      "number": 37,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi Kıbrıs sorununun çözü- mü için Birleşmiş Milletler Genel Sekreteri Kofi Annan’ın taraflara sunduğu planda yer alan konu- lardan biridir?",
+      "options": {
+        "A": "Güney Kıbrıs Rum Kesimi’nin Avrupa Birliğine tam üye olması",
+        "B": "Lokmacı sınır kapısının açılması",
+        "C": "Birleşik Kıbrıs Cumhuriyeti’nin kurulması",
+        "D": "Kuzey Kıbrıs Türk Cumhuriyeti’nin Avrupa Birliği- ne üye olması",
+        "E": "Kıbrıs sorununun çözümünün Avrupa Birliğiyle Türkiye’ye bırakılması"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q38",
+      "number": 38,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "XIX. yüzyılın ikinci yarısında İmparator Mutsuhito’nun aydınların Batı tarzı yenilikler yapılması fikirlerine destek vermesiyle Japonya’da Meiji Restorasyonu denilen reform süreci başlamıştır. Aşağıdakilerden hangisi bu reform sürecinde ger- çekleştirilenlerden biri değildir?",
+      "options": {
+        "A": "Prusya-Almanya modeline uygun bir anayasa yapılması",
+        "B": "Çağdaş bankacılık sisteminin oluşturulması",
+        "C": "Okuryazar oranının artırılması",
+        "D": "Feodal düzenin yıkılması",
+        "E": "Yeni bir alfabe yapılması 2010 – LYS4 / TAR Diğer sayfaya geçiniz. 11"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q39",
+      "number": 39,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "26 Mart 1979 tarihinde, iki devlet arasındaki sınırları çizen İsrail-Mısır Barış Antlaşması imzalanmıştır. Aşağıdakilerden hangisi bu antlaşmanın neden olduğu gelişmelerden biri değildir?",
+      "options": {
+        "A": "Suriye’nin Sovyet Sosyalist Cumhuriyetler Birliği’ ne yaklaşması",
+        "B": "Filistin sorununun ortaya çıkması",
+        "C": "İsrail’in, Sina Yarımadası’ndan çekilmeye başla- ması",
+        "D": "Arap ülkelerinden Mısır’a yapılan ekonomik yar- dımın kesilmesi",
+        "E": "İsrail’in, Batı Şeria’da devamlı Yahudi yerleşim merkezleri kurması"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q40",
+      "number": 40,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Çin Halk Cumhuriyeti, 1949 yılında kurulduktan sonra Sovyetler Birliği’yle ilişkilerini güçlendirmeye çalışmış ve 1950 yılında dostluk anlaşması imzalamıştır. Bu- na karşılık Amerika Birleşik Devletleri, yeni Çin yöne- timini tanımamış ve Çin’e ticari ambargo uygulamış- tır. Çin Hükûmeti, Birleşmiş Milletler Teşkilatından çı- karılarak yerine Milliyetçi Çin diye adlandırılan Tay- van Hükûmeti alınmıştır. Zamanla büyük güç hâline gelen Çin Halk Cumhuriyeti, Sovyetler Birliği’nden ba- ğımsız bir politika izlemeye başlamış ve Sovyetler Birliği’nin Batıyla ilişkilerinde görülen yumuşama so- nucunda yalnızlaşmıştır. Ancak 1965-1966 yılların- dan sonra izlediği çok yönlü politikayla, Amerika Bir- leşik Devletleriyle ilişkilerini düzeltmiş ve tekrar Bir- leşmiş Milletler Teşkilatına üye olmuştur. Tayvan Hü- kûmeti üyelikten çıkarılmıştır. Verilen bu bilgiyle aşağıdaki yargılardan hangisi- ne ulaşılamaz?",
+      "options": {
+        "A": "Çin Halk Cumhuriyeti’nin kurulması güçler den- gesini etkilemiştir.",
+        "B": "Sovyetler Birliği, Çin Halk Cumhuriyeti’ni destek- lerken Amerika Birleşik Devletleri, Tayvan’ı tanımıştır.",
+        "C": "Birleşmiş Milletler Teşkilatına üye olan devlet sa- yısında azalma olmuştur.",
+        "D": "Amerika Birleşik Devletleri uluslararası ilişkilerde büyük bir rol oynamıştır.",
+        "E": "Ülkelerin çıkarları uluslararası ilişkilere yön ver- miştir."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-tarih-2010-lisans-yerlestirme-sinavi-lys-4-t-q43",
+      "number": 43,
+      "subject": "Tarih",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Geniş bir petrol rezervi olan Amerika Birleşik Dev- letleri, başka nedenlerin etkisiyle Arap davasında, İsrail’e hemen hemen tam destek verirken, bölgede çıkan petrole daha bağımlı olan Batı Avrupa ülke- leriyle Japonya, daha ılımlı ve dengeli olmakta hatta belirli konularda Arap davasını desteklemektedir. Bu bilgiye dayanarak aşağıdaki yargılardan han- gisine ulaşılabilir?",
+      "options": {
+        "A": "Amerika Birleşik Devletleri nükleer tehlikeye dik- kat çekmiştir.",
+        "B": "Bölgede İlk Çağ’dan bu yana ekonomik bunalım yaşanmıştır.",
+        "C": "Ülkelerin Orta Doğu petrolüne bağımlılık derece- leri, bölgeye yönelik dış politikalarını biçimlendir- miştir.",
+        "D": "Amerika Birleşik Devletleri, Batı Avrupalı mütte- fiklerine petrol akışına karşı değildir.",
+        "E": "Orta Doğu’da İsrail Devleti güçlükle kurulmuştur."
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    }
+  ]
+}

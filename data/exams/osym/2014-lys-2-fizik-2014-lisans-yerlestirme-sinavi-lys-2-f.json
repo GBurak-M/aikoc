@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-2",
+  "year": 2014,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2014/LYS/sorucevap/2014_LYS_2_Fizik.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 10,
+  "parsedAt": "2026-06-11T13:42:25.487Z",
+  "questions": [
+    {
+      "id": "2014-lys-2-fizik-2014-lisans-yerlestirme-sinavi-lys-2-f-q22",
+      "number": 22,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Şekilde kutu olarak gösterilen bir merceğe gelen ışık ışını, şekildeki yolu izleyerek mercekten çıkıyor. Buna göre, merceğin cinsi ve odak uzaklığı için ne söylenebilir? Yakınsak Yakınsak d Iraksak Iraksak Iraksak d",
+      "options": {
+        "A": "40",
+        "B": "20",
+        "C": "16",
+        "D": "10",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2014-lys-2-fizik-2014-lisans-yerlestirme-sinavi-lys-2-f-q29",
+      "number": 29,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2014 – LYS2 / FİZ Bir elementin çekirdeğinde gerçekleşen radyoaktif bozunma eşitliğinde, lepton sayısının korunabilmesi için X ile gösterilen parçacık aşağıdakilerden hangisi olmalıdır? Elektron Nötron Nötrino Karşıtnötrino Karşıtnötron",
+      "options": {
+        "A": "2,4",
+        "B": "8",
+        "C": "12,5",
+        "D": "13,7",
+        "E": "24"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2014",
+        "LYS-2"
+      ]
+    }
+  ]
+}

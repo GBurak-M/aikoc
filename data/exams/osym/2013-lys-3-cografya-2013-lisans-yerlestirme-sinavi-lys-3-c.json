@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-3",
+  "year": 2013,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Coğrafya-1 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/148,lys3cog-1testipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 24,
+  "parsedAt": "2026-06-11T13:42:49.598Z",
+  "questions": [
+    {
+      "id": "2013-lys-3-cografya-2013-lisans-yerlestirme-sinavi-lys-3-c-q17",
+      "number": 17,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "2013 - LYS3 / COĞ-1 Bir ülkeyle ilgili olarak aşağıda verilenlerden hangisinin, diğer dördünün sonucu olduğu söylenebilir? A) B) C) D) E) Dış satımda sanayi ürünlerinin payı fazladır. Dış ticaret açığı azdır. Gelişmiş ülkeler arasındadır. Ortalama yaşam süresi uzundur. Sağlık hizmetleri gelişmiştir. Gelişmekte olan ülkelerde her yıl millî gelirin yükselmesine rağmen kişi başına düşen millî gelirin aynı ölçüde artmamasının temel nedeni aşağıdakilerden hangisidir? A) B) C) D) E) Millî gelirin daha çok yatırıma dönüşmesi Tarıma dayalı endüstri kuruluşlarının önem kazanması Çalışan nüfus sayısının az olması Nüfus artış hızının yüksek olması Millî gelirin verimsiz yatırımlara kaydırılması",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "I",
+        "C": "II",
+        "D": "III",
+        "E": "IV"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-3"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+src
+node_modules
+dist
+.vite
+legacy-react
+scripts
+*.ts
+*.tsx
+vite.config.ts
+tsconfig.json
+package-lock.json
+public/library/ogm
+public/library/tymm
+data/ogm-manifest.json
+data/tymm-manifest.json

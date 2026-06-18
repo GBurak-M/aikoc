@@ -1,0 +1,174 @@
+{
+  "exam": "LYS-2",
+  "year": 2011,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/213,lys2fizikpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 7,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:44:38.564Z",
+  "questions": [
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q3",
+      "number": 3,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / FİZ 000000000 FİZİK TESTİ 1. Bu testte 30 soru vardır. 2. Cevaplarınızı, cevap kâğıdının Fizik Testi için ayrılan kısmına işaretleyiniz. Bir ışık ışını R, S, T saydam ortamlarından oluşan düzenekte şekildeki yolu izliyor. R, S, T ortamlarının ışığı kırma indisleri sırasıyla olduğuna göre, bunların arasındaki ilişki nedir? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q5",
+      "number": 5,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / FİZ Bir doğrusal yol boyunca aynı yerden doğuya doğru harekete başlayan K ve L gözlemcilerinin yere göre hız zaman grafikleri şekildeki gibidir. Buna göre, K gözlemcisi L’nin hareketi için aşağıdaki yargılardan hangisine ulaşır? zaman yere göre hız K L O v 2v A) B) C) D) E) Batıya doğru sabit hızla gidiyor. Batıya doğru yavaşlayarak gidiyor. Batıya doğru hızlanarak gidiyor. Doğuya doğru yavaşlayarak gidiyor. Doğuya doğru sabit hızla gidiyor.",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "6",
+        "C": "5",
+        "D": "4",
+        "E": "3"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q12",
+      "number": 12,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Yüksekliği h olan bir kuleden yukarıya doğru fırlatılan bir cisim Şekil I’deki yolu izleyerek 4t sürede yere düşüyor. Cisim atıldığı noktadan kadar yükseliyor. Cismin hız zaman grafiği Şekil II’deki gibi olduğuna göre, oranı kaçtır? (Havanın direnci önemsizdir.)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0,3",
+        "C": "0,4",
+        "D": "0,5",
+        "E": "0,6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q15",
+      "number": 15,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / FİZ Küçük K, L cisimleri, kütlesi önemsenmeyen eşit bölmeli ve esnek olmayan ince bir çubuğun uçlarına şekildeki gibi bağlanmıştır. Bu düzenek, sabit O noktasından ge- çen düşey eksen çevresinde yatay düzlemde serbestçe dönüyor. K’nin kütlesi 2m, L’ninki de m olduğuna göre, herhangi bir anda, I. K ve L’nin açısal hızları birbirine eşittir. II. K ve L’nin çizgisel hızları birbirine eşittir. III. K ve L’ye etki eden merkezcil kuvvetlerin büyüklükleri birbirine eşittir. yargılarından hangileri doğrudur? Yalnız I Yalnız II I ve II I ve III II ve III K, L iletken küreleri sırasıyla elektrikle yüklü- dür. Bu kürelerin yüzeylerindeki elektriksel potansiyelin büyüklüğü birbirine eşittir. Bu küreler birbirine dokundurulup uzaklaştırıldığın- da K ve L’nin son elektrik yükleri ne olur? A) B) C) D) E) q − 2q + qq + q + q + 2q + 2q + q +",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3",
+        "E": "4"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q23",
+      "number": 23,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / FİZ Uçlarından gerilerek iki duvar arasına bağlanan bir yaydaki X ve Y atmalarının anındaki konumu Şekil I’deki gibidir. Bu atmaların her birinin, K ya da L’den yalnız bir kez yansıdıktan sonra, anındaki konumu da Şekil II’deki gibi oluyor. Buna göre, anında I. X ve Y atmalarının hareketi ok yönündedir. II. X atmasının hareketi ok yönünde, Y atmasınınki oka zıt yöndedir. III. X atmasının hareketi oka zıt yönde, Y atmasınınki ok yönündedir. yargılarından hangileri doğru olabilir? (Yayın bölmeleri eşit aralıklıdır.) X Y L K Şekil II X Y L K Şekil I duvar duvar duvar duvar Yalnız I Yalnız II Yalnız III I ve II II ve III 24. Su derinliği değişmeyen bir dalga leğeninde oluşturu- lan su dalgalarına, 1 saniyede 2 tam devir yaptırılan 6 yarıklı bir stroboskopla bakılıyor. Buna göre, kaynak aşağıda belirtilen frekans değer- lerinden hangisiyle titreşirse dalga tepeleri duruyor- muş gibi gözlenmez? İki bölmeli bir dalga leğeninde, bölmelerin her birinde su derinliği sabit ve birbirinden farklıdır. Periyodik su dalgaları leğenin bir bölmesinden diğer bölmesine geçerken dalgaların, I. Yayılma hızı değişir. II. Yayılma doğrultusu değişir. III. Periyodu değişir. yargılarından hangileri kesinlikle doğrudur? Yalnız I Yalnız II Yalnız III I ve III II ve III Çift yarıkla yapılan bir Young deneyinde girişim deseni üzerindeki 3. karanlık saçağın yarıklara olan uzaklıkları arasındaki fark (yol farkı) kaç olur? ( kullanılan ışığın dalgaboyudur.)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "8",
+        "C": "10",
+        "D": "16",
+        "E": "20"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q28",
+      "number": 28,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Sezyum atomunun kimi enerji düzeyleri şekildeki gibi- dir. Sezyum buharındaki atomların üzerine E kinetik enerjili elektronlar gönderiliyor. Bu elektronlardan biri, taban durumundaki iki sezyum atomunu peş peşe uyararak 0,10 eV’luk kinetik enerji ile ortamdan çıkıyor. Buna göre, E en az kaç eV’tur?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "10",
+        "C": "9",
+        "D": "8",
+        "E": "7"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2011-lys-2-fizik-2011-lisans-yerlestirme-sinavi-lys-2-f-q30",
+      "number": 30,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2011 - LYS2 / FİZ 2011 LİSANS YERLEŞTİRME SINAVI-2 (LYS-2) FİZİK TESTİ 26 HAZİRAN 2011 1. A 16. D 2. C 17. D 3. B 18. E 4. A 19. C 5. B 20. D 6. A 21. B 7. A 22. E 8. E 23. C 9. B 24. E 10. D 25. D 11. C 26. A 12. A 27. C 13. B 28. B 14. E 29. C 15. E 30. D",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0,25",
+        "C": "0,80",
+        "D": "1,00",
+        "E": "1,25"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-2"
+      ]
+    }
+  ]
+}

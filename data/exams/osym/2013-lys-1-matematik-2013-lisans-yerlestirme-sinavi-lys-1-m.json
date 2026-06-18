@@ -1,0 +1,151 @@
+{
+  "exam": "LYS-1",
+  "year": 2013,
+  "subject": "Matematik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Matematik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/142,lys1matematiktestipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 6,
+  "answerKeyCount": 0,
+  "parsedAt": "2026-06-11T13:42:45.242Z",
+  "questions": [
+    {
+      "id": "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m-q8",
+      "number": 8,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / MAT olduğuna göre, n kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m-q10",
+      "number": 10,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "A, B ve C birer küme olmak üzere, I. ’dir. II. ’dır. III. ’dir. önermelerinden hangileri her zaman doğrudur? Yalnız I Yalnız II Yalnız III I ve II II ve III Tam sayılar kümesi üzerinde bir işlemi, her a ve b tam sayısı için biçiminde tanımlanıyor. Buna göre, işlemiyle ilgili olarak I. Birim elemanı 1’dir. II. Değişme özelliği vardır. III. Birleşme özelliği vardır. ifadelerinden hangileri doğrudur? Yalnız I I ve II I ve III II ve III I, II ve III",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "27",
+        "C": "64",
+        "D": "72",
+        "E": "99"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m-q22",
+      "number": 22,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "olmak üzere, eşitliğini sağlayan x değerlerinin toplamı kaçtır? olduğuna göre, değeri kaçtır? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "2",
+        "C": "3",
+        "D": "4",
+        "E": "5"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m-q32",
+      "number": 32,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / MAT n pozitif tam sayısı için n’nin en büyük tek tam sayı böleni ile gösteriliyor. dizisinin terimleri için biçiminde tanımlanıyor. Buna göre, farkı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "9",
+        "C": "10",
+        "D": "12",
+        "E": "15"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m-q34",
+      "number": 34,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "m bir pozitif gerçel sayı ve olmak üzere, matris denkleminin sonsuz sayıda u çözümü olduğuna göre, m kaçtır? A türünde bir matris olmak üzere, eşitlikleri veriliyor. Buna göre, çarpımı aşağıdakilerden hangisine eşittir? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "4",
+        "D": "5",
+        "E": "6"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-matematik-2013-lisans-yerlestirme-sinavi-lys-1-m-q44",
+      "number": 44,
+      "subject": "Matematik",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "integralinin değeri kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "160",
+        "C": "165",
+        "D": "175",
+        "E": "180"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    }
+  ]
+}

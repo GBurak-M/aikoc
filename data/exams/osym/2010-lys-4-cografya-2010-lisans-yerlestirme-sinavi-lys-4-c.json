@@ -1,0 +1,289 @@
+{
+  "exam": "LYS-4",
+  "year": 2010,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-4) Coğrafya-2 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/287,2010lys4cogpdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 12,
+  "answerKeyCount": 16,
+  "parsedAt": "2026-06-11T13:45:05.623Z",
+  "questions": [
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q1",
+      "number": 1,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki topoğrafya haritasında, bir yörede yapımı planlanan demir yolunun güzergâhıyla bu güzergâhta yapılacak köprüler ve tüneller gösterilmiştir. Bu güzergâhtaki yer şekillerinden kaynaklanan engelleri aşmak için I, II ve III numaralı yerlerden hangilerine köprü, hangilerine tünel yapılmalıdır? I II III",
+      "options": {
+        "A": "Köprü Tünel Köprü",
+        "B": "Köprü Tünel Tünel",
+        "C": "Tünel Köprü Köprü",
+        "D": "Tünel Köprü Tünel",
+        "E": "Köprü Köprü Tünel"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q2",
+      "number": 2,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki tabloda, Türkiye’de hava koşullarının mev- sim normallerinde seyrettiği temmuz ayındaki bir gün- de K, L ve M kentlerindeki meteoroloji istasyonlarında yapılan ölçümler gösterilmiştir. Günün en düşük sıcaklığı (°",
+      "options": {
+        "C": "Muğla Bayburt Batman",
+        "A": "Mersin Trabzon Samsun",
+        "B": "Antalya Rize Şanlıurfa",
+        "D": "Ardahan Giresun Konya",
+        "E": "Ordu Adana Aydın I II III DENİZ 500 0 500 1000 1500 Akarsu Demir yolu Köprü ya da tünel m K 2010 – LYS4 / COĞ-2 Diğer sayfaya geçiniz. 2"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q3",
+      "number": 3,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki grafikte, Japonya’nın 1920-2005 yılları ara- sındaki nüfusu ve bugünkü nüfus politikası sürdürül- düğünde 2100 yılına kadar gerçekleşmesi beklenen nüfusu gösterilmiştir. Bu beklentinin gerçekleşmesi durumunda Japon- ya’da, 2005 yılından sonra aşağıdakilerin hangi- sinde artış görüleceği savunulabilir?",
+      "options": {
+        "A": "Yaşlı nüfus oranında",
+        "B": "Aktif nüfus miktarında",
+        "C": "Nüfus yoğunluğunda",
+        "D": "Doğum oranında",
+        "E": "Erkek nüfus oranında"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q5",
+      "number": 5,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Göç, farklı nedenlerden dolayı birey veya topluluk- ların sürekli ya da geçici olarak yer değiştirmesi ola- yıdır. Göçe neden olan çok sayıda etken olmakla bir- likte, bunlar üç ana grupta toplanabilir. Kimi zaman deprem, volkanik olaylar, sel, taşkın, heyelan ve tro- pikal fırtınalar gibi doğa olayları göçlere neden olur- ken kimi zaman da savaşlar, iç karışıklıklar, ihtilaller ve dinî nedenler gibi toplumsal ve siyasal olaylar so- nucunda göç yaşanmaktadır. En sık görülen göçler ise birey ya da toplulukların geçim sıkıntısı çekmesin- den ya da daha iyi koşullarda yaşamak istemesinden kaynaklanan ekonomik nedenli göçlerdir. Bu parçaya dayanarak, Türkiye’de görülen aşa- ğıdaki göçlerden hangisinin diğerlerinden farklı bir nedene bağlı olduğu söylenebilir?",
+      "options": {
+        "A": "İyi eğitim almış kişilerin gelişmiş ülkelere gitmesi ya da eğitimini yurt dışında başarıyla tamamla- yan kişilerin o ülkelere yerleşmesi",
+        "B": "Lozan Barış Antlaşması gereğince Türkiye ve Yunanistan arasında nüfus değişimi yapılması",
+        "C": "1960’lı yıllardan sonra, iş gücü sıkıntısı çeken Batı Avrupa ülkelerine işçi gönderilmesi",
+        "D": "Kırsal kesimde yaşayan ailelerin miras nedeniyle topraklarının küçülmesi sonucu şehirlere yerleş- mesi",
+        "E": "Yaz aylarında, özellikle Güneydoğu Anadolu Böl- gesi’nden birçok insanın, tarım işçisi olarak baş- ka bölgelere gitmesi"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q6",
+      "number": 6,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki haritada, Türkiye’de pamuk üretiminin ya- pıldığı alanlar gösterilmiştir. Buna göre, pamuk üretiminin yapıldığı alanların ortak özelliği aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Terra rossa toprak türü yaygındır.",
+        "B": "Kış aylarında kar yağışı görülmez.",
+        "C": "Ortalama yükselti 100 metreden azdır.",
+        "D": "Yaz mevsimi sıcak ve kuraktır.",
+        "E": "Yıllık toplam yağış tutarı 1000 milimetrenin üze- rindedir. 2010 – LYS4 / COĞ-2 Diğer sayfaya geçiniz. 4"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q8",
+      "number": 8,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki grafik, bir ülkede çalışan nüfusun ekono- mik sektörlere dağılımını göstermektedir. Buna göre, bu ülkenin en önemli dış alım ve dış satım ürünleri aşağıdakilerden hangisi olabilir? Dış alım Dış satım",
+      "options": {
+        "A": "Beyaz eşya Tahıllar",
+        "B": "Petrol Beyaz eşya",
+        "C": "Otomotiv Tekstil",
+        "D": "Tahıllar Pamuk",
+        "E": "Canlı hayvan Otomotiv Hizmet % 25 Tarım % 65 Endüstri % 10 2010 – LYS4 / COĞ-2 Diğer sayfaya geçiniz. 5"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q9",
+      "number": 9,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Türkiye’de, küçük kapalı ekonomik bölgeler içe- risinde gerçekleşen iç ticaret etkinliklerinin, 1950’ li yıllardan sonra hızla canlılık kazanarak bölgeler arasında yaygınlaşmasında aşağıdakilerden han- gisinin etkisi en azdır?",
+      "options": {
+        "A": "Kırdan kente göçlerle kent nüfuslarının artması",
+        "B": "Birçok köy ve kasabanın kent merkezlerine ula- şım koşullarının iyileşmesi",
+        "C": "Büyük limanların yükleme ve boşaltma kapasite- lerinin artması",
+        "D": "İletişim teknolojilerindeki gelişmeler sayesinde halkın farklı tüketim maddeleri hakkında bilgi sa- hibi olması",
+        "E": "Kişi başına düşen ulusal gelir miktarının artması"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q10",
+      "number": 10,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Türkiye’deki bir yörenin kıyı kesimlerinde turunçgil ta- rımı ve yaz turizmi, iç kesimlerinde ise küçükbaş hay- vancılık ve yaylacılık yaygındır. Yalnızca bu bilgilere dayanarak bu yöre ile ilgili aşağıdaki yorumlardan hangisi yapılamaz?",
+      "options": {
+        "A": "Kıyı kesimlerinde maki alanları yaygındır.",
+        "B": "Hem kıyı hem de iç kesimlerinde yaz kuraklığı belirgindir.",
+        "C": "Kıyı kesimlerinde yıllık sıcaklık farkı azdır.",
+        "D": "Kıyıyla iç kesimler arasında belirgin yükselti farkı vardır.",
+        "E": "İç kesimlerinde nüfus yoğunluğu fazladır. 2010 – LYS4 / COĞ-2 Diğer sayfaya geçiniz. 6"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q11",
+      "number": 11,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki grafikte, 2004 yılında bazı ülkelere gelen turist sayıları ve bu ülkelerin turizm gelirleri gösteril- miştir. Bu grafiğe göre, aşağıdaki bilgilerden hangisi doğrudur?",
+      "options": {
+        "A": "Turist başına en çok döviz kazanan ülke İtal- ya’dır.",
+        "B": "İtalya’ya gelen turist sayısı Çin’den fazladır.",
+        "C": "ABD’nin elde ettiği turizm geliri, grafikteki üç Av- rupa ülkesinin toplamından fazladır.",
+        "D": "Avrupa’da turizmden en fazla gelir elde eden ül- ke İspanya’dır.",
+        "E": "İtalya’nın turizm geliri, Fransa’dan fazladır."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q13",
+      "number": 13,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Dünya üzerindeki birçok canlı türü, doğal ortamlarına müdahale ve buna bağlı olarak nesillerinin tükenmesi tehlikesiyle karşı karşıyadır. Örneğin Amazon Orman- ları, dünyadaki türlerin yarıdan fazlasını barındırmak- tadır. Bu alanda yapılacak tahribat, 30 yıl içerisinde türlerin yaklaşık % 10’unun yok olmasına neden ola- bilir. Ayrıca, ticari değere sahip olmaları nedeniyle, okyanuslardaki balina, Afrika Kıtası’ndaki fil ve gerge- dan gibi canlılar sayı olarak çok azalmıştır. Canlı türü sayısının azalmasında bir diğer etken de artan talebi karşılamak için giderek yaygınlaşan tarım ve endüstri etkinliklerinin yarattığı kirliliktir. Bu parçada, ekolojik dengenin bozulmasına ve buna bağlı olarak canlı türlerinin yok olmasına neden olan etkenlerin hangisinden söz edilme- miştir?",
+      "options": {
+        "A": "Aşırı avlanma",
+        "B": "Hızlı nüfus artışı",
+        "C": "Yaşam alanlarının daralması",
+        "D": "Ekonomik etkinlikler",
+        "E": "Orman yangınları"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q15",
+      "number": 15,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Aşağıdaki gazete haberlerinden hangisi küresel ısınmanın sonuçlarıyla ilgili değildir?",
+      "options": {
+        "A": "Sibirya’nın batısında on bir bin yıldır donmuş hâl- de bulunan ve Türkiye’den daha geniş alan kap- layan turbalıklar son yıllarda erimeye başladı.",
+        "B": "Önümüzdeki yıllarda deniz seviyesinde görülme- si beklenen yükselme, birçok kıyı yerleşimini olumsuz yönde etkileyecek. Örneğin, deniz sevi- yesinde meydana gelecek bir metrelik yükselme, Bangladeş’in % 17’sinin sular altında kalmasına neden olacak.",
+        "C": "Son yıllarda, Kuzey Yarım Küre’nin orta enlemle- rindeki göl ve nehirlerin yıllık buzla kaplı kalma süreleri yaklaşık iki hafta kısaldı.",
+        "D": "İzlanda’nın güneyinde yer alan bir buzulun altın- daki volkan, uzun aradan sonra tekrar faaliyete geçti. Yoğun kül bulutundan dolayı görüş mesa- fesi azaldı ve çevredeki hava alanları kapatıldı. Oluşabilecek buzul erimesi ve çamur akıntısına önlem olarak çevredeki yerleşim birimleri boşal- tıldı.",
+        "E": "Kuzey Kutbu’nda yaşayan kutup ayıları, deniz yüzeyindeki buz parçaları üzerinde dolaşarak fokları avlıyorlar. Ancak, son yıllarda deniz yüze- yindeki buzların birbirinden uzaklaşması ve incel- mesi, kutup ayılarını açlık tehlikesiyle karşı karşı- ya getiriyor."
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    },
+    {
+      "id": "2010-lys-4-cografya-2010-lisans-yerlestirme-sinavi-lys-4-c-q16",
+      "number": 16,
+      "subject": "Coğrafya",
+      "topic": "LYS-4",
+      "difficulty": "orta",
+      "question": "Türkiye’de çayır ve meralarda aşırı otlatma yapılma- sı, tarım topraklarının aşırı işlenmesi, ormanlık alan- larda tarla açmak ya da turistik tesis kurmak için ağaçların kesilmesi, bazı maden ocaklarında made- nin çıkartılabilmesi için yüzeyin kazılarak açılması ve eğimli alanlardaki kara ve demir yolu yapım çalışma- ları erozyonu artıran başlıca etkenlerdir. Bu parçada verilenler, erozyonla aşağıdakilerden hangisi arasındaki ilişkiye doğrudan örnektir?",
+      "options": {
+        "A": "Ekonomik etkinlikler",
+        "B": "Toprak türü",
+        "C": "Yağış rejimi",
+        "D": "Yer şekillerinin yapısı",
+        "E": "Su kaynakları"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-4"
+      ]
+    }
+  ]
+}

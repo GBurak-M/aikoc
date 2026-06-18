@@ -1,0 +1,59 @@
+{
+  "exam": "LYS-2",
+  "year": 2015,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://dokuman.osym.gov.tr/pdfdokuman/2015/LYS/Sorular/2015_LYS_2_Fizik.pdf",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 2,
+  "answerKeyCount": 10,
+  "parsedAt": "2026-06-11T13:40:55.056Z",
+  "questions": [
+    {
+      "id": "2015-lys-2-fizik-2015-lisans-yerlestirme-sinavi-lys-2-f-q3",
+      "number": 3,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2015-LYS2/FİZ Baca santralleri olarak adlandırılan şekildeki sistemde; güneş panelleri yardımıyla ısıtılan havanın, birkaç yüz metre uzunluktaki baca içerisinden geçerken türbinleri döndürmesi sonucu elektrik enerjisi elde edilir. Temiz enerji kaynaklarından biri olarak da bilinen baca santrallerinin çalışması, I. Gazlar basınç farkından dolayı hareket eder. II. Gazların akış hızı basınç farkıyla doğru orantılıdır. III. Isınan hava yükselir. prensiplerinden hangileriyle ilgilidir? Yalnız I Yalnız II I ve III II ve III I, II ve III",
+      "options": {
+        "A": "13",
+        "B": "14",
+        "C": "15",
+        "D": "16",
+        "E": "17"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2015-lys-2-fizik-2015-lisans-yerlestirme-sinavi-lys-2-f-q28",
+      "number": 28,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2015-LYS2/FİZ Yıldız veya gezegenlerin parlaklıkları için Kadir (M) birimi kullanılır. Güneş, Sirius yıldızları ve Pluto gezegeninin görünen parlaklıkları sırasıyla PG   26M, PS   2M ve PP   14M dir. Buna göre, bu parlaklık değerleri arasındaki ilişki aşağıdakilerden hangisidir? PG  PS  PP PG  PS  PP PG  PS  PP PG  PS  PP PG  PS  PP atomunun çekirdeğini oluşturan proton ve nötronlardaki aşağı (d) ve yukarı (u) kuarklarının toplam sayıları aşağıdakilerden hangisidir? Aşağı (d) kuarklar Yukarı (u) kuarklar 6 8 8 11 11 8 10 11 11 10",
+      "options": {
+        "A": "6",
+        "B": "12",
+        "C": "24",
+        "D": "36",
+        "E": "72"
+      },
+      "answer": null,
+      "solution": null,
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2015",
+        "LYS-2"
+      ]
+    }
+  ]
+}

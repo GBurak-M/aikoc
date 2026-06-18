@@ -26,14 +26,14 @@ import { getMoraleMessage } from './aiCoachHub';
 import { buildTeacherFallback, tryConceptLesson, tryEducationalAnswer } from './conceptLessons';
 import { askBrowserLlm, isBrowserLlmSupported } from './browserLlm';
 import { resolveWorldLocation } from './worldLocations';
-import { askGemini, isGeminiLikelyEnabled } from './geminiClient';
+import { askGroq, isGroqLikelyEnabled } from './groqClient';
 import {
   buildCoachSystemPrompt,
   buildExamAnalysisSystemPrompt,
   buildScienceBriefSystemPrompt,
   buildSolverSystemPrompt,
   buildTranslationSystemPrompt,
-  mapHistoryForGemini,
+  mapHistoryForGroq,
   parseDataUrlImage,
   type CoachPromptContext,
 } from './geminiPrompts';
@@ -99,12 +99,12 @@ export async function translateAcademicTerm(
   term: string,
   direction: 'TR_EN' | 'EN_TR',
 ): Promise<string> {
-  if (isGeminiLikelyEnabled()) {
-    const gemini = await askGemini({
+  if (isGroqLikelyEnabled()) {
+    const groq = await askGroq({
       systemPrompt: buildTranslationSystemPrompt(direction),
       userText: `Terim: ${term.trim()}`,
     });
-    if (gemini) return `✨ **Gemini AI**\n\n${gemini}`;
+    if (groq) return `✨ **ROTA AI (Groq)**\n\n${groq}`;
   }
 
   if (isBrowserLlmSupported()) {
@@ -187,7 +187,7 @@ export async function generateFullExamAnalysis(
     )
     .join('\n');
 
-  if (isGeminiLikelyEnabled()) {
+  if (isGroqLikelyEnabled()) {
     const examData = buildExamDataSummary(
       exams,
       profile,
@@ -200,11 +200,11 @@ export async function generateFullExamAnalysis(
       totalAvg,
       trendText,
     );
-    const gemini = await askGemini({
+    const groq = await askGroq({
       systemPrompt: buildExamAnalysisSystemPrompt(profile),
       userText: `Deneme verileri:\n${examData}\n\nKişisel deneme analizi ve haftalık plan üret.`,
     });
-    if (gemini) return `✨ **Gemini AI Deneme Analizi**\n\n${gemini}`;
+    if (groq) return `✨ **ROTA AI Deneme Analizi**\n\n${groq}`;
   }
 
   if (isBrowserLlmSupported()) {
@@ -407,7 +407,7 @@ export async function generateCoachChatResponse(
   const intent = detectCoachIntent(userMessage);
   const world = context.world;
 
-  if (isGeminiLikelyEnabled()) {
+  if (isGroqLikelyEnabled()) {
     const worldParts: string[] = [];
     if (world) {
       worldParts.push(formatWorldWeather(world));
@@ -425,17 +425,17 @@ export async function generateCoachChatResponse(
       archiveStatsSummary: context.archiveStatsSummary,
       centralAiInsight: context.centralAiInsight,
     };
-    const geminiReply = await askGemini({
+    const groqReply = await askGroq({
       systemPrompt: buildCoachSystemPrompt(promptContext, {
         intent,
         worldContext: worldParts.length ? worldParts.join('\n\n') : undefined,
       }),
       userText: userMessage,
-      history: mapHistoryForGemini(history),
+      history: mapHistoryForGroq(history),
     });
-    if (geminiReply) {
+    if (groqReply) {
       const prefix = context.profile.name ? `${context.profile.name}, ` : '';
-      return sanitizeCoachOutput(`${prefix}${geminiReply}`);
+      return sanitizeCoachOutput(`${prefix}${groqReply}`);
     }
   }
 
@@ -650,13 +650,13 @@ export async function generateScienceBrief(world: WorldSnapshot): Promise<string
   const digest = formatScienceDigest(world);
   const userText = `İstatistikler:\n${stats.join('\n')}\n\nÖne çıkan yayınlar (Türkçe özetler):\n${digest}\n\nYanıtın tamamen Türkçe olsun.`;
 
-  if (isGeminiLikelyEnabled()) {
-    const gemini = await askGemini({
+  if (isGroqLikelyEnabled()) {
+    const groq = await askGroq({
       systemPrompt: buildScienceBriefSystemPrompt(world.settlement.displayName),
       userText,
     });
-    if (gemini) {
-      const body = await ensureTurkishScienceBrief(gemini);
+    if (groq) {
+      const body = await ensureTurkishScienceBrief(groq);
       return `✨ **Bilim Gündemi** (${world.settlement.displayName})\n\n${body}`;
     }
   }
@@ -890,17 +890,17 @@ export async function generateQuestionSolution(
   const topicSolution = tryTopicSolvers(subject, q);
   if (topicSolution) return `${ocrNote}${topicSolution}`;
 
-  if (isGeminiLikelyEnabled()) {
+  if (isGroqLikelyEnabled()) {
     const promptText =
       text ||
       'Ekteki soru fotoğrafını incele. Soruyu Türkçe olarak yeniden yaz ve adım adım çöz.';
-    const geminiSolution = await askGemini({
+    const groqSolution = await askGroq({
       systemPrompt: buildSolverSystemPrompt(subject),
       userText: `Ders: ${subject}\n\nSoru:\n${promptText}`,
       image: image ?? undefined,
     });
-    if (geminiSolution) {
-      return `${ocrNote}✨ **Gemini AI çözümü**\n\n${geminiSolution}`;
+    if (groqSolution) {
+      return `${ocrNote}✨ **ROTA AI çözümü**\n\n${groqSolution}`;
     }
   }
 

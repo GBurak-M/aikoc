@@ -1,0 +1,36 @@
+{
+  "exam": "LYS-3",
+  "year": 2011,
+  "subject": "Coğrafya",
+  "title": "Lisans Yerleştirme Sınavı (LYS-3) Coğrafya-1 Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/217,lys3cografya1pdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 1,
+  "answerKeyCount": 24,
+  "parsedAt": "2026-06-11T13:44:43.727Z",
+  "questions": [
+    {
+      "id": "2011-lys-3-cografya-2011-lisans-yerlestirme-sinavi-lys-3-c-q24",
+      "number": 24,
+      "subject": "Coğrafya",
+      "topic": "LYS-3",
+      "difficulty": "orta",
+      "question": "2011 - LYS3 / COĞ-1 2011 LİSANS YERLEŞTİRME SINAVI-3 (LYS-3) COĞRAFYA-1 TESTİ 25 HAZİRAN 2011 1. C 2. B 3. C 4. B 5. D 6. C 7. B 8. E 9. B 10. E 11. A 12. D 13. A 14. B 15. C 16. E 17. D 18. C 19. A 20. A 21. D 22. E 23. D 24. A",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "I",
+        "C": "II",
+        "D": "III",
+        "E": "IV"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2011",
+        "LYS-3"
+      ]
+    }
+  ]
+}

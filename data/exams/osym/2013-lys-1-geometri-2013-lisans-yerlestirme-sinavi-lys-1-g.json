@@ -1,0 +1,243 @@
+{
+  "exam": "LYS-1",
+  "year": 2013,
+  "subject": "Geometri",
+  "title": "Lisans Yerleştirme Sınavı (LYS-1) Geometri Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/143,lys1geometritestipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 10,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:42:44.014Z",
+  "questions": [
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q3",
+      "number": 3,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / GEO Şekildeki G noktası, ABC dik üçgeninin kenarortaylarının kesim noktasıdır. Buna göre, x kaç cm’dir? Kenar uzunlukları 8 cm ve 10 cm olan ABCD ve EFGA eş dikdörtgenleri, şekildeki gibi yerleştiriliyor. Bu dikdörtgenlerin BC ve FG kenarları, K noktasında kesişmektedir. Buna göre, kaç cm’dir? 2 3 4",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q6",
+      "number": 6,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / GEO Kenar uzunlukları 10 birim ve 15 birim olan ABCD dikdörtgeni biçimindeki bir karton, şekildeki gibi DB köşegeni boyunca kesiliyor. Daha sonra, elde edilen iki üçgenin A ve C köşeleri orijinde olacak biçimde üçgenler dik koordinat düzlemi üzerine aşağıdaki gibi yerleştiriliyor. Bu üçgenlerin kesim noktası için toplamı kaç birimdir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "8",
+        "C": "12",
+        "D": "15",
+        "E": "16"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q7",
+      "number": 7,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir yamuk Yukarıdaki verilere göre, ABCD yamuğunun alanı kaç birim karedir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "10",
+        "C": "11",
+        "D": "12",
+        "E": "13"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q8",
+      "number": 8,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / GEO Aşağıdaki ABCD paralelkenarı, AE ve FC paralel doğru parçalarıyla eşit alanlı üç bölgeye ayrılıyor. Ardından DB köşegeni çizilip alanları olan şekildeki bölgeler oluşturuluyor. Buna göre, aşağıdaki sıralamalardan hangisi doğrudur? E) 9. Bir kenar uzunluğu 1 birim olan düzgün sekizgen biçiminde bir kartonun şekildeki dört köşegeni çizildikten sonra ortadaki parça kesilip atılıyor. Buna göre, kalan kartonun alanı kaç birim karedir? E)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "28",
+        "C": "30",
+        "D": "32",
+        "E": "34"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q14",
+      "number": 14,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "ABCD bir dikdörtgen Birbirine E noktasında teğet olan şekildeki O ve M merkezli çemberlerin yarıçapları eşittir. Buna göre, çemberlerin merkezleri arasındaki uzaklık kaç cm’dir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "A",
+        "C": "B",
+        "D": "C",
+        "E": "D"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q15",
+      "number": 15,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / GEO Yukarıda verilen O merkezli üç çemberle ilgili olarak aşağıdakiler bilinmektedir.  En büyük çemberin AB kirişi, en küçük çembere; CD kirişi ise ortanca çembere teğettir.  En büyük çemberin yarıçapı 6 cm, AB kirişinin uzunluğu 8 cm, CD kirişinin uzunluğu ise 4 cm’dir. Buna göre, en küçük dairenin alanının ortanca dairenin alanına oranı kaçtır?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "8",
+        "C": "9",
+        "D": "10",
+        "E": "11"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q19",
+      "number": 19,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Ayrıt uzunluğu 4 birim olan tahta bir küpün bazı parçaları kesilip çıkarılarak üç boyutlu yeni bir cisim oluşturuluyor. Bu yeni cismin her bir yüzüne dik bir doğrultuda bakıldığında ortasında boşluk bulunan aşağıdaki görünüm elde ediliyor. Bu üç boyutlu yeni cismin hacmi en fazla kaç birim küptür?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "24",
+        "C": "27",
+        "D": "36",
+        "E": "45"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q20",
+      "number": 20,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / GEO Aşağıda, taban yarıçapı 3 cm ve yüksekliği 6 cm olan bir dik dairesel silindir verilmiştir. Silindirin taban düzlemlerinde şekildeki gibi merkezlerden 1 cm uzaklıkta AD ve BC paralel doğru parçaları çiziliyor. Buna göre, ABCD dikdörtgeninin alanı kaç dir? 21. Tabanları kare, yan yüzleri yamuk olan bir kesik dik piramidin açınımı aşağıda verilmiştir. Şekil üzerinde verilen uzunluklar cm türündendir. Buna göre, kesik piramidin hacmi kaç tür?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "24",
+        "C": "28",
+        "D": "32",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q26",
+      "number": 26,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "2013 - LYS1 / GEO R gerçel sayılar kümesi olmak üzere, kümesi veriliyor. Buna göre, aşağıdakilerden hangisi fark kümesinin bir alt kümesidir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "16",
+        "C": "20",
+        "D": "25",
+        "E": "30"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    },
+    {
+      "id": "2013-lys-1-geometri-2013-lisans-yerlestirme-sinavi-lys-1-g-q30",
+      "number": 30,
+      "subject": "Geometri",
+      "topic": "LYS-1",
+      "difficulty": "orta",
+      "question": "Baskı: METEKSAN A.Ş. - Ankara SINAVDA UYULACAK KURALLAR fotoğrafının çekilmesi, herhangi bir yolla çoğaltılması, yayımlanması ya da kullanılması yasaktır. Bu yasağa uymayanlar gerekli cezai sorumluluğu ve doğacak tüm mali külfeti peşinen kabullenmiş sayılır. 1. Sınav salonları kamera ile kayıt altına alınacaktır. Kamera kayıtlarının incelenmesinden sonra sınav kuralla- rına uymadığı tespit edilen adayların sınavları ÖSYM Yönetim Kurulunca geçersiz sayılacaktır. 2. Cep telefonu ile sınava girmek kesinlikle yasaktır. Çağrı cihazı, telsiz, fotoğraf makinesi vb. araçlarla; cep bilgi- sayarı, kol ya da cep saati gibi her türlü bilgisayar özelliği bulunan cihazlarla; silah ve benzeri teçhizatla; müsved- de kâğıdı, defter, kitap, sözlük, sözlük işlevi olan elektronik aygıt, hesap cetveli, hesap makinesi, pergel, açıölçer, cetvel vb. araçlarla sınava girmek kesinlikle yasaktır. Bu araçlarla sınava girmiş adayların adı mutlaka Salon Sınav Tutanağına yazılacak, bu adayların sınavı geçersiz sayılacaktır. Sınava kalem, silgi, kalemtıraş, saat vb. araçla ve kulaklık, küpe, broş vb. takı, herhangi bir metal eşya ile girmek de kesinlikle yasaktır. Yiyecek, içecek vb. tüketim malzemeleri de sınava getirilemez. Adaylar sınava şeffaf şişe içerisinde su getirebilecektir. 3. Bu test için verilen cevaplama süresi 60 dakikadır. LYS-1’de adaylar Matematik Testinin cevaplama süresi için- de, Geometri Testinin ilk 15 ve son 15 dakikası içinde sınav salonundan ayrılamazlar. İki test arasında bi- rinci testin soru kitapçığının toplanması ve ikinci testin soru kitapçığının dağıtılması işlemleri dışında ara verilmez. Toplama ve dağıtma işlemi sırasında adayların salondan dışarı çıkmaları kesinlikle yasaktır. Bu süreler dışında, cevaplamayı sınav bitmeden tamamlarsanız cevap kâğıdınızı ve soru kitapçığınızı salon görevlilerine teslim ederek salonu terk edebilirsiniz. Bildirilen sürelere aykırı davranışlardan adayın kendisi sorumludur. 4. Sınav salonundan ayrılan aday, her ne sebeple olursa olsun, tekrar sınava alınmayacaktır. 5. Sınav süresince görevlilerle konuşmak, görevlilere soru sormak yasaktır. Aynı şekilde görevlilerin de adaylarla ya- kından ve alçak sesle konuşmaları ayrıca adayların birbirinden kalem, silgi vb. şeyleri istemeleri kesinlikle yasaktır. 6. Sınav sırasında, görevlilerin her türlü uyarısına uymak zorundasınız. Sınavınızın geçerli sayılması, her şeyden önce, sınav kurallarına uymanıza bağlıdır. Kurallara aykırı davranışta bulunanların ve yapılacak uyarılara uymayanların kimlik bilgileri Salon Sınav Tutanağına yazılacak ve sınavları geçersiz sayılacaktır. 7. Sınav sırasında kopya çeken, çekmeye kalkışan, kopya veren, kopya çekilmesine yardım edenlerin kimlik bilgileri Salon Sınav Tutanağına yazılacak ve bu adayların sınavları geçersiz sayılacaktır. Adayların test sorularına verdikleri cevapların dağılımları bilgi işlem yöntemleriyle incelenecek, bu incelemelerden elde edilen bulgular bireysel ya da toplu olarak kopya çekildiğini gösterirse kopya eylemine katılan adayın/adayların sınavı geçersiz sayılacak ayrıca 2 yıl boyunca ÖSYM tarafından düzenlenen tüm sınavlara başvurusu yasaklanabilecektir. Sınav görevlileri bir salondaki sınavın, kurallara uygun biçimde yapılmadığını, toplu kopya girişiminde bulunulduğu- nu raporlarında bildirdiği takdirde, ÖSYM bu salonda sınava giren tüm adayların sınavını geçersiz sayabilir. 8. Cevap kâğıdında doldurmanız gereken alanlar bulunmaktadır. Bu alanları doldurunuz. Cevap kâğıdınızı başkaları tarafından görülmeyecek şekilde tutmanız gerekmektedir. Cevap kâğıdına yazılacak her türlü yazıda ve yapılacak bütün işaretlemelerde kurşun kalem kullanılacaktır. Sınav süresi bittiğinde cevapların cevap kâğıdına işaretlenmiş olması gerekir. Soru kitapçığına işaretlenen cevaplar geçerli değildir. 9. Soru kitapçığınızı alır almaz kapağında bulunan ilgili alanları doldurunuz. Sayfaların eksik olup olmadığını, kitapçıkta basım hatalarının bulunup bulunmadığını ve soru kitapçığının her sayfasında basılı bulunan soru kitapçık numarası- nın, kitapçığın ön kapağında basılı soru kitapçık numarasıyla aynı olup olmadığını kontrol ediniz. Soru kitapçığınızın sayfası eksik ya da basımı hatalıysa değiştirilmesi için salon başkanına başvurunuz. Size bu sınavın her bir testi için ayrı ayrı kitapçıklar verilmektedir. Her kitapçığın Soru Kitapçık Numarası birbirinden farklıdır. Bu nedenle her test için aldığınız kitapçığın Soru Kitapçık Numarasını cevap kâğıdınızdaki ilgili alana kod- lamanız çok önemlidir. Cevap kâğıdınızdaki “Soru kitapçık numaralarını doğru kodladım.” kutucuğunu işaretleyiniz. LYS-1’de size verilen Geometri Testinin Soru Kitapçık Numarasını cevap kâğıdınızdaki “Geometri Soru Kitap- çık Numarası” alanına kodlayınız. Soru kitapçığı üzerinde yer alan Soru Kitapçık Numarasını doğru kodladığınızı beyan eden alanı imzalayınız. 10. Sınav sonunda soru kitapçıkları toplanacak ve ÖSYM’de incelenecektir. Soru kitapçığınızın sayfalarını koparmayı- nız. Soru kitapçığının bir sayfası bile eksik çıkarsa sınavınız geçersiz sayılacaktır. 11. Cevap kâğıdına ve soru kitapçığına yazılması ve işaretlenmesi gereken bilgilerde bir eksiklik ve/veya yanlışlık olması hâlinde sınavınızın değerlendirilmesi mümkün olamamaktadır, bu husustaki özen yükümlülüğü ve sorumluluk size aittir. 12. Soru kitapçığının sayfalarındaki boş yerleri müsvedde için kullanabilirsiniz. 13. Soruları ve/veya bu sorulara verdiğiniz cevapları ayrı bir kâğıda yazıp bu kâğıdı dışarı çıkarmanız kesinlikle yasaktır. 14. Her testin cevaplarını cevap kâğıdındaki ilgili alana işaretleyiniz. 15. Sınav salonundan ayrılmadan önce, soru kitapçığınızı ve cevap kâğıdınızı salon görevlilerine eksiksiz olarak teslim etmeyi unutmayınız. LİSANS YERLEŞTİRME SINAVI-1 (LYS1) 16 HAZİRAN 2013 GEOMETRİ TESTİ 1. D 2. D 3. B 4. A 5. B 6. D 7. C 8. B 9. E 10. A 11. C 12. A 13. B 14. E 15. C 16. A 17. D 18. E 19. C 20. C 21. E 22. D 23. A 24. D 25. E 26. B 27. D 28. B 29. A 30. C",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0",
+        "C": "1",
+        "D": "2",
+        "E": "3"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-1"
+      ]
+    }
+  ]
+}

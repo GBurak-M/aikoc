@@ -1,0 +1,433 @@
+{
+  "exam": "AÖL",
+  "year": 2024,
+  "subjects": [
+    "Türkçe",
+    "Matematik",
+    "Fen",
+    "Sosyal",
+    "Tarih"
+  ],
+  "questions": [
+    {
+      "id": "aöl-2024-türkçe-001",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "kolay",
+      "question": "1. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-matematik-002",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "orta",
+      "question": "2. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-fen-003",
+      "subject": "Fen",
+      "topic": "Fen Konu 3",
+      "difficulty": "zor",
+      "question": "3. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-sosyal-004",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 4",
+      "difficulty": "kolay",
+      "question": "4. TBMM kaç yılında açılmıştır?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1923",
+        "E": "1924"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-tarih-005",
+      "subject": "Tarih",
+      "topic": "Tarih Konu 5",
+      "difficulty": "orta",
+      "question": "5. Kurtuluş Savaşı'nın başlangıcı olarak kabul edilen olay hangisidir?",
+      "options": {
+        "A": "Lozan Antlaşması",
+        "B": "Mondros Ateşkes Antlaşması",
+        "C": "Samsun'a çıkış",
+        "D": "Saltanatın kaldırılması",
+        "E": "Cumhuriyetin ilanı"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Tarih kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "tarih",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-türkçe-006",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "zor",
+      "question": "6. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-matematik-007",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "kolay",
+      "question": "7. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-fen-008",
+      "subject": "Fen",
+      "topic": "Fen Konu 3",
+      "difficulty": "orta",
+      "question": "8. Aşağıdakilerden hangisi yenilenebilir enerji kaynağıdır?",
+      "options": {
+        "A": "Kömür",
+        "B": "Doğal gaz",
+        "C": "Petrol",
+        "D": "Güneş",
+        "E": "Linyit"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-sosyal-009",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 4",
+      "difficulty": "zor",
+      "question": "9. Türkiye Cumhuriyeti'nin ilk cumhurbaşkanı kimdir?",
+      "options": {
+        "A": "İsmet İnönü",
+        "B": "Mustafa Kemal Atatürk",
+        "C": "Celal Bayar",
+        "D": "Fevzi Çakmak",
+        "E": "Kazım Karabekir"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-tarih-010",
+      "subject": "Tarih",
+      "topic": "Tarih Konu 5",
+      "difficulty": "kolay",
+      "question": "10. Cumhuriyet hangi yıl ilan edilmiştir?",
+      "options": {
+        "A": "1919",
+        "B": "1920",
+        "C": "1921",
+        "D": "1922",
+        "E": "1923"
+      },
+      "answer": "E",
+      "solution": "Doğru cevap E seçeneğidir. Tarih kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "tarih",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-türkçe-011",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "orta",
+      "question": "11. \"Gözden düşmek\" deyiminin anlamı aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Görme yetisini kaybetmek",
+        "B": "Değerini yitirmek",
+        "C": "Hızlı bakmak",
+        "D": "Gözü yorulmak",
+        "E": "Gözükmek"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-matematik-012",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "zor",
+      "question": "12. Bir dikdörtgenin kısa kenarı 6 cm, uzun kenarı 10 cm ise çevresi kaç cm'dir?",
+      "options": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "60",
+        "E": "80"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-fen-013",
+      "subject": "Fen",
+      "topic": "Fen Konu 3",
+      "difficulty": "kolay",
+      "question": "13. Fotosentez olayı hangi organelde gerçekleşir?",
+      "options": {
+        "A": "Mitokondri",
+        "B": "Kloroplast",
+        "C": "Ribozom",
+        "D": "Golgi",
+        "E": "Lizozom"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-sosyal-014",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 4",
+      "difficulty": "orta",
+      "question": "14. Aşağıdakilerden hangisi demokrasinin temel ilkelerinden biridir?",
+      "options": {
+        "A": "Tek parti yönetimi",
+        "B": "Hukukun üstünlüğü",
+        "C": "Gizli yargılama",
+        "D": "Süresiz görev",
+        "E": "Basın sansürü"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-tarih-015",
+      "subject": "Tarih",
+      "topic": "Tarih Konu 5",
+      "difficulty": "zor",
+      "question": "15. Aşağıdakilerden hangisi Atatürk ilkelerinden biridir?",
+      "options": {
+        "A": "Saltanatçılık",
+        "B": "Halifelik",
+        "C": "Laiklik",
+        "D": "Tekalif-i Milliye",
+        "E": "Misak-ı Milli"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Tarih kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "tarih",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-türkçe-016",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "kolay",
+      "question": "16. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-matematik-017",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "orta",
+      "question": "17. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-fen-018",
+      "subject": "Fen",
+      "topic": "Fen Konu 3",
+      "difficulty": "zor",
+      "question": "18. Sesin boşlukta yayılmamasının nedeni nedir?",
+      "options": {
+        "A": "Ses dalgasıdır",
+        "B": "Ortam tanecikleri gerekir",
+        "C": "Işıktan yavaştır",
+        "D": "Enerji taşımaz",
+        "E": "Basınç dalgası değildir"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-sosyal-019",
+      "subject": "Sosyal",
+      "topic": "Sosyal Konu 4",
+      "difficulty": "kolay",
+      "question": "19. Türkiye'nin en uzun nehri hangisidir?",
+      "options": {
+        "A": "Fırat",
+        "B": "Dicle",
+        "C": "Kızılırmak",
+        "D": "Sakarya",
+        "E": "Yeşilırmak"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Sosyal kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "sosyal",
+        "aöl"
+      ]
+    },
+    {
+      "id": "aöl-2024-tarih-020",
+      "subject": "Tarih",
+      "topic": "Tarih Konu 5",
+      "difficulty": "orta",
+      "question": "20. İstanbul'un fethi hangi yılda gerçekleşmiştir?",
+      "options": {
+        "A": "1071",
+        "B": "1299",
+        "C": "1453",
+        "D": "1517",
+        "E": "1683"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Tarih kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "tarih",
+        "aöl"
+      ]
+    }
+  ]
+}

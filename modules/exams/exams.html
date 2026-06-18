@@ -1,0 +1,54 @@
+<section class="exams-module">
+  <div class="module-header">
+    <h2>ÖSYM Çıkmış Sorular</h2>
+    <p>
+      <a href="https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html" target="_blank" rel="noopener noreferrer">ÖSYS arşivinden</a>
+      YGS, LYS ve ÖSS kitapçıkları — soru bankası ve istatistikler
+    </p>
+    <p class="meta">Sorular ÖSYM'ye aittir; yalnızca eğitim amaçlı sunulmaktadır.</p>
+  </div>
+
+  <div class="card-grid page-stats-panel" id="page-stats-exams" aria-label="İstatistikler"></div>
+
+  <div class="toolbar exam-catalog-toolbar">
+    <input type="search" class="input" id="exam-search" placeholder="Ders veya sınav ara (Matematik, YGS, ÖSS…)" aria-label="Sınav ara" />
+    <select class="select" id="exam-type-filter" aria-label="Sınav türü">
+      <option value="">Tüm sınavlar</option>
+    </select>
+    <select class="select" id="exam-category" aria-label="Kategori">
+      <option value="">Tüm kategoriler</option>
+    </select>
+    <select class="select" id="exam-year-filter" aria-label="Yıl">
+      <option value="">Tüm yıllar</option>
+    </select>
+    <span class="exam-count meta" id="exam-count"></span>
+  </div>
+
+  <div class="exam-catalog-wrap card" id="exam-catalog-wrap">
+    <div class="exam-catalog-head" role="row">
+      <span class="col-year">Yıl</span>
+      <span class="col-name">Sınav adı</span>
+      <span class="col-session">Oturum</span>
+      <span class="col-org">Soru</span>
+    </div>
+    <div class="exam-catalog-list" id="exam-catalog-list" role="list"></div>
+  </div>
+
+  <div class="exam-practice panel-hidden" id="exam-practice">
+    <div class="exam-selected card" id="exam-selected-info"></div>
+
+    <div class="toolbar exam-practice-toolbar">
+      <label class="toggle-label">
+        <input type="checkbox" id="exam-study-mode" /> Çalışma modu (anında çözüm)
+      </label>
+      <label class="toggle-label">
+        <input type="checkbox" id="exam-timer" /> Süre sayacı
+      </label>
+      <button type="button" class="btn btn-ghost btn-sm" id="exam-close-practice">Listeye dön</button>
+    </div>
+
+    <div class="exam-stats card" id="exam-stats-bar"></div>
+    <div id="exam-question-area" class="exam-question card"></div>
+    <div class="toolbar" id="exam-nav"></div>
+  </div>
+</section>

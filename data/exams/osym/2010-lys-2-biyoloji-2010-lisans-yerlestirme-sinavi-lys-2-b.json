@@ -1,0 +1,425 @@
+{
+  "exam": "LYS-2",
+  "year": 2010,
+  "subject": "Biyoloji",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Biyoloji Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/283,2010lys2biypdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 18,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:44:58.047Z",
+  "questions": [
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q2",
+      "number": 2,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Deney: Hipotalamusun başka bir bölgesine elektrik uyarısı verildiğinde, deney hayvanının tok olduğu hâlde yemeye devam ettiği saptanmıştır. Bu iki deneyin bulguları, bu memeli hayvanda hipotalamusun aşağıdakilerden hangisini denetle- diğini göstermez?",
+      "options": {
+        "A": "Vücut sıcaklığını",
+        "B": "Kanın ozmotik basıncını",
+        "C": "İdrar üretimini",
+        "D": "Vücuda alınacak su miktarını",
+        "E": "Açlık-tokluk hissini"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q4",
+      "number": 4,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Yukarıdaki tabloda insanda karbonhidrat ve protein sindiriminin bazı aşamaları verilmiştir. Tabloda I, II ve III ile gösterilen enzimler aşağıda- kilerin hangisinde doğru olarak verilmiştir? I II III",
+      "options": {
+        "A": "Amilaz Kimotripsin Pepsin",
+        "B": "Amilaz Pepsin Kimotripsin",
+        "C": "Tripsin Amilaz Kimotripsin",
+        "D": "Tripsin Kimotripsin Amilaz",
+        "E": "Kimotripsin Pepsin Amilaz Madde Sentezlenme Yıkım Depolanma Salgılanma X Y Z T U + + + + + + + + + + Ağız Karbonhidratlar Proteinler Mide İnce bağırsak I Protein Küçük polipeptitler Daha küçük polipeptitler ve bazı dipeptitler Nişasta Maltoz II III Glukoz Küçük polipeptitler 2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 3"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q6",
+      "number": 6,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Adli tıpta, güvenirliği çok yüksek olan “DNA parmak izi yöntemi”, zanlıların suçluluğunun kanıtlanmasında ve babalık testlerinde kullanılmaktadır. Bu yöntemin güvenilir olması DNA’nın aşağıda verilen özelliklerinden hangisine dayanmaktadır?",
+      "options": {
+        "A": "Sarmal yapıya sahip olması",
+        "B": "Enzimlerle istenilen yerden kesilebilmesi",
+        "C": "Laboratuvar ortamında çoğaltılabilmesi",
+        "D": "Hücreden saf olarak elde edilebilmesi",
+        "E": "Bazı bölgelerindeki baz dizilimlerinin bireye özgü olması"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q7",
+      "number": 7,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "I. Fosfat grubunun organik baza bağlandığı yer II. Taşıdığı şeker çeşidi III. Organik bazın şekere bağlandığı yer IV. Yapıdaki nükleik asit zincir sayısı DNA ve RNA yukarıdakilerin hangileri bakımından birbirinden farklılık gösterir? A) I ve II B) I ve IV C) II ve III D) II ve IV E) III ve IV 8. Bazı hormonların sadece hedef hücrelerde tepki",
+      "options": {
+        "A": "A)",
+        "B": "Amilaz",
+        "C": "Kimotripsin",
+        "D": "Pepsin"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q8",
+      "number": 8,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bazı hormonların sadece hedef hücrelerde tepki oluşturabilmeleri, hormonların aşağıda verilen özelliklerinden hangisiyle açıklanabilir?",
+      "options": {
+        "A": "Hücrede ilgili hormona özgü reseptörler olma- sıyla",
+        "B": "Hücrelere kan yoluyla taşınmalarıyla",
+        "C": "Geri bildirim mekanizmasıyla miktarlarının den- gede tutulmasıyla",
+        "D": "Steroit bileşikler olmalarıyla",
+        "E": "Her birinin farklı bir yapıya sahip olmasıyla 2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 4"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q12",
+      "number": 12,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Normal bir insanda, aşağıdaki olaylardan hangisi sempatik sinir sisteminin etkisiyle ortaya çıkar?",
+      "options": {
+        "A": "B)",
+        "B": "Kalp atım hızının yavaşlaması",
+        "C": "D)",
+        "D": "Bronşların daralması",
+        "E": "2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 5"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q15",
+      "number": 15,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi antikorların özelliklerin- den biri değildir?",
+      "options": {
+        "A": "Antijenleri fagosite etme",
+        "B": "Protein yapısında olma",
+        "C": "Antijenle karşılaştığında oluşma",
+        "D": "Antijene özgü olma",
+        "E": "B hücreleri tarafından üretilme"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q16",
+      "number": 16,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bir canlının solunum sisteminin aşağıdaki özellik- lerden hangisine sahip olması, kural olarak yaşa- dığı ortam hakkında bilgi verir?",
+      "options": {
+        "A": "Gaz alışverişinin difüzyonla gerçekleşmesi",
+        "B": "Solunum organının vücut içinde olması",
+        "C": "Gazların solunum pigmentiyle taşınması",
+        "D": "Solunum organının yüzeyinin nemli olması",
+        "E": "Gaz değişim yüzeyinin bir sıra hücre tabakasın- dan oluşması 2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 6"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q17",
+      "number": 17,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Oksijen kısmi basıncı (mm Hg) Karbondioksit kısmi basıncı (mm Hg) K 110 40 L 40 60 M 100 40 Yukarıdaki tablo insanın alveolünde, aort kanında ve doku sıvısında ölçülmüş oksijen ve karbondioksit kısmi basınç değerlerini göstermektedir. Buna göre, K, L ve M ile gösterilen alveol, aort kanı ve doku sıvısı aşağıdakilerin hangisinde doğru olarak verilmiştir? K L M",
+      "options": {
+        "A": "Alveol Aort kanı Doku sıvısı",
+        "B": "Alveol Doku sıvısı Aort kanı",
+        "C": "Doku sıvısı Alveol Aort kanı",
+        "D": "Aort kanı Alveol Doku sıvısı",
+        "E": "Aort kanı Doku sıvısı Alveol"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q18",
+      "number": 18,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Normal bir insanda K, L ve M olarak adlandırılan üç madde ile ilgili olarak nefronda gerçekleşen bazı olaylar aşağıdaki şekilde gösterilmiştir. Bu üç maddenin üre, aminoasit ve penisilin oldu- ğu bilindiğine göre aşağıdaki eşleştirmelerden hangisi doğrudur? Üre Aminoasit Penisilin",
+      "options": {
+        "A": "K L M",
+        "B": "K M L",
+        "C": "L K M",
+        "D": "L M K",
+        "E": "M K L Salgılanma M maddesi Süzülme ve tam geri emilim K maddesi Süzülme ve kısmen geri emilim L maddesi İdrar Kan damarı İdrar Kan damarı Nefron Kan damarı Nefron Nefron İdrar 2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 7"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q22",
+      "number": 22,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi insanda X’e bağlı çekinik kalıtımın özelliklerinden biri değildir?",
+      "options": {
+        "A": "Özelliği gösteren erkek bireyin kız çocuklarının hepsinde özellik ortaya çıkarken, hiçbir erkek ço- cuğunda ortaya çıkmaz.",
+        "B": "Özelliğin erkek bireyde ortaya çıkabilmesi için çekinik allelin tek bir kopyası yeterlidir.",
+        "C": "Özelliği gösteren dişi bireyin erkek çocuklarının hepsinde özellik ortaya çıkar.",
+        "D": "Heterozigot olan dişi bireyin erkek çocuklarında özelliğin % 50 oranında ortaya çıkması beklenir.",
+        "E": "Özelliğin dişi bireyde ortaya çıkabilmesi için bire- yin çekinik homozigot olması gerekir. : Dişi birey : Erkek birey"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q24",
+      "number": 24,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bir yulaf filizinin ucu kesiliyor ve bu parça bir süre agar bloğunun üstünde bekletiliyor. Daha sonra bu agar bloğu, ucu kesilmiş ve karanlıkta tutulan başka bir yulaf filizinin tepesine t anında şekildeki gibi yer- leştiriliyor. Karanlıkta tutulmaya devam edilen bu yulaf filizi- nin, agar bloğu yerleştirildikten bir süre sonra aşağıdakilerin hangisindeki gibi görünmesi bekle- nir? Fare Kertenkele 10 20 30 40 0 10 20 30 40 0",
+      "options": {
+        "A": "B) t",
+        "C": "t t t",
+        "E": "t",
+        "D": "2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 10"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q25",
+      "number": 25,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bitkilerde fotosentez, yaprağın aşağıda verilen yapılarının hangisinde gerçekleşir?",
+      "options": {
+        "A": "Soymuk boru hücrelerinde",
+        "B": "Arkadaş hücrelerinde",
+        "C": "Kütikula tabakasında",
+        "D": "Palizat parankima hücrelerinde",
+        "E": "Odun boru hücrelerinde"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q26",
+      "number": 26,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "I. Asma bitkisinin dokunduğu bir dala zamanla sa- rılması II. Akşamsefası bitkisinin çiçeklerinin aydınlıkta ka- panıp karanlıkta açılması III. Bitki köklerinin toprağın derinliklerine doğru uza- ması IV. Küstüm otu bitkisinin dokununca yaprakçıklarını kapatması Yukarıdakilerden hangileri, yönelim hareketi ola- rak kabul edilemez? A) I ve II B) I ve IV C) II ve III D) II ve IV E) III ve IV 2010 – LYS2 / BİYO 27. Aşağıdakilerden hangisi odunsu bitkilerde suyun köklerden yaprağa taşınmasında etkili faktörler- den biri değildir? A) Odun boruların kılcal yapıya sahip olması B) Yapraklardan terlemeyle su yitirilmesi C) Su moleküllerinin yarattığı kohezyon kuvveti D) Kökteki emici tüylerde ozmotik basıncın yüksek olması E) Soymuk borularında taşınan besin maddelerinin ozmotik basıncı artırması 28. İki farklı türün bireyleri arasında değişik ilişkiler olabi- lir. Aşağıdaki tabloda üç farklı ilişki, I, II ve III olarak adlandırılmış ve bu ilişkilerin K ve L canlıları üzerin- deki etkileri gösterilmiştir. Buna göre, tabloda I, II ve III ile belirtilen ilişki tip- leri aşağıdakilerin hangisinde doğru olarak veril- miştir? I II III",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "40",
+        "E": "0"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q27",
+      "number": 27,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi odunsu bitkilerde suyun köklerden yaprağa taşınmasında etkili faktörler- den biri değildir?",
+      "options": {
+        "A": "Odun boruların kılcal yapıya sahip olması",
+        "B": "Yapraklardan terlemeyle su yitirilmesi",
+        "C": "Su moleküllerinin yarattığı kohezyon kuvveti",
+        "D": "Kökteki emici tüylerde ozmotik basıncın yüksek olması",
+        "E": "Soymuk borularında taşınan besin maddelerinin ozmotik basıncı artırması"
+      },
+      "answer": "E",
+      "solution": "ÖSYM cevap anahtarı: E",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q28",
+      "number": 28,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "İki farklı türün bireyleri arasında değişik ilişkiler olabi- lir. Aşağıdaki tabloda üç farklı ilişki, I, II ve III olarak adlandırılmış ve bu ilişkilerin K ve L canlıları üzerin- deki etkileri gösterilmiştir. Buna göre, tabloda I, II ve III ile belirtilen ilişki tip- leri aşağıdakilerin hangisinde doğru olarak veril- miştir? I II III",
+      "options": {
+        "A": "Kommensalizm Mutualizm Parazitizm",
+        "B": "Kommensalizm Parazitizm Mutualizm",
+        "C": "Mutualizm Kommensalizm Parazitizm",
+        "D": "Mutualizm Parazitizm Kommensalizm",
+        "E": "Parazitizm Kommensalizm Mutualizm İlişki tipi K canlısı L canlısı I II III 0 + − + + + Canlı için yararlı bir etkisi var. Canlı için zararlı bir etkisi var. : : Canlı üzerinde etkisi yok. : 0 + − 2010 – LYS2 / BİYO Diğer sayfaya geçiniz. 12"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q29",
+      "number": 29,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Bir popülasyonda çekinik bir özelliğin ortaya çık- masından sorumlu allelin en az bir tanesini taşı- yan bireylerin popülasyon içindeki oranı, Hardy- Weinberg eşitliğine göre aşağıdakilerden hangi- siyle hesaplanabilir? (q çekinik allelin frekansını göstermektedir.)",
+      "options": {
+        "A": "+ + 2 2 2pq p 2pq q",
+        "B": "+ + + 2 2 2 2pq q p 2pq q",
+        "C": "+ + 2 2 2 q p 2pq q",
+        "D": "− + + 2 2 2 2pq p p 2pq q",
+        "E": "− + + 2 2 2 2pq q p 2pq q"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2010-lys-2-biyoloji-2010-lisans-yerlestirme-sinavi-lys-2-b-q30",
+      "number": 30,
+      "subject": "Biyoloji",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Aşağıdakilerden hangisi popülasyonların gen ha- vuzlarında değişime neden olmaz?",
+      "options": {
+        "A": "Popülasyonların yüksek enerjili ışınların etkisin- de kalması",
+        "B": "Popülasyonların coğrafi engellerle bölünmesi",
+        "C": "Popülasyonların içine ve dışına göçlerin olması",
+        "D": "Popülasyonların büyük olması",
+        "E": "Popülasyonlara yapay seçilim uygulanması"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2010",
+        "LYS-2"
+      ]
+    }
+  ]
+}

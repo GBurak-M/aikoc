@@ -1,0 +1,149 @@
+{
+  "exam": "LYS-2",
+  "year": 2013,
+  "subject": "Fizik",
+  "title": "Lisans Yerleştirme Sınavı (LYS-2) Fizik Testi ve Cevap Anahtarı",
+  "pdfUrl": "https://www.osym.gov.tr/Eklenti/144,lys2fiziktestipdf.pdf?0",
+  "sourceUrl": "https://www.osym.gov.tr/TR,15045/osys-cikmis-sorular.html",
+  "questionCount": 6,
+  "answerKeyCount": 30,
+  "parsedAt": "2026-06-11T13:42:47.414Z",
+  "questions": [
+    {
+      "id": "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f-q6",
+      "number": 6,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2013 - LYS2 / FİZ Şekildeki gibi bir binanın, yerden sırasıyla 5 m ve 45 m yükseklikteki odalarından her birinin hızı 3 m / s olan X, Y cisimleri yatay doğrultuda fırlatılıyor. X, Y cisimleri sırasıyla K, L noktalarına düştüğüne göre, KL uzaklığı kaç m’dir? (Hava sürtünmesi önemsizdir ve yükseklikler ölçekli çizilmemiştir, )",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "3",
+        "C": "2",
+        "D": "1"
+      },
+      "answer": "A",
+      "solution": "ÖSYM cevap anahtarı: A",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f-q11",
+      "number": 11,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2013 - LYS2 / FİZ Bir lunaparktaki raylı sistemde bir araç, 40 m yükseklikten ilk hızsız harekete başlıyor. Bu araç, yarıçapı 10 m olan çember biçimli raydaki M noktasından şekildeki gibi geçiyor. Buna göre, aracın M noktasındaki hızı kaç m / s olur? ( ; sürtünmeler ve aracın boyutları önemsenmeyecektir.)",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "20",
+        "C": "30",
+        "D": "40",
+        "E": "50"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f-q13",
+      "number": 13,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2013 - LYS2 / FİZ Her birinin iç direnci olan özdeş iki üreteç; ’luk R direncine Şekil I’deki gibi bağlandığında devreden geçen akımın şiddeti , Şekil II’deki gibi bağlandığında da oluyor. Buna göre, oranı kaçtır? 14. Özdeş K, L, M sığaçlarıyla (kondansatör) oluşturulan şekildeki devrede, K ve L sığaçlarında depolanan enerjilerin toplamı E’dir. Buna göre, M sığacında depolanan enerji kaç E’dir?",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "K",
+        "C": "L",
+        "D": "M",
+        "E": "N"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f-q15",
+      "number": 15,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "2013 - LYS2 / FİZ Birbirine paralel, sonsuz uzunluktaki K, L iletken tellerinden şekilde gösterilen yönlerde şiddetlerinde elektrik akımı geçiyor. Tellerden eşit uzaklıktaki M noktasında sayfa düzlemine dik ve içeriye doğru manyetik alanı oluşuyor. Buna göre, I. nin büyüklüğünü değiştirmeden yönünü değiştirmek, II. nin büyüklüğünü değiştirmeden yönünü değiştirmek, III. nin yönünü değiştirmeden büyüklüğünü artırmak işlemlerinden hangileri yapılırsa manyetik alanının hem büyüklüğü artar hem de yönü değişir? (Yerin manyetik alanı önemsenmeyecektir.) Yalnız I Yalnız II Yalnız III I ve II I ve III 16. Elektronik devre elemanlarının işlevleriyle ilgili, I. Transistör, elektrik sinyalini yükseltir. II. LED, elektrik enerjisini ışığa dönüştürür. III. Fotodiyot, elektronik devrelerde ışık üretir. yargılarından hangileri doğrudur? Yalnız I Yalnız II Yalnız III I ve II II ve III Aşağıdaki dalgalardan hangisi, hem enine hem de boyuna dalga özelliğini içinde barındırır? E) Işık Su Ses Sismik P dalgası Sismik S dalgası",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "1",
+        "C": "2",
+        "D": "3"
+      },
+      "answer": "B",
+      "solution": "ÖSYM cevap anahtarı: B",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f-q20",
+      "number": 20,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "Renk kuramına göre, ışığın ve boyanın renklerinden her biri üç farklı rengin değişik oranlarda birleşimi ve karışımı ile açıklanır. Buna göre aşağıdakilerden hangisi, ışık rengini açıklamakta kullanılan üç renkten biridir? A) B) C) D) E) Kırmızı Siyah Sarı Turkuaz (cyan) Eflatun (magenta) Odak noktası F olan şekildeki çukur ayna, T tepe noktası F’ye gelecek şekilde, asal eksen doğrultusunda döndürülmeden hareket ettiriliyor. Bu hareketin sonucunda K cisminin görüntüsünün ilk ve son konumları sırasıyla aşağıdakilerden hangisidir? I ve IV I ve V II ve IV II ve V III ve IV",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "4",
+        "C": "6",
+        "D": "18",
+        "E": "24"
+      },
+      "answer": "C",
+      "solution": "ÖSYM cevap anahtarı: C",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    },
+    {
+      "id": "2013-lys-2-fizik-2013-lisans-yerlestirme-sinavi-lys-2-f-q24",
+      "number": 24,
+      "subject": "Fizik",
+      "topic": "LYS-2",
+      "difficulty": "orta",
+      "question": "E enerjili fotonlar K metaline düşürüldüğünde sökülen elektronların maksimum kinetik enerjisi 8 eV, L metaline düşürüldüğünde de 6 eV oluyor. Buna göre, K ve L’nin eşik enerjileri sırasıyla aşağıdakilerden hangisi olabilir? A) B) C) D) E) 2 3 3 2 4 6 5 3 6 4",
+      "options": {
+        "A": "A) B) C) D) E)",
+        "B": "0,10",
+        "C": "0,15",
+        "D": "0,20",
+        "E": "0,25"
+      },
+      "answer": "D",
+      "solution": "ÖSYM cevap anahtarı: D",
+      "imageUrl": null,
+      "tags": [
+        "osym",
+        "2013",
+        "LYS-2"
+      ]
+    }
+  ]
+}

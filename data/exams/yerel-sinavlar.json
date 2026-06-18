@@ -1,0 +1,431 @@
+{
+  "exam": "Fen Lisesi Giriş",
+  "year": 2024,
+  "subjects": [
+    "Matematik",
+    "Fen",
+    "Türkçe"
+  ],
+  "questions": [
+    {
+      "id": "fen lisesi giriş-2024-matematik-001",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 1",
+      "difficulty": "kolay",
+      "question": "1. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-002",
+      "subject": "Fen",
+      "topic": "Fen Konu 2",
+      "difficulty": "orta",
+      "question": "2. Sesin boşlukta yayılmamasının nedeni nedir?",
+      "options": {
+        "A": "Ses dalgasıdır",
+        "B": "Ortam tanecikleri gerekir",
+        "C": "Işıktan yavaştır",
+        "D": "Enerji taşımaz",
+        "E": "Basınç dalgası değildir"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-türkçe-003",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 3",
+      "difficulty": "zor",
+      "question": "3. \"Gözden düşmek\" deyiminin anlamı aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Görme yetisini kaybetmek",
+        "B": "Değerini yitirmek",
+        "C": "Hızlı bakmak",
+        "D": "Gözü yorulmak",
+        "E": "Gözükmek"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-matematik-004",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 4",
+      "difficulty": "kolay",
+      "question": "4. Bir dikdörtgenin kısa kenarı 6 cm, uzun kenarı 10 cm ise çevresi kaç cm'dir?",
+      "options": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "60",
+        "E": "80"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-005",
+      "subject": "Fen",
+      "topic": "Fen Konu 5",
+      "difficulty": "orta",
+      "question": "5. Fotosentez olayı hangi organelde gerçekleşir?",
+      "options": {
+        "A": "Mitokondri",
+        "B": "Kloroplast",
+        "C": "Ribozom",
+        "D": "Golgi",
+        "E": "Lizozom"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-türkçe-006",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 1",
+      "difficulty": "zor",
+      "question": "6. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-matematik-007",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 2",
+      "difficulty": "kolay",
+      "question": "7. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-008",
+      "subject": "Fen",
+      "topic": "Fen Konu 3",
+      "difficulty": "orta",
+      "question": "8. Aşağıdakilerden hangisi yenilenebilir enerji kaynağıdır?",
+      "options": {
+        "A": "Kömür",
+        "B": "Doğal gaz",
+        "C": "Petrol",
+        "D": "Güneş",
+        "E": "Linyit"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-türkçe-009",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 4",
+      "difficulty": "zor",
+      "question": "9. Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+      "options": {
+        "A": "Okula giderken kitabını unuttu.",
+        "B": "Bende bu konuyu anlamadım.",
+        "C": "Yarın sınavımız var.",
+        "D": "Akşam çalışmaya devam edeceğim.",
+        "E": "Sınıfta sessizce oturdu."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-matematik-010",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 5",
+      "difficulty": "kolay",
+      "question": "10. 3x + 7 = 22 denkleminin çözümü kaçtır?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6",
+        "E": "7"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-011",
+      "subject": "Fen",
+      "topic": "Fen Konu 1",
+      "difficulty": "orta",
+      "question": "11. Saf suyun kaynama sıcaklığı deniz seviyesinde kaç °C'dir?",
+      "options": {
+        "A": "0",
+        "B": "50",
+        "C": "90",
+        "D": "100",
+        "E": "120"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-türkçe-012",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 2",
+      "difficulty": "zor",
+      "question": "12. Aşağıdaki cümlelerin hangisinde özne gizli öznedir?",
+      "options": {
+        "A": "Öğretmen tahtaya yazdı.",
+        "B": "Kitapları düzenledim.",
+        "C": "Yağmur yağıyor.",
+        "D": "Kuşlar uçuyor.",
+        "E": "Çocuklar parka gitti."
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-matematik-013",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 3",
+      "difficulty": "kolay",
+      "question": "13. Bir sayının %25 fazlası 80 ise sayı kaçtır?",
+      "options": {
+        "A": "60",
+        "B": "64",
+        "C": "70",
+        "D": "75",
+        "E": "80"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-014",
+      "subject": "Fen",
+      "topic": "Fen Konu 4",
+      "difficulty": "orta",
+      "question": "14. Sesin boşlukta yayılmamasının nedeni nedir?",
+      "options": {
+        "A": "Ses dalgasıdır",
+        "B": "Ortam tanecikleri gerekir",
+        "C": "Işıktan yavaştır",
+        "D": "Enerji taşımaz",
+        "E": "Basınç dalgası değildir"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-türkçe-015",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 5",
+      "difficulty": "zor",
+      "question": "15. \"Gözden düşmek\" deyiminin anlamı aşağıdakilerden hangisidir?",
+      "options": {
+        "A": "Görme yetisini kaybetmek",
+        "B": "Değerini yitirmek",
+        "C": "Hızlı bakmak",
+        "D": "Gözü yorulmak",
+        "E": "Gözükmek"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-matematik-016",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 1",
+      "difficulty": "kolay",
+      "question": "16. Bir dikdörtgenin kısa kenarı 6 cm, uzun kenarı 10 cm ise çevresi kaç cm'dir?",
+      "options": {
+        "A": "16",
+        "B": "24",
+        "C": "32",
+        "D": "60",
+        "E": "80"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-017",
+      "subject": "Fen",
+      "topic": "Fen Konu 2",
+      "difficulty": "orta",
+      "question": "17. Fotosentez olayı hangi organelde gerçekleşir?",
+      "options": {
+        "A": "Mitokondri",
+        "B": "Kloroplast",
+        "C": "Ribozom",
+        "D": "Golgi",
+        "E": "Lizozom"
+      },
+      "answer": "B",
+      "solution": "Doğru cevap B seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-türkçe-018",
+      "subject": "Türkçe",
+      "topic": "Türkçe Konu 3",
+      "difficulty": "zor",
+      "question": "18. Parçada boş bırakılan yere düşüncenin akışına göre hangisi gelmelidir?",
+      "options": {
+        "A": "Bu nedenle düzenli tekrar şarttır.",
+        "B": "Hava bugün çok güzel.",
+        "C": "Futbol maçı akşam başlayacak.",
+        "D": "Market kapalıydı.",
+        "E": "Yol çalışması sürüyor."
+      },
+      "answer": "A",
+      "solution": "Doğru cevap A seçeneğidir. Türkçe kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "türkçe",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-matematik-019",
+      "subject": "Matematik",
+      "topic": "Matematik Konu 4",
+      "difficulty": "kolay",
+      "question": "19. 12 ile 18 sayılarının EBOB'u kaçtır?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "6",
+        "D": "12",
+        "E": "36"
+      },
+      "answer": "C",
+      "solution": "Doğru cevap C seçeneğidir. Matematik kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "matematik",
+        "fen lisesi giriş"
+      ]
+    },
+    {
+      "id": "fen lisesi giriş-2024-fen-020",
+      "subject": "Fen",
+      "topic": "Fen Konu 5",
+      "difficulty": "orta",
+      "question": "20. Aşağıdakilerden hangisi yenilenebilir enerji kaynağıdır?",
+      "options": {
+        "A": "Kömür",
+        "B": "Doğal gaz",
+        "C": "Petrol",
+        "D": "Güneş",
+        "E": "Linyit"
+      },
+      "answer": "D",
+      "solution": "Doğru cevap D seçeneğidir. Fen kazanımına göre adım adım çözüm: verilen bilgiyi oku, kuralı uygula, sonucu kontrol et.",
+      "imageUrl": null,
+      "tags": [
+        "fen",
+        "fen lisesi giriş"
+      ]
+    }
+  ]
+}
