@@ -3,8 +3,8 @@ import { loadChatSessions, saveChatSessions } from '../../lib/chat-storage.js';
 import { renderChatStats } from '../../lib/page-stats.js';
 import { getAIEngine } from '../../lib/ai-engine.js';
 import { BRAND_LOGO, BRAND_ALT } from '../../lib/brand.js';
-import { isGoogleSignedIn, getGoogleAuthHint, onGoogleAuthChange, renderGoogleSignInButton } from '../../lib/google-auth.js';
 import { CHAT_SUBJECTS, subjectToMode, MODE_PROMPTS } from '../../lib/chat-subjects.js';
+import { assertMemberOrDemo, markDemoConsumed, isMemberLoggedIn } from '../../lib/guest-session.js';
 
 let sessionId = null;
 let messages = [];
@@ -153,6 +153,9 @@ async function sendMessage(text) {
   const trimmed = text.trim();
   if (!trimmed) return;
 
+  if (!assertMemberOrDemo('chat')) return;
+  if (!isMemberLoggedIn()) markDemoConsumed('chat');
+
   if (!sessionId) newSession();
 
   messages.push({ role: 'user', content: trimmed });
@@ -179,21 +182,6 @@ async function sendMessage(text) {
   }
 }
 
-async function updateGoogleBanner(engine) {
-  const banner = document.getElementById('chat-google-banner');
-  const text = document.getElementById('chat-google-banner-text');
-  const signin = document.getElementById('chat-google-signin');
-  if (!banner || !text) return;
-
-  const hint = await getGoogleAuthHint();
-  const show = !isGoogleSignedIn();
-  banner.hidden = !show;
-  if (!show) return;
-
-  text.textContent = hint || 'Sol menüdeki sarı Google AI girişi panelinden veya buradan Google hesabınla giriş yap.';
-  if (signin) await renderGoogleSignInButton(signin);
-}
-
 export async function init() {
   const engine = getAIEngine();
   const statusEl = document.getElementById('chat-ai-status');
@@ -206,24 +194,17 @@ export async function init() {
     const progressText = document.getElementById('chat-progress-text');
     if (progressWrap) progressWrap.hidden = !engine.progressText;
     if (progressText) progressText.textContent = engine.progressText || '';
-    updateGoogleBanner(engine);
     renderChatStats();
   };
   engine.onProgress(updateStatus);
   if (!engine.ready) await engine.init();
   updateStatus();
-  onGoogleAuthChange(async () => {
-    const eng = getAIEngine();
-    if (!eng.ready) await eng.init();
-    if (statusEl) statusEl.textContent = `AI: ${eng.getStatusLabel()}`;
-    updateGoogleBanner(eng);
-    renderChatStats();
-  });
 
   reloadFromStorage();
   renderChatStats();
 
   window.addEventListener('aikoc:session', reloadFromStorage);
+  window.addEventListener('aikoc:session-merged', reloadFromStorage);
 
   document.getElementById('chat-new')?.addEventListener('click', () => {
     newSession();
@@ -266,4 +247,5 @@ export async function init() {
 
 export function destroy() {
   window.removeEventListener('aikoc:session', reloadFromStorage);
+  window.removeEventListener('aikoc:session-merged', reloadFromStorage);
 }

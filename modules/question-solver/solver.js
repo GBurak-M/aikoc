@@ -2,6 +2,7 @@ import { getAIEngine } from '../../lib/ai-engine.js';
 import { isGroqAvailable } from '../../lib/groq-api.js';
 import { BRAND_LOGO, BRAND_ALT, BRAND_NAME } from '../../lib/brand.js';
 import { bumpSolverStats, renderSolverStats } from '../../lib/page-stats.js';
+import { assertMemberOrDemo, markDemoConsumed, isMemberLoggedIn } from '../../lib/guest-session.js';
 
 const MAX_BYTES = 25 * 1024 * 1024;
 let imageDataUrl = null;
@@ -21,16 +22,14 @@ function readImage(file) {
 }
 
 async function updateSolverBanner() {
-  const banner = document.getElementById('solver-google-banner');
-  const text = document.getElementById('solver-google-banner-text');
-  const signin = document.getElementById('solver-google-signin');
+  const banner = document.getElementById('solver-ai-banner');
+  const text = document.getElementById('solver-ai-banner-text');
   if (!banner || !text) return;
-  const groqOk = await isGroqAvailable();
+  const groqOk = await import('../../lib/groq-api.js').then((m) => m.isGroqAvailable());
   banner.hidden = groqOk;
   if (groqOk) return;
   text.textContent =
     'Tam yapay zeka yanıtı için sunucuda GROQ_API_KEY tanımlanmalı. Şimdilik temel çevrimdışı öğretmen yanıtları kullanılır.';
-  if (signin) signin.innerHTML = '';
 }
 
 export async function init() {
@@ -38,6 +37,10 @@ export async function init() {
   if (!engine.ready) await engine.init();
   await renderSolverStats();
   await updateSolverBanner();
+
+  const reloadStats = () => renderSolverStats();
+  window.addEventListener('aikoc:session', reloadStats);
+  window.addEventListener('aikoc:session-merged', reloadStats);
 
   document.getElementById('solver-image')?.addEventListener('change', async (e) => {
     const file = e.target.files?.[0];
@@ -69,6 +72,9 @@ export async function init() {
       if (result) result.innerHTML = `${resultHead}<p class="meta">Lütfen soru metni veya görsel ekle.</p>`;
       return;
     }
+
+    if (!assertMemberOrDemo('solver')) return;
+    if (!isMemberLoggedIn()) markDemoConsumed('solver');
 
     if (result) {
       result.innerHTML = `${resultHead}<p class="meta" id="solver-progress">Çözülüyor…</p>`;

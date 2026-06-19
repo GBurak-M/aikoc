@@ -1,5 +1,4 @@
 import { getCurrentUser } from '../../lib/sidebar-auth.js';
-import { isGoogleSignedIn } from '../../lib/google-auth.js';
 import { renderDashboardStats } from '../../lib/page-stats.js';
 
 export async function init() {
@@ -8,14 +7,17 @@ export async function init() {
   if (greeting) {
     if (member?.name) {
       greeting.textContent = `Merhaba ${member.name}! Bugün hangi rotada ilerleyelim?`;
-    } else if (isGoogleSignedIn()) {
-      greeting.textContent = 'AI koçun hazır — site üyeliği için kenar çubuktan kayıt olabilirsin.';
     } else {
-      greeting.textContent = 'ROTA AI\'ye hoş geldin — site üyeliği ve AI için ayrı girişler kullanılır.';
+      greeting.textContent =
+        'ROTA AI\'ye hoş geldin — dersler, sınavlar ve AI için bir kez demo dene; devamı için üye ol.';
     }
   }
 
   renderDashboardStats();
+
+  const refreshStats = () => renderDashboardStats();
+  window.addEventListener('aikoc:session', refreshStats);
+  window.addEventListener('aikoc:session-merged', refreshStats);
 
   const tips = [
     'Günde 25 dakika tek derse odaklan; ardından 5 dakika mola ver.',

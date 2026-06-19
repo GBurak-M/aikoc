@@ -2,17 +2,17 @@
 
 import { getLang, setLang, t, i18n } from './lib/i18n.js';
 import { getAIEngine, resetAIEngine } from './lib/ai-engine.js';
-import { onGoogleAuthChange, syncGoogleSession } from './lib/google-auth.js';
 import { loadSiteConfig } from './lib/site-config.js';
 import { initScene3D } from './lib/scene3d.js';
 import { initSidebarAuth } from './lib/sidebar-auth.js';
-import { initSidebarGoogleAuth } from './lib/sidebar-google-auth.js';
 import { initTopbarAuthUI } from './lib/topbar-auth-ui.js';
 import { getItem, setItem, removeItem } from './lib/storage.js';
 import { migrateChatStorage } from './lib/chat-storage.js';
+import { initGuestSessionLifecycle } from './lib/guest-session.js';
+import { initWidgetClock } from './lib/widget-clock.js';
 import { BRAND_NAME } from './lib/brand.js';
 
-const APP_BUILD = '20260618l';
+const APP_BUILD = '20260619a';
 
 const routes = {
   '/': { html: 'modules/dashboard/dashboard.html', js: 'modules/dashboard/dashboard.js', title: 'nav.dashboard' },
@@ -97,9 +97,8 @@ async function loadModule(path) {
     refreshIcons();
     updateTitle(route);
     setActiveNav(path);
-  } catch (err) {
+  } catch {
     main.innerHTML = `<div class="empty-state"><p>Sayfa yüklenirken bir sorun oluştu.</p><button class="btn btn-primary" onclick="location.reload()">Yenile</button></div>`;
-    /* yükleme hatası — kullanıcıya mesaj gösterildi */
   }
 }
 
@@ -169,8 +168,7 @@ function initAIStatus() {
     const update = () => {
       if (label) label.textContent = engine.getStatusLabel();
       if (box) {
-        const googleReady = engine.mode === 'window-ai';
-        box.classList.toggle('ready', engine.ready && googleReady);
+        box.classList.toggle('ready', engine.ready && engine.mode === 'groq-api');
         box.classList.toggle('loading', !!engine.progressText);
       }
     };
@@ -180,7 +178,6 @@ function initAIStatus() {
   };
 
   refreshEngine();
-  onGoogleAuthChange(() => refreshEngine());
 }
 
 async function registerSW() {
@@ -198,36 +195,19 @@ async function registerSW() {
 }
 
 window.addEventListener('hashchange', navigate);
-function handleAuthQuery() {
-  const params = new URLSearchParams(location.search);
-  if (params.get('auth_error') === 'google') {
-    history.replaceState(null, '', location.pathname + location.hash);
-  }
-}
 
-/** Eski sürüm Google oturumunu `user` anahtarına yazıyordu — üyelikten ayır. */
+/** Eski sürüm Google oturumunu `user` anahtarına yazıyordu — temizle. */
 function migrateLegacyAuth() {
   const user = getItem('user');
   if (!user) return;
-
   if (user.authProvider === 'local') return;
 
-  const looksGoogle =
-    user.authProvider === 'google' ||
-    Boolean(user.picture) ||
-    /\.googleusercontent\.com/i.test(user.picture || '');
-
-  if (looksGoogle) {
-    if (!getItem('google_user')) {
-      setItem('google_user', { ...user, authProvider: 'google' });
-    }
-  }
-
   removeItem('user');
+  removeItem('google_user');
+  removeItem('google_credential');
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
-  handleAuthQuery();
   if (!location.hash) location.hash = '#/';
   navigate();
 
@@ -235,14 +215,14 @@ window.addEventListener('DOMContentLoaded', async () => {
     await loadSiteConfig();
     migrateLegacyAuth();
     migrateChatStorage();
-    await syncGoogleSession();
+    initGuestSessionLifecycle();
     initTheme();
     initLang();
     initMobileMenu();
     initAIStatus();
     initTopbarAuthUI();
     initSidebarAuth();
-    initSidebarGoogleAuth();
+    initWidgetClock();
     initScene3D();
     registerSW();
     refreshIcons();

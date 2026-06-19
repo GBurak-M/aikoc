@@ -1,14 +1,14 @@
 <section class="auth-module">
   <div class="module-header">
     <h2>Profilim</h2>
-    <p>Site üyeliği ayrıdır; AI Sohbet ve Soru Çöz Groq öğretmen modu ile çalışır.</p>
+    <p>Site üyeliği ile dersler, sınavlar, AI Sohbet ve Soru Çöz geçmişin seninle kalır.</p>
   </div>
 
-  <div class="auth-grid">
+  <div class="auth-grid auth-grid-single">
     <div class="card auth-panel auth-panel-member">
       <p class="auth-panel-badge auth-panel-badge-member">Site üyeliği</p>
       <h3>E-posta ile giriş</h3>
-      <p class="meta">Kütüphane, sınavlar, profil ve sohbet geçmişi (üye oturumu).</p>
+      <p class="meta">Kayıt olduktan sonra giriş yaparak demo verilerini hesabına aktarabilirsin.</p>
 
       <div id="auth-member-logged" hidden>
         <h4 id="auth-member-name"></h4>
@@ -46,45 +46,22 @@
         <p class="meta" id="auth-member-message"></p>
       </form>
     </div>
-
-    <div class="card auth-panel auth-panel-google">
-      <p class="auth-panel-badge auth-panel-badge-google">Google (isteğe bağlı)</p>
-      <h3>Google oturumu</h3>
-      <p class="meta">Artık AI için zorunlu değil. AI Sohbet ve Soru Çöz sunucu tarafında Groq ile çalışır.</p>
-
-      <div id="auth-google-logged" hidden>
-        <div class="auth-user-head">
-          <img id="auth-google-avatar" class="auth-avatar" alt="" width="56" height="56" hidden />
-        </div>
-        <h4 id="auth-google-name"></h4>
-        <p class="meta" id="auth-google-email"></p>
-        <p class="meta">Bu oturum site üyeliğinden bağımsızdır.</p>
-        <button type="button" class="btn btn-secondary" id="auth-google-logout">Google çıkışı</button>
-      </div>
-
-      <div id="auth-google-guest">
-        <p class="meta">İsteğe bağlı Google bağlantısı (site üyeliğinden bağımsız).</p>
-        <div id="google-signin-wrap" class="google-signin-wrap"></div>
-      </div>
-    </div>
   </div>
 
   <div class="card auth-info-card">
-    <h3>İki ayrı panel</h3>
+    <h3>Demo ve üyelik</h3>
     <ul class="auth-info-list">
-      <li><strong>Site üyeliği</strong> — sol menüde mavi panel; e-posta ve şifre.</li>
-      <li><strong>AI Sohbet & Soru Çöz</strong> — Groq öğretmen modu (GROQ_API_KEY sunucuda).</li>
-      <li><strong>Google oturumu</strong> — isteğe bağlı; AI için artık gerekli değil.</li>
+      <li><strong>Demo</strong> — Dersler, sınavlar, AI Sohbet ve Soru Çöz için giriş yapmadan bir kez dene.</li>
+      <li><strong>Üyelik</strong> — İkinci kullanımdan itibaren ücretsiz kayıt veya giriş gerekir.</li>
+      <li><strong>Giriş sonrası</strong> — Demo sırasında yaptığın işlemler hesabına aktarılır.</li>
     </ul>
   </div>
 </section>
 
 <style>
-.auth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-@media (max-width: 768px) { .auth-grid { grid-template-columns: 1fr; } }
+.auth-grid-single { max-width: 32rem; }
 .auth-panel { border-width: 2px; }
 .auth-panel-member { border-color: rgba(0, 212, 255, 0.35); }
-.auth-panel-google { border-color: rgba(251, 188, 5, 0.45); }
 .auth-panel-badge {
   display: inline-block;
   margin: 0 0 0.5rem;
@@ -96,9 +73,6 @@
   text-transform: uppercase;
 }
 .auth-panel-badge-member { background: rgba(0, 212, 255, 0.15); color: var(--color-primary); }
-.auth-panel-badge-google { background: rgba(251, 188, 5, 0.18); color: #fbbc05; }
-.google-signin-wrap { margin: 1rem 0; min-height: 44px; }
-.auth-avatar { border-radius: 50%; object-fit: cover; margin-bottom: 0.75rem; }
 .auth-info-card { margin-top: 1rem; }
 .auth-info-list { margin: 0.5rem 0 0 1.25rem; line-height: 1.6; }
 .auth-panel h3 { margin-top: 0; }

@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="ROTA AI — Yolunu bul, hedefe yapay zeka ile var. Ücretsiz 3D dijital eğitim platformu." />
   <meta name="theme-color" content="#0B1026" />
-  <meta name="google-client-id" content="77021897813-cegcabu0g6iikhn6rg8kaukjun53rc57.apps.googleusercontent.com" />
   <meta property="og:image" content="assets/brand/rota-ai-logo.png" />
   <title>ROTA AI — Dijital Eğitim</title>
   <link rel="icon" href="favicon.png" type="image/png" />
@@ -14,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Nunito:wght@400;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260611b" />
+  <link rel="stylesheet" href="style.css?v=20260619a" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
@@ -88,7 +87,7 @@
             <div class="topbar-auth-dropdown auth-dropdown-member" id="topbar-member-dropdown" hidden>
               <div class="auth-dropdown-panel sidebar-member-panel" id="sidebar-auth-panel">
                 <p class="sidebar-auth-title">Site üyeliği</p>
-                <p class="meta sidebar-auth-hint">Kütüphane, sınavlar ve profil için e-posta ile giriş.</p>
+                <p class="meta sidebar-auth-hint">Dersler, sınavlar ve AI için bir kez demo; devamı için üye girişi.</p>
 
                 <div id="sidebar-auth-guest" class="sidebar-auth-guest">
                   <form id="sidebar-login-form" class="sidebar-auth-form">
@@ -117,37 +116,12 @@
               </div>
             </div>
           </div>
-
-          <div class="topbar-auth-slot">
-            <button type="button" class="topbar-auth-trigger topbar-auth-trigger-google" id="topbar-google-trigger" aria-expanded="false" aria-controls="topbar-google-dropdown">
-              <img src="assets/brand/rota-ai-logo.png" alt="" class="topbar-auth-trigger-icon" width="18" height="18" />
-              <span id="topbar-google-trigger-label">Google AI</span>
-            </button>
-            <div class="topbar-auth-dropdown auth-dropdown-google" id="topbar-google-dropdown" hidden>
-              <div class="auth-dropdown-panel sidebar-google-panel" id="sidebar-google-panel">
-                <p class="sidebar-auth-title sidebar-google-title">Google (isteğe bağlı)</p>
-                <p class="meta sidebar-auth-hint">AI Sohbet ve Soru Çöz, Groq öğretmen modu ile çalışır (sunucu tarafında GROQ_API_KEY).</p>
-
-                <div id="sidebar-google-guest" class="sidebar-google-guest">
-                  <div id="sidebar-google-signin" class="sidebar-google-wrap"></div>
-                  <p class="auth-msg" id="sidebar-google-msg"></p>
-                </div>
-
-                <div id="sidebar-google-logged" class="sidebar-auth-logged" hidden>
-                  <img src="" alt="" id="sidebar-google-avatar" class="sidebar-user-avatar" width="40" height="40" hidden />
-                  <div class="sidebar-user-meta">
-                    <strong id="sidebar-google-name"></strong>
-                    <span id="sidebar-google-email"></span>
-                  </div>
-                  <button type="button" class="btn btn-ghost btn-sm btn-block" id="sidebar-google-logout">Google çıkışı</button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </header>
       <main id="main-content" class="main-content" tabindex="-1"></main>
     </div>
+
+    <aside id="site-widget-clock" class="site-widget-clock" aria-label="Takvim ve saat"></aside>
 
     <nav class="tabbar" aria-label="Mobil menü">
       <a href="#/" class="tab-link" data-route="/"><i data-lucide="layout-dashboard"></i><span>Pano</span></a>
@@ -195,6 +169,6 @@
     </div>
   </div>
 
-  <script type="module" src="app.js?v=20260612b"></script>
+  <script type="module" src="app.js?v=20260619a"></script>
 </body>
 </html>

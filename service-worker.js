@@ -1,4 +1,4 @@
-const CACHE = 'rota-ai-v38';
+const CACHE = 'rota-ai-v39';
 
 const PRECACHE = [
   '/favicon.png',
