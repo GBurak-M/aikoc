@@ -1,21 +1,119 @@
 <section class="lessons-module">
-  <div class="module-header">
-    <h2>Dersler</h2>
-    <p>Her sınıfın dersleri ayrı ayrı — MEB müfredatına göre gruplandı</p>
+  <div class="module-header lessons-header">
+    <div>
+      <h2>Dersler</h2>
+      <p>Derslerinizi takip edin, sınav notlarınızı analiz edin, pomodoro ile haftalık çalışma planı oluşturun</p>
+    </div>
+    <div class="lessons-tabs" role="tablist">
+      <button type="button" class="lessons-tab active" data-tab="planner" role="tab" aria-selected="true">Derslerim</button>
+      <button type="button" class="lessons-tab" data-tab="curriculum" role="tab" aria-selected="false">Müfredat</button>
+    </div>
   </div>
 
   <div class="card-grid page-stats-panel" id="page-stats-lessons" aria-label="İstatistikler"></div>
 
-  <div class="toolbar">
-    <select class="select" id="lessons-level" aria-label="Kademe">
-      <option value="">Tüm kademeler</option>
-      <option value="ilkokul">İlkokul</option>
-      <option value="ortaokul">Ortaokul</option>
-      <option value="lise">Lise</option>
-      <option value="mezun">Mezun / YKS</option>
-    </select>
-    <input type="search" class="input" id="lessons-search" placeholder="Ders ara…" aria-label="Ders ara" />
+  <!-- Derslerim + Pomodoro -->
+  <div class="lessons-planner-layout" id="lessons-planner-panel">
+    <div class="lessons-main">
+      <div class="card lessons-panel">
+        <div class="lessons-panel-head">
+          <h3>Derslerim</h3>
+          <form id="lessons-add-course" class="lessons-inline-form">
+            <input type="text" class="input" id="lessons-course-name" placeholder="Ders adı (örn. Matematik)" required maxlength="60" />
+            <input type="number" class="input input-sm-num" id="lessons-course-target" placeholder="Hedef" min="0" max="100" value="70" title="Hedef not" />
+            <button type="submit" class="btn btn-primary btn-sm">Ekle</button>
+          </form>
+        </div>
+        <div id="lessons-course-list" class="lessons-course-list"></div>
+      </div>
+
+      <div class="card lessons-panel" id="lessons-exam-panel" hidden>
+        <div class="lessons-panel-head">
+          <h3 id="lessons-exam-panel-title">Sınav notları</h3>
+        </div>
+        <form id="lessons-add-exam" class="lessons-exam-form">
+          <div class="lessons-form-grid">
+            <label class="label">Sınav adı<input class="input" name="title" placeholder="1. Yazılı / Deneme 3" required /></label>
+            <label class="label">Tarih<input class="input" name="date" type="date" /></label>
+          </div>
+          <div class="lessons-form-grid">
+            <label class="label">Toplam soru<input class="input" name="total" id="exam-input-total" type="number" min="1" max="200" /></label>
+            <label class="label">Doğru<input class="input" name="correct" id="exam-input-correct" type="number" min="0" /></label>
+            <label class="label">Yanlış<input class="input" name="wrong" id="exam-input-wrong" type="number" min="0" /></label>
+            <label class="label">Boş<input class="input" name="blank" id="exam-input-blank" type="number" min="0" /></label>
+          </div>
+          <div class="lessons-exam-calc card" id="lessons-exam-calc" hidden>
+            <div class="calc-row"><span>Net</span><strong id="exam-calc-net">—</strong></div>
+            <div class="calc-row"><span>Sınav puanı</span><strong id="exam-calc-grade">—</strong></div>
+            <p class="meta" id="exam-calc-formula">Formül: net = doğru − yanlış÷4 · puan = (net ÷ toplam) × 100</p>
+          </div>
+          <p class="meta exam-calc-warn" id="exam-calc-warn" hidden></p>
+          <label class="label">Manuel not (opsiyonel)<input class="input" name="grade" id="exam-input-grade" type="number" min="0" max="100" step="0.5" placeholder="Test girilmezse elle yazın" /></label>
+          <p class="meta">Toplam, doğru ve yanlış girildiğinde net ve puan otomatik hesaplanır. Boş boş bırakılırsa toplamdan türetilir.</p>
+          <button type="submit" class="btn btn-primary btn-sm">Sınav ekle</button>
+        </form>
+        <div id="lessons-exam-list"></div>
+      </div>
+
+      <div class="card lessons-panel">
+        <div class="lessons-panel-head">
+          <h3>Derslerim analizi</h3>
+        </div>
+        <div id="lessons-analysis"></div>
+      </div>
+
+      <div class="card lessons-panel">
+        <div class="lessons-panel-head">
+          <h3>Haftalık çalışma planı</h3>
+          <div class="lessons-plan-actions">
+            <button type="button" class="btn btn-ghost btn-sm" id="lessons-export-plan">PDF / Yazdır</button>
+          </div>
+        </div>
+        <div id="lessons-weekly-plan"></div>
+      </div>
+    </div>
+
+    <aside class="lessons-pomodoro card" aria-label="Pomodoro sayaçları">
+      <div class="lessons-panel-head">
+        <h3>Pomodoro</h3>
+        <button type="button" class="btn btn-ghost btn-sm" id="lessons-pomo-settings-btn" title="Ayarlar">⚙</button>
+      </div>
+
+      <div class="pomo-timer-display" id="pomo-timer-display">25:00</div>
+      <p class="pomo-phase" id="pomo-phase">Hazır</p>
+      <p class="pomo-active-course" id="pomo-active-course"></p>
+      <div class="pomo-controls">
+        <button type="button" class="btn btn-primary btn-sm" id="pomo-start">Başlat</button>
+        <button type="button" class="btn btn-secondary btn-sm" id="pomo-pause" disabled>Duraklat</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="pomo-reset">Sıfırla</button>
+      </div>
+      <p class="meta pomo-session-count" id="pomo-session-count">Oturum: 0</p>
+
+      <div id="lessons-pomo-settings" class="lessons-pomo-settings" hidden>
+        <label class="label">Çalışma (dk)<input class="input" id="pomo-work-min" type="number" min="5" max="90" value="25" /></label>
+        <label class="label">Kısa mola (dk)<input class="input" id="pomo-short-min" type="number" min="1" max="30" value="5" /></label>
+        <label class="label">Uzun mola (dk)<input class="input" id="pomo-long-min" type="number" min="5" max="60" value="15" /></label>
+        <label class="label">Haftalık çalışma (saat)<input class="input" id="pomo-weekly-hours" type="number" min="1" max="60" value="14" /></label>
+        <button type="button" class="btn btn-secondary btn-sm btn-block" id="pomo-save-settings">Kaydet ve planı güncelle</button>
+      </div>
+
+      <h4 class="pomo-subtitle">Bugünkü hedefler</h4>
+      <div id="lessons-pomo-courses" class="lessons-pomo-courses"></div>
+    </aside>
   </div>
 
-  <div id="lessons-groups"></div>
+  <!-- Müfredat (mevcut) -->
+  <div id="lessons-curriculum-panel" hidden>
+    <div class="toolbar">
+      <select class="select" id="lessons-level" aria-label="Kademe">
+        <option value="">Tüm kademeler</option>
+        <option value="ilkokul">İlkokul</option>
+        <option value="ortaokul">Ortaokul</option>
+        <option value="lise">Lise</option>
+        <option value="mezun">Mezun / YKS</option>
+      </select>
+      <input type="search" class="input" id="lessons-search" placeholder="Ders ara…" aria-label="Ders ara" />
+    </div>
+    <div id="lessons-groups"></div>
+  </div>
 </section>

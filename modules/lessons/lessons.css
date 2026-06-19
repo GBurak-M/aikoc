@@ -1,3 +1,435 @@
+.lessons-module .lessons-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lessons-tabs {
+  display: flex;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.lessons-tab {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.lessons-tab.active {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.lessons-planner-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 320px);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .lessons-planner-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lessons-panel {
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.lessons-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.lessons-panel-head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.lessons-inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lessons-inline-form .input {
+  min-width: 140px;
+}
+
+.input-sm-num {
+  width: 72px;
+  min-width: 72px;
+}
+
+.lessons-course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lessons-course-chip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  max-width: 100%;
+}
+
+.lessons-course-chip.selected {
+  border-color: var(--course-color, var(--color-primary));
+  box-shadow: 0 0 0 1px var(--course-color, var(--color-primary));
+}
+
+.chip-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--course-color, var(--color-primary));
+  flex-shrink: 0;
+}
+
+.chip-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.chip-meta {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  width: 100%;
+}
+
+.chip-delete {
+  margin-left: auto;
+  opacity: 0.5;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+
+.chip-delete:hover {
+  opacity: 1;
+  color: var(--color-danger, #e02424);
+}
+
+.lessons-exam-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.lessons-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.65rem;
+}
+
+.lessons-exam-calc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+  background: rgba(26, 86, 219, 0.08);
+  border: 1px solid rgba(26, 86, 219, 0.25);
+}
+
+.lessons-exam-calc .calc-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.lessons-exam-calc .calc-row span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lessons-exam-calc .calc-row strong {
+  font-size: 1.35rem;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+}
+
+.lessons-exam-calc .meta {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.exam-calc-warn {
+  color: var(--color-danger, #e02424);
+  font-weight: 600;
+}
+
+.input-readonly {
+  opacity: 0.85;
+  background: rgba(255, 255, 255, 0.04);
+  cursor: default;
+}
+
+.lessons-test-details {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+}
+
+.lessons-test-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.lessons-exam-table,
+.lessons-plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.lessons-exam-table th,
+.lessons-exam-table td,
+.lessons-plan-table th,
+.lessons-plan-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.lessons-exam-table th,
+.lessons-plan-table th {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.lessons-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.lessons-stat {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(26, 86, 219, 0.08);
+  text-align: center;
+}
+
+.lessons-stat strong {
+  display: block;
+  font-size: 1.35rem;
+  color: var(--color-primary);
+}
+
+.lessons-stat span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.lessons-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+
+.lessons-analysis-card {
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.lessons-analysis-card.status-priority {
+  border-color: rgba(224, 36, 36, 0.4);
+}
+
+.lessons-analysis-card.status-ok {
+  border-color: rgba(14, 159, 110, 0.4);
+}
+
+.lac-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.lac-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lac-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  margin-bottom: 0.35rem;
+}
+
+.plan-summary {
+  margin: 0 0 0.65rem;
+}
+
+.plan-subhead {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.lessons-plan-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Pomodoro sidebar */
+.lessons-pomodoro {
+  position: sticky;
+  top: 1rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.pomo-timer-display {
+  font-family: var(--font-mono);
+  font-size: 2.75rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin: 0.5rem 0 0.25rem;
+}
+
+.pomo-phase {
+  text-align: center;
+  font-weight: 700;
+  margin: 0;
+}
+
+.pomo-active-course {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0.25rem 0 0.75rem;
+  min-height: 1.2em;
+}
+
+.pomo-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.pomo-session-count {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.lessons-pomo-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  padding: 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.pomo-subtitle {
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+.lessons-pomo-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pomo-course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  border-left: 3px solid var(--course-color, var(--color-primary));
+}
+
+.pomo-course-card.active {
+  background: rgba(26, 86, 219, 0.1);
+}
+
+.pcc-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.pcc-target {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.pcc-bar {
+  display: block;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.pcc-bar span {
+  display: block;
+  height: 100%;
+  background: var(--course-color, var(--color-primary));
+  border-radius: 2px;
+}
+
+/* Müfredat (mevcut) */
 .lessons-module .grade-block {
   margin-bottom: 1.75rem;
 }
@@ -46,6 +478,7 @@
 .lessons-module .subject-card:hover {
   transform: none;
   box-shadow: var(--shadow-3d-md);
+  border-color: var(--color-primary);
 }
 
 .lessons-module .subject-card strong {
@@ -55,10 +488,6 @@
 .lessons-module .subject-card span {
   font-size: 0.75rem;
   color: var(--color-text-muted);
-}
-
-.lessons-module .subject-card:hover {
-  border-color: var(--color-primary);
 }
 
 .lessons-module .subject-card:focus-visible {
@@ -75,4 +504,20 @@
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--color-border);
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+@media print {
+  .lessons-pomodoro,
+  .lessons-tabs,
+  .lessons-inline-form,
+  .lessons-exam-form,
+  .lessons-plan-actions,
+  .sidebar,
+  .topbar {
+    display: none !important;
+  }
 }
